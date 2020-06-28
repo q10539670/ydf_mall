@@ -50,6 +50,8 @@ return [
     | the Artisan command line tool. You should set this to the root of
     | your application so that it is used when running Artisan tasks.
     |
+    | 当使用Artisan命令行工具时，控制台使用此URL正确生成URL。
+    | 您应该将此设置为应用程序的根目录，以便在运行Artisan任务时使用它。
     */
 
     'url' => env('APP_URL', 'http://localhost'),
@@ -65,9 +67,10 @@ return [
     | will be used by the PHP date and date-time functions. We have gone
     | ahead and set this to a sensible default for you out of the box.
     |
+    | 在这里，您可以为应用程序指定默认时区，PHP日期和日期时间函数将使用该默认时区。我们已经进行了开箱即用，将其设置为明智的默认设置。
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Shanghai',
 
     /*
     |--------------------------------------------------------------------------
