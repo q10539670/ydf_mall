@@ -14,7 +14,7 @@ CREATE TABLE `ydf_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='管理员表';
 
 create table ydf_images (
-    id int unsigned AUTO_INCREMENT '图片id 图片名加随机数md5',
+    id int unsigned AUTO_INCREMENT comment '图片id 图片名加随机数md5',
     `name` varchar(64) not null default '' comment '图片名称',
     url varchar(255) not null default '' comment '绝对地址',
     path varchar(255) not null default '' comment '物理地址',
@@ -24,7 +24,7 @@ create table ydf_images (
     key(id_del)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='图片表';
 
-CREATE TABLE ydf_barnd (
+CREATE TABLE ydf_brand (
   `id` int unsigned AUTO_INCREMENT COMMENT '品牌ID',
   name varchar(64) not null default '' comment '品牌名称',
   logo char(32) not null default '' comment '品牌LOGO 图片ID',
@@ -55,6 +55,7 @@ create table ydf_goods_category (
 create table ydf_goods_type (
     id int unsigned auto_increment,
     name varchar(32) not null default '' comment '商品类型名称',
+    sort mediumint unsigned not null default 0 comment '分类排序 越小越靠前',
     primary key (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品类型表';
 
@@ -85,7 +86,8 @@ create table ydf_goods (
     is_recommend tinyint(1) unsigned DEFAULT '2' COMMENT '是否推荐，1是，2不是推荐',
     is_hot tinyint(1) unsigned DEFAULT '2' COMMENT '是否热门，1是，2否',
     label_ids varchar(255) not null  default '' COMMENT '标签id 逗号分隔',
-    spec_key_ids varchar(255) not null  default '' COMMENT 'sku属性id串 逗号分隔',
+    spec_list text COMMENT '商品规格-当前选中',
+    spec_desc text COMMENT '商品规格-所有',
     created_at datetime  NULL DEFAULT NULL,
     updated_at datetime  NULL  DEFAULT NULL,
     is_del tinyint not null default 0 comment '0：未删除，1:删除',
@@ -106,7 +108,7 @@ create table ydf_products(
     marketable tinyint(1) unsigned DEFAULT 1 COMMENT '上架标志 1=上架 2=下架',
     stock int unsigned DEFAULT '0' COMMENT '库存',
     freeze_stock int unsigned DEFAULT '0' COMMENT '冻结库存',
-    sku_select_ids varchar(255) not null  default '' COMMENT 'sku属性id串 逗号分隔',
+    spec_params text COMMENT '商品规格',
     is_defalut tinyint unsigned DEFAULT 2 COMMENT '是否默认货品 1=是 2=否',
     image_id int not null default 0 COMMENT '默认图片 图片id',
     created_at datetime  NULL DEFAULT NULL,
@@ -117,26 +119,26 @@ create table ydf_products(
     key (goods_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='货品表';
 
-create table ydf_sku_select(
-    id int unsigned auto_increment,
-    product_id int unsigned not null  default 0 COMMENT '产品id 关联products.id',
-    spec_value_ids int unsigned not null  default 0 COMMENT '规格属性值id 关联spec_value.id',
-    primary key (id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='货品-sku 选项值表';
-
-create table ydf_spec_key (
-    id int unsigned auto_increment,
-    type_id int not null default 0 comment '类型id 关联 goods_type.id',
-    name varchar(64) not null default '' COMMENT '属性名称',
-    details varchar(255) not null default '' COMMENT '描述',
-    primary key (id),
+create table ydf_type_spec_rel (
+    spec_id int not null default 0 comment 'spec.id',
+    type_id int not null default 0 comment 'type.id',
+    primary key(spec_id,type_id),
     key(type_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品类型-规格关联表';
+
+create table ydf_spec (
+    id int unsigned auto_increment,
+    name varchar(64) not null default '' COMMENT '属性名称',
+    sort mediumint unsigned not null default 0 comment '分类排序 越小越靠前',
+    details varchar(255) not null default '' COMMENT '描述',
+    primary key (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='产品规格-属性名称表';
 
 create table ydf_spec_value (
     id int unsigned auto_increment,
     spec_key_id int not null default 0 comment '属性id 关联sku_key.id',
-    name varchar(64) not null default '' COMMENT '属性名称',
+    name varchar(64) not null default '' COMMENT '属性值',
+    sort mediumint unsigned not null default 0 comment '分类排序 越小越靠前',
     details varchar(255) not null default '' COMMENT '描述',
     primary key (id),
     key(spec_key_id)

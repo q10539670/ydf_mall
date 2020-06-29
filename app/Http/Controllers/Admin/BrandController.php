@@ -10,11 +10,12 @@ use App\Models\Brand;
 use App\Models\Goods;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
+use Illuminate\Support\Facades\Validator;
 
 class BrandController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 查询所有品牌
      *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -30,40 +31,54 @@ class BrandController extends Controller
                 return $query->where('is_del', $isDel);
             })
             ->orderBy('sort', 'asc')->orderBy('created_at', 'desc');
-//        $brands = $query->orderBy('sort', 'asc')->orderBy('created_at', 'desc')->paginate(10);
-        $perPage = 5;
         $page = $request->has('page') ? $request->page : 1;
         $total = $query->count();
-        $items = $query->offset($perPage * ($page - 1))->limit($perPage)->get();
-        $user = new Paginator($items, $total, $perPage, $page);
-        return Helper::Json(1, '品牌查询成功', ['brands' => BrandResource::collection($user)]);
+        $items = $query->offset($this->perPage * ($page - 1))->limit($this->perPage)->get();
+//        dd($items);
+        $brands = new Paginator($items, $total, $this->perPage, $page);
+//        $brands = new BrandResource($brands);
+        return Helper::Json(1, '品牌查询成功', [
+            'current_page' => $page,
+            'per_page' => $this->perPage,
+            'total_page' => ceil($total / $this->perPage),
+            'total' => $total,
+            'brands' => BrandResource::collection($brands)
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * 创建品牌
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(BrandRequest $request)
+    public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'max:64'],
+            'logo' => ['required', 'exists:ydf_images,id'],
+            'sort' => ['required', 'numeric'],
+            'is_del' => ['required', 'regex:/^[0,1]$/']
+        ], [
+            'name.required' => '品牌名称不能为空',
+            'name.max' => '品牌名称最大长度为64个字符',
+            'logo.required' => 'logo不能为空',
+            'logo.exists' => 'logo不存在',
+            'sort.required' => '排序不能为空',
+            'sort.numeric' => '排序只能是数字',
+            'is_del.required' => '状态不能为空',
+            'is_del.regex' => '状态参数错误',
+        ]);
+        if ($validator->fails()) {
+            return Helper::Json(-1, $validator->errors()->first());
+        }
         $brand = Brand::create($request->all());
         return Helper::Json(1, '品牌创建成功', ['brand' => $brand]);
     }
 
     /**
-     * Display the specified resource.
+     * 查询单一品牌
      *
      * @param BrandRequest $id
      * @return \Illuminate\Http\JsonResponse
@@ -78,34 +93,43 @@ class BrandController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * 更新品牌
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
-    public function update(BrandRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'max:64'],
+            'logo' => ['required', 'exists:ydf_images,id'],
+            'sort' => ['required', 'numeric'],
+            'is_del' => ['required', 'regex:/^[0,1]$/']
+        ], [
+            'name.required' => '品牌名称不能为空',
+            'name.max' => '品牌名称最大长度为64个字符',
+            'logo.required' => 'logo不能为空',
+            'logo.exists' => 'logo不存在',
+            'sort.required' => '排序不能为空',
+            'sort.numeric' => '排序只能是数字',
+            'is_del.required' => '状态不能为空',
+            'is_del.regex' => '状态参数错误',
+        ]);
+        if ($validator->fails()) {
+            return Helper::Json(-1, $validator->errors()->first());
+        }
         $brand = Brand::find($id);
+        if (!$brand) {
+            return Helper::Json(-1, '品牌参数错误');
+        }
         $brand->fill($request->all());
         $brand->save();
         return Helper::Json(1, '品牌更新成功', ['brand' => $brand]);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 删除品牌
      *
      * @param int $id
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
@@ -114,11 +138,18 @@ class BrandController extends Controller
     {
         //
         $brand = Brand::find($id);
-        if (Goods::where('brand', $id)->first()) {
+        if (!$brand) {
+            return Helper::Json(-1, '删除失败,参数错误');
+        }
+        if (Goods::where('brand_id', $id)->first()) {
             return Helper::Json(-1, '删除失败,该品牌下还有商品');
+        }
+        if ($brand->is_del == 1) {
+            return Helper::Json(-1, '删除失败,该品牌已被删除');
         }
         $brand->is_del = 1;
         $brand->save();
-        return Helper::Json(1, '删除成功');
+//        $brand = Brand::find($id);
+        return Helper::Json(1, '删除成功', ['brand' => $brand]);
     }
 }
