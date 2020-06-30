@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
+use App\Models\Goods;
 use App\Models\GoodsCategory;
+use App\Models\GoodsType;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use Monolog\Handler\IFTTTHandler;
 
 class GoodsCategoryController extends Controller
 {
@@ -19,108 +22,132 @@ class GoodsCategoryController extends Controller
      */
     public function index()
     {
-        //
         $cateModel = new GoodsCategory();
         $treeCates = $cateModel->getCTree();
         //获取所有pid
         $pids = GoodsCategory::groupBy('pid')->get('pid');
         static $allPids = [];
-        foreach ($pids as $pid)
-        {
+        foreach ($pids as $pid) {
             $allPids[] .= $pid->pid;
         }
-        return Helper::json(1, '获取分类成功', ['treeCates' => $treeCates,'pids'=>$allPids]);
+        return Helper::json(1, '获取分类成功', ['pids' => $allPids, 'treeCates' => $treeCates]);
     }
 
     /**
      * 获取加前缀的分类
-     *
+     * 获取商品类型
      * @return JsonResponse
      */
     public function create()
     {
         $cateModel = new GoodsCategory();
         $cates = $cateModel->getPrefixTreeData()['data'];
-        return Helper::json(1, '获取分类列表成功', ['cates' => $cates]);
+        $types = GoodsType::orderBy('sort', 'asc')->get();
+        return Helper::json(1, '获取分类列表成功', ['types' => $types, 'cates' => $cates]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 保存分类
      *
      * @param Request $request
      * @return JsonResponse
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'pid' =>['required','numeric'],
-            'name' => ['required', 'max:32'],
-            'goods_type_id' => ['exists:ydf_goods_type,id'],
-            'sort' => ['required','numeric'],
-            'images_id' => ['exists:ydf_goods_type,id'],
-            'status' => ['required','regex:/^[1,2]$/']
-        ], [
-            'pid.required' => 'PID不能为空',
-            'pid.numeric' => 'PID只能是数字',
-            'name.required' => '分类名称不能为空',
-            'name.max' => '分类名称最大长度为64个字符',
-            'goods_type_id.exists' => '商品类型不存在',
-            'sort.required' => '排序不能为空',
-            'sort.numeric' => '排序只能是数字',
-            'images_id.exists' => '图片不存在',
-            'status.required' => '状态不能为空',
-            'status.regex' => '状态参数错误',
-        ]);
-        if ($validator->fails()) {
-            return Helper::Json(-1, $validator->errors()->first());
-        }
-        $category = GoodsCategory::create($request->all());
+        $data = $request->all();
+        if (!$data['goods_type_id']) unset($data['goods_type_id']);
+
+        if (!$data['image_id']) unset($data['image_id']);
+
+        GoodsCategory::validator($data);
+        $category = GoodsCategory::create($data);
         return Helper::Json(1, '分类创建成功', ['category' => $category]);
 
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * 查询分类
+     * @param int $id
+     * @return JsonResponse
      */
     public function show($id)
     {
         //
+        $cate = GoodsCategory::find($id);
+        if (!$cate) return Helper::Json(-1, '参数错误');
+
+        return Helper::Json(1, '分类查询成功', ['cate' => $cate]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 编辑分类
      *
-     * @param  int  $id
-     * @return Response
+     * @param int $id
+     * @return JsonResponse
      */
     public function edit($id)
     {
-        //
+        $cate = GoodsCategory::find($id);
+        if (!$cate) return Helper::Json(-1, '参数错误');
+
+        $cateModel = new GoodsCategory();
+        $cates = $cateModel->getPrefixTreeData()['data'];
+        $types = GoodsType::orderBy('sort', 'asc')->get();
+        return Helper::Json(1, '分类查询成功', ['cate' => $cate, 'types' => $types, 'cates' => $cates]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * 更新分类
      *
      * @param Request $request
-     * @param  int  $id
-     * @return Response
+     * @param int $id
+     * @return JsonResponse
      */
     public function update(Request $request, $id)
     {
         //
+        $data = $request->all();
+        if (!$data['goods_type_id']) unset($data['goods_type_id']);
+        if (!$data['image_id']) unset($data['image_id']);
+        $cate = GoodsCategory::find($id);
+        if (!$cate) return Helper::Json(-1, '参数错误');
+        GoodsCategory::validator($data);
+        $cate->fill($data);
+        GoodsCategory::setStatus($data['status'], $id);
+        $cate->save();
+        return Helper::Json(1, '品牌更新成功', ['cate' => $cate]);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 删除分类
      *
-     * @param  int  $id
-     * @return Response
+     * @param int $id
+     * @return JsonResponse
      */
     public function destroy($id)
     {
-        //
+        if (!$cate = GoodsCategory::find($id)) return Helper::Json(-1, '删除失败,参数错误');
+        if (Goods::where('goods_category_id', $id)->first()) return Helper::Json(-1, '删除失败,该分类下还有商品');
+        if (GoodsCategory::where('pid', $id)->first()) return Helper::Json(-1, '删除失败,该分类下还有子分类');
+        GoodsCategory::destroy($id);
+        return Helper::Json(1, '删除成功');
+
+    }
+
+    /**
+     * 更改状态
+     *
+     * @param Request $request
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function status(Request $request, $id)
+    {
+        if (!$cate = GoodsCategory::find($id)) return Helper::Json(-1, '更改失败,参数错误');
+        $status = $request->input('status');
+        GoodsCategory::setStatus($status, $id);
+        $cate->status = $status;
+        $cate->save();
+        return Helper::Json(1, '状态更改成功', []);
     }
 }

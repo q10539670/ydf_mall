@@ -16,6 +16,8 @@
         "medz/cors": "^1.5"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.7",
+        "doctrine/dbal": "^2.10",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",

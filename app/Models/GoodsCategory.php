@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+use App\Helpers\Helper;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Validator;
 
 class GoodsCategory extends Model
 {
@@ -140,5 +143,57 @@ class GoodsCategory extends Model
             $pids = $this->getPids($pid, $pids);
         }
         return $pids;
+    }
+
+    /**
+     * 验证器
+     * @param $data
+     * @return JsonResponse
+     */
+    public static function validator($data)
+    {
+        $validator = Validator::make($data, [
+            'pid' =>['required','numeric'],
+            'name' => ['required', 'max:32'],
+            'goods_type_id' => ['sometimes','required','exists:ydf_goods_type,id'],
+            'sort' => ['required','numeric'],
+            'image_id' => ['sometimes','required','exists:ydf_images,id'],
+            'status' => ['required','regex:/^[1,2]$/']
+        ], [
+            'pid.required' => 'PID不能为空',
+            'pid.numeric' => 'PID只能是数字',
+            'name.required' => '分类名称不能为空',
+            'name.max' => '分类名称最大长度为64个字符',
+            'goods_type_id.exists' => '商品类型不存在',
+            'sort.required' => '排序不能为空',
+            'sort.numeric' => '排序只能是数字',
+            'image_id.exists' => '图片不存在',
+            'status.required' => '状态不能为空',
+            'status.regex' => '状态参数错误',
+        ]);
+        if ($validator->fails()) {
+            return Helper::Json(-1, $validator->errors()->first());
+        }
+    }
+
+    /**
+     * 更改状态
+     * @param $status
+     * @param $id
+     */
+    public static function setStatus($status,$id)
+    {
+        $cate = self::find($id);
+        if ($status == 1) {
+            //同步修改父分类状态为显示
+            self::where('id', $cate->pid)->where('status', 2)->update(['status' => $status]);
+            //TODO 需要同步修改商品状态
+            //...
+        } else {
+            //同步修改子分类状态为隐藏
+            self::where('pid', $id)->where('status', 1)->update(['status' => $status]);
+            //TODO 需要同步修改商品状态
+            //...
+        }
     }
 }

@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //图片处理
         Intervention\Image\ImageServiceProvider::class,
     ],
 

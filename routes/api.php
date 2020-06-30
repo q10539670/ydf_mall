@@ -24,4 +24,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>'cors'],
     Route::resource('brand', 'BrandController')->names('brand');                       //品牌
     Route::resource('category', 'GoodsCategoryController')->names('category');         //分类
 
+
+
+
+
+
+    Route::patch('category/status/{category}','GoodsCategoryController@status')->name('category.status'); //更改分类状态
 });

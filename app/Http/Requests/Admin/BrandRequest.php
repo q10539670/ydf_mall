@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Helpers\Helper;
+
 class BrandRequest extends FormRequest
 {
     /**
@@ -11,12 +13,38 @@ class BrandRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => ['required', 'max:64'],
-            'logo' => ['required','exists:ydf_images,id'],
-            'sort' => ['required','numeric'],
-            'is_del' => ['required','regex:/^[0,1]$/']
-        ];
+        switch($this->method())
+        {
+            // CREATE
+            case 'PATCH':
+            case 'POST':
+                return [
+                    'name' => ['required', 'max:64'],
+                    'logo' => ['required','exists:ydf_images,id'],
+                    'sort' => ['required','numeric'],
+                    'is_del' => ['required','regex:/^[0,1]$/']
+                ];
+                break;
+
+            // UPDATE
+            case 'PUT':
+                break;
+
+            case 'GET':
+                return [
+                    //
+                    'id' => ['required','exists:ydf_brand,id']
+                ];
+                break;
+
+            case 'DELETE':
+                break;
+
+            default:
+                return [];
+                break;
+        }
+
     }
 
     public function messages()

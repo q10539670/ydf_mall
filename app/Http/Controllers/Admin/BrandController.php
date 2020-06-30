@@ -8,8 +8,10 @@ use App\Http\Requests\Admin\BrandRequest;
 use App\Http\Resources\Admin\BrandResource;
 use App\Models\Brand;
 use App\Models\Goods;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator as Paginator;
+
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 class BrandController extends Controller
@@ -18,12 +20,14 @@ class BrandController extends Controller
      * 查询所有品牌
      *
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function index(Request $request)
     {
         $condition = $request->input('condition');
         $isDel = $request->input('is_del', '0');
+        $currentPage = $request->input('current_page'); //当前页
+        $perPage = $request->input('per_page');    //每页显示数量
         $query = Brand::when($condition, function ($query) use ($condition) {
             return $query->where('name', 'like', '%' . $condition . '%');
         })
@@ -31,48 +35,20 @@ class BrandController extends Controller
                 return $query->where('is_del', $isDel);
             })
             ->orderBy('sort', 'asc')->orderBy('created_at', 'desc');
-        $page = $request->has('page') ? $request->page : 1;
-        $total = $query->count();
-        $items = $query->offset($this->perPage * ($page - 1))->limit($this->perPage)->get();
-//        dd($items);
-        $brands = new Paginator($items, $total, $this->perPage, $page);
-//        $brands = new BrandResource($brands);
-        return Helper::Json(1, '品牌查询成功', [
-            'current_page' => $page,
-            'per_page' => $this->perPage,
-            'total_page' => ceil($total / $this->perPage),
-            'total' => $total,
-            'brands' => BrandResource::collection($brands)
-        ]);
+        $brands = self::paginator($query, $currentPage,$perPage);
+
+        return Helper::Json(1, '品牌查询成功', ['brands' => $brands]);
     }
 
     /**
      * 创建品牌
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @return JsonResponse|Response
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(BrandRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => ['required', 'max:64'],
-            'logo' => ['required', 'exists:ydf_images,id'],
-            'sort' => ['required', 'numeric'],
-            'is_del' => ['required', 'regex:/^[0,1]$/']
-        ], [
-            'name.required' => '品牌名称不能为空',
-            'name.max' => '品牌名称最大长度为64个字符',
-            'logo.required' => 'logo不能为空',
-            'logo.exists' => 'logo不存在',
-            'sort.required' => '排序不能为空',
-            'sort.numeric' => '排序只能是数字',
-            'is_del.required' => '状态不能为空',
-            'is_del.regex' => '状态参数错误',
-        ]);
-        if ($validator->fails()) {
-            return Helper::Json(-1, $validator->errors()->first());
-        }
         $brand = Brand::create($request->all());
         return Helper::Json(1, '品牌创建成功', ['brand' => $brand]);
     }
@@ -81,15 +57,15 @@ class BrandController extends Controller
      * 查询单一品牌
      *
      * @param BrandRequest $id
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function show($id)
+    public function show( $id)
     {
         $brand = Brand::find($id);
         if (!$brand) {
             return Helper::Json(-1, '查询参数错误');
         }
-        return Helper::Json(1, '品牌查询成功', ['brand' => new BrandResource($brand)]);
+        return Helper::Json(1, '品牌查询成功', ['brand' => $brand]);
     }
 
     /**
@@ -97,28 +73,10 @@ class BrandController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @return JsonResponse|Response
      */
-    public function update(Request $request, $id)
+    public function update(BrandRequest $request, $id)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => ['required', 'max:64'],
-            'logo' => ['required', 'exists:ydf_images,id'],
-            'sort' => ['required', 'numeric'],
-            'is_del' => ['required', 'regex:/^[0,1]$/']
-        ], [
-            'name.required' => '品牌名称不能为空',
-            'name.max' => '品牌名称最大长度为64个字符',
-            'logo.required' => 'logo不能为空',
-            'logo.exists' => 'logo不存在',
-            'sort.required' => '排序不能为空',
-            'sort.numeric' => '排序只能是数字',
-            'is_del.required' => '状态不能为空',
-            'is_del.regex' => '状态参数错误',
-        ]);
-        if ($validator->fails()) {
-            return Helper::Json(-1, $validator->errors()->first());
-        }
         $brand = Brand::find($id);
         if (!$brand) {
             return Helper::Json(-1, '品牌参数错误');
@@ -132,7 +90,7 @@ class BrandController extends Controller
      * 删除品牌
      *
      * @param int $id
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
+     * @return JsonResponse|Response
      */
     public function destroy($id)
     {
@@ -152,4 +110,6 @@ class BrandController extends Controller
 //        $brand = Brand::find($id);
         return Helper::Json(1, '删除成功', ['brand' => $brand]);
     }
+
+
 }
