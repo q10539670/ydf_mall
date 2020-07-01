@@ -19,7 +19,7 @@ class Controller extends BaseController
      * @param $perPage
      * @return Paginator
      */
-    public static function paginator($query,$currentPage,$perPage)
+    public static function paginator($query, $currentPage, $perPage)
     {
         //获取查询总数
         $total = $query->count();

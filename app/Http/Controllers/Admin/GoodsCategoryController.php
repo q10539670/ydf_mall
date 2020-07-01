@@ -9,9 +9,7 @@ use App\Models\GoodsCategory;
 use App\Models\GoodsType;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Validator;
-use Monolog\Handler\IFTTTHandler;
+
 
 class GoodsCategoryController extends Controller
 {
@@ -56,9 +54,7 @@ class GoodsCategoryController extends Controller
     {
         $data = $request->all();
         if (!$data['goods_type_id']) unset($data['goods_type_id']);
-
         if (!$data['image_id']) unset($data['image_id']);
-
         GoodsCategory::validator($data);
         $category = GoodsCategory::create($data);
         return Helper::Json(1, '分类创建成功', ['category' => $category]);

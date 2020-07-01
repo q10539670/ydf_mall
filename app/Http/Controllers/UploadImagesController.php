@@ -53,7 +53,7 @@ class UploadImagesController extends Controller
                             $k = $k + 1;
                         }
                         $msg = $m . "张图片上传成功 " . $k . "张图片上传失败";
-                        $return[] = ['ResultData' => 0, 'info' => $msg, 'imagesId' => $image['id']];
+                        $return[] = ['ResultData' => 0, 'info' => $msg, 'imagesId' => $image['id'],'newFileName' =>$newFileName,'path' =>$pathName,];
                     } else {
                         return Helper::Json(-1,'上传失败',['info'=> '第' . $n . '张图片后缀名不合法!' . '只支持jpeg/jpg/png/gif格式']);
                     }

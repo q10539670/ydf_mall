@@ -13,7 +13,8 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "medz/cors": "^1.5"
+        "medz/cors": "^1.5",
+      "ext-json": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",

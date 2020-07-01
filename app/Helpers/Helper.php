@@ -3,6 +3,8 @@
 namespace App\Helpers;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Storage;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Redis;
@@ -92,18 +94,66 @@ class Helper
 
 
     /**
-     * 封装常规返回方法
      * @param int $code
      * @param string $message
-     * @param array $data
+     * @param $data
+     * @param bool $type
      * @return \Illuminate\Http\JsonResponse
      */
     public static function Json($code = 1, $message = '', $data = [], $type = false)
     {
-        if ($type) {
-            return json_encode(['code' => $code, 'message' => $message, 'data' => $data], JSON_UNESCAPED_UNICODE);
+        $response = [
+            'code' => $code,
+            'message' => $message,
+            'data' => $data
+        ];
+        if (!is_string($data)) {
+            /**
+             * @var ResourceCollection $data
+             * @var LengthAwarePaginator $resource
+             */
+            $response['data'] = $data;
+            if (is_array($data)) {
+                foreach ($data as $k => $v) {
+                    if ($v instanceof ResourceCollection && $v->resource instanceof LengthAwarePaginator) {
+                        $resource = $v->resource;
+                        $response['data']['meta'] = [
+                            'current_page' => $resource->currentPage(),
+                            'per_page' => $resource->perPage(),
+                            'total' => $resource->total(),
+                            'last_page' => $resource->lastPage(),
+                        ];
+//                        unset($data[$k]);
+                    }
+                }
+
+            }
+
+
+//            if ($data instanceof ResourceCollection && $data->resource instanceof LengthAwarePaginator) {
+//                $resource = $data->resource;
+//                $response['meta'] = [
+//                    'current_page' => $resource->currentPage(),
+//                    'per_page' => $resource->perPage(),
+//                    'total' => $resource->total(),
+//                    'last_page' => $resource->lastPage(),
+//                ];
+//            }
+
+//            if ($data instanceof LengthAwarePaginator) {
+//                $response['data'] = $data->items();
+//                $response['meta'] = [
+//                    'current_page' => $data->currentPage(),
+//                    'per_page' => $data->perPage(),
+//                    'total' => $data->total(),
+//                    'last_page' => $data->lastPage(),
+//                ];
+//            }
         }
-        return response()->json(['code' => $code, 'message' => $message, 'data' => $data]);
+        if ($type) {
+            return response()->json($response, JSON_UNESCAPED_UNICODE);
+        }
+        return response()->json($response);
     }
 
     /**

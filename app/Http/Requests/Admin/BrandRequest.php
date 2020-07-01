@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests\Admin;
 
-use App\Helpers\Helper;
 
 class BrandRequest extends FormRequest
 {
+
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -31,13 +32,11 @@ class BrandRequest extends FormRequest
                 break;
 
             case 'GET':
+            case 'DELETE':
                 return [
                     //
-                    'id' => ['required','exists:ydf_brand,id']
+                    'brand' => ['required','exists:ydf_brand,id']
                 ];
-                break;
-
-            case 'DELETE':
                 break;
 
             default:
@@ -50,8 +49,8 @@ class BrandRequest extends FormRequest
     public function messages()
     {
         return [
-            'id.required' => 'ID必须填写',
-            'id.exists' => 'ID不存在',
+            'brand.required' => 'ID必须填写',
+            'brand.exists' => 'ID不存在',
             'name.required' => '品牌名称不能为空',
             'name.max' => '品牌名称最大长度为64个字符',
             'logo.required' => 'logo不能为空',
