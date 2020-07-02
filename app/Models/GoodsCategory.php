@@ -13,59 +13,58 @@ class GoodsCategory extends Model
 
     protected $guarded = [];
 
+
     //获取权限数组
-    public function getPrefixTreeData($level=100)
+    public function getCatesWithPrefix()
     {
-        $pidArr = $this->getPidArr($level);
-        $cates = self::whereIn('pid',$pidArr)->orderBy('sort','desc')->orderBy('id','asc')->get()->toArray();
-        $formatCates = [];
-        foreach($cates as $v){
-            $formatCates[] = [
-                'id'=>$v['id'],
-                'name'=>$v['name'],
-                'sort'=>$v['sort'],
-                'pid'=>$v['pid'],
-            ];
-        }
-        $data = $this->getTree($formatCates);
-        return ['data'=>$this->setPrefix($data),'pids'=>$pidArr];
+        $cates = $this->getdata();
+        $data = $this->getTree($cates);
+        return $this->setPrefix($data);
     }
 
-    /*
-     * 获取PID
-     * */
-    public function getPidArr($limit = 2, $pidArr = [0])
+    //获取权限数组
+    public function getCatesForTable()
     {
-        if ($limit <= 0) {
-            return [];
+        $cates = $this->getdata();
+        $data = $this->getTree($cates);
+        $prefixData = $this->setPrefix($data);
+        foreach ($prefixData as $k => $v) {
+            $prefixData[$k]['is_more'] = 0;
+            foreach ($prefixData as $vv) {
+                if ($vv['pid'] == $v['id']) {
+                    $prefixData[$k]['is_more'] = 1;
+                    break;
+                }
+            }
         }
-        $childIdArr = self::whereIn('pid', $pidArr)
-            ->get()->pluck('id')->toArray();
-        if (empty($childIdArr)) {
-            return $pidArr;
-        }
-        return array_merge($pidArr, $this->getPidArr($limit - 1, $childIdArr));
+        return $prefixData;
     }
 
-    public function getFormatArrData(){
-        $res = [];
-        $data = self::orderBy('sort','desc')->orderBy('id','asc')->get()->toArray();
-        foreach($data as $v){
-            $res[] = [
-                'id'=>$v['id'],
-                'name'=>$v['name'],
-                'sort'=>$v['sort'],
-                'pid'=>$v['pid'],
-            ];
-        }
-        return $res;
+
+    public function getData()
+    {
+        return self::select(['id', 'pid', 'name'])->get()->toArray();
     }
 
-    public function getChildTree($cates, $pid=0)
+    //排序权限
+    public function getTree($cates, $pid = 0)
     {
         $tree = [];
-        foreach($cates as $val){
-            if($val['pid'] == $pid){
+        foreach ($cates as $val) {
+            if ($val['pid'] == $pid) {
+                $tree[] = $val;
+                $tree = array_merge($tree, $this->getTree($cates, $val['id']));
+            }
+        }
+        return $tree;
+    }
+
+    //多维数组结构
+    public function getChildTree($cates, $pid = 0)
+    {
+        $tree = [];
+        foreach ($cates as $val) {
+            if ($val['pid'] == $pid) {
                 $data = $val;
                 $data['children'] = $this->getChildTree($cates, $val['id']);
                 $tree[] = $data;
@@ -74,75 +73,41 @@ class GoodsCategory extends Model
         return $tree;
     }
 
-    //获取带level的分类树
-    public function getCTree($pid = 0, $target = [])
+    public function getChildId($id = 0, $level = 0)
     {
-        # 获取一级分类
-        $ts = self::where('pid', $pid)->orderBy('sort','desc')
-            ->get()->toArray();
-        if (empty($ts)) {
-            return $target;
-        }
-        static $n = 1;
-        foreach ($ts as $t) {
-            # 第一次遍历
-            $t['level']     = $n;
-            $target[$t['id']] = $t;
-
-            $n++;
-            $target = $this->getCTree($t['id'], $target);
-            $n--;
-        }
-        return $target;
-    }
-
-    //排序权限
-    public function getTree($cates, $pid=0)
-    {
-        $tree = [];
-        foreach($cates as $val){
-            if($val['pid']==$pid){
-                $tree[] = $val;
-                $tree = array_merge($tree, $this->getTree($cates, $val['id']));
+        $res = [];
+        $nextLevel = $level++;
+        if ($p = self::where('pid', $id)->get()) {
+            foreach ($p as $v) {
+                $res[] = array_merge($v, ['level' => $level]);
+                $res = array_merge($res, $this->getChildId($v->id, $nextLevel));
             }
         }
-        return $tree;
+        return $res;
     }
 
     //加前缀
-    public function setPrefix($data, $p='|----')
+    public function setPrefix($data, $p = '|----')
     {
         $tree = [];
         $num = 1;
         $prefix = [0 => 1];
-        while($val = current($data)) {
+        while ($val = current($data)) {
             $key = key($data);
             if ($key > 0) {
                 if ($data[$key - 1]['pid'] != $val['pid']) {
-                    $num ++;
+                    $num++;
                 }
             }
             if (array_key_exists($val['pid'], $prefix)) {
                 $num = $prefix[$val['pid']];
             }
-            $val['name'] = str_repeat($p, $num).$val['name'];
+            $val['name'] = str_repeat($p, $num) . $val['name'];
             $prefix[$val['pid']] = $num;
             $tree[] = $val;
             next($data);
         }
         return $tree;
-    }
-
-    //获取id的所有父级
-    public function getPids($id, $pids=[])
-    {
-        $pid = self::find($id, ['pid'])->toArray()['pid'];
-//        var_dump($pid) ;exit;
-        if ($pid != 0 ){
-            $pids[] = $pid;
-            $pids = $this->getPids($pid, $pids);
-        }
-        return $pids;
     }
 
     /**

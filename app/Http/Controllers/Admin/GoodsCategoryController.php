@@ -21,14 +21,14 @@ class GoodsCategoryController extends Controller
     public function index()
     {
         $cateModel = new GoodsCategory();
-        $treeCates = $cateModel->getCTree();
+        $treeCates = $cateModel->getCatesForTable();
         //获取所有pid
         $pids = GoodsCategory::groupBy('pid')->get('pid');
         static $allPids = [];
         foreach ($pids as $pid) {
             $allPids[] .= $pid->pid;
         }
-        return Helper::json(1, '获取分类成功', ['pids' => $allPids, 'treeCates' => $treeCates]);
+        return Helper::Json(1, '获取分类成功', ['pids' => $allPids, 'treeCates' => $treeCates]);
     }
 
     /**
@@ -39,7 +39,7 @@ class GoodsCategoryController extends Controller
     public function create()
     {
         $cateModel = new GoodsCategory();
-        $cates = $cateModel->getPrefixTreeData()['data'];
+        $cates = $cateModel->getCatesWithPrefix();
         $types = GoodsType::orderBy('sort', 'asc')->get();
         return Helper::json(1, '获取分类列表成功', ['types' => $types, 'cates' => $cates]);
     }
@@ -87,7 +87,7 @@ class GoodsCategoryController extends Controller
         if (!$cate) return Helper::Json(-1, '参数错误');
 
         $cateModel = new GoodsCategory();
-        $cates = $cateModel->getPrefixTreeData()['data'];
+        $cates = $cateModel->getCatesWithPrefix();
         $types = GoodsType::orderBy('sort', 'asc')->get();
         return Helper::Json(1, '分类查询成功', ['cate' => $cate, 'types' => $types, 'cates' => $cates]);
     }

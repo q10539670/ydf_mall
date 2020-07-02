@@ -14,31 +14,24 @@ class BrandRequest extends FormRequest
      */
     public function rules()
     {
-        switch($this->method())
-        {
+        switch ($this->method()) {
             // CREATE
             case 'PATCH':
             case 'POST':
                 return [
                     'name' => ['required', 'max:64'],
-                    'logo' => ['required','exists:ydf_images,id'],
-                    'sort' => ['required','numeric'],
-                    'is_del' => ['required','regex:/^[0,1]$/']
+                    'logo' => ['required', 'exists:ydf_images,id'],
+                    'sort' => ['required', 'numeric'],
+                    'is_del' => ['required', 'regex:/^[0,1]$/']
                 ];
                 break;
-
-            // UPDATE
-            case 'PUT':
-                break;
-
             case 'GET':
             case 'DELETE':
                 return [
                     //
-                    'brand' => ['required','exists:ydf_brand,id']
+                    'brand' => ['required', 'exists:ydf_brand,id']
                 ];
                 break;
-
             default:
                 return [];
                 break;

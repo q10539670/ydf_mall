@@ -10,10 +10,7 @@ use App\Models\Brand;
 use App\Models\Goods;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-
 use Illuminate\Http\Response;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Validator;
 
 class BrandController extends Controller
 {
@@ -43,14 +40,12 @@ class BrandController extends Controller
     /**
      * 创建品牌
      *
-     * @param \Illuminate\Http\Request $request
+     * @param BrandRequest $request
      * @return JsonResponse|Response
-     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(BrandRequest $request)
     {
         $brand = Brand::create($request->all());
-
         return Helper::Json(1, '品牌创建成功', ['brand' => new BrandResource($brand)]);
     }
 
@@ -90,7 +85,6 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
         $brand = Brand::find($id);
         if (!$brand) {
             return Helper::Json(-1, '品牌参数错误');

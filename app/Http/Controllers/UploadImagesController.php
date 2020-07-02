@@ -36,9 +36,9 @@ class UploadImagesController extends Controller
                         Storage::disk('public')->put($filename, $jpg);    //保存图片
                         $pathName = strstr($filename, date('Ymd'));
                         if (env('APP_ENV') == 'local') {
-                            $newFileName = 'http://192.168.0.178:8888/storage/images/' . '/' . $pathName;
+                            $newFileName = 'http://192.168.0.178:8888/storage/images/' . $pathName;
                         } else {
-                            $newFileName = asset('/storage/images/') . '/' . $pathName;
+                            $newFileName = asset('/storage/images/') . $pathName;
                         }
                         if ($newFileName) {
                             $m = $m + 1;

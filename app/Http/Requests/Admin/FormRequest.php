@@ -33,9 +33,13 @@ class FormRequest extends BaseFormRequest
         );
     }
 
+    /**
+     * all方法重写
+     * @param null $keys
+     * @return array
+     */
     public function all($keys = null)
     {
-
         switch ($this->method()) {
             case 'PATCH':
             case 'POST':
@@ -50,7 +54,7 @@ class FormRequest extends BaseFormRequest
                 break;
             case 'GET':
             case 'DELETE':
-                $results['brand'] = $this->route('brand');
+                $results = $this->route()->originalParameters();
                 break;
             default:
                 return [];
