@@ -120,7 +120,7 @@ class GoodsCategory extends Model
         $validator = Validator::make($data, [
             'pid' =>['required','numeric'],
             'name' => ['required', 'max:32'],
-            'goods_type_id' => ['sometimes','required','exists:ydf_goods_type,id'],
+            'goods_type_id' => ['nullable|exists:ydf_goods_type,id'],
             'sort' => ['required','numeric'],
             'image_id' => ['sometimes','required','exists:ydf_images,id'],
             'status' => ['required','regex:/^[1,2]$/']

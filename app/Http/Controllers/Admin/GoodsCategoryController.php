@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\GoodsCategoryRequest as GCRequest;
 use App\Models\Goods;
 use App\Models\GoodsCategory;
 use App\Models\GoodsType;
@@ -50,12 +51,12 @@ class GoodsCategoryController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(GCRequest $request)
     {
         $data = $request->all();
         if (!$data['goods_type_id']) unset($data['goods_type_id']);
         if (!$data['image_id']) unset($data['image_id']);
-        GoodsCategory::validator($data);
+//        GoodsCategory::validator($data);
         $category = GoodsCategory::create($data);
         return Helper::Json(1, '分类创建成功', ['category' => $category]);
 
@@ -66,7 +67,7 @@ class GoodsCategoryController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function show($id)
+    public function show(GCRequest $id)
     {
         //
         $cate = GoodsCategory::find($id);
@@ -81,11 +82,9 @@ class GoodsCategoryController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function edit($id)
+    public function edit(GCRequest $id)
     {
         $cate = GoodsCategory::find($id);
-        if (!$cate) return Helper::Json(-1, '参数错误');
-
         $cateModel = new GoodsCategory();
         $cates = $cateModel->getCatesWithPrefix();
         $types = GoodsType::orderBy('sort', 'asc')->get();
@@ -99,15 +98,14 @@ class GoodsCategoryController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(GCRequest $request, $id)
     {
         //
         $data = $request->all();
-        if (!$data['goods_type_id']) unset($data['goods_type_id']);
-        if (!$data['image_id']) unset($data['image_id']);
-        $cate = GoodsCategory::find($id);
-        if (!$cate) return Helper::Json(-1, '参数错误');
-        GoodsCategory::validator($data);
+
+        if (!$cate = GoodsCategory::find($id)) {
+            return Helper::Json(-1, '参数错误,未查到该分类');
+        }
         $cate->fill($data);
         GoodsCategory::setStatus($data['status'], $id);
         $cate->save();

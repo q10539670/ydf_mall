@@ -44,6 +44,7 @@ class FormRequest extends BaseFormRequest
             case 'PATCH':
             case 'POST':
                 $input = array_replace_recursive($this->input(), $this->allFiles());
+
                 if (!$keys) {
                     return $input;
                 }
@@ -60,7 +61,6 @@ class FormRequest extends BaseFormRequest
                 return [];
                 break;
         }
-
         return $results;
     }
 }
