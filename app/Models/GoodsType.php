@@ -10,6 +10,10 @@ class GoodsType extends Model
 
     protected $guarded = [];
 
+    public function spec()
+    {
+        return $this->belongsToMany('App\Models\Spec','ydf_type_spec_rel','type_id','spec_id');
+    }
     static function checkSafeOfDestroy($id)
     {
         if (GoodsCategory::where('goods_type_id',$id)->first()) {

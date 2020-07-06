@@ -42,6 +42,7 @@ class GoodsCategoryController extends Controller
         $cateModel = new GoodsCategory();
         $cates = $cateModel->getCatesWithPrefix();
         $types = GoodsType::orderBy('sort', 'asc')->get();
+        array_unshift($cates,['id'=>0,'name'=>'顶级分类']);
         return Helper::json(1, '获取分类列表成功', ['types' => $types, 'cates' => $cates]);
     }
 
@@ -87,6 +88,7 @@ class GoodsCategoryController extends Controller
         $cate = GoodsCategory::find($id);
         $cateModel = new GoodsCategory();
         $cates = $cateModel->getCatesWithPrefix();
+        array_unshift($cates,['id'=>0,'name'=>'顶级分类']);
         $types = GoodsType::orderBy('sort', 'asc')->get();
         return Helper::Json(1, '分类查询成功', ['cate' => $cate, 'types' => $types, 'cates' => $cates]);
     }

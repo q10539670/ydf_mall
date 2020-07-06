@@ -43,7 +43,7 @@ class GoodsCategory extends Model
 
     public function getData()
     {
-        return self::select(['id', 'pid', 'name'])->get()->toArray();
+        return self::select(['id', 'pid', 'name','status'])->get()->toArray();
     }
 
     //排序权限

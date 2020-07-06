@@ -6,6 +6,8 @@ use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\GoodsTypeRequest as GTRequest;
 use App\Models\GoodsType;
+use App\Models\Spec;
+use App\Models\TypeSpec;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -32,6 +34,11 @@ class GoodsTypeController extends Controller
 
     }
 
+    public function create()
+    {
+        $spec = Spec::all();
+        return Helper::Json(1,'查询成功',['spec'=>$spec]);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -41,7 +48,14 @@ class GoodsTypeController extends Controller
     public function store(GTRequest $request)
     {
         //
-        $type = GoodsType::create($request->all());
+        $type = GoodsType::create($request->except('spec_id'));
+        foreach ($request->spec_id as $spec) {
+            TypeSpec::create([
+                'type_id'=>$type->id,
+                'spec_id'=>$spec
+            ]);
+        }
+        $type->spec;
         return Helper::Json(1, '创建成功', ['type' => $type]);
     }
 
@@ -60,12 +74,14 @@ class GoodsTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     * @return Response
+     * @param GTRequest $id
+     * @return JsonResponse
      */
-    public function edit($id)
+    public function edit(GTRequest $id)
     {
-        //
+        $spec = Spec::all();
+        $type = GoodsType::find($id);
+        return Helper::Json(1,'查询成功',['type' => $type,'spec'=>$spec]);
     }
 
     /**
@@ -78,8 +94,16 @@ class GoodsTypeController extends Controller
     public function update(GTRequest $request, $id)
     {
         if (!$type = GoodsType::find($id)) return Helper::Json(-1, '更新失败,未查到该类型');
-        $type->fill($request->all());
+        $type->fill($request->except('spec_id'));
         $type->save();
+        TypeSpec::where('type_id',$type->id)->delete();
+        foreach ($request->spec_id as $spec) {
+            TypeSpec::create([
+                'type_id'=>$type->id,
+                'spec_id'=>$spec
+            ]);
+        }
+        $type->spec;
         return Helper::Json(1, '更新成功', ['type' => $type]);
     }
 

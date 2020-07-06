@@ -23,7 +23,8 @@ Route::group(['middleware'=>'cors'], function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>'cors'], function () {
     Route::resource('brand', 'BrandController')->names('brand');                       //品牌
     Route::resource('category', 'GoodsCategoryController')->names('category');         //分类
-    Route::resource('type', 'GoodsTypeController')->names('type');         //分类
+    Route::resource('type', 'GoodsTypeController')->names('type');                     //分类
+    Route::resource('spec', 'SpecController')->names('spec');                          //属性
 
 
 

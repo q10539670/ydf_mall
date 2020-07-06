@@ -136,12 +136,12 @@ create table ydf_spec (
 
 create table ydf_spec_value (
     id int unsigned auto_increment,
-    spec_key_id int not null default 0 comment '属性id 关联sku_key.id',
+    spec_id int not null default 0 comment '属性id 关联sku_key.id',
     name varchar(64) not null default '' COMMENT '属性值',
     sort mediumint unsigned not null default 0 comment '分类排序 越小越靠前',
     details varchar(255) not null default '' COMMENT '描述',
     primary key (id),
-    key(spec_key_id)
+    key(spec_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='产品规格-属性值表';
 
 
