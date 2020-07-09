@@ -10,4 +10,8 @@ class Goods extends Model
 
     protected $guarded = [];
 
+    public function product()
+    {
+        return $this->hasMany('App\Models\Products')->where('is_del',0);
+    }
 }

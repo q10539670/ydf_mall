@@ -81,6 +81,7 @@ class GoodsTypeController extends Controller
     {
         $spec = Spec::all();
         $type = GoodsType::find($id);
+        $type[0]->spec;
         return Helper::Json(1,'查询成功',['type' => $type,'spec'=>$spec]);
     }
 

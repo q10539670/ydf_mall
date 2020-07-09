@@ -25,7 +25,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware'=>'cors'],
     Route::resource('category', 'GoodsCategoryController')->names('category');         //分类
     Route::resource('type', 'GoodsTypeController')->names('type');                     //分类
     Route::resource('spec', 'SpecController')->names('spec');                          //属性
-
+    Route::resource('goods', 'GoodsController')->names('goods');                       //商品
 
 
 
