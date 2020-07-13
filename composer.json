@@ -9,12 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-json": "*",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "medz/cors": "^1.5",
-      "ext-json": "*"
+        "mpociot/laravel-apidoc-generator": "^4.8"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",

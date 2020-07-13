@@ -12,12 +12,21 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group Brand
+ * 品牌接口
+ * @package App\Http\Controllers\Admin
+ */
 class BrandController extends Controller
 {
     /**
-     * 查询所有品牌
-     *
-     * @param Request $request
+     * index
+     * 品牌列表
+     * @queryParam  condition 品牌名称  Example: 三星
+     * @queryParam  is_del 是否删除
+     * @queryParam  current_page required 当前页 Example: 1
+     * @queryParam  per_page required 每页显示数量 Example: 10
+     * @param  Request  $request
      * @return JsonResponse
      */
     public function index(Request $request)
@@ -38,9 +47,30 @@ class BrandController extends Controller
     }
 
     /**
-     * 创建品牌
+     * store
+     * 保存品牌
      *
-     * @param BrandRequest $request
+     * @bodyParam name string required  品牌名称 Example:三星
+     * @bodyParam logo int required  logo图片ID Example:1
+     * @bodyParam sort int required  排序 Example: 100
+     * @bodyParam is_del int required  是否删除[0:正常,1:删除] Example:0
+     * @response {
+    "code": 1,
+    "message": "品牌创建成功",
+    "data": {
+    "brand": {
+    "id": 51,
+    "name": "三星",
+    "logo_id": "1",
+    "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+    "sort": "100",
+    "is_del": "0",
+    "created_at": "2020-07-13 17:37:27",
+    "updated_at": "2020-07-13 17:37:27"
+    }
+    }
+     * }
+     * @param  BrandRequest  $request
      * @return JsonResponse|Response
      */
     public function store(BrandRequest $request)
@@ -50,8 +80,9 @@ class BrandController extends Controller
     }
 
     /**
+     * show
      * 查询单一品牌
-     *
+     * @urlParam brand required 品牌ID Example:1
      * @param BrandRequest $id
      * @return JsonResponse
      */
@@ -62,8 +93,29 @@ class BrandController extends Controller
     }
 
     /**
+     * update
      * 更新品牌
-     *
+     * @urlParam brand required 品牌ID Example:51
+     * @bodyParam name string required  品牌名称 Example:三星
+     * @bodyParam logo int required  logo图片ID Example:1
+     * @bodyParam sort int required  排序 Example: 90
+     * @bodyParam is_del int required  是否删除[0:正常,1:删除] Example:0
+     * @response {
+    "code": 1,
+    "message": "品牌更新成功",
+    "data": {
+    "brand": {
+    "id": 51,
+    "name": "三星",
+    "logo_id": "1",
+    "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+    "sort": "90",
+    "is_del": "0",
+    "created_at": "2020-07-13 17:37:27",
+    "updated_at": "2020-07-13 17:37:27"
+    }
+    }
+     * }
      * @param BrandRequest $request
      * @param int $id
      * @return JsonResponse|Response
@@ -77,10 +129,28 @@ class BrandController extends Controller
     }
 
     /**
+     * delete
      * 删除品牌
      *
+     * @urlParam brand required 品牌ID Example:51
      * @param BrandRequest $id
      * @return JsonResponse|Response
+     * @response {
+    "code": 1,
+    "message": "品牌删除成功",
+    "data": {
+    "brand": {
+    "id": 51,
+    "name": "三星",
+    "logo_id": "1",
+    "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+    "sort": "90",
+    "is_del": "1",
+    "created_at": "2020-07-13 17:37:27",
+    "updated_at": "2020-07-13 17:37:27"
+    }
+    }
+     * }
      */
     public function destroy($id)
     {

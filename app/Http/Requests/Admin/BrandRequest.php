@@ -2,13 +2,17 @@
 
 namespace App\Http\Requests\Admin;
 
+/**
+ * @queryparam brand required 实力
+ *
+ */
 
 class BrandRequest extends FormRequest
 {
 
 
     /**
-     * Get the validation rules that apply to the request.
+     *
      *
      * @return array
      */
