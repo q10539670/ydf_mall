@@ -12,10 +12,18 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group Type
+ * @package App\Http\Controllers\Admin
+ */
 class GoodsTypeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * index
+     * 类型列表
+     * @queryParam  condition 类型名称  No-example
+     * @queryParam  current_page required 当前页 Example: 1
+     * @queryParam  per_page required 每页显示数量 Example: 10
      *
      * @param Request $request
      * @return JsonResponse
@@ -34,14 +42,50 @@ class GoodsTypeController extends Controller
 
     }
 
+    /**
+     * create
+     * 创建类型
+     * @return JsonResponse
+     */
     public function create()
     {
         $spec = Spec::all();
         return Helper::Json(1,'查询成功',['spec'=>$spec]);
     }
+
     /**
-     * Store a newly created resource in storage.
-     *
+     * store
+     * 保存分类
+     * @bodyParam name string required 类型名称 Example: 通用类型
+     * @bodyParam spec_id array required 属性名ID Example: [1]
+     * @bodyParam sort int required 排序 Example: 100
+     * @response {
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+    "type": {
+    "name": "通用类型",
+    "sort": "100",
+    "updated_at": "2020-07-14 10:57:26",
+    "created_at": "2020-07-14 10:57:26",
+    "id": 26,
+    "spec": [
+    {
+    "id": 1,
+    "name": "通用",
+    "sort": 100,
+    "details": "",
+    "created_at": "2020-07-06 17:18:24",
+    "updated_at": "2020-07-06 17:18:24",
+    "pivot": {
+    "type_id": 26,
+    "spec_id": 1
+    }
+    }
+    ]
+    }
+    }
+     * }
      * @param GTRequest $request
      * @return JsonResponse
      */
@@ -60,8 +104,9 @@ class GoodsTypeController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
+     * show
+     * 查询类型(单一)
+     * @urlParam type required 类型ID Example:1
      * @param GTRequest $id
      * @return JsonResponse
      */
@@ -72,8 +117,9 @@ class GoodsTypeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
+     * edit
+     * 编辑类型
+     * @urlParam type required 类型ID Example:1
      * @param GTRequest $id
      * @return JsonResponse
      */
@@ -86,8 +132,39 @@ class GoodsTypeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
+     * update
+     * 更新类型
+     * @urlParam type required 类型ID Example:1
+     * @bodyParam name string required 类型名称 Example: 通用类型1
+     * @bodyParam spec_id array required 属性名ID Example: [1]
+     * @bodyParam sort int required 排序 Example: 100
+     * @response {
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+    "type": {
+    "name": "通用类型1",
+    "sort": "100",
+    "updated_at": "2020-07-14 10:57:26",
+    "created_at": "2020-07-14 10:57:26",
+    "id": 26,
+    "spec": [
+    {
+    "id": 1,
+    "name": "通用",
+    "sort": 100,
+    "details": "",
+    "created_at": "2020-07-06 17:18:24",
+    "updated_at": "2020-07-06 17:18:24",
+    "pivot": {
+    "type_id": 26,
+    "spec_id": 1
+    }
+    }
+    ]
+    }
+    }
+     * }
      * @param GTRequest $request
      * @param int $id
      * @return JsonResponse
@@ -109,8 +186,14 @@ class GoodsTypeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
+     * delete
+     * 删除分类
+     * @urlParam type required 类型ID Example:1
+     * @response {
+     *  "code":1,
+     *  "message": "删除成功",
+     *  "data":[]
+     * }
      * @param int $id
      * @return JsonResponse
      */

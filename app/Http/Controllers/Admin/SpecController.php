@@ -12,10 +12,20 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * @group Spec
+ * 属性接口
+ * Class SpecController
+ * @package App\Http\Controllers\Admin
+ */
 class SpecController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * index
+     * 属性列表
+     * @queryParam  condition 类型名称  No-example
+     * @queryParam  current_page required 当前页 Example: 1
+     * @queryParam  per_page required 每页显示数量 Example: 10
      *
      * @param Request $request
      * @return JsonResponse
@@ -36,8 +46,53 @@ class SpecController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
+     * store
+     * 保存属性
+     * @bodyParam name string required 属性名称 Example:码数
+     * @bodyParam sort int required 排序(越小越靠前) Example: 100
+     * @bodyParam values array required 属性值 Example: [34,35,36,37,38,39,40]
+     * @response {
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+    "$spec": {
+    "name": "码数",
+    "sort": "100",
+    "updated_at": "2020-07-14 11:08:54",
+    "created_at": "2020-07-14 11:08:54",
+    "id": 16,
+    "value": [
+    {
+    "id": 61,
+    "spec_id": 16,
+    "name": "34",
+    "sort": 0,
+    "details": "",
+    "created_at": "2020-07-14 11:08:54",
+    "updated_at": "2020-07-14 11:08:54"
+    },
+    {
+    "id": 62,
+    "spec_id": 16,
+    "name": "35",
+    "sort": 0,
+    "details": "",
+    "created_at": "2020-07-14 11:08:54",
+    "updated_at": "2020-07-14 11:08:54"
+    },
+    {
+    "id": 63,
+    "spec_id": 16,
+    "name": "36",
+    "sort": 0,
+    "details": "",
+    "created_at": "2020-07-14 11:08:54",
+    "updated_at": "2020-07-14 11:08:54"
+    }
+    ]
+    }
+    }
+     * }
      * @param SpecRequest $request
      * @return JsonResponse|Response
      */
@@ -58,7 +113,9 @@ class SpecController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * show
+     * 查询属性(单一)
+     * @urlParam spec required 属性ID
      *
      * @param SpecRequest $id
      * @return JsonResponse
@@ -71,8 +128,54 @@ class SpecController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
+     * update
+     * 更新属性
+     * @urlParam spec required 属性名ID
+     * @bodyParam name string required 属性名称 Example:码数
+     * @bodyParam sort int required 排序(越小越靠前) Example: 100
+     * @bodyParam values array required 属性值 Example: [34,35,36,37,38,39,40]
+     * @response {
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+    "$spec": {
+    "name": "码数",
+    "sort": "100",
+    "updated_at": "2020-07-14 11:08:54",
+    "created_at": "2020-07-14 11:08:54",
+    "id": 16,
+    "value": [
+    {
+    "id": 61,
+    "spec_id": 16,
+    "name": "34",
+    "sort": 0,
+    "details": "",
+    "created_at": "2020-07-14 11:08:54",
+    "updated_at": "2020-07-14 11:08:54"
+    },
+    {
+    "id": 62,
+    "spec_id": 16,
+    "name": "35",
+    "sort": 0,
+    "details": "",
+    "created_at": "2020-07-14 11:08:54",
+    "updated_at": "2020-07-14 11:08:54"
+    },
+    {
+    "id": 63,
+    "spec_id": 16,
+    "name": "36",
+    "sort": 0,
+    "details": "",
+    "created_at": "2020-07-14 11:08:54",
+    "updated_at": "2020-07-14 11:08:54"
+    }
+    ]
+    }
+    }
+     * }
      * @param SpecRequest $request
      * @param int $id
      * @return JsonResponse
@@ -95,7 +198,9 @@ class SpecController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * delete
+     * 删除
+     *
      * @param int $id
      * @return JsonResponse|Response
      * @throws \Exception

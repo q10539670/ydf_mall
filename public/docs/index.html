@@ -58,16 +58,16 @@
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/brand?condition=%E4%B8%89%E6%98%9F&amp;is_del=neque&amp;current_page=1&amp;per_page=10" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -G "http://192.168.0.178:8888/api/admin/brand?condition=%E4%B8%89%E6%98%9F&amp;is_del=culpa&amp;current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/brand"
 );
 
 let params = {
     "condition": "三星",
-    "is_del": "neque",
+    "is_del": "culpa",
     "current_page": "1",
     "per_page": "10",
 };
@@ -75,8 +75,8 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -91,12 +91,12 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/brand',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
         'query' =&gt; [
             'condition'=&gt; '三星',
-            'is_del'=&gt; 'neque',
+            'is_del'=&gt; 'culpa',
             'current_page'=&gt; '1',
             'per_page'=&gt; '10',
         ],
@@ -264,8 +264,8 @@ print_r(json_decode((string) $body));</code></pre>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "http://192.168.0.178:8888/api/admin/brand" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
     -d '{"name":"\u4e09\u661f","logo":1,"sort":100,"is_del":0}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -273,8 +273,8 @@ print_r(json_decode((string) $body));</code></pre>
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 let body = {
@@ -297,8 +297,8 @@ $response = $client-&gt;post(
     'http://192.168.0.178:8888/api/admin/brand',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
         'json' =&gt; [
             'name' =&gt; '三星',
@@ -377,15 +377,15 @@ print_r(json_decode((string) $body));</code></pre>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/brand/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/brand/1"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -400,8 +400,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/brand/1',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -456,8 +456,8 @@ print_r(json_decode((string) $body));</code></pre>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
     "http://192.168.0.178:8888/api/admin/brand/51" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
     -d '{"name":"\u4e09\u661f","logo":1,"sort":90,"is_del":0}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -465,8 +465,8 @@ print_r(json_decode((string) $body));</code></pre>
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 let body = {
@@ -489,8 +489,8 @@ $response = $client-&gt;put(
     'http://192.168.0.178:8888/api/admin/brand/51',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
         'json' =&gt; [
             'name' =&gt; '三星',
@@ -587,15 +587,15 @@ print_r(json_decode((string) $body));</code></pre>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
     "http://192.168.0.178:8888/api/admin/brand/51" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/brand/51"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -610,8 +610,8 @@ $response = $client-&gt;delete(
     'http://192.168.0.178:8888/api/admin/brand/51',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -656,96 +656,25 @@ print_r(json_decode((string) $body));</code></pre>
 </tbody>
 </table>
 <!-- END_683bdbae9348bfc894706954ec860e35 -->
-<h1>general</h1>
-<!-- START_204613676cab89a55dfdc7d81f16a281 -->
-<h2>api/images</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/images" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"images":{"":"sint"}}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/images"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "images": {
-        "": "sint"
-    }
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/images',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-        'json' =&gt; [
-            'images' =&gt; [
-                '' =&gt; 'sint',
-            ],
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/images</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>images[]</code></td>
-<td>file</td>
-<td>optional</td>
-<td>图片文件</td>
-</tr>
-</tbody>
-</table>
-<!-- END_204613676cab89a55dfdc7d81f16a281 -->
+<h1>Category</h1>
+<p>商品分类接口</p>
 <!-- START_701f64236c5cf10f69caffda7e7072f8 -->
-<h2>Display a listing of the resource.</h2>
+<h2>index</h2>
+<p>分类列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/category" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/category"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -760,8 +689,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/category',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -783,13 +712,20 @@ print_r(json_decode((string) $body));</code></pre>
                 "id": 1,
                 "pid": 0,
                 "name": "|----男装",
-                "status": 1,
+                "status": 2,
                 "is_more": 1
             },
             {
                 "id": 2,
                 "pid": 1,
                 "name": "|----|----T恤啊啊",
+                "status": 2,
+                "is_more": 0
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
                 "status": 2,
                 "is_more": 0
             },
@@ -828,22 +764,23 @@ print_r(json_decode((string) $body));</code></pre>
 <p><code>GET api/admin/category</code></p>
 <!-- END_701f64236c5cf10f69caffda7e7072f8 -->
 <!-- START_a6bb04f86b66b63d8f0e6505d1d29e2b -->
-<h2>获取加前缀的分类</h2>
-<p>获取商品类型</p>
+<h2>create</h2>
+<p>获取加前缀的分类
+获取商品类型</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/category/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/category/create"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -858,8 +795,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/category/create',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -993,6 +930,13 @@ print_r(json_decode((string) $body));</code></pre>
                 "updated_at": "2020-07-07 10:17:41"
             },
             {
+                "id": 26,
+                "name": "通用类型",
+                "sort": 100,
+                "created_at": "2020-07-14 10:57:26",
+                "updated_at": "2020-07-14 10:57:26"
+            },
+            {
                 "id": 21,
                 "name": "啊啊",
                 "sort": 123,
@@ -1023,12 +967,18 @@ print_r(json_decode((string) $body));</code></pre>
                 "id": 1,
                 "pid": 0,
                 "name": "|----男装",
-                "status": 1
+                "status": 2
             },
             {
                 "id": 2,
                 "pid": 1,
                 "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
                 "status": 2
             },
             {
@@ -1062,26 +1012,39 @@ print_r(json_decode((string) $body));</code></pre>
 <p><code>GET api/admin/category/create</code></p>
 <!-- END_a6bb04f86b66b63d8f0e6505d1d29e2b -->
 <!-- START_2f78ffac7816ccf9db5b5c8e130e43da -->
-<h2>保存分类</h2>
+<h2>store</h2>
+<p>保存分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "http://192.168.0.178:8888/api/admin/category" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"pid":1,"name":"\u77ed\u88e4","goods_type_id":1,"sort":100,"image_id":1,"status":1}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/category"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
+
+let body = {
+    "pid": 1,
+    "name": "\u77ed\u88e4",
+    "goods_type_id": 1,
+    "sort": 100,
+    "image_id": 1,
+    "status": 1
+}
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
@@ -1091,32 +1054,110 @@ $response = $client-&gt;post(
     'http://192.168.0.178:8888/api/admin/category',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'pid' =&gt; 1,
+            'name' =&gt; '短裤',
+            'goods_type_id' =&gt; 1,
+            'sort' =&gt; 100,
+            'image_id' =&gt; 1,
+            'status' =&gt; 1,
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "分类创建成功",
+    "data": {
+        "category": {
+            "pid": "1",
+            "name": "短裤",
+            "goods_type_id": "1",
+            "sort": "100",
+            "image_id": "1",
+            "status": "1",
+            "updated_at": "2020-07-14 09:20:32",
+            "created_at": "2020-07-14 09:20:32",
+            "id": 32
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/admin/category</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pid</code></td>
+<td>integer</td>
+<td>required</td>
+<td>父级ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>分类名称</td>
+</tr>
+<tr>
+<td><code>goods_type_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品类型ID</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>image_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>分类图片ID</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>integer</td>
+<td>required</td>
+<td>状态[1:显示,2:隐藏]</td>
+</tr>
+</tbody>
+</table>
 <!-- END_2f78ffac7816ccf9db5b5c8e130e43da -->
 <!-- START_214091a9db7d8a91095b4311653a6491 -->
-<h2>查询分类</h2>
+<h2>show</h2>
+<p>查询分类(单一)</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/category/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/category/1"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -1131,8 +1172,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/category/1',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -1153,32 +1194,50 @@ print_r(json_decode((string) $body));</code></pre>
                 "goods_type_id": 0,
                 "sort": 100,
                 "image_id": 0,
-                "status": 1,
+                "status": 2,
                 "created_at": null,
-                "updated_at": "2020-07-08 10:24:50"
+                "updated_at": "2020-07-14 14:34:03"
             }
         ]
     }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/category/{category}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>required</td>
+<td>分类ID</td>
+</tr>
+</tbody>
+</table>
 <!-- END_214091a9db7d8a91095b4311653a6491 -->
 <!-- START_9323416ad4259365069a9390edd15ed1 -->
-<h2>编辑分类</h2>
+<h2>edit</h2>
+<p>编辑分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/category/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/category/1/edit"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -1193,8 +1252,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/category/1/edit',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -1215,9 +1274,9 @@ print_r(json_decode((string) $body));</code></pre>
                 "goods_type_id": 0,
                 "sort": 100,
                 "image_id": 0,
-                "status": 1,
+                "status": 2,
                 "created_at": null,
-                "updated_at": "2020-07-08 10:24:50"
+                "updated_at": "2020-07-14 14:34:03"
             }
         ],
         "types": [
@@ -1341,6 +1400,13 @@ print_r(json_decode((string) $body));</code></pre>
                 "updated_at": "2020-07-07 10:17:41"
             },
             {
+                "id": 26,
+                "name": "通用类型",
+                "sort": 100,
+                "created_at": "2020-07-14 10:57:26",
+                "updated_at": "2020-07-14 10:57:26"
+            },
+            {
                 "id": 21,
                 "name": "啊啊",
                 "sort": 123,
@@ -1371,12 +1437,18 @@ print_r(json_decode((string) $body));</code></pre>
                 "id": 1,
                 "pid": 0,
                 "name": "|----男装",
-                "status": 1
+                "status": 2
             },
             {
                 "id": 2,
                 "pid": 1,
                 "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
                 "status": 2
             },
             {
@@ -1408,64 +1480,189 @@ print_r(json_decode((string) $body));</code></pre>
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/category/{category}/edit</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>required</td>
+<td>分类ID</td>
+</tr>
+</tbody>
+</table>
 <!-- END_9323416ad4259365069a9390edd15ed1 -->
 <!-- START_dde958a883781f63b95acf8f07522b75 -->
-<h2>更新分类</h2>
+<h2>update</h2>
+<p>更新分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/category/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    "http://192.168.0.178:8888/api/admin/category/32" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"pid":1,"name":"\u77ed\u88e42","goods_type_id":1,"sort":100,"image_id":1,"status":1}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/1"
+    "http://192.168.0.178:8888/api/admin/category/32"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
+
+let body = {
+    "pid": 1,
+    "name": "\u77ed\u88e42",
+    "goods_type_id": 1,
+    "sort": 100,
+    "image_id": 1,
+    "status": 1
+}
 
 fetch(url, {
     method: "PUT",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/category/1',
+    'http://192.168.0.178:8888/api/admin/category/32',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'pid' =&gt; 1,
+            'name' =&gt; '短裤2',
+            'goods_type_id' =&gt; 1,
+            'sort' =&gt; 100,
+            'image_id' =&gt; 1,
+            'status' =&gt; 1,
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "分类更新成功",
+    "data": {
+        "category": {
+            "pid": "1",
+            "name": "短裤2",
+            "goods_type_id": "1",
+            "sort": "100",
+            "image_id": "1",
+            "status": "1",
+            "updated_at": "2020-07-14 09:20:32",
+            "created_at": "2020-07-14 09:20:32",
+            "id": 32
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/admin/category/{category}</code></p>
 <p><code>PATCH api/admin/category/{category}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>required</td>
+<td>分类ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pid</code></td>
+<td>integer</td>
+<td>required</td>
+<td>父级ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>分类名称</td>
+</tr>
+<tr>
+<td><code>goods_type_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品类型ID</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>image_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>分类图片ID</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>integer</td>
+<td>required</td>
+<td>状态[1:显示,2:隐藏]</td>
+</tr>
+</tbody>
+</table>
 <!-- END_dde958a883781f63b95acf8f07522b75 -->
 <!-- START_3bfecade78e62be5edb04afa9f62857b -->
-<h2>删除分类</h2>
+<h2>delete</h2>
+<p>删除分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
     "http://192.168.0.178:8888/api/admin/category/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/category/1"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -1480,48 +1677,84 @@ $response = $client-&gt;delete(
     'http://192.168.0.178:8888/api/admin/category/1',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "删除成功",
+    "data": []
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/admin/category/{category}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>required</td>
+<td>分类ID</td>
+</tr>
+</tbody>
+</table>
 <!-- END_3bfecade78e62be5edb04afa9f62857b -->
-<!-- START_2bf18f2a6d8f9a56e9b7791105ae31dc -->
-<h2>Display a listing of the resource.</h2>
+<!-- START_1ab85a9a2627f7c9660a365bcc570698 -->
+<h2>status</h2>
+<p>更改状态</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+<pre><code class="language-bash">curl -X PATCH \
+    "http://192.168.0.178:8888/api/admin/category/status/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"status":12}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type"
+    "http://192.168.0.178:8888/api/admin/category/status/1"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
+let body = {
+    "status": 12
+}
+
 fetch(url, {
-    method: "GET",
+    method: "PATCH",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type',
+$response = $client-&gt;patch(
+    'http://192.168.0.178:8888/api/admin/category/status/1',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'status' =&gt; 12,
         ],
     ]
 );
@@ -1532,1207 +1765,76 @@ print_r(json_decode((string) $body));</code></pre>
 </blockquote>
 <pre><code class="language-json">{
     "code": 1,
-    "message": "查询成功",
-    "data": {
-        "types": {
-            "current_page": 1,
-            "data": [
-                {
-                    "id": 25,
-                    "name": "电视剧",
-                    "sort": 1,
-                    "created_at": "2020-07-10 15:29:47",
-                    "updated_at": "2020-07-10 15:29:47"
-                },
-                {
-                    "id": 23,
-                    "name": "啊啊",
-                    "sort": 1,
-                    "created_at": "2020-07-08 11:09:28",
-                    "updated_at": "2020-07-08 11:09:28"
-                },
-                {
-                    "id": 20,
-                    "name": "啊",
-                    "sort": 1,
-                    "created_at": "2020-07-08 11:23:21",
-                    "updated_at": "2020-07-08 11:23:21"
-                },
-                {
-                    "id": 22,
-                    "name": "啊啊啊啊啊",
-                    "sort": 1,
-                    "created_at": "2020-07-08 11:06:34",
-                    "updated_at": "2020-07-08 11:06:34"
-                },
-                {
-                    "id": 2,
-                    "name": "手机",
-                    "sort": 100,
-                    "created_at": "2020-07-09 14:41:37",
-                    "updated_at": "2020-07-09 14:41:37"
-                },
-                {
-                    "id": 3,
-                    "name": "通用类型5",
-                    "sort": 100,
-                    "created_at": "2020-07-06 16:49:49",
-                    "updated_at": "2020-07-06 16:49:49"
-                },
-                {
-                    "id": 4,
-                    "name": "通用类型5",
-                    "sort": 100,
-                    "created_at": "2020-07-06 16:50:16",
-                    "updated_at": "2020-07-06 16:50:16"
-                },
-                {
-                    "id": 5,
-                    "name": "通用类型5",
-                    "sort": 100,
-                    "created_at": "2020-07-06 16:51:00",
-                    "updated_at": "2020-07-06 16:51:00"
-                },
-                {
-                    "id": 6,
-                    "name": "通用类型5",
-                    "sort": 100,
-                    "created_at": "2020-07-06 16:52:06",
-                    "updated_at": "2020-07-06 16:52:06"
-                },
-                {
-                    "id": 8,
-                    "name": "通用类型1",
-                    "sort": 100,
-                    "created_at": "2020-07-06 17:05:38",
-                    "updated_at": "2020-07-06 17:05:38"
-                }
-            ],
-            "first_page_url": "\/?page=1",
-            "from": 1,
-            "last_page": 2,
-            "last_page_url": "\/?page=2",
-            "next_page_url": "\/?page=2",
-            "path": "\/",
-            "per_page": 10,
-            "prev_page_url": null,
-            "to": 10,
-            "total": 20
-        }
-    }
+    "message": "状态更改成功",
+    "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/type</code></p>
-<!-- END_2bf18f2a6d8f9a56e9b7791105ae31dc -->
-<!-- START_84902dbe1ce91e5e42037f62df784d86 -->
-<h2>api/admin/type/create</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type/create',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "查询成功",
-    "data": {
-        "spec": [
-            {
-                "id": 1,
-                "name": "通用",
-                "sort": 100,
-                "details": "",
-                "created_at": "2020-07-06 17:18:24",
-                "updated_at": "2020-07-06 17:18:24"
-            },
-            {
-                "id": 3,
-                "name": "内存",
-                "sort": 10,
-                "details": "",
-                "created_at": "2020-07-06 16:55:04",
-                "updated_at": "2020-07-06 16:55:04"
-            },
-            {
-                "id": 4,
-                "name": "内存",
-                "sort": 10,
-                "details": "",
-                "created_at": "2020-07-06 17:16:29",
-                "updated_at": "2020-07-06 17:16:29"
-            },
-            {
-                "id": 5,
-                "name": "颜色",
-                "sort": 10,
-                "details": "",
-                "created_at": "2020-07-09 14:40:53",
-                "updated_at": "2020-07-09 14:40:53"
-            },
-            {
-                "id": 6,
-                "name": "啊啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:33:57",
-                "updated_at": "2020-07-10 11:33:57"
-            },
-            {
-                "id": 7,
-                "name": "电脑",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:34:50",
-                "updated_at": "2020-07-10 11:34:50"
-            },
-            {
-                "id": 8,
-                "name": "啊啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:35:38",
-                "updated_at": "2020-07-10 11:35:38"
-            },
-            {
-                "id": 9,
-                "name": "11",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:35:47",
-                "updated_at": "2020-07-10 11:35:47"
-            },
-            {
-                "id": 10,
-                "name": "2",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:36:25",
-                "updated_at": "2020-07-10 11:36:25"
-            },
-            {
-                "id": 11,
-                "name": "啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:40:58",
-                "updated_at": "2020-07-10 11:40:58"
-            },
-            {
-                "id": 12,
-                "name": "啊啊",
-                "sort": 11,
-                "details": "",
-                "created_at": "2020-07-10 11:41:38",
-                "updated_at": "2020-07-10 11:41:38"
-            },
-            {
-                "id": 13,
-                "name": "啊啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 12:01:30",
-                "updated_at": "2020-07-10 12:01:30"
-            },
-            {
-                "id": 14,
-                "name": "啊实打实大撒",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 16:17:43",
-                "updated_at": "2020-07-10 16:17:43"
-            },
-            {
-                "id": 15,
-                "name": "手表",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 16:19:24",
-                "updated_at": "2020-07-10 16:19:24"
-            }
-        ]
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/admin/type/create</code></p>
-<!-- END_84902dbe1ce91e5e42037f62df784d86 -->
-<!-- START_adccea5cb8e1ee74d6d49b8340d2fea8 -->
-<h2>Store a newly created resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/type" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/type',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/admin/type</code></p>
-<!-- END_adccea5cb8e1ee74d6d49b8340d2fea8 -->
-<!-- START_4939a0f5d3266facf1b6f9edc0dcc558 -->
-<h2>Display the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "查询成功",
-    "data": {
-        "type": [
-            {
-                "id": 1,
-                "name": "手机",
-                "sort": 100,
-                "created_at": "2020-07-06 16:55:33",
-                "updated_at": "2020-07-06 16:55:33"
-            }
-        ]
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/admin/type/{type}</code></p>
-<!-- END_4939a0f5d3266facf1b6f9edc0dcc558 -->
-<!-- START_74d0bf9ea2fa3334be174ff0a867e515 -->
-<h2>Show the form for editing the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type/1/edit',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "查询成功",
-    "data": {
-        "type": [
-            {
-                "id": 1,
-                "name": "手机",
-                "sort": 100,
-                "created_at": "2020-07-06 16:55:33",
-                "updated_at": "2020-07-06 16:55:33",
-                "spec": [
-                    {
-                        "id": 1,
-                        "name": "通用",
-                        "sort": 100,
-                        "details": "",
-                        "created_at": "2020-07-06 17:18:24",
-                        "updated_at": "2020-07-06 17:18:24",
-                        "pivot": {
-                            "type_id": 1,
-                            "spec_id": 1
-                        }
-                    },
-                    {
-                        "id": 3,
-                        "name": "内存",
-                        "sort": 10,
-                        "details": "",
-                        "created_at": "2020-07-06 16:55:04",
-                        "updated_at": "2020-07-06 16:55:04",
-                        "pivot": {
-                            "type_id": 1,
-                            "spec_id": 3
-                        }
-                    }
-                ]
-            }
-        ],
-        "spec": [
-            {
-                "id": 1,
-                "name": "通用",
-                "sort": 100,
-                "details": "",
-                "created_at": "2020-07-06 17:18:24",
-                "updated_at": "2020-07-06 17:18:24"
-            },
-            {
-                "id": 3,
-                "name": "内存",
-                "sort": 10,
-                "details": "",
-                "created_at": "2020-07-06 16:55:04",
-                "updated_at": "2020-07-06 16:55:04"
-            },
-            {
-                "id": 4,
-                "name": "内存",
-                "sort": 10,
-                "details": "",
-                "created_at": "2020-07-06 17:16:29",
-                "updated_at": "2020-07-06 17:16:29"
-            },
-            {
-                "id": 5,
-                "name": "颜色",
-                "sort": 10,
-                "details": "",
-                "created_at": "2020-07-09 14:40:53",
-                "updated_at": "2020-07-09 14:40:53"
-            },
-            {
-                "id": 6,
-                "name": "啊啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:33:57",
-                "updated_at": "2020-07-10 11:33:57"
-            },
-            {
-                "id": 7,
-                "name": "电脑",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:34:50",
-                "updated_at": "2020-07-10 11:34:50"
-            },
-            {
-                "id": 8,
-                "name": "啊啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:35:38",
-                "updated_at": "2020-07-10 11:35:38"
-            },
-            {
-                "id": 9,
-                "name": "11",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:35:47",
-                "updated_at": "2020-07-10 11:35:47"
-            },
-            {
-                "id": 10,
-                "name": "2",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:36:25",
-                "updated_at": "2020-07-10 11:36:25"
-            },
-            {
-                "id": 11,
-                "name": "啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 11:40:58",
-                "updated_at": "2020-07-10 11:40:58"
-            },
-            {
-                "id": 12,
-                "name": "啊啊",
-                "sort": 11,
-                "details": "",
-                "created_at": "2020-07-10 11:41:38",
-                "updated_at": "2020-07-10 11:41:38"
-            },
-            {
-                "id": 13,
-                "name": "啊啊",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 12:01:30",
-                "updated_at": "2020-07-10 12:01:30"
-            },
-            {
-                "id": 14,
-                "name": "啊实打实大撒",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 16:17:43",
-                "updated_at": "2020-07-10 16:17:43"
-            },
-            {
-                "id": 15,
-                "name": "手表",
-                "sort": 1,
-                "details": "",
-                "created_at": "2020-07-10 16:19:24",
-                "updated_at": "2020-07-10 16:19:24"
-            }
-        ]
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/admin/type/{type}/edit</code></p>
-<!-- END_74d0bf9ea2fa3334be174ff0a867e515 -->
-<!-- START_ddfc96f5dd2cd99669f0ebf91e638e15 -->
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/type/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/type/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT api/admin/type/{type}</code></p>
-<p><code>PATCH api/admin/type/{type}</code></p>
-<!-- END_ddfc96f5dd2cd99669f0ebf91e638e15 -->
-<!-- START_5fa475b5e166ef0c11ad7356b1ce1373 -->
-<h2>Remove the specified resource from storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/type/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/type/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE api/admin/type/{type}</code></p>
-<!-- END_5fa475b5e166ef0c11ad7356b1ce1373 -->
-<!-- START_eb57f9f10a51ded148bdcb5669195e94 -->
-<h2>Display a listing of the resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/spec" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/spec',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "查询成功",
-    "data": {
-        "specs": {
-            "current_page": 1,
-            "data": [
-                {
-                    "id": 6,
-                    "name": "啊啊",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 11:33:57",
-                    "updated_at": "2020-07-10 11:33:57",
-                    "value": [
-                        {
-                            "id": 58,
-                            "spec_id": 6,
-                            "name": "啊1111",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:42:59",
-                            "updated_at": "2020-07-10 16:42:59"
-                        },
-                        {
-                            "id": 59,
-                            "spec_id": 6,
-                            "name": "11",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:42:59",
-                            "updated_at": "2020-07-10 16:42:59"
-                        },
-                        {
-                            "id": 60,
-                            "spec_id": 6,
-                            "name": "2",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:42:59",
-                            "updated_at": "2020-07-10 16:42:59"
-                        }
-                    ]
-                },
-                {
-                    "id": 7,
-                    "name": "电脑",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 11:34:50",
-                    "updated_at": "2020-07-10 11:34:50",
-                    "value": [
-                        {
-                            "id": 47,
-                            "spec_id": 7,
-                            "name": "笔记本",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:59:15",
-                            "updated_at": "2020-07-10 11:59:15"
-                        }
-                    ]
-                },
-                {
-                    "id": 8,
-                    "name": "啊啊",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 11:35:38",
-                    "updated_at": "2020-07-10 11:35:38",
-                    "value": [
-                        {
-                            "id": 50,
-                            "spec_id": 8,
-                            "name": "啊啊啊啊",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 12:00:53",
-                            "updated_at": "2020-07-10 12:00:53"
-                        },
-                        {
-                            "id": 51,
-                            "spec_id": 8,
-                            "name": "啊11111",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 12:00:53",
-                            "updated_at": "2020-07-10 12:00:53"
-                        }
-                    ]
-                },
-                {
-                    "id": 9,
-                    "name": "11",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 11:35:47",
-                    "updated_at": "2020-07-10 11:35:47",
-                    "value": [
-                        {
-                            "id": 42,
-                            "spec_id": 9,
-                            "name": "1",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:58:35",
-                            "updated_at": "2020-07-10 11:58:35"
-                        },
-                        {
-                            "id": 43,
-                            "spec_id": 9,
-                            "name": "11",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:58:35",
-                            "updated_at": "2020-07-10 11:58:35"
-                        }
-                    ]
-                },
-                {
-                    "id": 10,
-                    "name": "2",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 11:36:25",
-                    "updated_at": "2020-07-10 11:36:25",
-                    "value": [
-                        {
-                            "id": 27,
-                            "spec_id": 10,
-                            "name": "1",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:36:25",
-                            "updated_at": "2020-07-10 11:36:25"
-                        },
-                        {
-                            "id": 28,
-                            "spec_id": 10,
-                            "name": "1",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:36:25",
-                            "updated_at": "2020-07-10 11:36:25"
-                        },
-                        {
-                            "id": 29,
-                            "spec_id": 10,
-                            "name": "1",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:36:25",
-                            "updated_at": "2020-07-10 11:36:25"
-                        }
-                    ]
-                },
-                {
-                    "id": 11,
-                    "name": "啊",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 11:40:58",
-                    "updated_at": "2020-07-10 11:40:58",
-                    "value": [
-                        {
-                            "id": 30,
-                            "spec_id": 11,
-                            "name": "11",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:40:58",
-                            "updated_at": "2020-07-10 11:40:58"
-                        },
-                        {
-                            "id": 31,
-                            "spec_id": 11,
-                            "name": "22",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 11:40:58",
-                            "updated_at": "2020-07-10 11:40:58"
-                        }
-                    ]
-                },
-                {
-                    "id": 13,
-                    "name": "啊啊",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 12:01:30",
-                    "updated_at": "2020-07-10 12:01:30",
-                    "value": [
-                        {
-                            "id": 52,
-                            "spec_id": 13,
-                            "name": "11",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 12:01:30",
-                            "updated_at": "2020-07-10 12:01:30"
-                        },
-                        {
-                            "id": 53,
-                            "spec_id": 13,
-                            "name": "1",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 12:01:30",
-                            "updated_at": "2020-07-10 12:01:30"
-                        }
-                    ]
-                },
-                {
-                    "id": 14,
-                    "name": "啊实打实大撒",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 16:17:43",
-                    "updated_at": "2020-07-10 16:17:43",
-                    "value": [
-                        {
-                            "id": 54,
-                            "spec_id": 14,
-                            "name": "啊啊",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:17:43",
-                            "updated_at": "2020-07-10 16:17:43"
-                        },
-                        {
-                            "id": 55,
-                            "spec_id": 14,
-                            "name": "啊啊",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:17:43",
-                            "updated_at": "2020-07-10 16:17:43"
-                        }
-                    ]
-                },
-                {
-                    "id": 15,
-                    "name": "手表",
-                    "sort": 1,
-                    "details": "",
-                    "created_at": "2020-07-10 16:19:24",
-                    "updated_at": "2020-07-10 16:19:24",
-                    "value": [
-                        {
-                            "id": 56,
-                            "spec_id": 15,
-                            "name": "黑",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:19:24",
-                            "updated_at": "2020-07-10 16:19:24"
-                        },
-                        {
-                            "id": 57,
-                            "spec_id": 15,
-                            "name": "白",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-10 16:19:24",
-                            "updated_at": "2020-07-10 16:19:24"
-                        }
-                    ]
-                },
-                {
-                    "id": 3,
-                    "name": "内存",
-                    "sort": 10,
-                    "details": "",
-                    "created_at": "2020-07-06 16:55:04",
-                    "updated_at": "2020-07-06 16:55:04",
-                    "value": [
-                        {
-                            "id": 8,
-                            "spec_id": 3,
-                            "name": "2G",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-06 16:55:04",
-                            "updated_at": "2020-07-06 16:55:04"
-                        },
-                        {
-                            "id": 9,
-                            "spec_id": 3,
-                            "name": "4G",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-06 16:55:04",
-                            "updated_at": "2020-07-06 16:55:04"
-                        },
-                        {
-                            "id": 10,
-                            "spec_id": 3,
-                            "name": "8G",
-                            "sort": 0,
-                            "details": "",
-                            "created_at": "2020-07-06 16:55:04",
-                            "updated_at": "2020-07-06 16:55:04"
-                        }
-                    ]
-                }
-            ],
-            "first_page_url": "\/?page=1",
-            "from": 1,
-            "last_page": 2,
-            "last_page_url": "\/?page=2",
-            "next_page_url": "\/?page=2",
-            "path": "\/",
-            "per_page": 10,
-            "prev_page_url": null,
-            "to": 10,
-            "total": 14
-        }
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/admin/spec</code></p>
-<!-- END_eb57f9f10a51ded148bdcb5669195e94 -->
-<!-- START_1144bc6fdea08d8ddce96397dabd4a3f -->
-<h2>Store a newly created resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/spec" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/spec',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/admin/spec</code></p>
-<!-- END_1144bc6fdea08d8ddce96397dabd4a3f -->
-<!-- START_40bfefe538bd1e871b0867db2fd349fb -->
-<h2>Display the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/spec/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/spec/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "查询成功",
-    "data": {
-        "spec": [
-            {
-                "id": 1,
-                "name": "通用",
-                "sort": 100,
-                "details": "",
-                "created_at": "2020-07-06 17:18:24",
-                "updated_at": "2020-07-06 17:18:24",
-                "value": [
-                    {
-                        "id": 14,
-                        "spec_id": 1,
-                        "name": "绿色",
-                        "sort": 0,
-                        "details": "",
-                        "created_at": "2020-07-06 17:18:24",
-                        "updated_at": "2020-07-06 17:18:24"
-                    }
-                ]
-            }
-        ]
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/admin/spec/{spec}</code></p>
-<!-- END_40bfefe538bd1e871b0867db2fd349fb -->
-<!-- START_bd081498d34d1dc2bf0eca0d7ce5fa04 -->
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/spec/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/spec/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT api/admin/spec/{spec}</code></p>
-<p><code>PATCH api/admin/spec/{spec}</code></p>
-<!-- END_bd081498d34d1dc2bf0eca0d7ce5fa04 -->
-<!-- START_8f1f153625db53644568ad45fd01a751 -->
-<h2>Remove the specified resource from storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/spec/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/spec/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE api/admin/spec/{spec}</code></p>
-<!-- END_8f1f153625db53644568ad45fd01a751 -->
+<p><code>PATCH api/admin/category/status/{category}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>required</td>
+<td>分类ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>integer</td>
+<td>required</td>
+<td>状态[1:显示,2:隐藏]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1ab85a9a2627f7c9660a365bcc570698 -->
+<h1>Goods</h1>
+<p>商品接口</p>
 <!-- START_4f0cf39ed680b5602fa6eba298730581 -->
-<h2>Display a listing of the resource.</h2>
+<h2>index</h2>
+<p>商品列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -G "http://192.168.0.178:8888/api/admin/goods?condition=%E4%B8%89%E6%98%9F&amp;marketable=1&amp;current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/goods"
 );
 
+let params = {
+    "condition": "三星",
+    "marketable": "1",
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -2747,8 +1849,14 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/goods',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'query' =&gt; [
+            'condition'=&gt; '三星',
+            'marketable'=&gt; '1',
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
         ],
     ]
 );
@@ -2765,43 +1873,43 @@ print_r(json_decode((string) $body));</code></pre>
             "current_page": 1,
             "data": [
                 {
-                    "id": 1,
-                    "bn": "G_202007091799",
-                    "name": "三星S10",
+                    "id": 2,
+                    "bn": "G_202007142919",
+                    "name": "三星S10 5G",
                     "brief": "",
                     "price": "100.00",
                     "costprice": "0.00",
                     "mktprice": "0.00",
                     "image_id": 1,
-                    "pics": "",
-                    "goods_category_id": 2,
+                    "pics": [],
+                    "goods_category_id": 32,
                     "goods_type_id": 1,
                     "brand_id": 1,
                     "marketable": 1,
-                    "stock": 190,
-                    "freeze_stock": 40,
-                    "weight": "120.00",
+                    "stock": 180,
+                    "freeze_stock": 30,
+                    "weight": "123.50",
                     "unit": "克",
                     "introduction": null,
                     "comments_count": 0,
                     "view_count": 0,
                     "buy_count": 0,
-                    "up_at": "2020-07-09 18:22:34",
+                    "up_at": "2020-07-14 10:22:05",
                     "down_at": null,
-                    "sort": 10,
+                    "sort": 100,
                     "is_recommend": 2,
                     "is_hot": 1,
                     "label_ids": "",
-                    "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
+                    "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\"]}",
                     "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
-                    "created_at": "2020-07-09 18:22:34",
-                    "updated_at": "2020-07-09 18:34:50",
-                    "is_del": 1,
+                    "created_at": "2020-07-14 10:22:05",
+                    "updated_at": "2020-07-14 10:22:05",
+                    "is_del": 0,
                     "product": [
                         {
-                            "id": 1,
-                            "goods_id": 1,
-                            "barcode": "",
+                            "id": 7,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429191",
                             "sku_code": "",
                             "price": "100.00",
                             "costprice": "0.00",
@@ -2812,14 +1920,50 @@ print_r(json_decode((string) $body));</code></pre>
                             "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
                             "is_default": 1,
                             "image_id": 2,
-                            "created_at": "2020-07-09 18:22:34",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "is_del": 0
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "is_del": 0,
+                            "image": {
+                                "id": 2,
+                                "name": "share",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                                "path": "20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-07-10 15:29:01",
+                                "updated_at": "2020-07-10 15:29:01"
+                            }
                         },
                         {
-                            "id": 3,
-                            "goods_id": 1,
-                            "barcode": "",
+                            "id": 8,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429192",
+                            "sku_code": "",
+                            "price": "120.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 10,
+                            "freeze_stock": 2,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+                            "is_default": 2,
+                            "image_id": 3,
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "is_del": 0,
+                            "image": {
+                                "id": 3,
+                                "name": "三星logo",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/a67e412b04d7b0a5f29233683e97bde9.jpg",
+                                "path": "20200629\/a67e412b04d7b0a5f29233683e97bde9.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:31:06",
+                                "updated_at": "2020-06-29 15:31:06"
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429193",
                             "sku_code": "",
                             "price": "100.00",
                             "costprice": "0.00",
@@ -2830,47 +1974,83 @@ print_r(json_decode((string) $body));</code></pre>
                             "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
                             "is_default": 2,
                             "image_id": 4,
-                            "created_at": "2020-07-09 18:22:34",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "is_del": 0
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "is_del": 0,
+                            "image": {
+                                "id": 4,
+                                "name": "601韵动钻石之花健身操队2",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                                "path": "20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:32:23",
+                                "updated_at": "2020-06-29 15:32:23"
+                            }
                         },
                         {
-                            "id": 5,
-                            "goods_id": 1,
-                            "barcode": "P__2020070917995",
-                            "sku_code": "",
-                            "price": "120.00",
-                            "costprice": "0.00",
-                            "mktprice": "0.00",
-                            "marketable": 1,
-                            "stock": 10,
-                            "freeze_stock": 2,
-                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
-                            "is_default": 2,
-                            "image_id": 7,
-                            "created_at": "2020-07-09 18:22:41",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "is_del": 0
-                        },
-                        {
-                            "id": 6,
-                            "goods_id": 1,
-                            "barcode": "P__2020070917996",
+                            "id": 10,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429194",
                             "sku_code": "",
                             "price": "150.00",
                             "costprice": "0.00",
                             "mktprice": "0.00",
                             "marketable": 1,
-                            "stock": 40,
-                            "freeze_stock": 15,
-                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                            "stock": 30,
+                            "freeze_stock": 5,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
                             "is_default": 2,
-                            "image_id": 6,
-                            "created_at": "2020-07-09 18:22:41",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "is_del": 0
+                            "image_id": 5,
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "is_del": 0,
+                            "image": {
+                                "id": 5,
+                                "name": "601韵动钻石之花健身操队2",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/f1e8f823dd285bfb4e71769b44ac1aec.jpg",
+                                "path": "20200629\/f1e8f823dd285bfb4e71769b44ac1aec.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:34:39",
+                                "updated_at": "2020-06-29 15:34:39"
+                            }
                         }
-                    ]
+                    ],
+                    "image": {
+                        "id": 1,
+                        "name": "三星logo",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+                        "path": "20200629\/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:25:54",
+                        "updated_at": "2020-06-29 15:25:54"
+                    },
+                    "category": {
+                        "id": 32,
+                        "pid": 1,
+                        "name": "短裤",
+                        "goods_type_id": 1,
+                        "sort": 100,
+                        "image_id": 1,
+                        "status": 2,
+                        "created_at": "2020-07-14 09:20:32",
+                        "updated_at": "2020-07-14 14:34:03"
+                    },
+                    "type": {
+                        "id": 1,
+                        "name": "手机",
+                        "sort": 100,
+                        "created_at": "2020-07-06 16:55:33",
+                        "updated_at": "2020-07-06 16:55:33"
+                    },
+                    "brand": {
+                        "id": 1,
+                        "name": "三星",
+                        "logo": "56",
+                        "sort": 111,
+                        "created_at": "2020-06-29 14:31:19",
+                        "updated_at": "2020-07-02 15:21:26",
+                        "is_del": 1
+                    }
                 }
             ],
             "first_page_url": "\/?page=1",
@@ -2879,7 +2059,7 @@ print_r(json_decode((string) $body));</code></pre>
             "last_page_url": "\/?page=1",
             "next_page_url": null,
             "path": "\/",
-            "per_page": 10,
+            "per_page": "10",
             "prev_page_url": null,
             "to": 1,
             "total": 1
@@ -2888,23 +2068,61 @@ print_r(json_decode((string) $body));</code></pre>
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/goods</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td>optional</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td><code>bn</code></td>
+<td>optional</td>
+<td>编码</td>
+</tr>
+<tr>
+<td><code>marketable</code></td>
+<td>optional</td>
+<td>是否上架</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
 <!-- END_4f0cf39ed680b5602fa6eba298730581 -->
 <!-- START_6b55ae11d145b85c42a4d1a51c3a4e49 -->
-<h2>Show the form for creating a new resource.</h2>
+<h2>create</h2>
+<p>创建</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/goods/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/goods/create"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -2919,8 +2137,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/goods/create',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -2938,12 +2156,18 @@ print_r(json_decode((string) $body));</code></pre>
                 "id": 1,
                 "pid": 0,
                 "name": "|----男装",
-                "status": 1
+                "status": 2
             },
             {
                 "id": 2,
                 "pid": 1,
                 "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
                 "status": 2
             },
             {
@@ -3083,6 +2307,22 @@ print_r(json_decode((string) $body));</code></pre>
                 "details": "",
                 "created_at": "2020-07-10 16:19:24",
                 "updated_at": "2020-07-10 16:19:24"
+            },
+            {
+                "id": 16,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 11:08:54",
+                "updated_at": "2020-07-14 11:08:54"
+            },
+            {
+                "id": 17,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 17:27:28",
+                "updated_at": "2020-07-14 17:27:28"
             }
         ],
         "brand": [
@@ -3417,26 +2657,56 @@ print_r(json_decode((string) $body));</code></pre>
 <p><code>GET api/admin/goods/create</code></p>
 <!-- END_6b55ae11d145b85c42a4d1a51c3a4e49 -->
 <!-- START_b4c911978d3b1363c6d8368c7e9d256f -->
-<h2>Store a newly created resource in storage.</h2>
+<h2>store</h2>
+<p>保存商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "http://192.168.0.178:8888/api/admin/goods" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/goods"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
+
+let body = {
+    "name": "\u4e09\u661fS10 5G",
+    "brief": "\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a",
+    "price": 3688,
+    "costprice": 0,
+    "mktprice": 0,
+    "image_id": 1,
+    "pics": "[2,3,4]",
+    "goods_category_id": 32,
+    "goods_type_id": 10,
+    "brand_id": 1,
+    "marketable": 1,
+    "stock": 100,
+    "freeze_stock": 100,
+    "weight": 123.5,
+    "unit": "\u514b",
+    "introduction": "\u8fd9\u662f\u8be6\u60c5",
+    "sort": 100,
+    "is_recommend": 1,
+    "is_hot": 2,
+    "spec_list": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}",
+    "spec_desc": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+    "is_del": 0,
+    "products": "[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"
+}
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
@@ -3446,32 +2716,332 @@ $response = $client-&gt;post(
     'http://192.168.0.178:8888/api/admin/goods',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '三星S10 5G',
+            'brief' =&gt; '这是一款神奇的手机',
+            'price' =&gt; 3688.0,
+            'costprice' =&gt; 0.0,
+            'mktprice' =&gt; 0.0,
+            'image_id' =&gt; 1,
+            'pics' =&gt; '[2,3,4]',
+            'goods_category_id' =&gt; 32,
+            'goods_type_id' =&gt; 10,
+            'brand_id' =&gt; 1,
+            'marketable' =&gt; 1,
+            'stock' =&gt; 100,
+            'freeze_stock' =&gt; 100,
+            'weight' =&gt; 123.5,
+            'unit' =&gt; '克',
+            'introduction' =&gt; '这是详情',
+            'sort' =&gt; 100,
+            'is_recommend' =&gt; 1,
+            'is_hot' =&gt; 2,
+            'spec_list' =&gt; '{"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}',
+            'spec_desc' =&gt; '{"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}',
+            'is_del' =&gt; 0,
+            'products' =&gt; '[{"barcode":"","price":"100","costprice":"0","mktprice":"0","stock":"50","freeze_stock":"5","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"2G"}],"is_default":"1","image_id":"2","is_del":"0"},{"barcode":"","price":"120","costprice":"0","mktprice":"0","stock":"10","freeze_stock":"2","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"4G"}],"is_default":"2","image_id":"3","is_del":"0"}]',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "goods": {
+            "bn": "G_202007142919",
+            "name": "三星S10 5G",
+            "price": "100.00",
+            "costprice": "0.00",
+            "mktprice": "0.00",
+            "image_id": "1",
+            "pics": "",
+            "goods_category_id": "32",
+            "goods_type_id": "1",
+            "brand_id": "1",
+            "marketable": "1",
+            "stock": 180,
+            "freeze_stock": 30,
+            "weight": "123.5",
+            "unit": "克",
+            "introduction": null,
+            "sort": "100",
+            "is_recommend": "2",
+            "is_hot": "1",
+            "label_ids": "",
+            "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\"]}",
+            "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+            "up_at": "2020-07-14 10:22:05",
+            "updated_at": "2020-07-14 10:22:05",
+            "created_at": "2020-07-14 10:22:05",
+            "id": 2,
+            "product": [
+                {
+                    "id": 7,
+                    "goods_id": 2,
+                    "barcode": "P_2020071429191",
+                    "sku_code": "",
+                    "price": "100.00",
+                    "costprice": "0.00",
+                    "mktprice": "0.00",
+                    "marketable": 1,
+                    "stock": 50,
+                    "freeze_stock": 5,
+                    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                    "is_default": 1,
+                    "image_id": 2,
+                    "created_at": "2020-07-14 10:22:05",
+                    "updated_at": "2020-07-14 10:22:05",
+                    "is_del": 0
+                },
+                {
+                    "id": 8,
+                    "goods_id": 2,
+                    "barcode": "P_2020071429192",
+                    "sku_code": "",
+                    "price": "120.00",
+                    "costprice": "0.00",
+                    "mktprice": "0.00",
+                    "marketable": 1,
+                    "stock": 10,
+                    "freeze_stock": 2,
+                    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+                    "is_default": 2,
+                    "image_id": 3,
+                    "created_at": "2020-07-14 10:22:05",
+                    "updated_at": "2020-07-14 10:22:05",
+                    "is_del": 0
+                },
+                {
+                    "id": 9,
+                    "goods_id": 2,
+                    "barcode": "P_2020071429193",
+                    "sku_code": "",
+                    "price": "100.00",
+                    "costprice": "0.00",
+                    "mktprice": "0.00",
+                    "marketable": 1,
+                    "stock": 90,
+                    "freeze_stock": 18,
+                    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                    "is_default": 2,
+                    "image_id": 4,
+                    "created_at": "2020-07-14 10:22:05",
+                    "updated_at": "2020-07-14 10:22:05",
+                    "is_del": 0
+                },
+                {
+                    "id": 10,
+                    "goods_id": 2,
+                    "barcode": "P_2020071429194",
+                    "sku_code": "",
+                    "price": "150.00",
+                    "costprice": "0.00",
+                    "mktprice": "0.00",
+                    "marketable": 1,
+                    "stock": 30,
+                    "freeze_stock": 5,
+                    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+                    "is_default": 2,
+                    "image_id": 5,
+                    "created_at": "2020-07-14 10:22:05",
+                    "updated_at": "2020-07-14 10:22:05",
+                    "is_del": 0
+                }
+            ]
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/admin/goods</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bn</code></td>
+<td>string</td>
+<td>optional</td>
+<td>商品编码</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td><code>brief</code></td>
+<td>string</td>
+<td>optional</td>
+<td>商品简介</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>float</td>
+<td>required</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td><code>costprice</code></td>
+<td>float</td>
+<td>required</td>
+<td>成本价</td>
+</tr>
+<tr>
+<td><code>mktprice</code></td>
+<td>float</td>
+<td>required</td>
+<td>市场价</td>
+</tr>
+<tr>
+<td><code>image_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品主图</td>
+</tr>
+<tr>
+<td><code>pics</code></td>
+<td>array</td>
+<td>required</td>
+<td>商品图片</td>
+</tr>
+<tr>
+<td><code>goods_category_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品分类ID</td>
+</tr>
+<tr>
+<td><code>goods_type_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品类型ID</td>
+</tr>
+<tr>
+<td><code>brand_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>品牌ID</td>
+</tr>
+<tr>
+<td><code>marketable</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>上架标志[1:上架, 2:下架]</td>
+</tr>
+<tr>
+<td><code>stock</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>库存</td>
+</tr>
+<tr>
+<td><code>freeze_stock</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>冻结库存</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td>float</td>
+<td>optional</td>
+<td>重量</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td>optional</td>
+<td>单位</td>
+</tr>
+<tr>
+<td><code>introduction</code></td>
+<td>longtext</td>
+<td>optional</td>
+<td>商品详情</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品排序 越小越靠前</td>
+</tr>
+<tr>
+<td><code>is_recommend</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>推荐标志[1:推荐,2:不推荐]</td>
+</tr>
+<tr>
+<td><code>is_hot</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>热门标志[1:是,2:不是]</td>
+</tr>
+<tr>
+<td><code>label_ids</code></td>
+<td>array</td>
+<td>optional</td>
+<td>标签ID</td>
+</tr>
+<tr>
+<td><code>spec_list</code></td>
+<td>varchar</td>
+<td>optional</td>
+<td>商品规格-当前选中</td>
+</tr>
+<tr>
+<td><code>spec_desc</code></td>
+<td>varchar</td>
+<td>optional</td>
+<td>商品规格-所有</td>
+</tr>
+<tr>
+<td><code>is_del</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>删除标志[0:正常, 1:删除]</td>
+</tr>
+<tr>
+<td><code>products</code></td>
+<td>array</td>
+<td>optional</td>
+<td>规格详情</td>
+</tr>
+</tbody>
+</table>
 <!-- END_b4c911978d3b1363c6d8368c7e9d256f -->
 <!-- START_95cb295a66887bc87d231647cf934875 -->
-<h2>Display the specified resource.</h2>
+<h2>show</h2>
+<p>查询商品(单一)</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/goods/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/goods/1"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -3486,8 +3056,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/goods/1',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -3510,11 +3080,48 @@ print_r(json_decode((string) $body));</code></pre>
                 "costprice": "0.00",
                 "mktprice": "0.00",
                 "image_id": 1,
-                "pics": "",
+                "pics": [
+                    {
+                        "id": 2,
+                        "name": "share",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                        "path": "20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-07-10 15:29:01",
+                        "updated_at": "2020-07-10 15:29:01"
+                    },
+                    {
+                        "id": 3,
+                        "name": "三星logo",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/a67e412b04d7b0a5f29233683e97bde9.jpg",
+                        "path": "20200629\/a67e412b04d7b0a5f29233683e97bde9.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:31:06",
+                        "updated_at": "2020-06-29 15:31:06"
+                    },
+                    {
+                        "id": 4,
+                        "name": "601韵动钻石之花健身操队2",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                        "path": "20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:32:23",
+                        "updated_at": "2020-06-29 15:32:23"
+                    },
+                    {
+                        "id": 5,
+                        "name": "601韵动钻石之花健身操队2",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/f1e8f823dd285bfb4e71769b44ac1aec.jpg",
+                        "path": "20200629\/f1e8f823dd285bfb4e71769b44ac1aec.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:34:39",
+                        "updated_at": "2020-06-29 15:34:39"
+                    }
+                ],
                 "goods_category_id": 2,
                 "goods_type_id": 1,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 190,
                 "freeze_stock": 40,
                 "weight": "120.00",
@@ -3532,7 +3139,7 @@ print_r(json_decode((string) $body));</code></pre>
                 "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
                 "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
                 "created_at": "2020-07-09 18:22:34",
-                "updated_at": "2020-07-09 18:34:50",
+                "updated_at": "2020-07-14 14:34:47",
                 "is_del": 1,
                 "product": [
                     {
@@ -3607,30 +3214,84 @@ print_r(json_decode((string) $body));</code></pre>
                         "updated_at": "2020-07-09 18:22:41",
                         "is_del": 0
                     }
-                ]
+                ],
+                "image": {
+                    "id": 1,
+                    "name": "三星logo",
+                    "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+                    "path": "20200629\/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+                    "is_del": 0,
+                    "created_at": "2020-06-29 15:25:54",
+                    "updated_at": "2020-06-29 15:25:54"
+                },
+                "category": {
+                    "id": 2,
+                    "pid": 1,
+                    "name": "T恤啊啊",
+                    "goods_type_id": 3,
+                    "sort": 100,
+                    "image_id": 80,
+                    "status": 2,
+                    "created_at": null,
+                    "updated_at": "2020-07-07 10:15:38"
+                },
+                "type": {
+                    "id": 1,
+                    "name": "手机",
+                    "sort": 100,
+                    "created_at": "2020-07-06 16:55:33",
+                    "updated_at": "2020-07-06 16:55:33"
+                },
+                "brand": {
+                    "id": 1,
+                    "name": "三星",
+                    "logo": "56",
+                    "sort": 111,
+                    "created_at": "2020-06-29 14:31:19",
+                    "updated_at": "2020-07-02 15:21:26",
+                    "is_del": 1
+                }
             }
         ]
     }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/goods/{good}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>good</code></td>
+<td>required</td>
+<td>商品ID</td>
+</tr>
+</tbody>
+</table>
 <!-- END_95cb295a66887bc87d231647cf934875 -->
 <!-- START_260f82804c7e0295307e499bd681175e -->
-<h2>Show the form for editing the specified resource.</h2>
+<h2>edit</h2>
+<p>编辑商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://192.168.0.178:8888/api/admin/goods/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://192.168.0.178:8888/api/admin/goods/1/edit"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -3645,8 +3306,8 @@ $response = $client-&gt;get(
     'http://192.168.0.178:8888/api/admin/goods/1/edit',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
@@ -3664,12 +3325,18 @@ print_r(json_decode((string) $body));</code></pre>
                 "id": 1,
                 "pid": 0,
                 "name": "|----男装",
-                "status": 1
+                "status": 2
             },
             {
                 "id": 2,
                 "pid": 1,
                 "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
                 "status": 2
             },
             {
@@ -3809,6 +3476,22 @@ print_r(json_decode((string) $body));</code></pre>
                 "details": "",
                 "created_at": "2020-07-10 16:19:24",
                 "updated_at": "2020-07-10 16:19:24"
+            },
+            {
+                "id": 16,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 11:08:54",
+                "updated_at": "2020-07-14 11:08:54"
+            },
+            {
+                "id": 17,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 17:27:28",
+                "updated_at": "2020-07-14 17:27:28"
             }
         ],
         "brand": [
@@ -4147,6 +3830,237 @@ print_r(json_decode((string) $body));</code></pre>
                 "costprice": "0.00",
                 "mktprice": "0.00",
                 "image_id": 1,
+                "pics": "2,3,4,5",
+                "goods_category_id": 2,
+                "goods_type_id": 1,
+                "brand_id": 1,
+                "marketable": 2,
+                "stock": 190,
+                "freeze_stock": 40,
+                "weight": "120.00",
+                "unit": "克",
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": "2020-07-09 18:22:34",
+                "down_at": null,
+                "sort": 10,
+                "is_recommend": 2,
+                "is_hot": 1,
+                "label_ids": "",
+                "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
+                "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+                "created_at": "2020-07-09 18:22:34",
+                "updated_at": "2020-07-14 14:34:47",
+                "is_del": 1,
+                "product": [
+                    {
+                        "id": 1,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 50,
+                        "freeze_stock": 5,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 1,
+                        "image_id": 2,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    },
+                    {
+                        "id": 3,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 90,
+                        "freeze_stock": 18,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 2,
+                        "image_id": 4,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    },
+                    {
+                        "id": 5,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917995",
+                        "sku_code": "",
+                        "price": "120.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 10,
+                        "freeze_stock": 2,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 7,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    },
+                    {
+                        "id": 6,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917996",
+                        "sku_code": "",
+                        "price": "150.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 40,
+                        "freeze_stock": 15,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 6,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    }
+                ]
+            }
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/goods/{good}/edit</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>good</code></td>
+<td>required</td>
+<td>商品ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_260f82804c7e0295307e499bd681175e -->
+<!-- START_d4da2edf1bc2e1db7c31164ef418936b -->
+<h2>update</h2>
+<p>更新商品</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://192.168.0.178:8888/api/admin/goods/2" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/goods/2"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u4e09\u661fS10 5G",
+    "brief": "\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a",
+    "price": 3688,
+    "costprice": 0,
+    "mktprice": 0,
+    "image_id": 1,
+    "pics": "[2,3,4]",
+    "goods_category_id": 32,
+    "goods_type_id": 10,
+    "brand_id": 1,
+    "marketable": 1,
+    "stock": 100,
+    "freeze_stock": 100,
+    "weight": 123.5,
+    "unit": "\u514b",
+    "introduction": "\u8fd9\u662f\u8be6\u60c5",
+    "sort": 100,
+    "is_recommend": 1,
+    "is_hot": 2,
+    "spec_list": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}",
+    "spec_desc": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+    "is_del": 0,
+    "products": "[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://192.168.0.178:8888/api/admin/goods/2',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '三星S10 5G',
+            'brief' =&gt; '这是一款神奇的手机',
+            'price' =&gt; 3688.0,
+            'costprice' =&gt; 0.0,
+            'mktprice' =&gt; 0.0,
+            'image_id' =&gt; 1,
+            'pics' =&gt; '[2,3,4]',
+            'goods_category_id' =&gt; 32,
+            'goods_type_id' =&gt; 10,
+            'brand_id' =&gt; 1,
+            'marketable' =&gt; 1,
+            'stock' =&gt; 100,
+            'freeze_stock' =&gt; 100,
+            'weight' =&gt; 123.5,
+            'unit' =&gt; '克',
+            'introduction' =&gt; '这是详情',
+            'sort' =&gt; 100,
+            'is_recommend' =&gt; 1,
+            'is_hot' =&gt; 2,
+            'spec_list' =&gt; '{"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}',
+            'spec_desc' =&gt; '{"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}',
+            'is_del' =&gt; 0,
+            'products' =&gt; '[{"barcode":"","price":"100","costprice":"0","mktprice":"0","stock":"50","freeze_stock":"5","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"2G"}],"is_default":"1","image_id":"2","is_del":"0"},{"barcode":"","price":"120","costprice":"0","mktprice":"0","stock":"10","freeze_stock":"2","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"4G"}],"is_default":"2","image_id":"3","is_del":"0"}]',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+        "goods": [
+            {
+                "id": 1,
+                "bn": "G_202007091799",
+                "name": "三星S10",
+                "brief": "",
+                "price": "100.00",
+                "costprice": "0.00",
+                "mktprice": "0.00",
+                "image_id": 1,
                 "pics": "",
                 "goods_category_id": 2,
                 "goods_type_id": 1,
@@ -4250,65 +4164,206 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/goods/{good}/edit</code></p>
-<!-- END_260f82804c7e0295307e499bd681175e -->
-<!-- START_d4da2edf1bc2e1db7c31164ef418936b -->
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/goods/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/goods/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
 <p><code>PUT api/admin/goods/{good}</code></p>
 <p><code>PATCH api/admin/goods/{good}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>good</code></td>
+<td>required</td>
+<td>商品ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bn</code></td>
+<td>string</td>
+<td>optional</td>
+<td>商品编码</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td><code>brief</code></td>
+<td>string</td>
+<td>optional</td>
+<td>商品简介</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>float</td>
+<td>required</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td><code>costprice</code></td>
+<td>float</td>
+<td>required</td>
+<td>成本价</td>
+</tr>
+<tr>
+<td><code>mktprice</code></td>
+<td>float</td>
+<td>required</td>
+<td>市场价</td>
+</tr>
+<tr>
+<td><code>image_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品主图</td>
+</tr>
+<tr>
+<td><code>pics</code></td>
+<td>array</td>
+<td>required</td>
+<td>商品图片</td>
+</tr>
+<tr>
+<td><code>goods_category_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品分类ID</td>
+</tr>
+<tr>
+<td><code>goods_type_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品类型ID</td>
+</tr>
+<tr>
+<td><code>brand_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>品牌ID</td>
+</tr>
+<tr>
+<td><code>marketable</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>上架标志[1:上架, 2:下架]</td>
+</tr>
+<tr>
+<td><code>stock</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>库存</td>
+</tr>
+<tr>
+<td><code>freeze_stock</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>冻结库存</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td>float</td>
+<td>optional</td>
+<td>重量</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td>optional</td>
+<td>单位</td>
+</tr>
+<tr>
+<td><code>introduction</code></td>
+<td>longtext</td>
+<td>optional</td>
+<td>商品详情</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>商品排序 越小越靠前</td>
+</tr>
+<tr>
+<td><code>is_recommend</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>推荐标志[1:推荐,2:不推荐]</td>
+</tr>
+<tr>
+<td><code>is_hot</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>热门标志[1:是,2:不是]</td>
+</tr>
+<tr>
+<td><code>label_ids</code></td>
+<td>array</td>
+<td>optional</td>
+<td>标签ID</td>
+</tr>
+<tr>
+<td><code>spec_list</code></td>
+<td>varchar</td>
+<td>optional</td>
+<td>商品规格-当前选中</td>
+</tr>
+<tr>
+<td><code>spec_desc</code></td>
+<td>varchar</td>
+<td>optional</td>
+<td>商品规格-所有</td>
+</tr>
+<tr>
+<td><code>is_del</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>删除标志[0:正常, 1:删除]</td>
+</tr>
+<tr>
+<td><code>products</code></td>
+<td>array</td>
+<td>optional</td>
+<td>规格详情</td>
+</tr>
+</tbody>
+</table>
 <!-- END_d4da2edf1bc2e1db7c31164ef418936b -->
 <!-- START_3f4639ac2921209061f1d8ac93d977c0 -->
-<h2>Remove the specified resource from storage.</h2>
+<h2>delete</h2>
+<p>删除商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/goods/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    "http://192.168.0.178:8888/api/admin/goods/2" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/1"
+    "http://192.168.0.178:8888/api/admin/goods/2"
 );
 
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
@@ -4320,59 +4375,2292 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/goods/1',
+    'http://192.168.0.178:8888/api/admin/goods/2',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "删除成功",
+    "data": {
+        "goods": [
+            {
+                "id": 1,
+                "bn": "G_202007091799",
+                "name": "三星S10",
+                "brief": "",
+                "price": "100.00",
+                "costprice": "0.00",
+                "mktprice": "0.00",
+                "image_id": 1,
+                "pics": "",
+                "goods_category_id": 2,
+                "goods_type_id": 1,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 190,
+                "freeze_stock": 40,
+                "weight": "120.00",
+                "unit": "克",
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": "2020-07-09 18:22:34",
+                "down_at": null,
+                "sort": 10,
+                "is_recommend": 2,
+                "is_hot": 1,
+                "label_ids": "",
+                "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
+                "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+                "created_at": "2020-07-09 18:22:34",
+                "updated_at": "2020-07-09 18:34:50",
+                "is_del": 1,
+                "product": [
+                    {
+                        "id": 1,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 50,
+                        "freeze_stock": 5,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 1,
+                        "image_id": 2,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    },
+                    {
+                        "id": 3,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 90,
+                        "freeze_stock": 18,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 2,
+                        "image_id": 4,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    },
+                    {
+                        "id": 5,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917995",
+                        "sku_code": "",
+                        "price": "120.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 10,
+                        "freeze_stock": 2,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 7,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    },
+                    {
+                        "id": 6,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917996",
+                        "sku_code": "",
+                        "price": "150.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 40,
+                        "freeze_stock": 15,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 6,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41",
+                        "is_del": 0
+                    }
+                ]
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/admin/goods/{good}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>good</code></td>
+<td>required</td>
+<td>商品ID</td>
+</tr>
+</tbody>
+</table>
 <!-- END_3f4639ac2921209061f1d8ac93d977c0 -->
-<!-- START_1ab85a9a2627f7c9660a365bcc570698 -->
-<h2>更改状态</h2>
+<h1>Spec</h1>
+<p>属性接口
+Class SpecController</p>
+<!-- START_eb57f9f10a51ded148bdcb5669195e94 -->
+<h2>index</h2>
+<p>属性列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PATCH \
-    "http://192.168.0.178:8888/api/admin/category/status/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/spec?current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/status/1"
+    "http://192.168.0.178:8888/api/admin/spec"
 );
 
+let params = {
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
 let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
 };
 
 fetch(url, {
-    method: "PATCH",
+    method: "GET",
     headers: headers,
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
-$response = $client-&gt;patch(
-    'http://192.168.0.178:8888/api/admin/category/status/1',
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/spec',
     [
         'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'query' =&gt; [
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "specs": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 6,
+                    "name": "啊啊",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 11:33:57",
+                    "updated_at": "2020-07-10 11:33:57",
+                    "value": [
+                        {
+                            "id": 58,
+                            "spec_id": 6,
+                            "name": "啊1111",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:42:59",
+                            "updated_at": "2020-07-10 16:42:59"
+                        },
+                        {
+                            "id": 59,
+                            "spec_id": 6,
+                            "name": "11",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:42:59",
+                            "updated_at": "2020-07-10 16:42:59"
+                        },
+                        {
+                            "id": 60,
+                            "spec_id": 6,
+                            "name": "2",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:42:59",
+                            "updated_at": "2020-07-10 16:42:59"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "name": "电脑",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 11:34:50",
+                    "updated_at": "2020-07-10 11:34:50",
+                    "value": [
+                        {
+                            "id": 47,
+                            "spec_id": 7,
+                            "name": "笔记本",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:59:15",
+                            "updated_at": "2020-07-10 11:59:15"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "name": "啊啊",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 11:35:38",
+                    "updated_at": "2020-07-10 11:35:38",
+                    "value": [
+                        {
+                            "id": 50,
+                            "spec_id": 8,
+                            "name": "啊啊啊啊",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 12:00:53",
+                            "updated_at": "2020-07-10 12:00:53"
+                        },
+                        {
+                            "id": 51,
+                            "spec_id": 8,
+                            "name": "啊11111",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 12:00:53",
+                            "updated_at": "2020-07-10 12:00:53"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "name": "11",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 11:35:47",
+                    "updated_at": "2020-07-10 11:35:47",
+                    "value": [
+                        {
+                            "id": 42,
+                            "spec_id": 9,
+                            "name": "1",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:58:35",
+                            "updated_at": "2020-07-10 11:58:35"
+                        },
+                        {
+                            "id": 43,
+                            "spec_id": 9,
+                            "name": "11",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:58:35",
+                            "updated_at": "2020-07-10 11:58:35"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "name": "2",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 11:36:25",
+                    "updated_at": "2020-07-10 11:36:25",
+                    "value": [
+                        {
+                            "id": 27,
+                            "spec_id": 10,
+                            "name": "1",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:36:25",
+                            "updated_at": "2020-07-10 11:36:25"
+                        },
+                        {
+                            "id": 28,
+                            "spec_id": 10,
+                            "name": "1",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:36:25",
+                            "updated_at": "2020-07-10 11:36:25"
+                        },
+                        {
+                            "id": 29,
+                            "spec_id": 10,
+                            "name": "1",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:36:25",
+                            "updated_at": "2020-07-10 11:36:25"
+                        }
+                    ]
+                },
+                {
+                    "id": 11,
+                    "name": "啊",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 11:40:58",
+                    "updated_at": "2020-07-10 11:40:58",
+                    "value": [
+                        {
+                            "id": 30,
+                            "spec_id": 11,
+                            "name": "11",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:40:58",
+                            "updated_at": "2020-07-10 11:40:58"
+                        },
+                        {
+                            "id": 31,
+                            "spec_id": 11,
+                            "name": "22",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 11:40:58",
+                            "updated_at": "2020-07-10 11:40:58"
+                        }
+                    ]
+                },
+                {
+                    "id": 13,
+                    "name": "啊啊",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 12:01:30",
+                    "updated_at": "2020-07-10 12:01:30",
+                    "value": [
+                        {
+                            "id": 52,
+                            "spec_id": 13,
+                            "name": "11",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 12:01:30",
+                            "updated_at": "2020-07-10 12:01:30"
+                        },
+                        {
+                            "id": 53,
+                            "spec_id": 13,
+                            "name": "1",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 12:01:30",
+                            "updated_at": "2020-07-10 12:01:30"
+                        }
+                    ]
+                },
+                {
+                    "id": 14,
+                    "name": "啊实打实大撒",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 16:17:43",
+                    "updated_at": "2020-07-10 16:17:43",
+                    "value": [
+                        {
+                            "id": 54,
+                            "spec_id": 14,
+                            "name": "啊啊",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:17:43",
+                            "updated_at": "2020-07-10 16:17:43"
+                        },
+                        {
+                            "id": 55,
+                            "spec_id": 14,
+                            "name": "啊啊",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:17:43",
+                            "updated_at": "2020-07-10 16:17:43"
+                        }
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "手表",
+                    "sort": 1,
+                    "details": "",
+                    "created_at": "2020-07-10 16:19:24",
+                    "updated_at": "2020-07-10 16:19:24",
+                    "value": [
+                        {
+                            "id": 56,
+                            "spec_id": 15,
+                            "name": "黑",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:19:24",
+                            "updated_at": "2020-07-10 16:19:24"
+                        },
+                        {
+                            "id": 57,
+                            "spec_id": 15,
+                            "name": "白",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-10 16:19:24",
+                            "updated_at": "2020-07-10 16:19:24"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "内存",
+                    "sort": 10,
+                    "details": "",
+                    "created_at": "2020-07-06 16:55:04",
+                    "updated_at": "2020-07-06 16:55:04",
+                    "value": [
+                        {
+                            "id": 8,
+                            "spec_id": 3,
+                            "name": "2G",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-06 16:55:04",
+                            "updated_at": "2020-07-06 16:55:04"
+                        },
+                        {
+                            "id": 9,
+                            "spec_id": 3,
+                            "name": "4G",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-06 16:55:04",
+                            "updated_at": "2020-07-06 16:55:04"
+                        },
+                        {
+                            "id": 10,
+                            "spec_id": 3,
+                            "name": "8G",
+                            "sort": 0,
+                            "details": "",
+                            "created_at": "2020-07-06 16:55:04",
+                            "updated_at": "2020-07-06 16:55:04"
+                        }
+                    ]
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 2,
+            "last_page_url": "\/?page=2",
+            "next_page_url": "\/?page=2",
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 10,
+            "total": 16
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/spec</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td>optional</td>
+<td>类型名称</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
+<!-- END_eb57f9f10a51ded148bdcb5669195e94 -->
+<!-- START_1144bc6fdea08d8ddce96397dabd4a3f -->
+<h2>store</h2>
+<p>保存属性</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/api/admin/spec" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u7801\u6570","sort":100,"values":"[34,35,36,37,38,39,40]"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/spec"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u7801\u6570",
+    "sort": 100,
+    "values": "[34,35,36,37,38,39,40]"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/api/admin/spec',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '码数',
+            'sort' =&gt; 100,
+            'values' =&gt; '[34,35,36,37,38,39,40]',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "$spec": {
+            "name": "码数",
+            "sort": "100",
+            "updated_at": "2020-07-14 11:08:54",
+            "created_at": "2020-07-14 11:08:54",
+            "id": 16,
+            "value": [
+                {
+                    "id": 61,
+                    "spec_id": 16,
+                    "name": "34",
+                    "sort": 0,
+                    "details": "",
+                    "created_at": "2020-07-14 11:08:54",
+                    "updated_at": "2020-07-14 11:08:54"
+                },
+                {
+                    "id": 62,
+                    "spec_id": 16,
+                    "name": "35",
+                    "sort": 0,
+                    "details": "",
+                    "created_at": "2020-07-14 11:08:54",
+                    "updated_at": "2020-07-14 11:08:54"
+                },
+                {
+                    "id": 63,
+                    "spec_id": 16,
+                    "name": "36",
+                    "sort": 0,
+                    "details": "",
+                    "created_at": "2020-07-14 11:08:54",
+                    "updated_at": "2020-07-14 11:08:54"
+                }
+            ]
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/admin/spec</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>属性名称</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序(越小越靠前)</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td>array</td>
+<td>required</td>
+<td>属性值</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1144bc6fdea08d8ddce96397dabd4a3f -->
+<!-- START_40bfefe538bd1e871b0867db2fd349fb -->
+<h2>show</h2>
+<p>查询属性(单一)</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/spec/culpa" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/spec/culpa"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/spec/culpa',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": -1,
+    "message": "ID错误,该属性不存在",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/spec/{spec}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spec</code></td>
+<td>required</td>
+<td>属性ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_40bfefe538bd1e871b0867db2fd349fb -->
+<!-- START_bd081498d34d1dc2bf0eca0d7ce5fa04 -->
+<h2>update</h2>
+<p>更新属性</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://192.168.0.178:8888/api/admin/spec/culpa" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u7801\u6570","sort":100,"values":"[34,35,36,37,38,39,40]"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/spec/culpa"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u7801\u6570",
+    "sort": 100,
+    "values": "[34,35,36,37,38,39,40]"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://192.168.0.178:8888/api/admin/spec/culpa',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '码数',
+            'sort' =&gt; 100,
+            'values' =&gt; '[34,35,36,37,38,39,40]',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+        "$spec": {
+            "name": "码数",
+            "sort": "100",
+            "updated_at": "2020-07-14 11:08:54",
+            "created_at": "2020-07-14 11:08:54",
+            "id": 16,
+            "value": [
+                {
+                    "id": 61,
+                    "spec_id": 16,
+                    "name": "34",
+                    "sort": 0,
+                    "details": "",
+                    "created_at": "2020-07-14 11:08:54",
+                    "updated_at": "2020-07-14 11:08:54"
+                },
+                {
+                    "id": 62,
+                    "spec_id": 16,
+                    "name": "35",
+                    "sort": 0,
+                    "details": "",
+                    "created_at": "2020-07-14 11:08:54",
+                    "updated_at": "2020-07-14 11:08:54"
+                },
+                {
+                    "id": 63,
+                    "spec_id": 16,
+                    "name": "36",
+                    "sort": 0,
+                    "details": "",
+                    "created_at": "2020-07-14 11:08:54",
+                    "updated_at": "2020-07-14 11:08:54"
+                }
+            ]
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/admin/spec/{spec}</code></p>
+<p><code>PATCH api/admin/spec/{spec}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spec</code></td>
+<td>required</td>
+<td>属性名ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>属性名称</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序(越小越靠前)</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td>array</td>
+<td>required</td>
+<td>属性值</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bd081498d34d1dc2bf0eca0d7ce5fa04 -->
+<!-- START_8f1f153625db53644568ad45fd01a751 -->
+<h2>delete</h2>
+<p>删除</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://192.168.0.178:8888/api/admin/spec/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/spec/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://192.168.0.178:8888/api/admin/spec/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
         ],
     ]
 );
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PATCH api/admin/category/status/{category}</code></p>
-<!-- END_1ab85a9a2627f7c9660a365bcc570698 -->
+<p><code>DELETE api/admin/spec/{spec}</code></p>
+<!-- END_8f1f153625db53644568ad45fd01a751 -->
+<h1>Type</h1>
+<!-- START_2bf18f2a6d8f9a56e9b7791105ae31dc -->
+<h2>index</h2>
+<p>类型列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/type?current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type"
+);
+
+let params = {
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/type',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'query' =&gt; [
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "types": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 25,
+                    "name": "电视剧",
+                    "sort": 1,
+                    "created_at": "2020-07-10 15:29:47",
+                    "updated_at": "2020-07-10 15:29:47"
+                },
+                {
+                    "id": 23,
+                    "name": "啊啊",
+                    "sort": 1,
+                    "created_at": "2020-07-08 11:09:28",
+                    "updated_at": "2020-07-08 11:09:28"
+                },
+                {
+                    "id": 20,
+                    "name": "啊",
+                    "sort": 1,
+                    "created_at": "2020-07-08 11:23:21",
+                    "updated_at": "2020-07-08 11:23:21"
+                },
+                {
+                    "id": 22,
+                    "name": "啊啊啊啊啊",
+                    "sort": 1,
+                    "created_at": "2020-07-08 11:06:34",
+                    "updated_at": "2020-07-08 11:06:34"
+                },
+                {
+                    "id": 2,
+                    "name": "手机",
+                    "sort": 100,
+                    "created_at": "2020-07-09 14:41:37",
+                    "updated_at": "2020-07-09 14:41:37"
+                },
+                {
+                    "id": 3,
+                    "name": "通用类型5",
+                    "sort": 100,
+                    "created_at": "2020-07-06 16:49:49",
+                    "updated_at": "2020-07-06 16:49:49"
+                },
+                {
+                    "id": 26,
+                    "name": "通用类型",
+                    "sort": 100,
+                    "created_at": "2020-07-14 10:57:26",
+                    "updated_at": "2020-07-14 10:57:26"
+                },
+                {
+                    "id": 5,
+                    "name": "通用类型5",
+                    "sort": 100,
+                    "created_at": "2020-07-06 16:51:00",
+                    "updated_at": "2020-07-06 16:51:00"
+                },
+                {
+                    "id": 6,
+                    "name": "通用类型5",
+                    "sort": 100,
+                    "created_at": "2020-07-06 16:52:06",
+                    "updated_at": "2020-07-06 16:52:06"
+                },
+                {
+                    "id": 8,
+                    "name": "通用类型1",
+                    "sort": 100,
+                    "created_at": "2020-07-06 17:05:38",
+                    "updated_at": "2020-07-06 17:05:38"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 3,
+            "last_page_url": "\/?page=3",
+            "next_page_url": "\/?page=2",
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 10,
+            "total": 21
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/type</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td>optional</td>
+<td>类型名称</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2bf18f2a6d8f9a56e9b7791105ae31dc -->
+<!-- START_84902dbe1ce91e5e42037f62df784d86 -->
+<h2>create</h2>
+<p>创建类型</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/type/create" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type/create"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/type/create',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "spec": [
+            {
+                "id": 1,
+                "name": "通用",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-06 17:18:24",
+                "updated_at": "2020-07-06 17:18:24"
+            },
+            {
+                "id": 3,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 16:55:04",
+                "updated_at": "2020-07-06 16:55:04"
+            },
+            {
+                "id": 4,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 17:16:29",
+                "updated_at": "2020-07-06 17:16:29"
+            },
+            {
+                "id": 5,
+                "name": "颜色",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-09 14:40:53",
+                "updated_at": "2020-07-09 14:40:53"
+            },
+            {
+                "id": 6,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:33:57",
+                "updated_at": "2020-07-10 11:33:57"
+            },
+            {
+                "id": 7,
+                "name": "电脑",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:34:50",
+                "updated_at": "2020-07-10 11:34:50"
+            },
+            {
+                "id": 8,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:38",
+                "updated_at": "2020-07-10 11:35:38"
+            },
+            {
+                "id": 9,
+                "name": "11",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:47",
+                "updated_at": "2020-07-10 11:35:47"
+            },
+            {
+                "id": 10,
+                "name": "2",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:36:25",
+                "updated_at": "2020-07-10 11:36:25"
+            },
+            {
+                "id": 11,
+                "name": "啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:40:58",
+                "updated_at": "2020-07-10 11:40:58"
+            },
+            {
+                "id": 12,
+                "name": "啊啊",
+                "sort": 11,
+                "details": "",
+                "created_at": "2020-07-10 11:41:38",
+                "updated_at": "2020-07-10 11:41:38"
+            },
+            {
+                "id": 13,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 12:01:30",
+                "updated_at": "2020-07-10 12:01:30"
+            },
+            {
+                "id": 14,
+                "name": "啊实打实大撒",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:17:43",
+                "updated_at": "2020-07-10 16:17:43"
+            },
+            {
+                "id": 15,
+                "name": "手表",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:19:24",
+                "updated_at": "2020-07-10 16:19:24"
+            },
+            {
+                "id": 16,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 11:08:54",
+                "updated_at": "2020-07-14 11:08:54"
+            },
+            {
+                "id": 17,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 17:27:28",
+                "updated_at": "2020-07-14 17:27:28"
+            }
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/type/create</code></p>
+<!-- END_84902dbe1ce91e5e42037f62df784d86 -->
+<!-- START_adccea5cb8e1ee74d6d49b8340d2fea8 -->
+<h2>store</h2>
+<p>保存分类</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/api/admin/type" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u901a\u7528\u7c7b\u578b","spec_id":"[1]","sort":100}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u901a\u7528\u7c7b\u578b",
+    "spec_id": "[1]",
+    "sort": 100
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/api/admin/type',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '通用类型',
+            'spec_id' =&gt; '[1]',
+            'sort' =&gt; 100,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "type": {
+            "name": "通用类型",
+            "sort": "100",
+            "updated_at": "2020-07-14 10:57:26",
+            "created_at": "2020-07-14 10:57:26",
+            "id": 26,
+            "spec": [
+                {
+                    "id": 1,
+                    "name": "通用",
+                    "sort": 100,
+                    "details": "",
+                    "created_at": "2020-07-06 17:18:24",
+                    "updated_at": "2020-07-06 17:18:24",
+                    "pivot": {
+                        "type_id": 26,
+                        "spec_id": 1
+                    }
+                }
+            ]
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/admin/type</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>类型名称</td>
+</tr>
+<tr>
+<td><code>spec_id</code></td>
+<td>array</td>
+<td>required</td>
+<td>属性名ID</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<!-- END_adccea5cb8e1ee74d6d49b8340d2fea8 -->
+<!-- START_4939a0f5d3266facf1b6f9edc0dcc558 -->
+<h2>show</h2>
+<p>查询类型(单一)</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/type/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/type/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "type": [
+            {
+                "id": 1,
+                "name": "手机",
+                "sort": 100,
+                "created_at": "2020-07-06 16:55:33",
+                "updated_at": "2020-07-06 16:55:33"
+            }
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/type/{type}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>required</td>
+<td>类型ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_4939a0f5d3266facf1b6f9edc0dcc558 -->
+<!-- START_74d0bf9ea2fa3334be174ff0a867e515 -->
+<h2>edit</h2>
+<p>编辑类型</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/type/1/edit" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type/1/edit"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/type/1/edit',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "type": [
+            {
+                "id": 1,
+                "name": "手机",
+                "sort": 100,
+                "created_at": "2020-07-06 16:55:33",
+                "updated_at": "2020-07-06 16:55:33",
+                "spec": [
+                    {
+                        "id": 1,
+                        "name": "通用",
+                        "sort": 100,
+                        "details": "",
+                        "created_at": "2020-07-06 17:18:24",
+                        "updated_at": "2020-07-06 17:18:24",
+                        "pivot": {
+                            "type_id": 1,
+                            "spec_id": 1
+                        }
+                    },
+                    {
+                        "id": 3,
+                        "name": "内存",
+                        "sort": 10,
+                        "details": "",
+                        "created_at": "2020-07-06 16:55:04",
+                        "updated_at": "2020-07-06 16:55:04",
+                        "pivot": {
+                            "type_id": 1,
+                            "spec_id": 3
+                        }
+                    }
+                ]
+            }
+        ],
+        "spec": [
+            {
+                "id": 1,
+                "name": "通用",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-06 17:18:24",
+                "updated_at": "2020-07-06 17:18:24"
+            },
+            {
+                "id": 3,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 16:55:04",
+                "updated_at": "2020-07-06 16:55:04"
+            },
+            {
+                "id": 4,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 17:16:29",
+                "updated_at": "2020-07-06 17:16:29"
+            },
+            {
+                "id": 5,
+                "name": "颜色",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-09 14:40:53",
+                "updated_at": "2020-07-09 14:40:53"
+            },
+            {
+                "id": 6,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:33:57",
+                "updated_at": "2020-07-10 11:33:57"
+            },
+            {
+                "id": 7,
+                "name": "电脑",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:34:50",
+                "updated_at": "2020-07-10 11:34:50"
+            },
+            {
+                "id": 8,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:38",
+                "updated_at": "2020-07-10 11:35:38"
+            },
+            {
+                "id": 9,
+                "name": "11",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:47",
+                "updated_at": "2020-07-10 11:35:47"
+            },
+            {
+                "id": 10,
+                "name": "2",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:36:25",
+                "updated_at": "2020-07-10 11:36:25"
+            },
+            {
+                "id": 11,
+                "name": "啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:40:58",
+                "updated_at": "2020-07-10 11:40:58"
+            },
+            {
+                "id": 12,
+                "name": "啊啊",
+                "sort": 11,
+                "details": "",
+                "created_at": "2020-07-10 11:41:38",
+                "updated_at": "2020-07-10 11:41:38"
+            },
+            {
+                "id": 13,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 12:01:30",
+                "updated_at": "2020-07-10 12:01:30"
+            },
+            {
+                "id": 14,
+                "name": "啊实打实大撒",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:17:43",
+                "updated_at": "2020-07-10 16:17:43"
+            },
+            {
+                "id": 15,
+                "name": "手表",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:19:24",
+                "updated_at": "2020-07-10 16:19:24"
+            },
+            {
+                "id": 16,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 11:08:54",
+                "updated_at": "2020-07-14 11:08:54"
+            },
+            {
+                "id": 17,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 17:27:28",
+                "updated_at": "2020-07-14 17:27:28"
+            }
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/type/{type}/edit</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>required</td>
+<td>类型ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_74d0bf9ea2fa3334be174ff0a867e515 -->
+<!-- START_ddfc96f5dd2cd99669f0ebf91e638e15 -->
+<h2>update</h2>
+<p>更新类型</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://192.168.0.178:8888/api/admin/type/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u901a\u7528\u7c7b\u578b1","spec_id":"[1]","sort":100}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u901a\u7528\u7c7b\u578b1",
+    "spec_id": "[1]",
+    "sort": 100
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://192.168.0.178:8888/api/admin/type/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '通用类型1',
+            'spec_id' =&gt; '[1]',
+            'sort' =&gt; 100,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+        "type": {
+            "name": "通用类型1",
+            "sort": "100",
+            "updated_at": "2020-07-14 10:57:26",
+            "created_at": "2020-07-14 10:57:26",
+            "id": 26,
+            "spec": [
+                {
+                    "id": 1,
+                    "name": "通用",
+                    "sort": 100,
+                    "details": "",
+                    "created_at": "2020-07-06 17:18:24",
+                    "updated_at": "2020-07-06 17:18:24",
+                    "pivot": {
+                        "type_id": 26,
+                        "spec_id": 1
+                    }
+                }
+            ]
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/admin/type/{type}</code></p>
+<p><code>PATCH api/admin/type/{type}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>required</td>
+<td>类型ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>类型名称</td>
+</tr>
+<tr>
+<td><code>spec_id</code></td>
+<td>array</td>
+<td>required</td>
+<td>属性名ID</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ddfc96f5dd2cd99669f0ebf91e638e15 -->
+<!-- START_5fa475b5e166ef0c11ad7356b1ce1373 -->
+<h2>delete</h2>
+<p>删除分类</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://192.168.0.178:8888/api/admin/type/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/type/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://192.168.0.178:8888/api/admin/type/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "删除成功",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/admin/type/{type}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>required</td>
+<td>类型ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5fa475b5e166ef0c11ad7356b1ce1373 -->
+<h1>User</h1>
+<p>用户接口</p>
+<!-- START_fd37ef481ce55a9d86e2f35843d32982 -->
+<h2>index</h2>
+<p>用户列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/user/index?current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/user/index"
+);
+
+let params = {
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/user/index',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'query' =&gt; [
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "用户查询成功",
+    "data": {
+        "brand": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 3,
+                    "openid": "345",
+                    "nickname": "知了",
+                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqZ59TwKO4IBDXWFmmLuDN2gDJbiaVxwrqHAMPksJbUfzXSnpnDbJwv9UJj00etocicgPfoSGpPSL7w\/132",
+                    "mobile": "13174797037",
+                    "sex": 2,
+                    "unique_code": "334456",
+                    "pid": {
+                        "id": 2,
+                        "openid": "234",
+                        "nickname": "X",
+                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/P78kJjgI0cWkJ8vDh9FssKY3V51x49jMib4d5ic4YGNwcKlSd9NmZhF2pI2LmrkdLKrx9Dkc33Wyld0MQt9KWDJQ\/132",
+                        "mobile": "13174797057",
+                        "sex": 2,
+                        "unique_code": "223344",
+                        "pid": 1,
+                        "ppid": 0,
+                        "status": 1,
+                        "created_at": "2020-07-14 17:41:01",
+                        "updated_at": "2020-07-14 17:41:04"
+                    },
+                    "ppid": {
+                        "id": 1,
+                        "openid": "123",
+                        "nickname": "五岁",
+                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
+                        "mobile": "18107120122",
+                        "sex": 1,
+                        "unique_code": "123456",
+                        "pid": 0,
+                        "ppid": 0,
+                        "status": 2,
+                        "created_at": "2020-07-14 17:40:19",
+                        "updated_at": "2020-07-14 17:42:07"
+                    },
+                    "status": 1,
+                    "created_at": "2020-07-14 17:41:59",
+                    "updated_at": "2020-07-14 17:42:01"
+                },
+                {
+                    "id": 2,
+                    "openid": "234",
+                    "nickname": "X",
+                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/P78kJjgI0cWkJ8vDh9FssKY3V51x49jMib4d5ic4YGNwcKlSd9NmZhF2pI2LmrkdLKrx9Dkc33Wyld0MQt9KWDJQ\/132",
+                    "mobile": "13174797057",
+                    "sex": 2,
+                    "unique_code": "223344",
+                    "pid": {
+                        "id": 1,
+                        "openid": "123",
+                        "nickname": "五岁",
+                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
+                        "mobile": "18107120122",
+                        "sex": 1,
+                        "unique_code": "123456",
+                        "pid": 0,
+                        "ppid": 0,
+                        "status": 2,
+                        "created_at": "2020-07-14 17:40:19",
+                        "updated_at": "2020-07-14 17:42:07"
+                    },
+                    "ppid": 0,
+                    "status": 1,
+                    "created_at": "2020-07-14 17:41:01",
+                    "updated_at": "2020-07-14 17:41:04"
+                },
+                {
+                    "id": 1,
+                    "openid": "123",
+                    "nickname": "五岁",
+                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
+                    "mobile": "18107120122",
+                    "sex": 1,
+                    "unique_code": "123456",
+                    "pid": 0,
+                    "ppid": 0,
+                    "status": 2,
+                    "created_at": "2020-07-14 17:40:19",
+                    "updated_at": "2020-07-14 17:42:07"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 3,
+            "total": 3
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/user/index</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phone</code></td>
+<td>optional</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>optional</td>
+<td>性别[1:男, 2:女]</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>optional</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>optional</td>
+<td>状态[1:正常, 2:禁用]</td>
+</tr>
+<tr>
+<td><code>pid_phone</code></td>
+<td>optional</td>
+<td>推荐人手机号</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
+<!-- END_fd37ef481ce55a9d86e2f35843d32982 -->
+<!-- START_cd4ea8061e4098ff43c0a955e533b436 -->
+<h2>status</h2>
+<p>更改用户状态</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PATCH \
+    "http://192.168.0.178:8888/api/admin/user/status/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"status":"2"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/user/status/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "status": "2"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;patch(
+    'http://192.168.0.178:8888/api/admin/user/status/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'status' =&gt; '2',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PATCH api/admin/user/status/{user}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td>required</td>
+<td>用户ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>required</td>
+<td>optional</td>
+<td>状态[1:正常, 2:禁用]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_cd4ea8061e4098ff43c0a955e533b436 -->
+<h1>Z-Other 通用接口</h1>
+<!-- START_204613676cab89a55dfdc7d81f16a281 -->
+<h2>upload</h2>
+<p>上传图片</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/api/images" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"images":{"":"culpa"}}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/images"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "images": {
+        "": "culpa"
+    }
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/api/images',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'images' =&gt; [
+                '' =&gt; 'culpa',
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/images</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>images[]</code></td>
+<td>file</td>
+<td>optional</td>
+<td>图片文件</td>
+</tr>
+</tbody>
+</table>
+<!-- END_204613676cab89a55dfdc7d81f16a281 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

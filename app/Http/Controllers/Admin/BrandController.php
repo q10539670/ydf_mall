@@ -36,13 +36,13 @@ class BrandController extends Controller
         $currentPage = $request->input('current_page'); //当前页
         $perPage = $request->input('per_page');    //每页显示数量
         $query = Brand::when($condition, function ($query) use ($condition) {
-            return $query->where('name', 'like', '%' . $condition . '%');
+            return $query->where('name', 'like', '%'.$condition.'%');
         })
             ->when($isDel === '0' or $isDel === '1', function ($query) use ($isDel) {
                 return $query->where('is_del', $isDel);
             });
-        $query->orderBy('sort','asc');
-        $brands = self::paginator($query, $currentPage,$perPage);
+        $query->orderBy('sort', 'asc');
+        $brands = self::paginator($query, $currentPage, $perPage);
         return Helper::Json(1, '品牌查询成功', ['brand' => BrandResource::collection($brands)]);
     }
 
@@ -55,20 +55,20 @@ class BrandController extends Controller
      * @bodyParam sort int required  排序 Example: 100
      * @bodyParam is_del int required  是否删除[0:正常,1:删除] Example:0
      * @response {
-    "code": 1,
-    "message": "品牌创建成功",
-    "data": {
-    "brand": {
-    "id": 51,
-    "name": "三星",
-    "logo_id": "1",
-    "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
-    "sort": "100",
-    "is_del": "0",
-    "created_at": "2020-07-13 17:37:27",
-    "updated_at": "2020-07-13 17:37:27"
-    }
-    }
+     * "code": 1,
+     * "message": "品牌创建成功",
+     * "data": {
+     * "brand": {
+     * "id": 51,
+     * "name": "三星",
+     * "logo_id": "1",
+     * "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+     * "sort": "100",
+     * "is_del": "0",
+     * "created_at": "2020-07-13 17:37:27",
+     * "updated_at": "2020-07-13 17:37:27"
+     * }
+     * }
      * }
      * @param  BrandRequest  $request
      * @return JsonResponse|Response
@@ -83,7 +83,7 @@ class BrandController extends Controller
      * show
      * 查询单一品牌
      * @urlParam brand required 品牌ID Example:1
-     * @param BrandRequest $id
+     * @param  BrandRequest  $id
      * @return JsonResponse
      */
     public function show(BrandRequest $id)
@@ -101,28 +101,30 @@ class BrandController extends Controller
      * @bodyParam sort int required  排序 Example: 90
      * @bodyParam is_del int required  是否删除[0:正常,1:删除] Example:0
      * @response {
-    "code": 1,
-    "message": "品牌更新成功",
-    "data": {
-    "brand": {
-    "id": 51,
-    "name": "三星",
-    "logo_id": "1",
-    "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
-    "sort": "90",
-    "is_del": "0",
-    "created_at": "2020-07-13 17:37:27",
-    "updated_at": "2020-07-13 17:37:27"
-    }
-    }
+     * "code": 1,
+     * "message": "品牌更新成功",
+     * "data": {
+     * "brand": {
+     * "id": 51,
+     * "name": "三星",
+     * "logo_id": "1",
+     * "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+     * "sort": "90",
+     * "is_del": "0",
+     * "created_at": "2020-07-13 17:37:27",
+     * "updated_at": "2020-07-13 17:37:27"
      * }
-     * @param BrandRequest $request
-     * @param int $id
+     * }
+     * }
+     * @param  BrandRequest  $request
+     * @param  int  $id
      * @return JsonResponse|Response
      */
     public function update(BrandRequest $request, $id)
     {
-        if ($brand = Brand::find($id)) return Helper::Json(-1,'更新失败,未查到该品牌');
+        if ($brand = Brand::find($id)) {
+            return Helper::Json(-1, '更新失败,未查到该品牌');
+        }
         $brand->fill($request->all());
         $brand->save();
         return Helper::Json(1, '品牌更新成功', ['brand' => new BrandResource($brand)]);
@@ -133,23 +135,23 @@ class BrandController extends Controller
      * 删除品牌
      *
      * @urlParam brand required 品牌ID Example:51
-     * @param BrandRequest $id
+     * @param  BrandRequest  $id
      * @return JsonResponse|Response
      * @response {
-    "code": 1,
-    "message": "品牌删除成功",
-    "data": {
-    "brand": {
-    "id": 51,
-    "name": "三星",
-    "logo_id": "1",
-    "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
-    "sort": "90",
-    "is_del": "1",
-    "created_at": "2020-07-13 17:37:27",
-    "updated_at": "2020-07-13 17:37:27"
-    }
-    }
+     * "code": 1,
+     * "message": "品牌删除成功",
+     * "data": {
+     * "brand": {
+     * "id": 51,
+     * "name": "三星",
+     * "logo_id": "1",
+     * "logo": "http://192.168.0.178:8888/storage/images/20200629/1a50b6ea3afc308f4b88407bd0d7ecf9.jpg",
+     * "sort": "90",
+     * "is_del": "1",
+     * "created_at": "2020-07-13 17:37:27",
+     * "updated_at": "2020-07-13 17:37:27"
+     * }
+     * }
      * }
      */
     public function destroy($id)

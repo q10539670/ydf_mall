@@ -310,7 +310,7 @@ CREATE TABLE `ydf_order` (
   `cost_freight` decimal(6,2) unsigned DEFAULT '0.00' COMMENT '配送费用',
   `user_id` int(10) unsigned DEFAULT NULL COMMENT '用户ID 关联user.id',
   `confirm` tinyint unsigned DEFAULT '1' COMMENT '售后状态 1=未确认收货 2=已确认收货',
-  `ship_area_code` varchar(16) unsigned DEFAULT '0' COMMENT '收货地区code',
+  `ship_area_code` varchar(16) DEFAULT '' COMMENT '收货地区code',
   `ship_address` varchar(200) DEFAULT NULL COMMENT '收货详细地址',
   `ship_name` varchar(50) DEFAULT NULL COMMENT '收货人姓名',
   `ship_mobile` varchar(32) DEFAULT NULL COMMENT '收货电话',
@@ -383,7 +383,7 @@ create table ydf_aftersales(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='售后表';
 
 CREATE TABLE `jshop_bill_delivery` (
-  `id` varchar(32) NOT NULL COMMENT '售后单id 日期字符串+dl+微秒+3位随机数生成',,
+  `id` varchar(32) NOT NULL COMMENT '售后单id 日期字符串+dl+微秒+3位随机数生成',
   `logi_name` varchar(50) DEFAULT NULL COMMENT '物流公司名称',
   `logi_code` varchar(50) DEFAULT NULL COMMENT '物流公司编码',
   `logi_no` varchar(50) DEFAULT NULL COMMENT '物流单号',

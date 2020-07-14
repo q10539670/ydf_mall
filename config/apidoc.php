@@ -148,8 +148,8 @@ return [
                  * Specify headers to be added to the example requests
                  */
                 'headers' => [
-                    'Content-Type' => 'application/json',
-                    'Accept' => 'application/json',
+                    'Content-Type' => 'multipart/form-data',
+                    'Accept' => 'multipart/form-data',
                     // 'Authorization' => 'Bearer {token}',
                     // 'Api-Version' => 'v2',
                 ],
@@ -243,7 +243,7 @@ return [
     /*
      * Name for the group of routes which do not have a @group set.
      */
-    'default_group' => 'general',
+    'default_group' => 'Z-Other 通用接口',
 
     /*
      * Example requests for each endpoint will be shown in each of these languages.
@@ -283,7 +283,7 @@ return [
      * set this to any number (eg. 1234)
      *
      */
-    'faker_seed' => null,
+    'faker_seed' => 1,
 
     /*
      * If you would like to customize how routes are matched beyond the route configuration you may

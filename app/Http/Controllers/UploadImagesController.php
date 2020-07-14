@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
 use App\Models\Images;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
-/**
- * Upload
- * 上传图片接口
- * @package App\Http\Controllers
- */
+
 class UploadImagesController extends Controller
 {
     protected $ratio = 70; //富文本图片压缩比率
 
     /**
+     * upload
+     * 上传图片
      * @bodyParam images[] file 图片文件
      * @param  Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function uploadImages(Request $request)
     {

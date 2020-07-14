@@ -7,18 +7,29 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\GoodsRequest;
 use App\Models\Brand;
 use App\Models\GoodsCategory;
+use App\Models\Images;
 use App\Models\Products;
 use App\Models\Spec;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Goods;
-use Illuminate\Http\Response;
 
+/**
+ * @group Goods
+ * 商品接口
+ * @package App\Http\Controllers\Admin
+ */
 class GoodsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * index
+     * 商品列表
      *
+     * @queryParam  condition 商品名称  Example: 三星
+     * @queryParam  bn 编码 No-example
+     * @queryParam  marketable 是否上架 Example: 1
+     * @queryParam  current_page required 当前页 Example: 1
+     * @queryParam  per_page required 每页显示数量 Example: 10
      * @param  Request  $request
      * @return JsonResponse
      */
@@ -41,13 +52,22 @@ class GoodsController extends Controller
         $query->orderBy('created_at', 'desc');
         $goods = self::paginator($query, $currentPage, $perPage);
         foreach ($goods as $good) {
-            $good->product;
+            foreach ($good->product as $product){
+                $product->image;
+            }
+            $pics = explode(',',$good->pics);
+            $good['pics'] = Images::whereIn('id',$pics)->get();
+            $good->image;
+            $good->category;
+            $good->type;
+            $good->brand;
         }
         return Helper::Json(1, '查询成功', ['goods' => $goods]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * create
+     * 创建
      *
      * @return JsonResponse
      */
@@ -61,10 +81,184 @@ class GoodsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * show
+     * 查询商品(单一)
+     * @urlParam good required 商品ID Example:1
      *
+     * @param  GoodsRequest  $id
+     * @return JsonResponse
+     */
+    public function show(GoodsRequest $id)
+    {
+        $goods = Goods::find($id);
+        $goods[0]->product->where('is_del', 1)->first();
+        $pics = explode(',',$goods[0]->pics);
+        $goods[0]['pics'] = Images::whereIn('id',$pics)->get();
+        $goods[0]->image;
+        $goods[0]->category;
+        $goods[0]->type;
+        $goods[0]->brand;
+        return Helper::Json(1, '查询成功', ['goods' => $goods]);
+
+    }
+
+    /**
+     * edit
+     * 编辑商品
+     * @urlParam good required 商品ID Example:1
+     * @param  GoodsRequest  $id
+     * @return JsonResponse
+     */
+    public function edit(GoodsRequest $id)
+    {
+        $cateModel = new GoodsCategory();
+        $cates = $cateModel->getCatesWithPrefix();
+        $spec = Spec::all();
+        $brand = Brand::all();
+        $goods = Goods::find($id);
+        $goods[0]->product;
+        return Helper::Json(1, '查询成功', ['cates' => $cates, 'spec' => $spec, 'brand' => $brand, 'goods' => $goods]);
+    }
+
+    /**
+     * store
+     * 保存商品
+     *
+     * @bodyParam bn string 商品编码 No-example
+     * @bodyParam name string required 商品名称 Example: 三星S10 5G
+     * @bodyParam brief string 商品简介 Example: 这是一款神奇的手机
+     * @bodyParam price float required 商品价格 Example: 3688.00
+     * @bodyParam costprice float required 成本价 Example: 0.00
+     * @bodyParam mktprice float required 市场价 Example: 0.00
+     * @bodyParam image_id int required 商品主图 Example: 1
+     * @bodyParam pics array required 商品图片 Example: [2,3,4]
+     * @bodyParam goods_category_id int required 商品分类ID Example: 32
+     * @bodyParam goods_type_id int required 商品类型ID Example: 10
+     * @bodyParam brand_id int  required 品牌ID Example: 1
+     * @bodyParam marketable int 上架标志[1:上架, 2:下架] Example: 1
+     * @bodyParam stock int 库存 Example: 100
+     * @bodyParam freeze_stock int 冻结库存 Example: 100
+     * @bodyParam weight float 重量 Example: 123.5
+     * @bodyParam unit string 单位 Example: 克
+     * @bodyParam introduction longtext 商品详情 Example: 这是详情
+     * @bodyParam sort int required 商品排序 越小越靠前 Example: 100
+     * @bodyParam is_recommend int 推荐标志[1:推荐,2:不推荐] Example: 1
+     * @bodyParam is_hot int 热门标志[1:是,2:不是] Example: 2
+     * @bodyParam label_ids array 标签ID No-example
+     * @bodyParam spec_list varchar 商品规格-当前选中 Example: {"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}
+     * @bodyParam spec_desc varchar 商品规格-所有 Example: {"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}
+     * @bodyParam is_del int 删除标志[0:正常, 1:删除] Example: 0
+     * @bodyParam products array 规格详情 Example: [{"barcode":"","price":"100","costprice":"0","mktprice":"0","stock":"50","freeze_stock":"5","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"2G"}],"is_default":"1","image_id":"2","is_del":"0"},{"barcode":"","price":"120","costprice":"0","mktprice":"0","stock":"10","freeze_stock":"2","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"4G"}],"is_default":"2","image_id":"3","is_del":"0"}]
      * @param  GoodsRequest  $request
      * @return JsonResponse
+     * @response {
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+    "goods": {
+    "bn": "G_202007142919",
+    "name": "三星S10 5G",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "image_id": "1",
+    "pics": "",
+    "goods_category_id": "32",
+    "goods_type_id": "1",
+    "brand_id": "1",
+    "marketable": "1",
+    "stock": 180,
+    "freeze_stock": 30,
+    "weight": "123.5",
+    "unit": "克",
+    "introduction": null,
+    "sort": "100",
+    "is_recommend": "2",
+    "is_hot": "1",
+    "label_ids": "",
+    "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\"]}",
+    "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+    "up_at": "2020-07-14 10:22:05",
+    "updated_at": "2020-07-14 10:22:05",
+    "created_at": "2020-07-14 10:22:05",
+    "id": 2,
+    "product": [
+    {
+    "id": 7,
+    "goods_id": 2,
+    "barcode": "P_2020071429191",
+    "sku_code": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 50,
+    "freeze_stock": 5,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+    "is_default": 1,
+    "image_id": 2,
+    "created_at": "2020-07-14 10:22:05",
+    "updated_at": "2020-07-14 10:22:05",
+    "is_del": 0
+    },
+    {
+    "id": 8,
+    "goods_id": 2,
+    "barcode": "P_2020071429192",
+    "sku_code": "",
+    "price": "120.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 10,
+    "freeze_stock": 2,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+    "is_default": 2,
+    "image_id": 3,
+    "created_at": "2020-07-14 10:22:05",
+    "updated_at": "2020-07-14 10:22:05",
+    "is_del": 0
+    },
+    {
+    "id": 9,
+    "goods_id": 2,
+    "barcode": "P_2020071429193",
+    "sku_code": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 90,
+    "freeze_stock": 18,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+    "is_default": 2,
+    "image_id": 4,
+    "created_at": "2020-07-14 10:22:05",
+    "updated_at": "2020-07-14 10:22:05",
+    "is_del": 0
+    },
+    {
+    "id": 10,
+    "goods_id": 2,
+    "barcode": "P_2020071429194",
+    "sku_code": "",
+    "price": "150.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 30,
+    "freeze_stock": 5,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+    "is_default": 2,
+    "image_id": 5,
+    "created_at": "2020-07-14 10:22:05",
+    "updated_at": "2020-07-14 10:22:05",
+    "is_del": 0
+    }
+    ]
+    }
+    }
+     * }
      */
     public function store(GoodsRequest $request)
     {
@@ -91,7 +285,7 @@ class GoodsController extends Controller
             $freezeStock = 0;
             foreach ($products as $key => $product) {
                 $product = json_decode($product, true);
-                $product['spec_params'] = json_encode($product['spec_params'],JSON_UNESCAPED_UNICODE);
+                $product['spec_params'] = json_encode($product['spec_params'], JSON_UNESCAPED_UNICODE);
                 $stock += $product['stock'];
                 $freezeStock += $product['freeze_stock'];
                 $product['goods_id'] = $goods->id;
@@ -110,39 +304,152 @@ class GoodsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  GoodsRequest  $id
+     * update
+     * 更新商品
+     * @urlParam good required 商品ID Example:2
+     * @bodyParam bn string 商品编码 No-example
+     * @bodyParam name string required 商品名称 Example: 三星S10 5G
+     * @bodyParam brief string 商品简介 Example: 这是一款神奇的手机
+     * @bodyParam price float required 商品价格 Example: 3688.00
+     * @bodyParam costprice float required 成本价 Example: 0.00
+     * @bodyParam mktprice float required 市场价 Example: 0.00
+     * @bodyParam image_id int required 商品主图 Example: 1
+     * @bodyParam pics array required 商品图片 Example: [2,3,4]
+     * @bodyParam goods_category_id int required 商品分类ID Example: 32
+     * @bodyParam goods_type_id int required 商品类型ID Example: 10
+     * @bodyParam brand_id int  required 品牌ID Example: 1
+     * @bodyParam marketable int 上架标志[1:上架, 2:下架] Example: 1
+     * @bodyParam stock int 库存 Example: 100
+     * @bodyParam freeze_stock int 冻结库存 Example: 100
+     * @bodyParam weight float 重量 Example: 123.5
+     * @bodyParam unit string 单位 Example: 克
+     * @bodyParam introduction longtext 商品详情 Example: 这是详情
+     * @bodyParam sort int required 商品排序 越小越靠前 Example: 100
+     * @bodyParam is_recommend int 推荐标志[1:推荐,2:不推荐] Example: 1
+     * @bodyParam is_hot int 热门标志[1:是,2:不是] Example: 2
+     * @bodyParam label_ids array 标签ID No-example
+     * @bodyParam spec_list varchar 商品规格-当前选中 Example: {"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}
+     * @bodyParam spec_desc varchar 商品规格-所有 Example: {"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}
+     * @bodyParam is_del int 删除标志[0:正常, 1:删除] Example: 0
+     * @bodyParam products array 规格详情 Example: [{"barcode":"","price":"100","costprice":"0","mktprice":"0","stock":"50","freeze_stock":"5","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"2G"}],"is_default":"1","image_id":"2","is_del":"0"},{"barcode":"","price":"120","costprice":"0","mktprice":"0","stock":"10","freeze_stock":"2","spec_params":[{"key":"颜色","value":"黑色"},{"key":"内存","value":"4G"}],"is_default":"2","image_id":"3","is_del":"0"}]
+     * @param  GoodsRequest  $request
      * @return JsonResponse
-     */
-    public function show(GoodsRequest $id)
+     * @response {
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+    "goods": [
     {
-        $goods = Goods::find($id);
-        $goods[0]->product->where('is_del',1)->first();
-        return Helper::Json(1, '查询成功', ['goods' => $goods]);
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  GoodsRequest  $id
-     * @return JsonResponse
-     */
-    public function edit(GoodsRequest $id)
+    "id": 1,
+    "bn": "G_202007091799",
+    "name": "三星S10",
+    "brief": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "image_id": 1,
+    "pics": "",
+    "goods_category_id": 2,
+    "goods_type_id": 1,
+    "brand_id": 1,
+    "marketable": 1,
+    "stock": 190,
+    "freeze_stock": 40,
+    "weight": "120.00",
+    "unit": "克",
+    "introduction": null,
+    "comments_count": 0,
+    "view_count": 0,
+    "buy_count": 0,
+    "up_at": "2020-07-09 18:22:34",
+    "down_at": null,
+    "sort": 10,
+    "is_recommend": 2,
+    "is_hot": 1,
+    "label_ids": "",
+    "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
+    "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+    "created_at": "2020-07-09 18:22:34",
+    "updated_at": "2020-07-09 18:34:50",
+    "is_del": 1,
+    "product": [
     {
-        $cateModel = new GoodsCategory();
-        $cates = $cateModel->getCatesWithPrefix();
-        $spec = Spec::all();
-        $brand = Brand::all();
-        $goods = Goods::find($id);
-        $goods[0]->product;
-        return Helper::Json(1, '查询成功', ['cates' => $cates, 'spec' => $spec, 'brand' => $brand, 'goods' => $goods]);
+    "id": 1,
+    "goods_id": 1,
+    "barcode": "",
+    "sku_code": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 50,
+    "freeze_stock": 5,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+    "is_default": 1,
+    "image_id": 2,
+    "created_at": "2020-07-09 18:22:34",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    },
+    {
+    "id": 3,
+    "goods_id": 1,
+    "barcode": "",
+    "sku_code": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 90,
+    "freeze_stock": 18,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+    "is_default": 2,
+    "image_id": 4,
+    "created_at": "2020-07-09 18:22:34",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    },
+    {
+    "id": 5,
+    "goods_id": 1,
+    "barcode": "P__2020070917995",
+    "sku_code": "",
+    "price": "120.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 10,
+    "freeze_stock": 2,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+    "is_default": 2,
+    "image_id": 7,
+    "created_at": "2020-07-09 18:22:41",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    },
+    {
+    "id": 6,
+    "goods_id": 1,
+    "barcode": "P__2020070917996",
+    "sku_code": "",
+    "price": "150.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 40,
+    "freeze_stock": 15,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+    "is_default": 2,
+    "image_id": 6,
+    "created_at": "2020-07-09 18:22:41",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
+    ]
+    }
+    ]
+    }
+     * }
      * @param  GoodsRequest  $request
      * @param  int  $id
      * @return JsonResponse
@@ -176,7 +483,7 @@ class GoodsController extends Controller
             $ids = [];
             foreach ($products as $key => $product) {
                 $product = json_decode($product, true);
-                $product['spec_params'] = json_encode($product['spec_params'],JSON_UNESCAPED_UNICODE); //数组格式转成json
+                $product['spec_params'] = json_encode($product['spec_params'], JSON_UNESCAPED_UNICODE); //数组格式转成json
                 if (!isset($product['id'])) {  //ID不存在  新增规格
                     $stock += $product['stock'];
 
@@ -202,7 +509,7 @@ class GoodsController extends Controller
 
             }
             $noIds = array_diff($productIds, $ids);
-            $noProds = Products::whereIn('id', $noIds)->where('is_del',0)->get();
+            $noProds = Products::whereIn('id', $noIds)->where('is_del', 0)->get();
             foreach ($noProds as $noProd) {
                 $stock -= $noProd->stock;
                 $freezeStock -= $noProd->freeze_stock;
@@ -220,8 +527,125 @@ class GoodsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
+     * delete
+     * 删除商品
+     * @urlParam good required 商品ID Example:2
+     * @response {
+    "code": 1,
+    "message": "删除成功",
+    "data": {
+    "goods": [
+    {
+    "id": 1,
+    "bn": "G_202007091799",
+    "name": "三星S10",
+    "brief": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "image_id": 1,
+    "pics": "",
+    "goods_category_id": 2,
+    "goods_type_id": 1,
+    "brand_id": 1,
+    "marketable": 1,
+    "stock": 190,
+    "freeze_stock": 40,
+    "weight": "120.00",
+    "unit": "克",
+    "introduction": null,
+    "comments_count": 0,
+    "view_count": 0,
+    "buy_count": 0,
+    "up_at": "2020-07-09 18:22:34",
+    "down_at": null,
+    "sort": 10,
+    "is_recommend": 2,
+    "is_hot": 1,
+    "label_ids": "",
+    "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
+    "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
+    "created_at": "2020-07-09 18:22:34",
+    "updated_at": "2020-07-09 18:34:50",
+    "is_del": 1,
+    "product": [
+    {
+    "id": 1,
+    "goods_id": 1,
+    "barcode": "",
+    "sku_code": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 50,
+    "freeze_stock": 5,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+    "is_default": 1,
+    "image_id": 2,
+    "created_at": "2020-07-09 18:22:34",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    },
+    {
+    "id": 3,
+    "goods_id": 1,
+    "barcode": "",
+    "sku_code": "",
+    "price": "100.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 90,
+    "freeze_stock": 18,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+    "is_default": 2,
+    "image_id": 4,
+    "created_at": "2020-07-09 18:22:34",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    },
+    {
+    "id": 5,
+    "goods_id": 1,
+    "barcode": "P__2020070917995",
+    "sku_code": "",
+    "price": "120.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 10,
+    "freeze_stock": 2,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+    "is_default": 2,
+    "image_id": 7,
+    "created_at": "2020-07-09 18:22:41",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    },
+    {
+    "id": 6,
+    "goods_id": 1,
+    "barcode": "P__2020070917996",
+    "sku_code": "",
+    "price": "150.00",
+    "costprice": "0.00",
+    "mktprice": "0.00",
+    "marketable": 1,
+    "stock": 40,
+    "freeze_stock": 15,
+    "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+    "is_default": 2,
+    "image_id": 6,
+    "created_at": "2020-07-09 18:22:41",
+    "updated_at": "2020-07-09 18:22:41",
+    "is_del": 0
+    }
+    ]
+    }
+    ]
+    }
+     * }
      * @param  int  $id
      * @return JsonResponse
      */

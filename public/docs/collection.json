@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "2e0268dd-40de-47b8-b89c-a99b56601899",
+        "_postman_id": "46d23ca3-757d-4b06-87b9-71bced21e9b9",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -27,7 +27,7 @@
                                 },
                                 {
                                     "key": "is_del",
-                                    "value": "neque",
+                                    "value": "culpa",
                                     "description": "\u662f\u5426\u5220\u9664",
                                     "disabled": false
                                 },
@@ -49,11 +49,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -77,11 +77,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -113,11 +113,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -149,11 +149,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -185,11 +185,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -203,39 +203,11 @@
             ]
         },
         {
-            "name": "general",
-            "description": "",
+            "name": "Category",
+            "description": "\u5546\u54c1\u5206\u7c7b\u63a5\u53e3",
             "item": [
                 {
-                    "name": "api\/images",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/images",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"images\": {\n        \"\": \"sint\"\n    }\n}"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
+                    "name": "index\n\u5206\u7c7b\u5217\u8868",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -247,11 +219,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -263,7 +235,7 @@
                     }
                 },
                 {
-                    "name": "\u83b7\u53d6\u52a0\u524d\u7f00\u7684\u5206\u7c7b\n\u83b7\u53d6\u5546\u54c1\u7c7b\u578b",
+                    "name": "create\n\u83b7\u53d6\u52a0\u524d\u7f00\u7684\u5206\u7c7b\n\u83b7\u53d6\u5546\u54c1\u7c7b\u578b",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -275,11 +247,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -291,7 +263,7 @@
                     }
                 },
                 {
-                    "name": "\u4fdd\u5b58\u5206\u7c7b",
+                    "name": "store\n\u4fdd\u5b58\u5206\u7c7b",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -303,39 +275,47 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"pid\": 1,\n    \"name\": \"\\u77ed\\u88e4\",\n    \"goods_type_id\": 1,\n    \"sort\": 100,\n    \"image_id\": 1,\n    \"status\": 1\n}"
                         },
                         "description": "",
                         "response": []
                     }
                 },
                 {
-                    "name": "\u67e5\u8be2\u5206\u7c7b",
+                    "name": "show\n\u67e5\u8be2\u5206\u7c7b(\u5355\u4e00)",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/category\/:category",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "category",
+                                    "key": "category",
+                                    "value": "1",
+                                    "description": "\u5206\u7c7bID"
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -347,23 +327,31 @@
                     }
                 },
                 {
-                    "name": "\u7f16\u8f91\u5206\u7c7b",
+                    "name": "edit\n\u7f16\u8f91\u5206\u7c7b",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/category\/:category\/edit",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "category",
+                                    "key": "category",
+                                    "value": "1",
+                                    "description": "\u5206\u7c7bID"
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -375,51 +363,67 @@
                     }
                 },
                 {
-                    "name": "\u66f4\u65b0\u5206\u7c7b",
+                    "name": "update\n\u66f4\u65b0\u5206\u7c7b",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/category\/:category",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "category",
+                                    "key": "category",
+                                    "value": "32",
+                                    "description": "\u5206\u7c7bID"
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"pid\": 1,\n    \"name\": \"\\u77ed\\u88e42\",\n    \"goods_type_id\": 1,\n    \"sort\": 100,\n    \"image_id\": 1,\n    \"status\": 1\n}"
                         },
                         "description": "",
                         "response": []
                     }
                 },
                 {
-                    "name": "\u5220\u9664\u5206\u7c7b",
+                    "name": "delete\n\u5220\u9664\u5206\u7c7b",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/category\/:category",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "category",
+                                    "key": "category",
+                                    "value": "1",
+                                    "description": "\u5206\u7c7bID"
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -431,359 +435,96 @@
                     }
                 },
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "status\n\u66f4\u6539\u72b6\u6001",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type",
-                            "query": []
+                            "path": "api\/admin\/category\/status\/:category",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "category",
+                                    "key": "category",
+                                    "value": "1",
+                                    "description": "\u5206\u7c7bID"
+                                }
+                            ]
                         },
-                        "method": "GET",
+                        "method": "PATCH",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"status\": 12\n}"
                         },
                         "description": "",
                         "response": []
                     }
-                },
+                }
+            ]
+        },
+        {
+            "name": "Goods",
+            "description": "\u5546\u54c1\u63a5\u53e3",
+            "item": [
                 {
-                    "name": "api\/admin\/type\/create",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec\/:spec",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec\/:spec",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec\/:spec",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
+                    "name": "index\n\u5546\u54c1\u5217\u8868",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/goods",
-                            "query": []
+                            "query": [
+                                {
+                                    "key": "condition",
+                                    "value": "%E4%B8%89%E6%98%9F",
+                                    "description": "\u5546\u54c1\u540d\u79f0",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "bn",
+                                    "value": "",
+                                    "description": "\u7f16\u7801",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "marketable",
+                                    "value": "1",
+                                    "description": "\u662f\u5426\u4e0a\u67b6",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -795,7 +536,7 @@
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
+                    "name": "create\n\u521b\u5efa",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -807,11 +548,11 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -823,7 +564,7 @@
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "store\n\u4fdd\u5b58\u5546\u54c1",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -835,39 +576,47 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"\\u4e09\\u661fS10 5G\",\n    \"brief\": \"\\u8fd9\\u662f\\u4e00\\u6b3e\\u795e\\u5947\\u7684\\u624b\\u673a\",\n    \"price\": 3688,\n    \"costprice\": 0,\n    \"mktprice\": 0,\n    \"image_id\": 1,\n    \"pics\": \"[2,3,4]\",\n    \"goods_category_id\": 32,\n    \"goods_type_id\": 10,\n    \"brand_id\": 1,\n    \"marketable\": 1,\n    \"stock\": 100,\n    \"freeze_stock\": 100,\n    \"weight\": 123.5,\n    \"unit\": \"\\u514b\",\n    \"introduction\": \"\\u8fd9\\u662f\\u8be6\\u60c5\",\n    \"sort\": 100,\n    \"is_recommend\": 1,\n    \"is_hot\": 2,\n    \"spec_list\": \"{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":[\\\"\\u9ed1\\u8272\\\",\\\"\\u767d\\u8272\\\"]},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":[\\\"2G\\\",\\\"8G\\\"]}\",\n    \"spec_desc\": \"{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":[\\\"\\u9ed1\\u8272\\\",\\\"\\u767d\\u8272\\\",\\\"\\u91d1\\u8272\\\"]},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":[\\\"2G\\\",\\\"4G\\\",\\\"8G]\\\"}\",\n    \"is_del\": 0,\n    \"products\": \"[{\\\"barcode\\\":\\\"\\\",\\\"price\\\":\\\"100\\\",\\\"costprice\\\":\\\"0\\\",\\\"mktprice\\\":\\\"0\\\",\\\"stock\\\":\\\"50\\\",\\\"freeze_stock\\\":\\\"5\\\",\\\"spec_params\\\":[{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":\\\"\\u9ed1\\u8272\\\"},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":\\\"2G\\\"}],\\\"is_default\\\":\\\"1\\\",\\\"image_id\\\":\\\"2\\\",\\\"is_del\\\":\\\"0\\\"},{\\\"barcode\\\":\\\"\\\",\\\"price\\\":\\\"120\\\",\\\"costprice\\\":\\\"0\\\",\\\"mktprice\\\":\\\"0\\\",\\\"stock\\\":\\\"10\\\",\\\"freeze_stock\\\":\\\"2\\\",\\\"spec_params\\\":[{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":\\\"\\u9ed1\\u8272\\\"},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":\\\"4G\\\"}],\\\"is_default\\\":\\\"2\\\",\\\"image_id\\\":\\\"3\\\",\\\"is_del\\\":\\\"0\\\"}]\"\n}"
                         },
                         "description": "",
                         "response": []
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "show\n\u67e5\u8be2\u5546\u54c1(\u5355\u4e00)",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/goods\/:good",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "good",
+                                    "key": "good",
+                                    "value": "1",
+                                    "description": "\u5546\u54c1ID"
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -879,23 +628,31 @@
                     }
                 },
                 {
-                    "name": "Show the form for editing the specified resource.",
+                    "name": "edit\n\u7f16\u8f91\u5546\u54c1",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/goods\/:good\/edit",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "good",
+                                    "key": "good",
+                                    "value": "1",
+                                    "description": "\u5546\u54c1ID"
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -907,23 +664,120 @@
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "update\n\u66f4\u65b0\u5546\u54c1",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "api\/admin\/goods\/:good",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "good",
+                                    "key": "good",
+                                    "value": "2",
+                                    "description": "\u5546\u54c1ID"
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u4e09\\u661fS10 5G\",\n    \"brief\": \"\\u8fd9\\u662f\\u4e00\\u6b3e\\u795e\\u5947\\u7684\\u624b\\u673a\",\n    \"price\": 3688,\n    \"costprice\": 0,\n    \"mktprice\": 0,\n    \"image_id\": 1,\n    \"pics\": \"[2,3,4]\",\n    \"goods_category_id\": 32,\n    \"goods_type_id\": 10,\n    \"brand_id\": 1,\n    \"marketable\": 1,\n    \"stock\": 100,\n    \"freeze_stock\": 100,\n    \"weight\": 123.5,\n    \"unit\": \"\\u514b\",\n    \"introduction\": \"\\u8fd9\\u662f\\u8be6\\u60c5\",\n    \"sort\": 100,\n    \"is_recommend\": 1,\n    \"is_hot\": 2,\n    \"spec_list\": \"{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":[\\\"\\u9ed1\\u8272\\\",\\\"\\u767d\\u8272\\\"]},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":[\\\"2G\\\",\\\"8G\\\"]}\",\n    \"spec_desc\": \"{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":[\\\"\\u9ed1\\u8272\\\",\\\"\\u767d\\u8272\\\",\\\"\\u91d1\\u8272\\\"]},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":[\\\"2G\\\",\\\"4G\\\",\\\"8G]\\\"}\",\n    \"is_del\": 0,\n    \"products\": \"[{\\\"barcode\\\":\\\"\\\",\\\"price\\\":\\\"100\\\",\\\"costprice\\\":\\\"0\\\",\\\"mktprice\\\":\\\"0\\\",\\\"stock\\\":\\\"50\\\",\\\"freeze_stock\\\":\\\"5\\\",\\\"spec_params\\\":[{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":\\\"\\u9ed1\\u8272\\\"},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":\\\"2G\\\"}],\\\"is_default\\\":\\\"1\\\",\\\"image_id\\\":\\\"2\\\",\\\"is_del\\\":\\\"0\\\"},{\\\"barcode\\\":\\\"\\\",\\\"price\\\":\\\"120\\\",\\\"costprice\\\":\\\"0\\\",\\\"mktprice\\\":\\\"0\\\",\\\"stock\\\":\\\"10\\\",\\\"freeze_stock\\\":\\\"2\\\",\\\"spec_params\\\":[{\\\"key\\\":\\\"\\u989c\\u8272\\\",\\\"value\\\":\\\"\\u9ed1\\u8272\\\"},{\\\"key\\\":\\\"\\u5185\\u5b58\\\",\\\"value\\\":\\\"4G\\\"}],\\\"is_default\\\":\\\"2\\\",\\\"image_id\\\":\\\"3\\\",\\\"is_del\\\":\\\"0\\\"}]\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "delete\n\u5220\u9664\u5546\u54c1",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/goods\/:good",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "good",
+                                    "key": "good",
+                                    "value": "2",
+                                    "description": "\u5546\u54c1ID"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Spec",
+            "description": "\u5c5e\u6027\u63a5\u53e3\nClass SpecController",
+            "item": [
+                {
+                    "name": "index\n\u5c5e\u6027\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/spec",
+                            "query": [
+                                {
+                                    "key": "condition",
+                                    "value": "",
+                                    "description": "\u7c7b\u578b\u540d\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -935,23 +789,176 @@
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "store\n\u4fdd\u5b58\u5c5e\u6027",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/:good",
+                            "path": "api\/admin\/spec",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u7801\\u6570\",\n    \"sort\": 100,\n    \"values\": \"[34,35,36,37,38,39,40]\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "show\n\u67e5\u8be2\u5c5e\u6027(\u5355\u4e00)",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/spec\/:spec",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "spec",
+                                    "key": "spec",
+                                    "value": "culpa",
+                                    "description": "\u5c5e\u6027ID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "update\n\u66f4\u65b0\u5c5e\u6027",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/spec\/:spec",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "spec",
+                                    "key": "spec",
+                                    "value": "culpa",
+                                    "description": "\u5c5e\u6027\u540dID"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u7801\\u6570\",\n    \"sort\": 100,\n    \"values\": \"[34,35,36,37,38,39,40]\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "delete\n\u5220\u9664",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/spec\/:spec",
                             "query": []
                         },
                         "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Type",
+            "description": "",
+            "item": [
+                {
+                    "name": "index\n\u7c7b\u578b\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/type",
+                            "query": [
+                                {
+                                    "key": "condition",
+                                    "value": "",
+                                    "description": "\u7c7b\u578b\u540d\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
@@ -963,28 +970,347 @@
                     }
                 },
                 {
-                    "name": "\u66f4\u6539\u72b6\u6001",
+                    "name": "create\n\u521b\u5efa\u7c7b\u578b",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/status\/:category",
+                            "path": "api\/admin\/type\/create",
                             "query": []
                         },
-                        "method": "PATCH",
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             }
                         ],
                         "body": {
                             "mode": "raw",
                             "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "store\n\u4fdd\u5b58\u5206\u7c7b",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/type",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u901a\\u7528\\u7c7b\\u578b\",\n    \"spec_id\": \"[1]\",\n    \"sort\": 100\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "show\n\u67e5\u8be2\u7c7b\u578b(\u5355\u4e00)",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/type\/:type",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "1",
+                                    "description": "\u7c7b\u578bID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "edit\n\u7f16\u8f91\u7c7b\u578b",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/type\/:type\/edit",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "1",
+                                    "description": "\u7c7b\u578bID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "update\n\u66f4\u65b0\u7c7b\u578b",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/type\/:type",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "1",
+                                    "description": "\u7c7b\u578bID"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u901a\\u7528\\u7c7b\\u578b1\",\n    \"spec_id\": \"[1]\",\n    \"sort\": 100\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "delete\n\u5220\u9664\u5206\u7c7b",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/type\/:type",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "type",
+                                    "key": "type",
+                                    "value": "1",
+                                    "description": "\u7c7b\u578bID"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "description": "\u7528\u6237\u63a5\u53e3",
+            "item": [
+                {
+                    "name": "index\n\u7528\u6237\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/user\/index",
+                            "query": [
+                                {
+                                    "key": "phone",
+                                    "value": "",
+                                    "description": "\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "sex",
+                                    "value": "",
+                                    "description": "\u6027\u522b[1:\u7537, 2:\u5973]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "nickname",
+                                    "value": "",
+                                    "description": "\u6635\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "status",
+                                    "value": "",
+                                    "description": "\u72b6\u6001[1:\u6b63\u5e38, 2:\u7981\u7528]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "pid_phone",
+                                    "value": "",
+                                    "description": "\u63a8\u8350\u4eba\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "status\n\u66f4\u6539\u7528\u6237\u72b6\u6001",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/user\/status\/:user",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "1",
+                                    "description": "\u7528\u6237ID"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"2\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Z-Other \u901a\u7528\u63a5\u53e3",
+            "description": "",
+            "item": [
+                {
+                    "name": "upload\n\u4e0a\u4f20\u56fe\u7247",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/images",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"images\": {\n        \"\": \"culpa\"\n    }\n}"
                         },
                         "description": "",
                         "response": []

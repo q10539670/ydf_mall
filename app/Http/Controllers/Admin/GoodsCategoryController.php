@@ -11,11 +11,17 @@ use App\Models\GoodsType;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+/**
+ * @group Category
+ * 商品分类接口
+ * @package App\Http\Controllers\Admin
+ */
 
 class GoodsCategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * index
+     * 分类列表
      *
      * @return JsonResponse
      */
@@ -33,6 +39,7 @@ class GoodsCategoryController extends Controller
     }
 
     /**
+     * create
      * 获取加前缀的分类
      * 获取商品类型
      * @return JsonResponse
@@ -47,8 +54,31 @@ class GoodsCategoryController extends Controller
     }
 
     /**
+     * store
      * 保存分类
-     *
+     * @bodyParam pid int required 父级ID Example: 1
+     * @bodyParam name string required 分类名称 Example: 短裤
+     * @bodyParam goods_type_id int required 商品类型ID Example: 1
+     * @bodyParam sort int required 排序 Example:100
+     * @bodyParam image_id int required 分类图片ID Example:1
+     * @bodyParam status int required 状态[1:显示,2:隐藏] Example:1
+     * @response {
+     * "code": 1,
+    "message": "分类创建成功",
+    "data": {
+    "category": {
+    "pid": "1",
+    "name": "短裤",
+    "goods_type_id": "1",
+    "sort": "100",
+    "image_id": "1",
+    "status": "1",
+    "updated_at": "2020-07-14 09:20:32",
+    "created_at": "2020-07-14 09:20:32",
+    "id": 32
+    }
+    }
+     * }
      * @param Request $request
      * @return JsonResponse
      */
@@ -64,7 +94,9 @@ class GoodsCategoryController extends Controller
     }
 
     /**
-     * 查询分类
+     * show
+     * 查询分类(单一)
+     * @urlParam category required 分类ID Example: 1
      * @param int $id
      * @return JsonResponse
      */
@@ -78,9 +110,10 @@ class GoodsCategoryController extends Controller
     }
 
     /**
+     * edit
      * 编辑分类
-     *
-     * @param int $id
+     * @urlParam category required 分类ID Example: 1
+     * @param  GCRequest  $id
      * @return JsonResponse
      */
     public function edit(GCRequest $id)
@@ -94,10 +127,34 @@ class GoodsCategoryController extends Controller
     }
 
     /**
+     * update
      * 更新分类
-     *
-     * @param Request $request
-     * @param int $id
+     * @urlParam category required 分类ID Example: 32
+     * @bodyParam pid int required 父级ID Example: 1
+     * @bodyParam name string required 分类名称 Example: 短裤2
+     * @bodyParam goods_type_id int required 商品类型ID Example: 1
+     * @bodyParam sort int required 排序 Example:100
+     * @bodyParam image_id int required 分类图片ID Example:1
+     * @bodyParam status int required 状态[1:显示,2:隐藏] Example:1
+     * @response {
+     * "code": 1,
+     * "message": "分类更新成功",
+     * "data": {
+     * "category": {
+     * "pid": "1",
+     * "name": "短裤2",
+     * "goods_type_id": "1",
+     * "sort": "100",
+     * "image_id": "1",
+     * "status": "1",
+     * "updated_at": "2020-07-14 09:20:32",
+     * "created_at": "2020-07-14 09:20:32",
+     * "id": 32
+     * }
+     * }
+     * }
+     * @param  GCRequest  $request
+     * @param  int  $id
      * @return JsonResponse
      */
     public function update(GCRequest $request, $id)
@@ -115,8 +172,14 @@ class GoodsCategoryController extends Controller
     }
 
     /**
+     * delete
      * 删除分类
-     *
+     * @urlParam category required 分类ID Example: 1
+     * @response {
+     *  "code":1,
+     *  "message": "删除成功",
+     *  "data":[]
+     * }
      * @param int $id
      * @return JsonResponse
      */
@@ -131,8 +194,15 @@ class GoodsCategoryController extends Controller
     }
 
     /**
+     * status
      * 更改状态
-     *
+     * @urlParam category required 分类ID Example: 1
+     * @bodyParam status int required 状态[1:显示,2:隐藏]
+     * @response {
+     *  "code":1,
+     *  "message": "状态更改成功",
+     *  "data":[]
+     * }
      * @param Request $request
      * @param int $id
      * @return JsonResponse
@@ -144,6 +214,6 @@ class GoodsCategoryController extends Controller
         GoodsCategory::setStatus($status, $id);
         $cate->status = $status;
         $cate->save();
-        return Helper::Json(1, '状态更改成功', []);
+        return Helper::Json(1, '状态更改成功');
     }
 }

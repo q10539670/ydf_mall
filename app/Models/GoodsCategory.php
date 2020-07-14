@@ -157,8 +157,12 @@ class GoodsCategory extends Model
         } else {
             //同步修改子分类状态为隐藏
             self::where('pid', $id)->where('status', 1)->update(['status' => $status]);
-            //TODO 需要同步修改商品状态
-            //...
+            //同步修改商品状态为下架
+            $ids = array_reduce(self::where('pid',$id)->where('status', 1)->get('id')->toArray(), function ($result, $value) {
+                return array_merge($result, array_values($value));
+            }, array()); //把二维数组的值转成一位数组
+            array_push($ids,$id);
+            Goods::whereIn('goods_category_id',$ids)->where('marketable',1)->update(['marketable'=> $status]);
         }
     }
 }

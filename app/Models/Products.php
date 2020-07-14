@@ -10,4 +10,8 @@ class Products extends Model
 
     protected $guarded = [];
 
+    public function image()
+    {
+        return $this->belongsTo('App\Models\Images');
+    }
 }
