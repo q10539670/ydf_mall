@@ -31,15 +31,15 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $phone = $request->input('phone');
+        $mobile = $request->input('mobile');
         $sex = $request->input('sex');
         $nickname = $request->input('nickname');
         $status = $request->input('status');
-        $pidPhone = $request->input('pid_phone');
+        $pidMobile = $request->input('pid_mobile');
         $currentPage = $request->input('current_page'); //当前页
         $perPage = $request->input('per_page');    //每页显示数量
-        $query = User::when($phone != '', function ($query) use ($phone) {
-            return $query->where('phone', 'like', '%'.$phone.'%');
+        $query = User::when($mobile != '', function ($query) use ($mobile) {
+            return $query->where('mobile', 'like', '%'.$mobile.'%');
         })
             ->when($sex == 1 || $sex == 2, function ($query) use ($sex) {
                 return $query->where('sex', $sex);
@@ -50,12 +50,12 @@ class UserController extends Controller
             ->when($status == 1 || $status == 2, function ($query) use ($status) {
                 return $query->where('status', $status);
             })
-            ->when($pidPhone != '', function ($query) use ($pidPhone) {
-                $ids = array_reduce(User::where('phone', 'like', '%'.$pidPhone.'%')->get('id')->toArray(),
+            ->when($pidMobile != '', function ($query) use ($pidMobile) {
+                $ids = array_reduce(User::where('mobile', 'like', '%'.$pidMobile.'%')->get('id')->toArray(),
                     function ($result, $value) {
                         return array_merge($result, array_values($value));
                     }, array()); //把二维数组的值转成一位数组
-                return $query->whereIn('id', $ids);
+                return $query->whereIn('pid', $ids);
             });
         $query->orderBy('created_at', 'desc');
         $users = self::paginator($query, $currentPage, $perPage);
@@ -82,6 +82,6 @@ class UserController extends Controller
         }
         $user->status = $request->input('status');
         $user->save();
-        Helper::Json(1, '状态修改成功', ['user' => $user]);
+        return Helper::Json(1, '状态修改成功', ['user' => $user]);
     }
 }

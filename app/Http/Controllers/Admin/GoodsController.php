@@ -144,6 +144,7 @@ class GoodsController extends Controller
      * @bodyParam sort int required 商品排序 越小越靠前 Example: 100
      * @bodyParam is_recommend int 推荐标志[1:推荐,2:不推荐] Example: 1
      * @bodyParam is_hot int 热门标志[1:是,2:不是] Example: 2
+     * @bodyParam is_selected int 精选标志[1:是,2:不是] Example: 2
      * @bodyParam label_ids array 标签ID No-example
      * @bodyParam spec_list varchar 商品规格-当前选中 Example: {"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}
      * @bodyParam spec_desc varchar 商品规格-所有 Example: {"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}
@@ -327,6 +328,7 @@ class GoodsController extends Controller
      * @bodyParam sort int required 商品排序 越小越靠前 Example: 100
      * @bodyParam is_recommend int 推荐标志[1:推荐,2:不推荐] Example: 1
      * @bodyParam is_hot int 热门标志[1:是,2:不是] Example: 2
+     * @bodyParam is_selected int 精选标志[1:是,2:不是] Example: 2
      * @bodyParam label_ids array 标签ID No-example
      * @bodyParam spec_list varchar 商品规格-当前选中 Example: {"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}
      * @bodyParam spec_desc varchar 商品规格-所有 Example: {"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}

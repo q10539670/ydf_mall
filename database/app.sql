@@ -241,15 +241,17 @@ create table ydf_coupon(
     amount decimal(10,2) not null default 0.00 comment '金额',
     per_limit tinyint unsigned not null default 0 comment '每人限领数量',
     min_point decimal(10,2) not null default 0.00 comment '使用门槛；0表示无门槛',
-    `start_time` datetime  NULL DEFAULT NULL COMMENT '开始时间',
-    `end_time` datetime  NULL DEFAULT NULL COMMENT '结束时间',
-    use_type tinyint not null default 0 comment '使用类型：0->全场通用；1->指定分类；2->指定商品',
+    start_time datetime  NULL DEFAULT NULL COMMENT '开始时间',
+    end_time datetime  NULL DEFAULT NULL COMMENT '结束时间',
     note varchar(255) not null default '' comment '备注',
     publish_count int not null default 0 comment '发放数量',
-    use_count int not null default 0 comment '发放数量',
+    use_count int not null default 0 comment '使用数量',
     receive_count int not null default 0 comment '领取数量',
     code varchar(64) not null default '' comment '优惠码',
     enable_time datetime NULL DEFAULT NULL COMMENT '可领取的截止日期',
+    status tinyint(1) NULL DEFAULT 1 COMMENT '状态 1:正常 2:禁用',
+    created_at datetime  NULL DEFAULT NULL,
+    updated_at datetime  NULL  DEFAULT NULL,
     primary key (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='优惠券表';
 

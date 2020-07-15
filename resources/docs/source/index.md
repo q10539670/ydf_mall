@@ -1806,6 +1806,7 @@ print_r(json_decode((string) $body));
                     "sort": 100,
                     "is_recommend": 2,
                     "is_hot": 1,
+                    "is_selected": 2,
                     "label_ids": "",
                     "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\"]}",
                     "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
@@ -2566,7 +2567,7 @@ curl -X POST \
     "http://192.168.0.178:8888/api/admin/goods" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
-    -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
+    -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"is_selected":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
 
 ```
 
@@ -2600,6 +2601,7 @@ let body = {
     "sort": 100,
     "is_recommend": 1,
     "is_hot": 2,
+    "is_selected": 2,
     "spec_list": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}",
     "spec_desc": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
     "is_del": 0,
@@ -2645,6 +2647,7 @@ $response = $client->post(
             'sort' => 100,
             'is_recommend' => 1,
             'is_hot' => 2,
+            'is_selected' => 2,
             'spec_list' => '{"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}',
             'spec_desc' => '{"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}',
             'is_del' => 0,
@@ -2796,6 +2799,7 @@ Parameter | Type | Status | Description
         `sort` | integer |  required  | 商品排序 越小越靠前
         `is_recommend` | integer |  optional  | 推荐标志[1:推荐,2:不推荐]
         `is_hot` | integer |  optional  | 热门标志[1:是,2:不是]
+        `is_selected` | integer |  optional  | 精选标志[1:是,2:不是]
         `label_ids` | array |  optional  | 标签ID
         `spec_list` | varchar |  optional  | 商品规格-当前选中
         `spec_desc` | varchar |  optional  | 商品规格-所有
@@ -2924,6 +2928,7 @@ print_r(json_decode((string) $body));
                 "sort": 10,
                 "is_recommend": 2,
                 "is_hot": 1,
+                "is_selected": 2,
                 "label_ids": "",
                 "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
                 "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
@@ -3640,6 +3645,7 @@ print_r(json_decode((string) $body));
                 "sort": 10,
                 "is_recommend": 2,
                 "is_hot": 1,
+                "is_selected": 2,
                 "label_ids": "",
                 "spec_list": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"8G\"]}",
                 "spec_desc": "{\"key\":\"颜色\",\"value\":[\"黑色\",\"白色\",\"金色\"]},{\"key\":\"内存\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
@@ -3748,7 +3754,7 @@ curl -X PUT \
     "http://192.168.0.178:8888/api/admin/goods/2" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
-    -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
+    -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"is_selected":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
 
 ```
 
@@ -3782,6 +3788,7 @@ let body = {
     "sort": 100,
     "is_recommend": 1,
     "is_hot": 2,
+    "is_selected": 2,
     "spec_list": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}",
     "spec_desc": "{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}",
     "is_del": 0,
@@ -3827,6 +3834,7 @@ $response = $client->put(
             'sort' => 100,
             'is_recommend' => 1,
             'is_hot' => 2,
+            'is_selected' => 2,
             'spec_list' => '{"key":"颜色","value":["黑色","白色"]},{"key":"内存","value":["2G","8G"]}',
             'spec_desc' => '{"key":"颜色","value":["黑色","白色","金色"]},{"key":"内存","value":["2G","4G","8G]"}',
             'is_del' => 0,
@@ -3993,6 +4001,7 @@ Parameter | Type | Status | Description
         `sort` | integer |  required  | 商品排序 越小越靠前
         `is_recommend` | integer |  optional  | 推荐标志[1:推荐,2:不推荐]
         `is_hot` | integer |  optional  | 热门标志[1:是,2:不是]
+        `is_selected` | integer |  optional  | 精选标志[1:是,2:不是]
         `label_ids` | array |  optional  | 标签ID
         `spec_list` | varchar |  optional  | 商品规格-当前选中
         `spec_desc` | varchar |  optional  | 商品规格-所有
@@ -5925,7 +5934,7 @@ Parameter | Status | Description
 #User
 
 用户接口
-<!-- START_fd37ef481ce55a9d86e2f35843d32982 -->
+<!-- START_b83d7cd7027ac246cb0f9cecb20c7bc4 -->
 ## index
 用户列表
 
@@ -5933,14 +5942,14 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/user/index?current_page=1&per_page=10" \
+    -G "http://192.168.0.178:8888/api/admin/user?current_page=1&per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"
 ```
 
 ```javascript
 const url = new URL(
-    "http://192.168.0.178:8888/api/admin/user/index"
+    "http://192.168.0.178:8888/api/admin/user"
 );
 
 let params = {
@@ -5967,7 +5976,7 @@ fetch(url, {
 
 $client = new \GuzzleHttp\Client();
 $response = $client->get(
-    'http://192.168.0.178:8888/api/admin/user/index',
+    'http://192.168.0.178:8888/api/admin/user',
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
@@ -6026,9 +6035,9 @@ print_r(json_decode((string) $body));
                         "unique_code": "123456",
                         "pid": 0,
                         "ppid": 0,
-                        "status": 2,
+                        "status": 1,
                         "created_at": "2020-07-14 17:40:19",
-                        "updated_at": "2020-07-14 17:42:07"
+                        "updated_at": "2020-07-15 09:17:30"
                     },
                     "status": 1,
                     "created_at": "2020-07-14 17:41:59",
@@ -6052,9 +6061,9 @@ print_r(json_decode((string) $body));
                         "unique_code": "123456",
                         "pid": 0,
                         "ppid": 0,
-                        "status": 2,
+                        "status": 1,
                         "created_at": "2020-07-14 17:40:19",
-                        "updated_at": "2020-07-14 17:42:07"
+                        "updated_at": "2020-07-15 09:17:30"
                     },
                     "ppid": 0,
                     "status": 1,
@@ -6071,9 +6080,9 @@ print_r(json_decode((string) $body));
                     "unique_code": "123456",
                     "pid": 0,
                     "ppid": 0,
-                    "status": 2,
+                    "status": 1,
                     "created_at": "2020-07-14 17:40:19",
-                    "updated_at": "2020-07-14 17:42:07"
+                    "updated_at": "2020-07-15 09:17:30"
                 }
             ],
             "first_page_url": "\/?page=1",
@@ -6092,7 +6101,7 @@ print_r(json_decode((string) $body));
 ```
 
 ### HTTP Request
-`GET api/admin/user/index`
+`GET api/admin/user`
 
 #### Query Parameters
 
@@ -6106,7 +6115,7 @@ Parameter | Status | Description
     `current_page` |  required  | 当前页
     `per_page` |  required  | 每页显示数量
 
-<!-- END_fd37ef481ce55a9d86e2f35843d32982 -->
+<!-- END_b83d7cd7027ac246cb0f9cecb20c7bc4 -->
 
 <!-- START_cd4ea8061e4098ff43c0a955e533b436 -->
 ## status
