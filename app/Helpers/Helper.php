@@ -49,7 +49,7 @@ class Helper
     {
         $redis = app('redis');
         $redis->select(12);
-        $cacheKeyExpireAt = $cacheKey . 'ExpireAt';
+        $cacheKeyExpireAt = $cacheKey.'ExpireAt';
         $nowTime = now()->timestamp;
         /*不存在或者过期*/
         if ((!$redis->exists($cacheKeyExpireAt)) || $redis->get($cacheKeyExpireAt) < $nowTime) {
@@ -67,7 +67,7 @@ class Helper
     {
         $redis = app('redis');
         $redis->select(12);
-        $rKey = 'wx:' . $itemName . ':stopResubmit:' . $userId;
+        $rKey = 'wx:'.$itemName.':stopResubmit:'.$userId;
         $rVal = $redis->incr($rKey);
         if ($rVal > 1) {
             return false;
@@ -78,15 +78,15 @@ class Helper
 
     /**
      * 保存微信头像
-     * @param $avatar //微信头像地址
-     * @param $controllerName //前控制器名称
+     * @param $avatar  //微信头像地址
+     * @param $controllerName  //前控制器名称
      * @return string   返回存储的路径
      */
     public static function generateAvatar($avatar, $controllerName)
     {
         $client = new Client();
         $res = $client->request('GET', $avatar);
-        $avatarPath = 'upload/items/' . $controllerName . '/avatar/' . md5(date('YmdHis') . str_random(8)) . '.png';
+        $avatarPath = 'upload/items/'.$controllerName.'/avatar/'.md5(date('YmdHis').str_random(8)).'.png';
         $storage = Storage::disk('public');
         $storage->put($avatarPath, $res->getBody());
         return $avatarPath;
@@ -94,10 +94,10 @@ class Helper
 
 
     /**
-     * @param int $code
-     * @param string $message
+     * @param  int  $code
+     * @param  string  $message
      * @param $data
-     * @param bool $type
+     * @param  bool  $type
      * @return \Illuminate\Http\JsonResponse
      */
     public static function Json($code = 1, $message = '', $data = [], $type = false)
@@ -180,9 +180,13 @@ class Helper
     public static function getRedisShareData($itemName)
     {
         Redis::connection()->select(0);
-        $res = Redis::hgetall('wx:view:' . $itemName);
-        if (!isset($res['tl'])) $res['tl'] = 0;
-        if (!isset($res['firend'])) $res['firend'] = 0;
+        $res = Redis::hgetall('wx:view:'.$itemName);
+        if (!isset($res['tl'])) {
+            $res['tl'] = 0;
+        }
+        if (!isset($res['firend'])) {
+            $res['firend'] = 0;
+        }
         return $res;
     }
 
@@ -194,7 +198,7 @@ class Helper
         $emojiStr = preg_replace_callback('/./u', function (array $match) {
             return strlen($match[0]) >= 4 ? '' : $match[0];
         }, $emojiStr);
-        return '`' . $emojiStr;    //昵称前面加半角符号 防止 EXCEL报错
+        return '`'.$emojiStr;    //昵称前面加半角符号 防止 EXCEL报错
     }
 
     /**
@@ -205,25 +209,32 @@ class Helper
         $ip = false;
         if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown")) {
             $ip = getenv("HTTP_CLIENT_IP");
-        } else if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) {
-            $ips = explode(", ", getenv("HTTP_X_FORWARDED_FOR"));
-            if ($ip) {
-                array_unshift($ips, $ip);
-                $ip = false;
-            }
-            $ipsCount = count($ips);
-            for ($i = 0; $i < $ipsCount; $i++) {
-                if (!preg_match("/^(10|172\.16|192\.168)\./i", $ips[$i])) {
-                    $ip = $ips[$i];
-                    break;
+        } else {
+            if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) {
+                $ips = explode(", ", getenv("HTTP_X_FORWARDED_FOR"));
+                if ($ip) {
+                    array_unshift($ips, $ip);
+                    $ip = false;
+                }
+                $ipsCount = count($ips);
+                for ($i = 0; $i < $ipsCount; $i++) {
+                    if (!preg_match("/^(10|172\.16|192\.168)\./i", $ips[$i])) {
+                        $ip = $ips[$i];
+                        break;
+                    }
+                }
+            } else {
+                if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) {
+                    $ip = getenv("REMOTE_ADDR");
+                } else {
+                    if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'],
+                            "unknown")) {
+                        $ip = $_SERVER['REMOTE_ADDR'];
+                    } else {
+                        $ip = "unknown";
+                    }
                 }
             }
-        } else if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) {
-            $ip = getenv("REMOTE_ADDR");
-        } else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) {
-            $ip = $_SERVER['REMOTE_ADDR'];
-        } else {
-            $ip = "unknown";
         }
         return self::isIp($ip) ? $ip : "unknown";
     }
@@ -245,6 +256,14 @@ class Helper
      */
     public static function checkMobile($mobile)
     {
-        return preg_match('/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/i', $mobile);
+        return preg_match('/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/i',
+            $mobile);
+    }
+
+    public static function formatDateString($dateRange)
+    {
+        return $dateRange[0] != '' && $dateRange[1] != '' ? [
+            $dateRange[0].' 00:00:00', $dateRange[1].' 23:59:59'
+        ] : '';
     }
 }

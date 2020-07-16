@@ -26,6 +26,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'cors
     Route::resource('type', 'GoodsTypeController')->names('type');                     //类型
     Route::resource('spec', 'SpecController')->names('spec');                          //属性
     Route::resource('goods', 'GoodsController')->names('goods');                       //商品
+    Route::resource('coupon', 'CouponController')->names('coupon');                    //优惠券
+    Route::resource('promotion', 'PromotionController')->names('promotion');           //促销
 
 
     Route::get('user', 'UserController@index')->name('user'); //用户列表

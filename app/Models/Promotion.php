@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Coupon extends Model
+class Promotion extends Model
 {
 
 
-    protected $table = 'ydf_coupon';
+    protected $table = 'ydf_promotion';
 
     protected $guarded = [];
 
