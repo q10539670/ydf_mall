@@ -1859,9 +1859,95 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "coupons": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 4,
+                    "type": 0,
+                    "name": "20元优惠券",
+                    "use_key": 0,
+                    "use_value": "",
+                    "amount": "20.00",
+                    "per_limit": 1,
+                    "min_point": "0.00",
+                    "start_time": "2020-07-01 00:00:00",
+                    "end_time": "2020-08-31 00:00:00",
+                    "note": "这是一张优惠券",
+                    "publish_count": 1000,
+                    "use_count": 0,
+                    "receive_count": 0,
+                    "code": "F3494507D47DC700",
+                    "enable_time": "2020-07-31 00:00:00",
+                    "status": 1,
+                    "is_del": 0,
+                    "created_at": "2020-07-16 14:44:10",
+                    "updated_at": "2020-07-16 14:44:10"
+                },
+                {
+                    "id": 3,
+                    "type": 0,
+                    "name": "50元优惠券",
+                    "use_key": 0,
+                    "use_value": "",
+                    "amount": "50.00",
+                    "per_limit": 1,
+                    "min_point": "100.00",
+                    "start_time": "2020-07-01 00:00:00",
+                    "end_time": "2020-08-31 23:59:59",
+                    "note": "这是一张50元的优惠券",
+                    "publish_count": 1000,
+                    "use_count": 0,
+                    "receive_count": 0,
+                    "code": "97D7BE62C439EB97",
+                    "enable_time": "2020-07-31 23:59:59",
+                    "status": 1,
+                    "is_del": 0,
+                    "created_at": "2020-07-16 14:29:17",
+                    "updated_at": "2020-07-17 10:16:07"
+                },
+                {
+                    "id": 1,
+                    "type": 0,
+                    "name": "20元优惠券",
+                    "use_key": 0,
+                    "use_value": "",
+                    "amount": "20.00",
+                    "per_limit": 1,
+                    "min_point": "10.00",
+                    "start_time": "2020-07-01 00:00:00",
+                    "end_time": "2020-08-31 23:59:59",
+                    "note": "这是一张优惠券",
+                    "publish_count": 1000,
+                    "use_count": 0,
+                    "receive_count": 0,
+                    "code": "E92EE45AB1A3C690",
+                    "enable_time": "2020-07-31 23:59:59",
+                    "status": 1,
+                    "is_del": 0,
+                    "created_at": "2020-07-16 14:22:00",
+                    "updated_at": "2020-07-17 10:15:23"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": 10,
+            "prev_page_url": null,
+            "to": 3,
+            "total": 3
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/coupon</code></p>
 <h4>Query Parameters</h4>
@@ -1946,9 +2032,200 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "cates": [
+            {
+                "id": 1,
+                "pid": 0,
+                "name": "|----男装",
+                "status": 2
+            },
+            {
+                "id": 2,
+                "pid": 1,
+                "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
+                "status": 2
+            },
+            {
+                "id": 26,
+                "pid": 0,
+                "name": "|----1",
+                "status": 1
+            },
+            {
+                "id": 29,
+                "pid": 0,
+                "name": "|----你好啊",
+                "status": 1
+            },
+            {
+                "id": 30,
+                "pid": 0,
+                "name": "|----装备",
+                "status": 1
+            },
+            {
+                "id": 31,
+                "pid": 0,
+                "name": "|----啊啊",
+                "status": 1
+            }
+        ],
+        "goods": [
+            {
+                "id": 1,
+                "bn": "",
+                "name": "1号衣服",
+                "brief": "",
+                "price": "200.00",
+                "costprice": "100.00",
+                "mktprice": "240.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 2,
+                "goods_type_id": 5,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 1,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": "2020-07-17 16:06:18"
+            },
+            {
+                "id": 2,
+                "bn": "",
+                "name": "2号衣服",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 1,
+                "goods_type_id": 5,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 3,
+                "bn": "",
+                "name": "3号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 11,
+                "goods_type_id": 3,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 4,
+                "bn": "",
+                "name": "4号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 10,
+                "goods_type_id": 0,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/coupon/create</code></p>
 <!-- END_f5074db5c32272c395317ffe38487dd4 -->
@@ -2185,9 +2462,224 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "coupon": [
+            {
+                "id": 1,
+                "type": 0,
+                "name": "20元优惠券",
+                "use_key": 0,
+                "use_value": "",
+                "amount": "20.00",
+                "per_limit": 1,
+                "min_point": "10.00",
+                "start_time": "2020-07-01 00:00:00",
+                "end_time": "2020-08-31 23:59:59",
+                "note": "这是一张优惠券",
+                "publish_count": 1000,
+                "use_count": 0,
+                "receive_count": 0,
+                "code": "E92EE45AB1A3C690",
+                "enable_time": "2020-07-31 23:59:59",
+                "status": 1,
+                "is_del": 0,
+                "created_at": "2020-07-16 14:22:00",
+                "updated_at": "2020-07-17 10:15:23"
+            }
+        ],
+        "cates": [
+            {
+                "id": 1,
+                "pid": 0,
+                "name": "|----男装",
+                "status": 2
+            },
+            {
+                "id": 2,
+                "pid": 1,
+                "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
+                "status": 2
+            },
+            {
+                "id": 26,
+                "pid": 0,
+                "name": "|----1",
+                "status": 1
+            },
+            {
+                "id": 29,
+                "pid": 0,
+                "name": "|----你好啊",
+                "status": 1
+            },
+            {
+                "id": 30,
+                "pid": 0,
+                "name": "|----装备",
+                "status": 1
+            },
+            {
+                "id": 31,
+                "pid": 0,
+                "name": "|----啊啊",
+                "status": 1
+            }
+        ],
+        "goods": [
+            {
+                "id": 1,
+                "bn": "",
+                "name": "1号衣服",
+                "brief": "",
+                "price": "200.00",
+                "costprice": "100.00",
+                "mktprice": "240.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 2,
+                "goods_type_id": 5,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 1,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": "2020-07-17 16:06:18"
+            },
+            {
+                "id": 2,
+                "bn": "",
+                "name": "2号衣服",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 1,
+                "goods_type_id": 5,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 3,
+                "bn": "",
+                "name": "3号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 11,
+                "goods_type_id": 3,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 4,
+                "bn": "",
+                "name": "4号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 10,
+                "goods_type_id": 0,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/coupon/{coupon}/edit</code></p>
 <h4>URL Parameters</h4>
@@ -2495,7 +2987,7 @@ print_r(json_decode((string) $body));</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods?condition=%E4%B8%89%E6%98%9F&amp;marketable=1&amp;current_page=1&amp;per_page=10" \
+    -G "http://192.168.0.178:8888/api/admin/goods?marketable=1&amp;current_page=1&amp;per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -2503,7 +2995,6 @@ print_r(json_decode((string) $body));</code></pre>
 );
 
 let params = {
-    "condition": "三星",
     "marketable": "1",
     "current_page": "1",
     "per_page": "10",
@@ -2532,7 +3023,6 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'multipart/form-data',
         ],
         'query' =&gt; [
-            'condition'=&gt; '三星',
             'marketable'=&gt; '1',
             'current_page'=&gt; '1',
             'per_page'=&gt; '10',
@@ -2542,9 +3032,597 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "goods": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 1,
+                    "bn": "",
+                    "name": "1号衣服",
+                    "brief": "",
+                    "price": "200.00",
+                    "costprice": "100.00",
+                    "mktprice": "240.00",
+                    "image_id": 6,
+                    "pics": [
+                        {
+                            "id": 6,
+                            "name": "601韵动钻石之花健身操队",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:09",
+                            "updated_at": "2020-06-29 15:38:09"
+                        },
+                        {
+                            "id": 8,
+                            "name": "601韵动钻石之花健身操队2",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "path": "20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:11",
+                            "updated_at": "2020-06-29 15:38:11"
+                        },
+                        {
+                            "id": 9,
+                            "name": "三星logo",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "path": "20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:39:48",
+                            "updated_at": "2020-06-29 15:39:48"
+                        }
+                    ],
+                    "goods_category_id": 2,
+                    "goods_type_id": 5,
+                    "brand_id": 1,
+                    "marketable": 1,
+                    "stock": 0,
+                    "freeze_stock": 0,
+                    "weight": null,
+                    "unit": null,
+                    "introduction": null,
+                    "comments_count": 0,
+                    "view_count": 0,
+                    "buy_count": 0,
+                    "up_at": null,
+                    "down_at": null,
+                    "sort": 100,
+                    "is_recommend": 2,
+                    "is_hot": 2,
+                    "is_selected": 1,
+                    "label_ids": "",
+                    "spec_list": null,
+                    "spec_desc": null,
+                    "is_del": 0,
+                    "created_at": null,
+                    "updated_at": "2020-07-17 16:06:18",
+                    "product": [
+                        {
+                            "id": 1,
+                            "goods_id": 1,
+                            "barcode": "",
+                            "sku_code": "",
+                            "price": "100.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 50,
+                            "freeze_stock": 5,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                            "is_default": 1,
+                            "image_id": 2,
+                            "is_del": 0,
+                            "created_at": "2020-07-09 18:22:34",
+                            "updated_at": "2020-07-09 18:22:41",
+                            "image": {
+                                "id": 2,
+                                "name": "share",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                                "path": "20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-07-10 15:29:01",
+                                "updated_at": "2020-07-10 15:29:01"
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "goods_id": 1,
+                            "barcode": "",
+                            "sku_code": "",
+                            "price": "100.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 90,
+                            "freeze_stock": 18,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                            "is_default": 2,
+                            "image_id": 4,
+                            "is_del": 0,
+                            "created_at": "2020-07-09 18:22:34",
+                            "updated_at": "2020-07-09 18:22:41",
+                            "image": {
+                                "id": 4,
+                                "name": "601韵动钻石之花健身操队2",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                                "path": "20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:32:23",
+                                "updated_at": "2020-06-29 15:32:23"
+                            }
+                        },
+                        {
+                            "id": 5,
+                            "goods_id": 1,
+                            "barcode": "P__2020070917995",
+                            "sku_code": "",
+                            "price": "120.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 10,
+                            "freeze_stock": 2,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                            "is_default": 2,
+                            "image_id": 7,
+                            "is_del": 0,
+                            "created_at": "2020-07-09 18:22:41",
+                            "updated_at": "2020-07-09 18:22:41",
+                            "image": {
+                                "id": 7,
+                                "name": "601韵动钻石之花健身操队1",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/6d20a916f06430004ca0db18b12505ef.jpg",
+                                "path": "20200629\/6d20a916f06430004ca0db18b12505ef.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:38:10",
+                                "updated_at": "2020-06-29 15:38:10"
+                            }
+                        },
+                        {
+                            "id": 6,
+                            "goods_id": 1,
+                            "barcode": "P__2020070917996",
+                            "sku_code": "",
+                            "price": "150.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 40,
+                            "freeze_stock": 15,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                            "is_default": 2,
+                            "image_id": 6,
+                            "is_del": 0,
+                            "created_at": "2020-07-09 18:22:41",
+                            "updated_at": "2020-07-09 18:22:41",
+                            "image": {
+                                "id": 6,
+                                "name": "601韵动钻石之花健身操队",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                                "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:38:09",
+                                "updated_at": "2020-06-29 15:38:09"
+                            }
+                        }
+                    ],
+                    "image": {
+                        "id": 6,
+                        "name": "601韵动钻石之花健身操队",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:38:09",
+                        "updated_at": "2020-06-29 15:38:09"
+                    },
+                    "category": {
+                        "id": 2,
+                        "pid": 1,
+                        "name": "T恤啊啊",
+                        "goods_type_id": 3,
+                        "sort": 100,
+                        "image_id": 80,
+                        "status": 2,
+                        "created_at": null,
+                        "updated_at": "2020-07-07 10:15:38"
+                    },
+                    "type": {
+                        "id": 5,
+                        "name": "通用类型5",
+                        "sort": 100,
+                        "created_at": "2020-07-06 16:51:00",
+                        "updated_at": "2020-07-06 16:51:00"
+                    },
+                    "brand": {
+                        "id": 1,
+                        "name": "三星",
+                        "logo": "56",
+                        "sort": 111,
+                        "is_del": 1,
+                        "created_at": "2020-06-29 14:31:19",
+                        "updated_at": "2020-07-02 15:21:26"
+                    }
+                },
+                {
+                    "id": 2,
+                    "bn": "",
+                    "name": "2号衣服",
+                    "brief": "",
+                    "price": "210.00",
+                    "costprice": "110.00",
+                    "mktprice": "230.00",
+                    "image_id": 6,
+                    "pics": [
+                        {
+                            "id": 6,
+                            "name": "601韵动钻石之花健身操队",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:09",
+                            "updated_at": "2020-06-29 15:38:09"
+                        },
+                        {
+                            "id": 8,
+                            "name": "601韵动钻石之花健身操队2",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "path": "20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:11",
+                            "updated_at": "2020-06-29 15:38:11"
+                        },
+                        {
+                            "id": 9,
+                            "name": "三星logo",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "path": "20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:39:48",
+                            "updated_at": "2020-06-29 15:39:48"
+                        }
+                    ],
+                    "goods_category_id": 1,
+                    "goods_type_id": 5,
+                    "brand_id": 0,
+                    "marketable": 1,
+                    "stock": 0,
+                    "freeze_stock": 0,
+                    "weight": null,
+                    "unit": null,
+                    "introduction": null,
+                    "comments_count": 0,
+                    "view_count": 0,
+                    "buy_count": 0,
+                    "up_at": null,
+                    "down_at": null,
+                    "sort": 100,
+                    "is_recommend": 2,
+                    "is_hot": 2,
+                    "is_selected": 2,
+                    "label_ids": "",
+                    "spec_list": null,
+                    "spec_desc": null,
+                    "is_del": 0,
+                    "created_at": null,
+                    "updated_at": null,
+                    "product": [
+                        {
+                            "id": 7,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429191",
+                            "sku_code": "",
+                            "price": "100.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 50,
+                            "freeze_stock": 5,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                            "is_default": 1,
+                            "image_id": 2,
+                            "is_del": 0,
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "image": {
+                                "id": 2,
+                                "name": "share",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                                "path": "20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-07-10 15:29:01",
+                                "updated_at": "2020-07-10 15:29:01"
+                            }
+                        },
+                        {
+                            "id": 8,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429192",
+                            "sku_code": "",
+                            "price": "120.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 10,
+                            "freeze_stock": 2,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+                            "is_default": 2,
+                            "image_id": 3,
+                            "is_del": 0,
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "image": {
+                                "id": 3,
+                                "name": "三星logo",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/a67e412b04d7b0a5f29233683e97bde9.jpg",
+                                "path": "20200629\/a67e412b04d7b0a5f29233683e97bde9.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:31:06",
+                                "updated_at": "2020-06-29 15:31:06"
+                            }
+                        },
+                        {
+                            "id": 9,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429193",
+                            "sku_code": "",
+                            "price": "100.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 90,
+                            "freeze_stock": 18,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                            "is_default": 2,
+                            "image_id": 4,
+                            "is_del": 0,
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "image": {
+                                "id": 4,
+                                "name": "601韵动钻石之花健身操队2",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                                "path": "20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:32:23",
+                                "updated_at": "2020-06-29 15:32:23"
+                            }
+                        },
+                        {
+                            "id": 10,
+                            "goods_id": 2,
+                            "barcode": "P_2020071429194",
+                            "sku_code": "",
+                            "price": "150.00",
+                            "costprice": "0.00",
+                            "mktprice": "0.00",
+                            "marketable": 1,
+                            "stock": 30,
+                            "freeze_stock": 5,
+                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"4G\"}]",
+                            "is_default": 2,
+                            "image_id": 5,
+                            "is_del": 0,
+                            "created_at": "2020-07-14 10:22:05",
+                            "updated_at": "2020-07-14 10:22:05",
+                            "image": {
+                                "id": 5,
+                                "name": "601韵动钻石之花健身操队2",
+                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/f1e8f823dd285bfb4e71769b44ac1aec.jpg",
+                                "path": "20200629\/f1e8f823dd285bfb4e71769b44ac1aec.jpg",
+                                "is_del": 0,
+                                "created_at": "2020-06-29 15:34:39",
+                                "updated_at": "2020-06-29 15:34:39"
+                            }
+                        }
+                    ],
+                    "image": {
+                        "id": 6,
+                        "name": "601韵动钻石之花健身操队",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:38:09",
+                        "updated_at": "2020-06-29 15:38:09"
+                    },
+                    "category": {
+                        "id": 1,
+                        "pid": 0,
+                        "name": "男装",
+                        "goods_type_id": 0,
+                        "sort": 100,
+                        "image_id": 0,
+                        "status": 2,
+                        "created_at": null,
+                        "updated_at": "2020-07-14 14:34:03"
+                    },
+                    "type": {
+                        "id": 5,
+                        "name": "通用类型5",
+                        "sort": 100,
+                        "created_at": "2020-07-06 16:51:00",
+                        "updated_at": "2020-07-06 16:51:00"
+                    },
+                    "brand": null
+                },
+                {
+                    "id": 3,
+                    "bn": "",
+                    "name": "3号手机",
+                    "brief": "",
+                    "price": "210.00",
+                    "costprice": "110.00",
+                    "mktprice": "230.00",
+                    "image_id": 6,
+                    "pics": [
+                        {
+                            "id": 6,
+                            "name": "601韵动钻石之花健身操队",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:09",
+                            "updated_at": "2020-06-29 15:38:09"
+                        },
+                        {
+                            "id": 8,
+                            "name": "601韵动钻石之花健身操队2",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "path": "20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:11",
+                            "updated_at": "2020-06-29 15:38:11"
+                        },
+                        {
+                            "id": 9,
+                            "name": "三星logo",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "path": "20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:39:48",
+                            "updated_at": "2020-06-29 15:39:48"
+                        }
+                    ],
+                    "goods_category_id": 11,
+                    "goods_type_id": 3,
+                    "brand_id": 0,
+                    "marketable": 1,
+                    "stock": 0,
+                    "freeze_stock": 0,
+                    "weight": null,
+                    "unit": null,
+                    "introduction": null,
+                    "comments_count": 0,
+                    "view_count": 0,
+                    "buy_count": 0,
+                    "up_at": null,
+                    "down_at": null,
+                    "sort": 100,
+                    "is_recommend": 2,
+                    "is_hot": 2,
+                    "is_selected": 2,
+                    "label_ids": "",
+                    "spec_list": null,
+                    "spec_desc": null,
+                    "is_del": 0,
+                    "created_at": null,
+                    "updated_at": null,
+                    "product": [],
+                    "image": {
+                        "id": 6,
+                        "name": "601韵动钻石之花健身操队",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:38:09",
+                        "updated_at": "2020-06-29 15:38:09"
+                    },
+                    "category": null,
+                    "type": {
+                        "id": 3,
+                        "name": "通用类型5",
+                        "sort": 100,
+                        "created_at": "2020-07-06 16:49:49",
+                        "updated_at": "2020-07-06 16:49:49"
+                    },
+                    "brand": null
+                },
+                {
+                    "id": 4,
+                    "bn": "",
+                    "name": "4号手机",
+                    "brief": "",
+                    "price": "210.00",
+                    "costprice": "110.00",
+                    "mktprice": "230.00",
+                    "image_id": 6,
+                    "pics": [
+                        {
+                            "id": 6,
+                            "name": "601韵动钻石之花健身操队",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:09",
+                            "updated_at": "2020-06-29 15:38:09"
+                        },
+                        {
+                            "id": 8,
+                            "name": "601韵动钻石之花健身操队2",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "path": "20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:38:11",
+                            "updated_at": "2020-06-29 15:38:11"
+                        },
+                        {
+                            "id": 9,
+                            "name": "三星logo",
+                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "path": "20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                            "is_del": 0,
+                            "created_at": "2020-06-29 15:39:48",
+                            "updated_at": "2020-06-29 15:39:48"
+                        }
+                    ],
+                    "goods_category_id": 10,
+                    "goods_type_id": 0,
+                    "brand_id": 0,
+                    "marketable": 1,
+                    "stock": 0,
+                    "freeze_stock": 0,
+                    "weight": null,
+                    "unit": null,
+                    "introduction": null,
+                    "comments_count": 0,
+                    "view_count": 0,
+                    "buy_count": 0,
+                    "up_at": null,
+                    "down_at": null,
+                    "sort": 100,
+                    "is_recommend": 2,
+                    "is_hot": 2,
+                    "is_selected": 2,
+                    "label_ids": "",
+                    "spec_list": null,
+                    "spec_desc": null,
+                    "is_del": 0,
+                    "created_at": null,
+                    "updated_at": null,
+                    "product": [],
+                    "image": {
+                        "id": 6,
+                        "name": "601韵动钻石之花健身操队",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:38:09",
+                        "updated_at": "2020-06-29 15:38:09"
+                    },
+                    "category": null,
+                    "type": null,
+                    "brand": null
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 4,
+            "total": 4
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/goods</code></p>
 <h4>Query Parameters</h4>
@@ -2624,9 +3702,514 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "cates": [
+            {
+                "id": 1,
+                "pid": 0,
+                "name": "|----男装",
+                "status": 2
+            },
+            {
+                "id": 2,
+                "pid": 1,
+                "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
+                "status": 2
+            },
+            {
+                "id": 26,
+                "pid": 0,
+                "name": "|----1",
+                "status": 1
+            },
+            {
+                "id": 29,
+                "pid": 0,
+                "name": "|----你好啊",
+                "status": 1
+            },
+            {
+                "id": 30,
+                "pid": 0,
+                "name": "|----装备",
+                "status": 1
+            },
+            {
+                "id": 31,
+                "pid": 0,
+                "name": "|----啊啊",
+                "status": 1
+            }
+        ],
+        "spec": [
+            {
+                "id": 1,
+                "name": "通用",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-06 17:18:24",
+                "updated_at": "2020-07-06 17:18:24"
+            },
+            {
+                "id": 3,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 16:55:04",
+                "updated_at": "2020-07-06 16:55:04"
+            },
+            {
+                "id": 4,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 17:16:29",
+                "updated_at": "2020-07-06 17:16:29"
+            },
+            {
+                "id": 5,
+                "name": "颜色",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-09 14:40:53",
+                "updated_at": "2020-07-09 14:40:53"
+            },
+            {
+                "id": 6,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:33:57",
+                "updated_at": "2020-07-10 11:33:57"
+            },
+            {
+                "id": 7,
+                "name": "电脑",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:34:50",
+                "updated_at": "2020-07-10 11:34:50"
+            },
+            {
+                "id": 8,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:38",
+                "updated_at": "2020-07-10 11:35:38"
+            },
+            {
+                "id": 9,
+                "name": "11",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:47",
+                "updated_at": "2020-07-10 11:35:47"
+            },
+            {
+                "id": 10,
+                "name": "2",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:36:25",
+                "updated_at": "2020-07-10 11:36:25"
+            },
+            {
+                "id": 11,
+                "name": "啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:40:58",
+                "updated_at": "2020-07-10 11:40:58"
+            },
+            {
+                "id": 12,
+                "name": "啊啊",
+                "sort": 11,
+                "details": "",
+                "created_at": "2020-07-10 11:41:38",
+                "updated_at": "2020-07-10 11:41:38"
+            },
+            {
+                "id": 13,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 12:01:30",
+                "updated_at": "2020-07-10 12:01:30"
+            },
+            {
+                "id": 14,
+                "name": "啊实打实大撒",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:17:43",
+                "updated_at": "2020-07-10 16:17:43"
+            },
+            {
+                "id": 15,
+                "name": "手表",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:19:24",
+                "updated_at": "2020-07-10 16:19:24"
+            },
+            {
+                "id": 16,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 11:08:54",
+                "updated_at": "2020-07-14 11:08:54"
+            },
+            {
+                "id": 17,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 17:27:28",
+                "updated_at": "2020-07-14 17:27:28"
+            }
+        ],
+        "brand": [
+            {
+                "id": 1,
+                "name": "三星",
+                "logo": "56",
+                "sort": 111,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 15:21:26"
+            },
+            {
+                "id": 2,
+                "name": "1",
+                "logo": "1",
+                "sort": 99,
+                "is_del": 0,
+                "created_at": "2020-06-29 17:34:32",
+                "updated_at": "2020-07-01 17:29:12"
+            },
+            {
+                "id": 18,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 108,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:29:37"
+            },
+            {
+                "id": 19,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 108,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:30:06"
+            },
+            {
+                "id": 20,
+                "name": "1",
+                "logo": "58",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:42:20"
+            },
+            {
+                "id": 21,
+                "name": "12",
+                "logo": "59",
+                "sort": 12,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:43:09"
+            },
+            {
+                "id": 22,
+                "name": "2",
+                "logo": "60",
+                "sort": 2,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:45:52"
+            },
+            {
+                "id": 23,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 11:56:07"
+            },
+            {
+                "id": 24,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 16:17:47"
+            },
+            {
+                "id": 25,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 16:18:32"
+            },
+            {
+                "id": 26,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-07 11:09:20"
+            },
+            {
+                "id": 27,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 16:21:40"
+            },
+            {
+                "id": 28,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:49:07"
+            },
+            {
+                "id": 29,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-06-30 17:38:23"
+            },
+            {
+                "id": 30,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-06-30 17:38:03"
+            },
+            {
+                "id": 31,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88111,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 09:55:16"
+            },
+            {
+                "id": 32,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 09:56:50"
+            },
+            {
+                "id": 33,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 09:58:51"
+            },
+            {
+                "id": 34,
+                "name": "1",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-08 10:12:06"
+            },
+            {
+                "id": 35,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 11:56:13"
+            },
+            {
+                "id": 36,
+                "name": "三星",
+                "logo": "1",
+                "sort": 100,
+                "is_del": 0,
+                "created_at": "2020-06-30 17:59:15",
+                "updated_at": "2020-06-30 17:59:15"
+            },
+            {
+                "id": 37,
+                "name": "啊",
+                "logo": "1",
+                "sort": 101,
+                "is_del": 0,
+                "created_at": "2020-06-30 18:11:16",
+                "updated_at": "2020-07-01 16:55:46"
+            },
+            {
+                "id": 38,
+                "name": "阿斯顿撒",
+                "logo": "50",
+                "sort": 123,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:49:58",
+                "updated_at": "2020-07-01 16:56:29"
+            },
+            {
+                "id": 39,
+                "name": "三星啊",
+                "logo": "52",
+                "sort": 123,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:51:10",
+                "updated_at": "2020-07-01 17:03:39"
+            },
+            {
+                "id": 40,
+                "name": "13",
+                "logo": "53",
+                "sort": 122,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:52:24",
+                "updated_at": "2020-07-01 17:25:35"
+            },
+            {
+                "id": 41,
+                "name": "三星",
+                "logo": "1",
+                "sort": 10123,
+                "is_del": 1,
+                "created_at": "2020-07-01 15:53:52",
+                "updated_at": "2020-07-01 16:48:43"
+            },
+            {
+                "id": 42,
+                "name": "啊实打实大",
+                "logo": "1",
+                "sort": 123,
+                "is_del": 1,
+                "created_at": "2020-07-01 15:53:53",
+                "updated_at": "2020-07-01 16:49:30"
+            },
+            {
+                "id": 43,
+                "name": "三星",
+                "logo": "1",
+                "sort": 1011,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:55:05",
+                "updated_at": "2020-07-01 16:46:37"
+            },
+            {
+                "id": 44,
+                "name": "123",
+                "logo": "1",
+                "sort": 123,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:55:40",
+                "updated_at": "2020-07-01 16:47:14"
+            },
+            {
+                "id": 45,
+                "name": "三星1",
+                "logo": "1",
+                "sort": 101,
+                "is_del": 1,
+                "created_at": "2020-07-01 16:01:41",
+                "updated_at": "2020-07-02 18:35:05"
+            },
+            {
+                "id": 46,
+                "name": "三星",
+                "logo": "1",
+                "sort": 111,
+                "is_del": 0,
+                "created_at": "2020-07-01 16:06:20",
+                "updated_at": "2020-07-01 16:45:27"
+            },
+            {
+                "id": 47,
+                "name": "啊",
+                "logo": "86",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-07 10:58:24",
+                "updated_at": "2020-07-10 15:28:27"
+            },
+            {
+                "id": 48,
+                "name": "1",
+                "logo": "87",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-07 10:59:51",
+                "updated_at": "2020-07-08 10:11:42"
+            },
+            {
+                "id": 49,
+                "name": "1",
+                "logo": "88",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-07 11:01:10",
+                "updated_at": "2020-07-07 11:09:26"
+            },
+            {
+                "id": 50,
+                "name": "已",
+                "logo": "89",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-08 10:42:13",
+                "updated_at": "2020-07-08 10:42:15"
+            },
+            {
+                "id": 51,
+                "name": "三星",
+                "logo": "1",
+                "sort": 100,
+                "is_del": 0,
+                "created_at": "2020-07-13 17:37:27",
+                "updated_at": "2020-07-13 17:37:27"
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/goods/create</code></p>
 <!-- END_6b55ae11d145b85c42a4d1a51c3a4e49 -->
@@ -3046,9 +4629,189 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "goods": [
+            {
+                "id": 1,
+                "bn": "",
+                "name": "1号衣服",
+                "brief": "",
+                "price": "200.00",
+                "costprice": "100.00",
+                "mktprice": "240.00",
+                "image_id": 6,
+                "pics": [
+                    {
+                        "id": 6,
+                        "name": "601韵动钻石之花健身操队",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:38:09",
+                        "updated_at": "2020-06-29 15:38:09"
+                    },
+                    {
+                        "id": 8,
+                        "name": "601韵动钻石之花健身操队2",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                        "path": "20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:38:11",
+                        "updated_at": "2020-06-29 15:38:11"
+                    },
+                    {
+                        "id": 9,
+                        "name": "三星logo",
+                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                        "path": "20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
+                        "is_del": 0,
+                        "created_at": "2020-06-29 15:39:48",
+                        "updated_at": "2020-06-29 15:39:48"
+                    }
+                ],
+                "goods_category_id": 2,
+                "goods_type_id": 5,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 1,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": "2020-07-17 16:06:18",
+                "product": [
+                    {
+                        "id": 1,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 50,
+                        "freeze_stock": 5,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 1,
+                        "image_id": 2,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41"
+                    },
+                    {
+                        "id": 3,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 90,
+                        "freeze_stock": 18,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 2,
+                        "image_id": 4,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41"
+                    },
+                    {
+                        "id": 5,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917995",
+                        "sku_code": "",
+                        "price": "120.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 10,
+                        "freeze_stock": 2,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 7,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41"
+                    },
+                    {
+                        "id": 6,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917996",
+                        "sku_code": "",
+                        "price": "150.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 40,
+                        "freeze_stock": 15,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 6,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41"
+                    }
+                ],
+                "image": {
+                    "id": 6,
+                    "name": "601韵动钻石之花健身操队",
+                    "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                    "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
+                    "is_del": 0,
+                    "created_at": "2020-06-29 15:38:09",
+                    "updated_at": "2020-06-29 15:38:09"
+                },
+                "category": {
+                    "id": 2,
+                    "pid": 1,
+                    "name": "T恤啊啊",
+                    "goods_type_id": 3,
+                    "sort": 100,
+                    "image_id": 80,
+                    "status": 2,
+                    "created_at": null,
+                    "updated_at": "2020-07-07 10:15:38"
+                },
+                "type": {
+                    "id": 5,
+                    "name": "通用类型5",
+                    "sort": 100,
+                    "created_at": "2020-07-06 16:51:00",
+                    "updated_at": "2020-07-06 16:51:00"
+                },
+                "brand": {
+                    "id": 1,
+                    "name": "三星",
+                    "logo": "56",
+                    "sort": 111,
+                    "is_del": 1,
+                    "created_at": "2020-06-29 14:31:19",
+                    "updated_at": "2020-07-02 15:21:26"
+                }
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/goods/{good}</code></p>
 <h4>URL Parameters</h4>
@@ -3108,9 +4871,625 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "cates": [
+            {
+                "id": 1,
+                "pid": 0,
+                "name": "|----男装",
+                "status": 2
+            },
+            {
+                "id": 2,
+                "pid": 1,
+                "name": "|----|----T恤啊啊",
+                "status": 2
+            },
+            {
+                "id": 32,
+                "pid": 1,
+                "name": "|----|----短裤",
+                "status": 2
+            },
+            {
+                "id": 26,
+                "pid": 0,
+                "name": "|----1",
+                "status": 1
+            },
+            {
+                "id": 29,
+                "pid": 0,
+                "name": "|----你好啊",
+                "status": 1
+            },
+            {
+                "id": 30,
+                "pid": 0,
+                "name": "|----装备",
+                "status": 1
+            },
+            {
+                "id": 31,
+                "pid": 0,
+                "name": "|----啊啊",
+                "status": 1
+            }
+        ],
+        "spec": [
+            {
+                "id": 1,
+                "name": "通用",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-06 17:18:24",
+                "updated_at": "2020-07-06 17:18:24"
+            },
+            {
+                "id": 3,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 16:55:04",
+                "updated_at": "2020-07-06 16:55:04"
+            },
+            {
+                "id": 4,
+                "name": "内存",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-06 17:16:29",
+                "updated_at": "2020-07-06 17:16:29"
+            },
+            {
+                "id": 5,
+                "name": "颜色",
+                "sort": 10,
+                "details": "",
+                "created_at": "2020-07-09 14:40:53",
+                "updated_at": "2020-07-09 14:40:53"
+            },
+            {
+                "id": 6,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:33:57",
+                "updated_at": "2020-07-10 11:33:57"
+            },
+            {
+                "id": 7,
+                "name": "电脑",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:34:50",
+                "updated_at": "2020-07-10 11:34:50"
+            },
+            {
+                "id": 8,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:38",
+                "updated_at": "2020-07-10 11:35:38"
+            },
+            {
+                "id": 9,
+                "name": "11",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:35:47",
+                "updated_at": "2020-07-10 11:35:47"
+            },
+            {
+                "id": 10,
+                "name": "2",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:36:25",
+                "updated_at": "2020-07-10 11:36:25"
+            },
+            {
+                "id": 11,
+                "name": "啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 11:40:58",
+                "updated_at": "2020-07-10 11:40:58"
+            },
+            {
+                "id": 12,
+                "name": "啊啊",
+                "sort": 11,
+                "details": "",
+                "created_at": "2020-07-10 11:41:38",
+                "updated_at": "2020-07-10 11:41:38"
+            },
+            {
+                "id": 13,
+                "name": "啊啊",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 12:01:30",
+                "updated_at": "2020-07-10 12:01:30"
+            },
+            {
+                "id": 14,
+                "name": "啊实打实大撒",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:17:43",
+                "updated_at": "2020-07-10 16:17:43"
+            },
+            {
+                "id": 15,
+                "name": "手表",
+                "sort": 1,
+                "details": "",
+                "created_at": "2020-07-10 16:19:24",
+                "updated_at": "2020-07-10 16:19:24"
+            },
+            {
+                "id": 16,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 11:08:54",
+                "updated_at": "2020-07-14 11:08:54"
+            },
+            {
+                "id": 17,
+                "name": "码数",
+                "sort": 100,
+                "details": "",
+                "created_at": "2020-07-14 17:27:28",
+                "updated_at": "2020-07-14 17:27:28"
+            }
+        ],
+        "brand": [
+            {
+                "id": 1,
+                "name": "三星",
+                "logo": "56",
+                "sort": 111,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 15:21:26"
+            },
+            {
+                "id": 2,
+                "name": "1",
+                "logo": "1",
+                "sort": 99,
+                "is_del": 0,
+                "created_at": "2020-06-29 17:34:32",
+                "updated_at": "2020-07-01 17:29:12"
+            },
+            {
+                "id": 18,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 108,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:29:37"
+            },
+            {
+                "id": 19,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 108,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:30:06"
+            },
+            {
+                "id": 20,
+                "name": "1",
+                "logo": "58",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:42:20"
+            },
+            {
+                "id": 21,
+                "name": "12",
+                "logo": "59",
+                "sort": 12,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:43:09"
+            },
+            {
+                "id": 22,
+                "name": "2",
+                "logo": "60",
+                "sort": 2,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:45:52"
+            },
+            {
+                "id": 23,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 11:56:07"
+            },
+            {
+                "id": 24,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 16:17:47"
+            },
+            {
+                "id": 25,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 16:18:32"
+            },
+            {
+                "id": 26,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-07 11:09:20"
+            },
+            {
+                "id": 27,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 16:21:40"
+            },
+            {
+                "id": 28,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-01 17:49:07"
+            },
+            {
+                "id": 29,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-06-30 17:38:23"
+            },
+            {
+                "id": 30,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-06-30 17:38:03"
+            },
+            {
+                "id": 31,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88111,
+                "is_del": 0,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 09:55:16"
+            },
+            {
+                "id": 32,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 09:56:50"
+            },
+            {
+                "id": 33,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 09:58:51"
+            },
+            {
+                "id": 34,
+                "name": "1",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-08 10:12:06"
+            },
+            {
+                "id": 35,
+                "name": "三星白",
+                "logo": "1",
+                "sort": 88,
+                "is_del": 1,
+                "created_at": "2020-06-29 14:31:19",
+                "updated_at": "2020-07-02 11:56:13"
+            },
+            {
+                "id": 36,
+                "name": "三星",
+                "logo": "1",
+                "sort": 100,
+                "is_del": 0,
+                "created_at": "2020-06-30 17:59:15",
+                "updated_at": "2020-06-30 17:59:15"
+            },
+            {
+                "id": 37,
+                "name": "啊",
+                "logo": "1",
+                "sort": 101,
+                "is_del": 0,
+                "created_at": "2020-06-30 18:11:16",
+                "updated_at": "2020-07-01 16:55:46"
+            },
+            {
+                "id": 38,
+                "name": "阿斯顿撒",
+                "logo": "50",
+                "sort": 123,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:49:58",
+                "updated_at": "2020-07-01 16:56:29"
+            },
+            {
+                "id": 39,
+                "name": "三星啊",
+                "logo": "52",
+                "sort": 123,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:51:10",
+                "updated_at": "2020-07-01 17:03:39"
+            },
+            {
+                "id": 40,
+                "name": "13",
+                "logo": "53",
+                "sort": 122,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:52:24",
+                "updated_at": "2020-07-01 17:25:35"
+            },
+            {
+                "id": 41,
+                "name": "三星",
+                "logo": "1",
+                "sort": 10123,
+                "is_del": 1,
+                "created_at": "2020-07-01 15:53:52",
+                "updated_at": "2020-07-01 16:48:43"
+            },
+            {
+                "id": 42,
+                "name": "啊实打实大",
+                "logo": "1",
+                "sort": 123,
+                "is_del": 1,
+                "created_at": "2020-07-01 15:53:53",
+                "updated_at": "2020-07-01 16:49:30"
+            },
+            {
+                "id": 43,
+                "name": "三星",
+                "logo": "1",
+                "sort": 1011,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:55:05",
+                "updated_at": "2020-07-01 16:46:37"
+            },
+            {
+                "id": 44,
+                "name": "123",
+                "logo": "1",
+                "sort": 123,
+                "is_del": 0,
+                "created_at": "2020-07-01 15:55:40",
+                "updated_at": "2020-07-01 16:47:14"
+            },
+            {
+                "id": 45,
+                "name": "三星1",
+                "logo": "1",
+                "sort": 101,
+                "is_del": 1,
+                "created_at": "2020-07-01 16:01:41",
+                "updated_at": "2020-07-02 18:35:05"
+            },
+            {
+                "id": 46,
+                "name": "三星",
+                "logo": "1",
+                "sort": 111,
+                "is_del": 0,
+                "created_at": "2020-07-01 16:06:20",
+                "updated_at": "2020-07-01 16:45:27"
+            },
+            {
+                "id": 47,
+                "name": "啊",
+                "logo": "86",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-07 10:58:24",
+                "updated_at": "2020-07-10 15:28:27"
+            },
+            {
+                "id": 48,
+                "name": "1",
+                "logo": "87",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-07 10:59:51",
+                "updated_at": "2020-07-08 10:11:42"
+            },
+            {
+                "id": 49,
+                "name": "1",
+                "logo": "88",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-07 11:01:10",
+                "updated_at": "2020-07-07 11:09:26"
+            },
+            {
+                "id": 50,
+                "name": "已",
+                "logo": "89",
+                "sort": 1,
+                "is_del": 1,
+                "created_at": "2020-07-08 10:42:13",
+                "updated_at": "2020-07-08 10:42:15"
+            },
+            {
+                "id": 51,
+                "name": "三星",
+                "logo": "1",
+                "sort": 100,
+                "is_del": 0,
+                "created_at": "2020-07-13 17:37:27",
+                "updated_at": "2020-07-13 17:37:27"
+            }
+        ],
+        "goods": [
+            {
+                "id": 1,
+                "bn": "",
+                "name": "1号衣服",
+                "brief": "",
+                "price": "200.00",
+                "costprice": "100.00",
+                "mktprice": "240.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 2,
+                "goods_type_id": 5,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 1,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": "2020-07-17 16:06:18",
+                "product": [
+                    {
+                        "id": 1,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 50,
+                        "freeze_stock": 5,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 1,
+                        "image_id": 2,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41"
+                    },
+                    {
+                        "id": 3,
+                        "goods_id": 1,
+                        "barcode": "",
+                        "sku_code": "",
+                        "price": "100.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 90,
+                        "freeze_stock": 18,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
+                        "is_default": 2,
+                        "image_id": 4,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:34",
+                        "updated_at": "2020-07-09 18:22:41"
+                    },
+                    {
+                        "id": 5,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917995",
+                        "sku_code": "",
+                        "price": "120.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 10,
+                        "freeze_stock": 2,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 7,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41"
+                    },
+                    {
+                        "id": 6,
+                        "goods_id": 1,
+                        "barcode": "P__2020070917996",
+                        "sku_code": "",
+                        "price": "150.00",
+                        "costprice": "0.00",
+                        "mktprice": "0.00",
+                        "marketable": 1,
+                        "stock": 40,
+                        "freeze_stock": 15,
+                        "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
+                        "is_default": 2,
+                        "image_id": 6,
+                        "is_del": 0,
+                        "created_at": "2020-07-09 18:22:41",
+                        "updated_at": "2020-07-09 18:22:41"
+                    }
+                ]
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/goods/{good}/edit</code></p>
 <h4>URL Parameters</h4>
@@ -3711,6 +6090,626 @@ print_r(json_decode((string) $body));</code></pre>
 </tbody>
 </table>
 <!-- END_3f4639ac2921209061f1d8ac93d977c0 -->
+<!-- START_57d8ed12eef0af47cd20ad543e4f506d -->
+<h2>set</h2>
+<p>设置商品属性</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/goods/attr/2?key=marketable&amp;value=2" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/goods/attr/2"
+);
+
+let params = {
+    "key": "marketable",
+    "value": "2",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/goods/attr/2',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'query' =&gt; [
+            'key'=&gt; 'marketable',
+            'value'=&gt; '2',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "设置成功",
+    "data": {
+        "goods": {
+            "id": 2,
+            "bn": "",
+            "name": "2号衣服",
+            "brief": "",
+            "price": "210.00",
+            "costprice": "110.00",
+            "mktprice": "230.00",
+            "image_id": 6,
+            "pics": "6,8,9",
+            "goods_category_id": 1,
+            "goods_type_id": 5,
+            "brand_id": 0,
+            "marketable": "2",
+            "stock": 0,
+            "freeze_stock": 0,
+            "weight": null,
+            "unit": null,
+            "introduction": null,
+            "comments_count": 0,
+            "view_count": 0,
+            "buy_count": 0,
+            "up_at": null,
+            "down_at": null,
+            "sort": 100,
+            "is_recommend": 2,
+            "is_hot": 2,
+            "is_selected": 2,
+            "label_ids": "",
+            "spec_list": null,
+            "spec_desc": null,
+            "is_del": 0,
+            "created_at": null,
+            "updated_at": "2020-07-17 16:10:20"
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/goods/attr/{good}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>good</code></td>
+<td>required</td>
+<td>商品ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td>required</td>
+<td>设置的字段名[marketable,is_recommend,is_hot,is_selected]</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>optional</td>
+<td>设置的字段值[1:(上架or是),2:(下架or否)]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_57d8ed12eef0af47cd20ad543e4f506d -->
+<h1>Logistics</h1>
+<p>物流公司接口</p>
+<!-- START_ac771ff0c9c369a329393a4a2ffeb667 -->
+<h2>index</h2>
+<p>物流公司列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/logi?per_page=10&amp;current_page=1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/logi"
+);
+
+let params = {
+    "per_page": "10",
+    "current_page": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/logi',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'query' =&gt; [
+            'per_page'=&gt; '10',
+            'current_page'=&gt; '1',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "logistics": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 1,
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "sort": 1,
+                    "created_at": "2020-07-17 11:44:44",
+                    "updated_at": "2020-07-17 11:51:57"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 1,
+            "total": 1
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/logi</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>optional</td>
+<td>物流公司名称</td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td>optional</td>
+<td>物流公司编码</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ac771ff0c9c369a329393a4a2ffeb667 -->
+<!-- START_1de8e0ac38162e94265713e62849d786 -->
+<h2>store</h2>
+<p>保存</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/api/admin/logi" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","sort":"100"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/logi"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "logi_name": "\u987a\u4e30\u901f\u8fd0",
+    "logi_code": "SF-Express",
+    "sort": "100"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/api/admin/logi',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'logi_name' =&gt; '顺丰速运',
+            'logi_code' =&gt; 'SF-Express',
+            'sort' =&gt; '100',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "logistics": {
+            "logi_name": "顺丰速运",
+            "logi_code": "SF-Express",
+            "sort": "100",
+            "updated_at": "2020-07-17 11:44:44",
+            "created_at": "2020-07-17 11:44:44",
+            "id": 1
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/admin/logi</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logi_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>物流公司名称</td>
+</tr>
+<tr>
+<td><code>logi_code</code></td>
+<td>string</td>
+<td>required</td>
+<td>物流公司编码</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>numeric</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1de8e0ac38162e94265713e62849d786 -->
+<!-- START_cc13661f343da8623681915c17849e1d -->
+<h2>edit</h2>
+<p>编辑</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/logi/1/edit" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/logi/1/edit"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/api/admin/logi/1/edit',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "logistics": [
+            {
+                "id": 1,
+                "logi_name": "顺丰速运",
+                "logi_code": "SF-Express",
+                "sort": 1,
+                "created_at": "2020-07-17 11:44:44",
+                "updated_at": "2020-07-17 11:51:57"
+            }
+        ]
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/admin/logi/{logi}/edit</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logi</code></td>
+<td>required</td>
+<td>物流ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_cc13661f343da8623681915c17849e1d -->
+<!-- START_678147baaf5700c8523ed3d143d13e11 -->
+<h2>update</h2>
+<p>更新</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://192.168.0.178:8888/api/admin/logi/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","sort":"100"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/logi/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "logi_name": "\u987a\u4e30\u901f\u8fd0",
+    "logi_code": "SF-Express",
+    "sort": "100"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://192.168.0.178:8888/api/admin/logi/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+        'json' =&gt; [
+            'logi_name' =&gt; '顺丰速运',
+            'logi_code' =&gt; 'SF-Express',
+            'sort' =&gt; '100',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+        "logistics": {
+            "logi_name": "顺丰速运",
+            "logi_code": "SF-Express",
+            "sort": "100",
+            "updated_at": "2020-07-17 11:44:44",
+            "created_at": "2020-07-17 11:44:44",
+            "id": 1
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/admin/logi/{logi}</code></p>
+<p><code>PATCH api/admin/logi/{logi}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logi</code></td>
+<td>required</td>
+<td>物流ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logi_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>物流公司名称</td>
+</tr>
+<tr>
+<td><code>logi_code</code></td>
+<td>string</td>
+<td>required</td>
+<td>物流公司编码</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>numeric</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+<!-- END_678147baaf5700c8523ed3d143d13e11 -->
+<!-- START_c875af72ea7cdfe9217a3b1e60942cfb -->
+<h2>delete</h2>
+<p>删除物流公司</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://192.168.0.178:8888/api/admin/logi/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/api/admin/logi/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://192.168.0.178:8888/api/admin/logi/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "删除成功",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/admin/logi/{logi}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logi</code></td>
+<td>required</td>
+<td>物流ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c875af72ea7cdfe9217a3b1e60942cfb -->
 <h1>Promotion</h1>
 <p>促销接口</p>
 <!-- START_ad40ef13b9f3d1f5bbe357fabaf5320d -->
@@ -3752,9 +6751,63 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "promotions": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 2,
+                    "name": "元旦促销",
+                    "exclusive": 1,
+                    "status": 1,
+                    "condition_code": "GOODS_IDS",
+                    "condition_params": "1,2,3",
+                    "result_code": "GOODS_DISCOUNT",
+                    "result_params": "{\"discount\":77}",
+                    "desc": "这是一个元旦促销活动",
+                    "sort": 100,
+                    "start_time": "2020-07-01 00:00:00",
+                    "end_time": "2020-08-31 00:00:00",
+                    "is_del": 0,
+                    "created_at": "2020-07-16 17:43:40",
+                    "updated_at": "2020-07-16 17:53:01"
+                },
+                {
+                    "id": 1,
+                    "name": "元旦促销",
+                    "exclusive": 1,
+                    "status": 1,
+                    "condition_code": "GOODS_IDS",
+                    "condition_params": "1,2,3",
+                    "result_code": "GOODS_DISCOUNT",
+                    "result_params": "{\"discount\":77}",
+                    "desc": "这是一个元旦促销活动",
+                    "sort": 100,
+                    "start_time": "2020-07-01 00:00:00",
+                    "end_time": "2020-08-31 00:00:00",
+                    "is_del": 0,
+                    "created_at": "2020-07-16 17:42:44",
+                    "updated_at": "2020-07-16 17:52:45"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": 10,
+            "prev_page_url": null,
+            "to": 2,
+            "total": 2
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/promotion</code></p>
 <!-- END_ad40ef13b9f3d1f5bbe357fabaf5320d -->
@@ -3797,9 +6850,156 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "goods": [
+            {
+                "id": 1,
+                "bn": "",
+                "name": "1号衣服",
+                "brief": "",
+                "price": "200.00",
+                "costprice": "100.00",
+                "mktprice": "240.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 2,
+                "goods_type_id": 5,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 1,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": "2020-07-17 16:06:18"
+            },
+            {
+                "id": 2,
+                "bn": "",
+                "name": "2号衣服",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 1,
+                "goods_type_id": 5,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 3,
+                "bn": "",
+                "name": "3号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 11,
+                "goods_type_id": 3,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 4,
+                "bn": "",
+                "name": "4号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 10,
+                "goods_type_id": 0,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/promotion/create</code></p>
 <!-- END_35903c35ae655f85ccac333c5923d457 -->
@@ -4028,9 +7228,33 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "promotion": [
+            {
+                "id": 1,
+                "name": "元旦促销",
+                "exclusive": 1,
+                "status": 1,
+                "condition_code": "GOODS_IDS",
+                "condition_params": "1,2,3",
+                "result_code": "GOODS_DISCOUNT",
+                "result_params": "{\"discount\":77}",
+                "desc": "这是一个元旦促销活动",
+                "sort": 100,
+                "start_time": "2020-07-01 00:00:00",
+                "end_time": "2020-08-31 00:00:00",
+                "is_del": 0,
+                "created_at": "2020-07-16 17:42:44",
+                "updated_at": "2020-07-16 17:52:45"
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/promotion/{promotion}</code></p>
 <h4>URL Parameters</h4>
@@ -4090,9 +7314,175 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "goods": [
+            {
+                "id": 1,
+                "bn": "",
+                "name": "1号衣服",
+                "brief": "",
+                "price": "200.00",
+                "costprice": "100.00",
+                "mktprice": "240.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 2,
+                "goods_type_id": 5,
+                "brand_id": 1,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 1,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": "2020-07-17 16:06:18"
+            },
+            {
+                "id": 2,
+                "bn": "",
+                "name": "2号衣服",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 1,
+                "goods_type_id": 5,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 3,
+                "bn": "",
+                "name": "3号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 11,
+                "goods_type_id": 3,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            },
+            {
+                "id": 4,
+                "bn": "",
+                "name": "4号手机",
+                "brief": "",
+                "price": "210.00",
+                "costprice": "110.00",
+                "mktprice": "230.00",
+                "image_id": 6,
+                "pics": "6,8,9",
+                "goods_category_id": 10,
+                "goods_type_id": 0,
+                "brand_id": 0,
+                "marketable": 1,
+                "stock": 0,
+                "freeze_stock": 0,
+                "weight": null,
+                "unit": null,
+                "introduction": null,
+                "comments_count": 0,
+                "view_count": 0,
+                "buy_count": 0,
+                "up_at": null,
+                "down_at": null,
+                "sort": 100,
+                "is_recommend": 2,
+                "is_hot": 2,
+                "is_selected": 2,
+                "label_ids": "",
+                "spec_list": null,
+                "spec_desc": null,
+                "is_del": 0,
+                "created_at": null,
+                "updated_at": null
+            }
+        ],
+        "promotion": [
+            {
+                "id": 1,
+                "name": "元旦促销",
+                "exclusive": 1,
+                "status": 1,
+                "condition_code": "GOODS_IDS",
+                "condition_params": "1,2,3",
+                "result_code": "GOODS_DISCOUNT",
+                "result_params": "{\"discount\":77}",
+                "desc": "这是一个元旦促销活动",
+                "sort": 100,
+                "start_time": "2020-07-01 00:00:00",
+                "end_time": "2020-08-31 00:00:00",
+                "is_del": 0,
+                "created_at": "2020-07-16 17:42:44",
+                "updated_at": "2020-07-16 17:52:45"
+            }
+        ]
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/promotion/{promotion}/edit</code></p>
 <h4>URL Parameters</h4>
@@ -6189,9 +9579,110 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (429):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "用户查询成功",
+    "data": {
+        "brand": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 3,
+                    "openid": "345",
+                    "nickname": "知了",
+                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqZ59TwKO4IBDXWFmmLuDN2gDJbiaVxwrqHAMPksJbUfzXSnpnDbJwv9UJj00etocicgPfoSGpPSL7w\/132",
+                    "mobile": "13174797037",
+                    "sex": 2,
+                    "unique_code": "334456",
+                    "pid": {
+                        "id": 2,
+                        "openid": "234",
+                        "nickname": "X",
+                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/P78kJjgI0cWkJ8vDh9FssKY3V51x49jMib4d5ic4YGNwcKlSd9NmZhF2pI2LmrkdLKrx9Dkc33Wyld0MQt9KWDJQ\/132",
+                        "mobile": "13174797057",
+                        "sex": 2,
+                        "unique_code": "223344",
+                        "pid": 1,
+                        "ppid": 0,
+                        "status": 1,
+                        "created_at": "2020-07-14 17:41:01",
+                        "updated_at": "2020-07-14 17:41:04"
+                    },
+                    "ppid": {
+                        "id": 1,
+                        "openid": "123",
+                        "nickname": "五岁",
+                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
+                        "mobile": "18107120122",
+                        "sex": 1,
+                        "unique_code": "123456",
+                        "pid": 0,
+                        "ppid": 0,
+                        "status": 1,
+                        "created_at": "2020-07-14 17:40:19",
+                        "updated_at": "2020-07-15 09:17:30"
+                    },
+                    "status": 1,
+                    "created_at": "2020-07-14 17:41:59",
+                    "updated_at": "2020-07-14 17:42:01"
+                },
+                {
+                    "id": 2,
+                    "openid": "234",
+                    "nickname": "X",
+                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/P78kJjgI0cWkJ8vDh9FssKY3V51x49jMib4d5ic4YGNwcKlSd9NmZhF2pI2LmrkdLKrx9Dkc33Wyld0MQt9KWDJQ\/132",
+                    "mobile": "13174797057",
+                    "sex": 2,
+                    "unique_code": "223344",
+                    "pid": {
+                        "id": 1,
+                        "openid": "123",
+                        "nickname": "五岁",
+                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
+                        "mobile": "18107120122",
+                        "sex": 1,
+                        "unique_code": "123456",
+                        "pid": 0,
+                        "ppid": 0,
+                        "status": 1,
+                        "created_at": "2020-07-14 17:40:19",
+                        "updated_at": "2020-07-15 09:17:30"
+                    },
+                    "ppid": 0,
+                    "status": 1,
+                    "created_at": "2020-07-14 17:41:01",
+                    "updated_at": "2020-07-14 17:41:04"
+                },
+                {
+                    "id": 1,
+                    "openid": "123",
+                    "nickname": "五岁",
+                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
+                    "mobile": "18107120122",
+                    "sex": 1,
+                    "unique_code": "123456",
+                    "pid": 0,
+                    "ppid": 0,
+                    "status": 1,
+                    "created_at": "2020-07-14 17:40:19",
+                    "updated_at": "2020-07-15 09:17:30"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 3,
+            "total": 3
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/admin/user</code></p>
 <h4>Query Parameters</h4>

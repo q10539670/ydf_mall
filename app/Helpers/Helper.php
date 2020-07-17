@@ -266,4 +266,12 @@ class Helper
             $dateRange[0].' 00:00:00', $dateRange[1].' 23:59:59'
         ] : '';
     }
+
+    public static function formatTimeString($date, $type = '')
+    {
+        if ($type == 'start') {
+            return $date != '' ? $date.' 00:00:00' : '';
+        }
+        return $date != '' ? $date.' 23:59:59' : '';
+    }
 }

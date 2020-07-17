@@ -26,7 +26,7 @@ class GoodsRequest extends FormRequest
                     'pics' => ['sometimes','required','array'],
                     'goods_category_id' => ['required', 'exists:ydf_goods_category,id'],
                     'goods_type_id' => ['required', 'exists:ydf_goods_type,id'],
-                    'brand_id' =>['sometimes','required', 'exists:ydf_goods_category,id'],
+                    'brand_id' =>['sometimes','required', 'exists:ydf_brand,id'],
                     'sort' => ['required', 'numeric'],
                 ];
                 break;
@@ -45,8 +45,8 @@ class GoodsRequest extends FormRequest
     public function messages()
     {
         return [
-            'goods.required' => 'ID不能为空',
-            'goods.exists' => 'ID错误,该分类不存在',
+            'good.required' => 'ID不能为空',
+            'good.exists' => 'ID错误,该商品不存在',
             'name.required' => '商品名称不能为空',
             'name.max' => '商品名称最大长度为64个字符',
             'price.regex' =>'商品价格格式错误',

@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "23173793-a814-43ad-8201-6b37948992d1",
+        "_postman_id": "6a9b918e-6e04-45dd-9a70-2b685230921c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -721,9 +721,9 @@
                             "query": [
                                 {
                                     "key": "condition",
-                                    "value": "%E4%B8%89%E6%98%9F",
+                                    "value": "",
                                     "description": "\u5546\u54c1\u540d\u79f0",
-                                    "disabled": false
+                                    "disabled": true
                                 },
                                 {
                                     "key": "bn",
@@ -948,6 +948,250 @@
                                     "key": "good",
                                     "value": "2",
                                     "description": "\u5546\u54c1ID"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "set\n\u8bbe\u7f6e\u5546\u54c1\u5c5e\u6027",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/goods\/attr\/:good",
+                            "query": [
+                                {
+                                    "key": "key",
+                                    "value": "marketable",
+                                    "description": "\u8bbe\u7f6e\u7684\u5b57\u6bb5\u540d[marketable,is_recommend,is_hot,is_selected]",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "2",
+                                    "description": "\u8bbe\u7f6e\u7684\u5b57\u6bb5\u503c[1:(\u4e0a\u67b6or\u662f),2:(\u4e0b\u67b6or\u5426)]",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "good",
+                                    "key": "good",
+                                    "value": "2",
+                                    "description": "\u5546\u54c1ID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Logistics",
+            "description": "\u7269\u6d41\u516c\u53f8\u63a5\u53e3",
+            "item": [
+                {
+                    "name": "index\n\u7269\u6d41\u516c\u53f8\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/logi",
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "",
+                                    "description": "\u7269\u6d41\u516c\u53f8\u540d\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "code",
+                                    "value": "",
+                                    "description": "\u7269\u6d41\u516c\u53f8\u7f16\u7801",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "store\n\u4fdd\u5b58",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/logi",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"logi_name\": \"\\u987a\\u4e30\\u901f\\u8fd0\",\n    \"logi_code\": \"SF-Express\",\n    \"sort\": \"100\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "edit\n\u7f16\u8f91",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/logi\/:logi\/edit",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "logi",
+                                    "key": "logi",
+                                    "value": "1",
+                                    "description": "\u7269\u6d41ID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "update\n\u66f4\u65b0",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/logi\/:logi",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "logi",
+                                    "key": "logi",
+                                    "value": "1",
+                                    "description": "\u7269\u6d41ID"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"logi_name\": \"\\u987a\\u4e30\\u901f\\u8fd0\",\n    \"logi_code\": \"SF-Express\",\n    \"sort\": \"100\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "delete\n\u5220\u9664\u7269\u6d41\u516c\u53f8",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/logi\/:logi",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "logi",
+                                    "key": "logi",
+                                    "value": "1",
+                                    "description": "\u7269\u6d41ID"
                                 }
                             ]
                         },

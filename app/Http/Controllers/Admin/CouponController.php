@@ -125,6 +125,9 @@ class CouponController extends Controller
         } else {
             $useValue = '';
         }
+        $request->merge(['start_time' => Helper::formatTimeString($request->input('start_time'),'start')]);
+        $request->merge(['end_time' => Helper::formatTimeString($request->input('end_time'))]);
+        $request->merge(['enable_time' => Helper::formatTimeString($request->input('enable_time'))]);
         $request->merge(['use_value' => $useValue]);
         $coupon = Coupon::create($request->all());
         return Helper::Json(1, '优惠券创建成功', ['coupon' => $coupon]);
@@ -203,6 +206,9 @@ class CouponController extends Controller
             $useValue = "";
         }
         $data['use_value'] = $useValue;
+        $data['start_time'] = Helper::formatTimeString($request->input('start_time'),'start');
+        $data['end_time'] = Helper::formatTimeString($request->input('end_time'));
+        $data['enable_time'] = Helper::formatTimeString($request->input('enable_time'));
         $coupon->fill($data);
         $coupon->save();
         return Helper::Json(1, '更新成功', ['coupon' => $coupon]);

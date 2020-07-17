@@ -112,6 +112,8 @@ class PromotionController extends Controller
             $conditionParams = '';
         }
         $request->merge(['condition_params' => $conditionParams]);
+        $request->merge(['start_time' => Helper::formatTimeString($request->input('start_time'),'start')]);
+        $request->merge(['end_time' => Helper::formatTimeString($request->input('end_time'))]);
         $promotion = Promotion::create($request->all());
         return Helper::Json(1,'创建成功',['promotion'=>$promotion]);
     }
@@ -193,6 +195,8 @@ class PromotionController extends Controller
         } else {
             $conditionParams = '';
         }
+        $request->merge(['start_time' => Helper::formatTimeString($request->input('start_time'),'start')]);
+        $request->merge(['end_time' => Helper::formatTimeString($request->input('end_time'))]);
         $request->merge(['condition_params' => $conditionParams]);
         $promotion = Promotion::find($id);
         $promotion->fill($request->all());

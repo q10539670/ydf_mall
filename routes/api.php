@@ -28,9 +28,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'cors
     Route::resource('goods', 'GoodsController')->names('goods');                       //商品
     Route::resource('coupon', 'CouponController')->names('coupon');                    //优惠券
     Route::resource('promotion', 'PromotionController')->names('promotion');           //促销
+    Route::resource('logi', 'LogisticsController')->names('logi');                     //物流公司
 
 
     Route::get('user', 'UserController@index')->name('user'); //用户列表
     Route::patch('user/status/{user}', 'UserController@status')->name('user.status'); //更改用户状态
     Route::patch('category/status/{category}', 'GoodsCategoryController@status')->name('category.status'); //更改分类状态
+    Route::get('goods/attr/{good}','GoodsController@setGoodsAttribute')->name('goods.attr');  //设置商品属性
 });

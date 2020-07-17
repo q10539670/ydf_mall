@@ -25,7 +25,7 @@ class GoodsController extends Controller
      * index
      * 商品列表
      *
-     * @queryParam  condition 商品名称  Example: 三星
+     * @queryParam  condition 商品名称  No-example
      * @queryParam  bn 编码 No-example
      * @queryParam  marketable 是否上架 Example: 1
      * @queryParam  current_page required 当前页 Example: 1
@@ -662,5 +662,28 @@ class GoodsController extends Controller
         $goods->is_del = 1;
         $goods->save();
         return Helper::Json(1, '删除成功', ['goods' => $goods]);
+    }
+
+    /**
+     * set
+     * 设置商品属性
+     * @urlParam good required 商品ID Example:2
+     * @queryParam key required 设置的字段名[marketable,is_recommend,is_hot,is_selected] Example:marketable
+     * @queryParam value 设置的字段值[1:(上架or是),2:(下架or否)] Example:2
+     * @param  GoodsRequest  $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function setGoodsAttribute(GoodsRequest $request, $id)
+    {
+        $keyArr = ['marketable','is_recommend','is_hot','is_selected'];
+        $key = $request->input('key');
+        $value = $request->input('value');
+        if (!in_array($key,$keyArr)) return Helper::Json(-1,'设置失败,字段名无效');
+        if (!in_array($value,[1,2])) return Helper::Json(-1,'设置失败,字段值无效');
+        $goods = Goods::find($id);
+        $goods->fill([$key => $value]);
+        $goods->save();
+        return Helper::Json(1, '设置成功', ['goods' => $goods]);
     }
 }
