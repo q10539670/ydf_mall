@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Area;
 use App\Models\Images;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
-
-class UploadImagesController extends Controller
+/**
+ * Common
+ * 公共接口
+ * Class CommonController
+ * @package App\Http\Controllers
+ */
+class CommonController extends Controller
 {
     protected $ratio = 70; //富文本图片压缩比率
 
@@ -74,5 +80,22 @@ class UploadImagesController extends Controller
             return Helper::Json(-1,'上传失败',['info'=>'请选择文件']);
         }
         return Helper::Json(1,'上传成功',['info'=>$return]);
+    }
+
+    /**
+     * area
+     * 获取全国地区
+     * @return JsonResponse
+     */
+    public function getAreas()
+    {
+        $redis = app('redis');
+        $redis->select(12);
+        $redisKey = 'wx:area';
+        if (!$areas = $redis->get($redisKey)) {
+            $areas = Area::getAreasForTable();
+            $redis->set($redisKey,$areas);
+        }
+        return Helper::Json(1,'地区查询成功',['areas' => $areas]);
     }
 }

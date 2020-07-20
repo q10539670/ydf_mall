@@ -15,7 +15,8 @@
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "medz/cors": "^1.5",
-        "mpociot/laravel-apidoc-generator": "^4.8"
+        "mpociot/laravel-apidoc-generator": "^4.8",
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",

@@ -14,7 +14,7 @@ class GoodsCategory extends Model
     protected $guarded = [];
 
 
-    //获取权限数组
+    //获取数组
     public function getCatesWithPrefix()
     {
         $cates = $this->getdata();
@@ -22,7 +22,6 @@ class GoodsCategory extends Model
         return $this->setPrefix($data);
     }
 
-    //获取权限数组
     public function getCatesForTable()
     {
         $cates = $this->getdata();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CouponRequest;
+use App\Models\Area;
 use App\Models\Coupon;
 use App\Models\Goods;
 use App\Models\GoodsCategory;

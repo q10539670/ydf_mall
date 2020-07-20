@@ -17,7 +17,8 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 Route::group(['middleware' => 'cors'], function () {
-    Route::post('/images', 'UploadImagesController@uploadImages')->name('images');         //上传图片
+    Route::post('/images', 'CommonController@uploadImages')->name('images');         //上传图片
+    Route::get('/areas', 'CommonController@getAreas')->name('areas');                //获取全国地区信息
 
 });
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'cors'], function () {
