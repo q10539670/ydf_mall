@@ -30,6 +30,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'cors
     Route::resource('coupon', 'CouponController')->names('coupon');                    //优惠券
     Route::resource('promotion', 'PromotionController')->names('promotion');           //促销
     Route::resource('logi', 'LogisticsController')->names('logi');                     //物流公司
+    Route::resource('ship', 'ShipController')->names('ship');                          //配送方式
 
 
     Route::get('user', 'UserController@index')->name('user'); //用户列表

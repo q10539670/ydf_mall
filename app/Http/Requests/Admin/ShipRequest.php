@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Admin;
 
-use Illuminate\Foundation\Http\FormRequest;
 
 class ShipRequest extends FormRequest
 {
@@ -11,7 +10,7 @@ class ShipRequest extends FormRequest
      *
      * @return array
      */
-    public function authorize()
+    public function rules()
     {
         switch ($this->method()) {
             // CREATE

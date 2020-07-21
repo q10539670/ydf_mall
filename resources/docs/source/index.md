@@ -696,6 +696,20 @@ print_r(json_decode((string) $body));
                 "name": "|----啊啊",
                 "status": 1,
                 "is_more": 0
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1,
+                "is_more": 0
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1,
+                "is_more": 0
             }
         ]
     }
@@ -958,6 +972,18 @@ print_r(json_decode((string) $body));
                 "id": 31,
                 "pid": 0,
                 "name": "|----啊啊",
+                "status": 1
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
                 "status": 1
             }
         ]
@@ -1421,6 +1447,18 @@ print_r(json_decode((string) $body));
                 "id": 31,
                 "pid": 0,
                 "name": "|----啊啊",
+                "status": 1
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
                 "status": 1
             }
         ]
@@ -1970,6 +2008,18 @@ print_r(json_decode((string) $body));
                 "pid": 0,
                 "name": "|----啊啊",
                 "status": 1
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
             }
         ],
         "goods": [
@@ -1986,7 +2036,7 @@ print_r(json_decode((string) $body));
                 "goods_category_id": 2,
                 "goods_type_id": 5,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 0,
                 "freeze_stock": 0,
                 "weight": null,
@@ -1998,15 +2048,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 1,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": "2020-07-17 16:06:18"
+                "updated_at": "2020-07-20 11:40:50"
             },
             {
                 "id": 2,
@@ -2033,15 +2083,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:33"
             },
             {
                 "id": 3,
@@ -2068,15 +2118,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:27"
             },
             {
                 "id": 4,
@@ -2103,15 +2153,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:32"
             }
         ]
     }
@@ -2379,6 +2429,18 @@ print_r(json_decode((string) $body));
                 "pid": 0,
                 "name": "|----啊啊",
                 "status": 1
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
             }
         ],
         "goods": [
@@ -2395,7 +2457,7 @@ print_r(json_decode((string) $body));
                 "goods_category_id": 2,
                 "goods_type_id": 5,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 0,
                 "freeze_stock": 0,
                 "weight": null,
@@ -2407,15 +2469,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 1,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": "2020-07-17 16:06:18"
+                "updated_at": "2020-07-20 11:40:50"
             },
             {
                 "id": 2,
@@ -2442,15 +2504,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:33"
             },
             {
                 "id": 3,
@@ -2477,15 +2539,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:27"
             },
             {
                 "id": 4,
@@ -2512,15 +2574,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:32"
             }
         ]
     }
@@ -2823,215 +2885,6 @@ print_r(json_decode((string) $body));
             "current_page": 1,
             "data": [
                 {
-                    "id": 1,
-                    "bn": "",
-                    "name": "1号衣服",
-                    "brief": "",
-                    "price": "200.00",
-                    "costprice": "100.00",
-                    "mktprice": "240.00",
-                    "image_id": 6,
-                    "pics": [
-                        {
-                            "id": 6,
-                            "name": "601韵动钻石之花健身操队",
-                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
-                            "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
-                            "is_del": 0,
-                            "created_at": "2020-06-29 15:38:09",
-                            "updated_at": "2020-06-29 15:38:09"
-                        },
-                        {
-                            "id": 8,
-                            "name": "601韵动钻石之花健身操队2",
-                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
-                            "path": "20200629\/54f0364db6501e4cfbce90e9f2f4b634.jpg",
-                            "is_del": 0,
-                            "created_at": "2020-06-29 15:38:11",
-                            "updated_at": "2020-06-29 15:38:11"
-                        },
-                        {
-                            "id": 9,
-                            "name": "三星logo",
-                            "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
-                            "path": "20200629\/29ce5b702341e2f6f59b06fe36666be5.jpg",
-                            "is_del": 0,
-                            "created_at": "2020-06-29 15:39:48",
-                            "updated_at": "2020-06-29 15:39:48"
-                        }
-                    ],
-                    "goods_category_id": 2,
-                    "goods_type_id": 5,
-                    "brand_id": 1,
-                    "marketable": 1,
-                    "stock": 0,
-                    "freeze_stock": 0,
-                    "weight": null,
-                    "unit": null,
-                    "introduction": null,
-                    "comments_count": 0,
-                    "view_count": 0,
-                    "buy_count": 0,
-                    "up_at": null,
-                    "down_at": null,
-                    "sort": 100,
-                    "is_recommend": 2,
-                    "is_hot": 2,
-                    "is_selected": 1,
-                    "label_ids": "",
-                    "spec_list": null,
-                    "spec_desc": null,
-                    "is_del": 0,
-                    "created_at": null,
-                    "updated_at": "2020-07-17 16:06:18",
-                    "product": [
-                        {
-                            "id": 1,
-                            "goods_id": 1,
-                            "barcode": "",
-                            "sku_code": "",
-                            "price": "100.00",
-                            "costprice": "0.00",
-                            "mktprice": "0.00",
-                            "marketable": 1,
-                            "stock": 50,
-                            "freeze_stock": 5,
-                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
-                            "is_default": 1,
-                            "image_id": 2,
-                            "is_del": 0,
-                            "created_at": "2020-07-09 18:22:34",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "image": {
-                                "id": 2,
-                                "name": "share",
-                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
-                                "path": "20200710\/410399c72b8d33868e424caab5e6d8cf.jpg",
-                                "is_del": 0,
-                                "created_at": "2020-07-10 15:29:01",
-                                "updated_at": "2020-07-10 15:29:01"
-                            }
-                        },
-                        {
-                            "id": 3,
-                            "goods_id": 1,
-                            "barcode": "",
-                            "sku_code": "",
-                            "price": "100.00",
-                            "costprice": "0.00",
-                            "mktprice": "0.00",
-                            "marketable": 1,
-                            "stock": 90,
-                            "freeze_stock": 18,
-                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"2G\"}]",
-                            "is_default": 2,
-                            "image_id": 4,
-                            "is_del": 0,
-                            "created_at": "2020-07-09 18:22:34",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "image": {
-                                "id": 4,
-                                "name": "601韵动钻石之花健身操队2",
-                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
-                                "path": "20200629\/cde2ed52ffc69992a9c76b87f97dcfb9.jpg",
-                                "is_del": 0,
-                                "created_at": "2020-06-29 15:32:23",
-                                "updated_at": "2020-06-29 15:32:23"
-                            }
-                        },
-                        {
-                            "id": 5,
-                            "goods_id": 1,
-                            "barcode": "P__2020070917995",
-                            "sku_code": "",
-                            "price": "120.00",
-                            "costprice": "0.00",
-                            "mktprice": "0.00",
-                            "marketable": 1,
-                            "stock": 10,
-                            "freeze_stock": 2,
-                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"黑色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
-                            "is_default": 2,
-                            "image_id": 7,
-                            "is_del": 0,
-                            "created_at": "2020-07-09 18:22:41",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "image": {
-                                "id": 7,
-                                "name": "601韵动钻石之花健身操队1",
-                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/6d20a916f06430004ca0db18b12505ef.jpg",
-                                "path": "20200629\/6d20a916f06430004ca0db18b12505ef.jpg",
-                                "is_del": 0,
-                                "created_at": "2020-06-29 15:38:10",
-                                "updated_at": "2020-06-29 15:38:10"
-                            }
-                        },
-                        {
-                            "id": 6,
-                            "goods_id": 1,
-                            "barcode": "P__2020070917996",
-                            "sku_code": "",
-                            "price": "150.00",
-                            "costprice": "0.00",
-                            "mktprice": "0.00",
-                            "marketable": 1,
-                            "stock": 40,
-                            "freeze_stock": 15,
-                            "spec_params": "[{\"key\":\"颜色\",\"value\":\"白色\"},{\"key\":\"内存\",\"value\":\"8G\"}]",
-                            "is_default": 2,
-                            "image_id": 6,
-                            "is_del": 0,
-                            "created_at": "2020-07-09 18:22:41",
-                            "updated_at": "2020-07-09 18:22:41",
-                            "image": {
-                                "id": 6,
-                                "name": "601韵动钻石之花健身操队",
-                                "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
-                                "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
-                                "is_del": 0,
-                                "created_at": "2020-06-29 15:38:09",
-                                "updated_at": "2020-06-29 15:38:09"
-                            }
-                        }
-                    ],
-                    "image": {
-                        "id": 6,
-                        "name": "601韵动钻石之花健身操队",
-                        "url": "http:\/\/192.168.0.178:8888\/storage\/images\/20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
-                        "path": "20200629\/3c0d21876ac64f8267765e05b6f3df29.jpg",
-                        "is_del": 0,
-                        "created_at": "2020-06-29 15:38:09",
-                        "updated_at": "2020-06-29 15:38:09"
-                    },
-                    "category": {
-                        "id": 2,
-                        "pid": 1,
-                        "name": "T恤啊啊",
-                        "goods_type_id": 3,
-                        "sort": 100,
-                        "image_id": 80,
-                        "status": 2,
-                        "created_at": null,
-                        "updated_at": "2020-07-07 10:15:38"
-                    },
-                    "type": {
-                        "id": 5,
-                        "name": "通用类型5",
-                        "sort": 100,
-                        "created_at": "2020-07-06 16:51:00",
-                        "updated_at": "2020-07-06 16:51:00"
-                    },
-                    "brand": {
-                        "id": 1,
-                        "name": "三星",
-                        "logo": "56",
-                        "sort": 111,
-                        "is_del": 1,
-                        "created_at": "2020-06-29 14:31:19",
-                        "updated_at": "2020-07-02 15:21:26"
-                    }
-                },
-                {
                     "id": 2,
                     "bn": "",
                     "name": "2号衣服",
@@ -3084,15 +2937,15 @@ print_r(json_decode((string) $body));
                     "up_at": null,
                     "down_at": null,
                     "sort": 100,
-                    "is_recommend": 2,
-                    "is_hot": 2,
+                    "is_recommend": 1,
+                    "is_hot": 1,
                     "is_selected": 2,
                     "label_ids": "",
                     "spec_list": null,
                     "spec_desc": null,
                     "is_del": 0,
                     "created_at": null,
-                    "updated_at": null,
+                    "updated_at": "2020-07-17 16:52:33",
                     "product": [
                         {
                             "id": 7,
@@ -3285,15 +3138,15 @@ print_r(json_decode((string) $body));
                     "up_at": null,
                     "down_at": null,
                     "sort": 100,
-                    "is_recommend": 2,
-                    "is_hot": 2,
+                    "is_recommend": 1,
+                    "is_hot": 1,
                     "is_selected": 2,
                     "label_ids": "",
                     "spec_list": null,
                     "spec_desc": null,
                     "is_del": 0,
                     "created_at": null,
-                    "updated_at": null,
+                    "updated_at": "2020-07-17 16:52:27",
                     "product": [],
                     "image": {
                         "id": 6,
@@ -3367,15 +3220,15 @@ print_r(json_decode((string) $body));
                     "up_at": null,
                     "down_at": null,
                     "sort": 100,
-                    "is_recommend": 2,
-                    "is_hot": 2,
+                    "is_recommend": 1,
+                    "is_hot": 1,
                     "is_selected": 2,
                     "label_ids": "",
                     "spec_list": null,
                     "spec_desc": null,
                     "is_del": 0,
                     "created_at": null,
-                    "updated_at": null,
+                    "updated_at": "2020-07-17 16:52:32",
                     "product": [],
                     "image": {
                         "id": 6,
@@ -3399,8 +3252,8 @@ print_r(json_decode((string) $body));
             "path": "\/",
             "per_page": "10",
             "prev_page_url": null,
-            "to": 4,
-            "total": 4
+            "to": 3,
+            "total": 3
         }
     }
 }
@@ -3517,6 +3370,18 @@ print_r(json_decode((string) $body));
                 "id": 31,
                 "pid": 0,
                 "name": "|----啊啊",
+                "status": 1
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
                 "status": 1
             }
         ],
@@ -4335,7 +4200,7 @@ print_r(json_decode((string) $body));
                 "goods_category_id": 2,
                 "goods_type_id": 5,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 0,
                 "freeze_stock": 0,
                 "weight": null,
@@ -4347,15 +4212,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 1,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": "2020-07-17 16:06:18",
+                "updated_at": "2020-07-20 11:40:50",
                 "product": [
                     {
                         "id": 1,
@@ -4579,6 +4444,18 @@ print_r(json_decode((string) $body));
                 "id": 31,
                 "pid": 0,
                 "name": "|----啊啊",
+                "status": 1
+            },
+            {
+                "id": 33,
+                "pid": 0,
+                "name": "|----a",
+                "status": 1
+            },
+            {
+                "id": 34,
+                "pid": 0,
+                "name": "|----a",
                 "status": 1
             }
         ],
@@ -5052,7 +4929,7 @@ print_r(json_decode((string) $body));
                 "goods_category_id": 2,
                 "goods_type_id": 5,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 0,
                 "freeze_stock": 0,
                 "weight": null,
@@ -5064,15 +4941,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 1,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": "2020-07-17 16:06:18",
+                "updated_at": "2020-07-20 11:40:50",
                 "product": [
                     {
                         "id": 1,
@@ -5670,50 +5547,10 @@ print_r(json_decode((string) $body));
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
-{
-    "code": 1,
-    "message": "设置成功",
-    "data": {
-        "goods": {
-            "id": 2,
-            "bn": "",
-            "name": "2号衣服",
-            "brief": "",
-            "price": "210.00",
-            "costprice": "110.00",
-            "mktprice": "230.00",
-            "image_id": 6,
-            "pics": "6,8,9",
-            "goods_category_id": 1,
-            "goods_type_id": 5,
-            "brand_id": 0,
-            "marketable": "2",
-            "stock": 0,
-            "freeze_stock": 0,
-            "weight": null,
-            "unit": null,
-            "introduction": null,
-            "comments_count": 0,
-            "view_count": 0,
-            "buy_count": 0,
-            "up_at": null,
-            "down_at": null,
-            "sort": 100,
-            "is_recommend": 2,
-            "is_hot": 2,
-            "is_selected": 2,
-            "label_ids": "",
-            "spec_list": null,
-            "spec_desc": null,
-            "is_del": 0,
-            "created_at": null,
-            "updated_at": "2020-07-17 16:10:20"
-        }
-    }
-}
+null
 ```
 
 ### HTTP Request
@@ -6371,7 +6208,7 @@ print_r(json_decode((string) $body));
                 "goods_category_id": 2,
                 "goods_type_id": 5,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 0,
                 "freeze_stock": 0,
                 "weight": null,
@@ -6383,15 +6220,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 1,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": "2020-07-17 16:06:18"
+                "updated_at": "2020-07-20 11:40:50"
             },
             {
                 "id": 2,
@@ -6418,15 +6255,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:33"
             },
             {
                 "id": 3,
@@ -6453,15 +6290,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:27"
             },
             {
                 "id": 4,
@@ -6488,15 +6325,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:32"
             }
         ]
     }
@@ -6798,7 +6635,7 @@ print_r(json_decode((string) $body));
                 "goods_category_id": 2,
                 "goods_type_id": 5,
                 "brand_id": 1,
-                "marketable": 1,
+                "marketable": 2,
                 "stock": 0,
                 "freeze_stock": 0,
                 "weight": null,
@@ -6810,15 +6647,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 1,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": "2020-07-17 16:06:18"
+                "updated_at": "2020-07-20 11:40:50"
             },
             {
                 "id": 2,
@@ -6845,15 +6682,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:33"
             },
             {
                 "id": 3,
@@ -6880,15 +6717,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:27"
             },
             {
                 "id": 4,
@@ -6915,15 +6752,15 @@ print_r(json_decode((string) $body));
                 "up_at": null,
                 "down_at": null,
                 "sort": 100,
-                "is_recommend": 2,
-                "is_hot": 2,
+                "is_recommend": 1,
+                "is_hot": 1,
                 "is_selected": 2,
                 "label_ids": "",
                 "spec_list": null,
                 "spec_desc": null,
                 "is_del": 0,
                 "created_at": null,
-                "updated_at": null
+                "updated_at": "2020-07-17 16:52:32"
             }
         ],
         "promotion": [
@@ -7163,6 +7000,1537 @@ print_r(json_decode((string) $body));
 
 
 <!-- END_4a494705ac31eff224e95c7cbf9b7487 -->
+
+#Ship
+
+配送方式接口
+<!-- START_833c788b1ce112e7c98aa8fd92013d3e -->
+## index
+配送方式列表
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/ship?per_page=10&current_page=1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship"
+);
+
+let params = {
+    "per_page": "10",
+    "current_page": "1",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/api/admin/ship',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+        'query' => [
+            'per_page'=> '10',
+            'current_page'=> '1',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "ships": {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 1,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                1005,
+                                2005,
+                                2576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 755,
+                                    "pid": 748,
+                                    "shortname": "汤原",
+                                    "name": "汤原县",
+                                    "merger_name": "中国,黑龙江省,佳木斯市,汤原县",
+                                    "level": 3,
+                                    "pinyin": "tangyuan",
+                                    "code": "0454",
+                                    "zip_code": "154700",
+                                    "first": "T",
+                                    "lng": "129.90966",
+                                    "lat": "46.72755"
+                                },
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 11:16:14",
+                    "updated_at": "2020-07-21 11:16:14"
+                },
+                {
+                    "id": 3,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": null,
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 11:26:14",
+                    "updated_at": "2020-07-21 11:26:14"
+                },
+                {
+                    "id": 4,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                1005,
+                                2005,
+                                2576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 755,
+                                    "pid": 748,
+                                    "shortname": "汤原",
+                                    "name": "汤原县",
+                                    "merger_name": "中国,黑龙江省,佳木斯市,汤原县",
+                                    "level": 3,
+                                    "pinyin": "tangyuan",
+                                    "code": "0454",
+                                    "zip_code": "154700",
+                                    "first": "T",
+                                    "lng": "129.90966",
+                                    "lat": "46.72755"
+                                },
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 11:43:41",
+                    "updated_at": "2020-07-21 11:43:41"
+                },
+                {
+                    "id": 5,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:42:39",
+                    "updated_at": "2020-07-21 14:42:39"
+                },
+                {
+                    "id": 6,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:43:01",
+                    "updated_at": "2020-07-21 14:43:01"
+                },
+                {
+                    "id": 7,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:43:31",
+                    "updated_at": "2020-07-21 14:43:31"
+                },
+                {
+                    "id": 8,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:44:08",
+                    "updated_at": "2020-07-21 14:44:08"
+                },
+                {
+                    "id": 9,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:44:56",
+                    "updated_at": "2020-07-21 14:44:56"
+                },
+                {
+                    "id": 10,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:45:11",
+                    "updated_at": "2020-07-21 14:45:11"
+                },
+                {
+                    "id": 11,
+                    "type": 1,
+                    "name": "配送方式1",
+                    "has_cod": 1,
+                    "firstunit": 500,
+                    "continueunit": 500,
+                    "def_area_fee": 1,
+                    "area_type": 1,
+                    "firstunit_price": "10.00",
+                    "continueunit_price": "5.00",
+                    "logi_name": "顺丰速运",
+                    "logi_code": "SF-Express",
+                    "is_def": 2,
+                    "sort": 100,
+                    "status": 1,
+                    "free_postage": 2,
+                    "area_fee": [
+                        {
+                            "area_id": [
+                                10005,
+                                2005,
+                                25576
+                            ],
+                            "firstunit": "500",
+                            "continueunit": "500",
+                            "firstunit_price": 12,
+                            "continueunit_price": 8,
+                            "area": [
+                                {
+                                    "id": 2005,
+                                    "pid": 2003,
+                                    "shortname": "金平",
+                                    "name": "金平区",
+                                    "merger_name": "中国,广东省,汕头市,金平区",
+                                    "level": 3,
+                                    "pinyin": "jinping",
+                                    "code": "0754",
+                                    "zip_code": "515041",
+                                    "first": "J",
+                                    "lng": "116.70364",
+                                    "lat": "23.36637"
+                                }
+                            ]
+                        },
+                        {
+                            "area_id": [
+                                1005,
+                                9755,
+                                2576
+                            ],
+                            "firstunit": 500,
+                            "continueunit": 500,
+                            "firstunit_price": 8,
+                            "continueunit_price": 3,
+                            "area": [
+                                {
+                                    "id": 1005,
+                                    "pid": 1003,
+                                    "shortname": "衢江",
+                                    "name": "衢江区",
+                                    "merger_name": "中国,浙江省,衢州市,衢江区",
+                                    "level": 3,
+                                    "pinyin": "qujiang",
+                                    "code": "0570",
+                                    "zip_code": "324022",
+                                    "first": null,
+                                    "lng": "118.9598",
+                                    "lat": "28.97977"
+                                },
+                                {
+                                    "id": 2576,
+                                    "pid": 2573,
+                                    "shortname": "花溪",
+                                    "name": "花溪区",
+                                    "merger_name": "中国,贵州省,贵阳市,花溪区",
+                                    "level": 3,
+                                    "pinyin": "huaxi",
+                                    "code": "0851",
+                                    "zip_code": "550025",
+                                    "first": "H",
+                                    "lng": "106.67688",
+                                    "lat": "26.43343"
+                                }
+                            ]
+                        }
+                    ],
+                    "goodsmoney": "0.00",
+                    "created_at": "2020-07-21 14:45:20",
+                    "updated_at": "2020-07-21 14:45:20"
+                }
+            ],
+            "first_page_url": "\/?page=1",
+            "from": 1,
+            "last_page": 2,
+            "last_page_url": "\/?page=2",
+            "next_page_url": "\/?page=2",
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": 10,
+            "total": 13
+        }
+    }
+}
+```
+
+### HTTP Request
+`GET api/admin/ship`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `per_page` |  required  | 每页显示数量
+    `current_page` |  required  | 当前页
+
+<!-- END_833c788b1ce112e7c98aa8fd92013d3e -->
+
+<!-- START_83413ca82f5d118476fab68d3803ae5e -->
+## create
+创建配送方式
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/ship/create" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship/create"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/api/admin/ship/create',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "logistics": [
+            {
+                "id": 1,
+                "logi_name": "顺丰速运",
+                "logi_code": "SF-Express",
+                "sort": 1,
+                "created_at": "2020-07-17 11:44:44",
+                "updated_at": "2020-07-17 11:51:57"
+            }
+        ]
+    }
+}
+```
+
+### HTTP Request
+`GET api/admin/ship/create`
+
+
+<!-- END_83413ca82f5d118476fab68d3803ae5e -->
+
+<!-- START_9a5a5cb0fba71575935217ba2076a5aa -->
+## store
+保存配送方式
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://192.168.0.178:8888/api/admin/ship" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u914d\u9001\u65b9\u5f0f1","type":1,"has_cod":1,"firstunit":500,"continueunit":500,"def_area_fee":1,"area_type":1,"firstunit_price":10,"continueunit_price":5,"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","is_def":2,"sort":100,"status":1,"free_postage":2,"goodsmoney":0,"area_fee":"[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u914d\u9001\u65b9\u5f0f1",
+    "type": 1,
+    "has_cod": 1,
+    "firstunit": 500,
+    "continueunit": 500,
+    "def_area_fee": 1,
+    "area_type": 1,
+    "firstunit_price": 10,
+    "continueunit_price": 5,
+    "logi_name": "\u987a\u4e30\u901f\u8fd0",
+    "logi_code": "SF-Express",
+    "is_def": 2,
+    "sort": 100,
+    "status": 1,
+    "free_postage": 2,
+    "goodsmoney": 0,
+    "area_fee": "[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->post(
+    'http://192.168.0.178:8888/api/admin/ship',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+        'json' => [
+            'name' => '配送方式1',
+            'type' => 1,
+            'has_cod' => 1,
+            'firstunit' => 500,
+            'continueunit' => 500,
+            'def_area_fee' => 1,
+            'area_type' => 1,
+            'firstunit_price' => 10.0,
+            'continueunit_price' => 5.0,
+            'logi_name' => '顺丰速运',
+            'logi_code' => 'SF-Express',
+            'is_def' => 2,
+            'sort' => 100,
+            'status' => 1,
+            'free_postage' => 2,
+            'goodsmoney' => 0.0,
+            'area_fee' => '[{"area_id":[10005,2005,25576],"firstunit":"500","continueunit":"500","firstunit_price":"12","continueunit_price":"8"},{"area_id":[1005,9755,2576],"firstunit":"500","continueunit":"500","firstunit_price":"8","continueunit_price":"3"}]',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+
+### HTTP Request
+`POST api/admin/ship`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | 配送方式名称
+        `type` | integer |  required  | 计算方式[1:按重量 2:按件数]
+        `has_cod` | integer |  required  | 是否货到付款[1:不是 2:是]
+        `firstunit` | integer |  required  | 首重(单位:克)
+        `continueunit` | integer |  required  | 续重(单位:克)
+        `def_area_fee` | integer |  required  | 按地区设置配送费用是否启用默认配送费用[1:启用 2:不启用]
+        `area_type` | integer |  required  | 地区类型[1:全部地区 2:指定地区]
+        `firstunit_price` | float |  required  | 首重费用
+        `continueunit_price` | float |  required  | 续重费用
+        `logi_name` | string |  required  | 物流公司名称
+        `logi_code` | string |  required  | 物流公司编码
+        `is_def` | integer |  required  | 是否默认[1:默认 2:不默认]
+        `sort` | integer |  required  | 排序
+        `status` | integer |  required  | 状态[1:正常 2:禁用]
+        `free_postage` | integer |  required  | 是否包邮[1:包邮 2:不包邮]
+        `goodsmoney` | float |  required  | 满多少免运费
+        `area_fee` | array |  optional  | 地区配送费用
+    
+<!-- END_9a5a5cb0fba71575935217ba2076a5aa -->
+
+<!-- START_53037d387438ebf682668ff7d66edd98 -->
+## show
+查询配送方式
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/ship/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/api/admin/ship/1',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (429):
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/ship/{ship}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `ship` |  required  | 配送方式ID
+
+<!-- END_53037d387438ebf682668ff7d66edd98 -->
+
+<!-- START_43c46b08c6a9692404cad53f2f11ebd6 -->
+## edit
+编辑
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/api/admin/ship/1/edit" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship/1/edit"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/api/admin/ship/1/edit',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (429):
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/admin/ship/{ship}/edit`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `ship` |  required  | 配送方式ID
+
+<!-- END_43c46b08c6a9692404cad53f2f11ebd6 -->
+
+<!-- START_4b9c1da0fed382429a84c26e09a11a81 -->
+## update
+更新
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://192.168.0.178:8888/api/admin/ship/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -d '{"name":"\u914d\u9001\u65b9\u5f0f1","type":1,"has_cod":1,"firstunit":500,"continueunit":500,"def_area_fee":1,"area_type":1,"firstunit_price":10,"continueunit_price":5,"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","is_def":2,"sort":100,"status":1,"free_postage":2,"goodsmoney":0,"area_fee":"[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+let body = {
+    "name": "\u914d\u9001\u65b9\u5f0f1",
+    "type": 1,
+    "has_cod": 1,
+    "firstunit": 500,
+    "continueunit": 500,
+    "def_area_fee": 1,
+    "area_type": 1,
+    "firstunit_price": 10,
+    "continueunit_price": 5,
+    "logi_name": "\u987a\u4e30\u901f\u8fd0",
+    "logi_code": "SF-Express",
+    "is_def": 2,
+    "sort": 100,
+    "status": 1,
+    "free_postage": 2,
+    "goodsmoney": 0,
+    "area_fee": "[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->put(
+    'http://192.168.0.178:8888/api/admin/ship/1',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+        'json' => [
+            'name' => '配送方式1',
+            'type' => 1,
+            'has_cod' => 1,
+            'firstunit' => 500,
+            'continueunit' => 500,
+            'def_area_fee' => 1,
+            'area_type' => 1,
+            'firstunit_price' => 10.0,
+            'continueunit_price' => 5.0,
+            'logi_name' => '顺丰速运',
+            'logi_code' => 'SF-Express',
+            'is_def' => 2,
+            'sort' => 100,
+            'status' => 1,
+            'free_postage' => 2,
+            'goodsmoney' => 0.0,
+            'area_fee' => '[{"area_id":[10005,2005,25576],"firstunit":"500","continueunit":"500","firstunit_price":"12","continueunit_price":"8"},{"area_id":[1005,9755,2576],"firstunit":"500","continueunit":"500","firstunit_price":"8","continueunit_price":"3"}]',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+
+### HTTP Request
+`PUT api/admin/ship/{ship}`
+
+`PATCH api/admin/ship/{ship}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `ship` |  required  | 配送方式ID
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | 配送方式名称
+        `type` | integer |  required  | 计算方式[1:按重量 2:按件数]
+        `has_cod` | integer |  required  | 是否货到付款[1:不是 2:是]
+        `firstunit` | integer |  required  | 首重(单位:克)
+        `continueunit` | integer |  required  | 续重(单位:克)
+        `def_area_fee` | integer |  required  | 按地区设置配送费用是否启用默认配送费用[1:启用 2:不启用]
+        `area_type` | integer |  required  | 地区类型[1:全部地区 2:指定地区]
+        `firstunit_price` | float |  required  | 首重费用
+        `continueunit_price` | float |  required  | 续重费用
+        `logi_name` | string |  required  | 物流公司名称
+        `logi_code` | string |  required  | 物流公司编码
+        `is_def` | integer |  required  | 是否默认[1:默认 2:不默认]
+        `sort` | integer |  required  | 排序
+        `status` | integer |  required  | 状态[1:正常 2:禁用]
+        `free_postage` | integer |  required  | 是否包邮[1:包邮 2:不包邮]
+        `goodsmoney` | float |  required  | 满多少免运费
+        `area_fee` | array |  optional  | 地区配送费用
+    
+<!-- END_4b9c1da0fed382429a84c26e09a11a81 -->
+
+<!-- START_f82e3bd349225df19b2a43207c01e9d5 -->
+## delete
+删除
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://192.168.0.178:8888/api/admin/ship/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/admin/ship/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->delete(
+    'http://192.168.0.178:8888/api/admin/ship/1',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+
+### HTTP Request
+`DELETE api/admin/ship/{ship}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `ship` |  required  | 配送方式ID
+
+<!-- END_f82e3bd349225df19b2a43207c01e9d5 -->
 
 #Spec
 
@@ -8967,111 +10335,10 @@ print_r(json_decode((string) $body));
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
-{
-    "code": 1,
-    "message": "用户查询成功",
-    "data": {
-        "brand": {
-            "current_page": 1,
-            "data": [
-                {
-                    "id": 3,
-                    "openid": "345",
-                    "nickname": "知了",
-                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83eqZ59TwKO4IBDXWFmmLuDN2gDJbiaVxwrqHAMPksJbUfzXSnpnDbJwv9UJj00etocicgPfoSGpPSL7w\/132",
-                    "mobile": "13174797037",
-                    "sex": 2,
-                    "unique_code": "334456",
-                    "pid": {
-                        "id": 2,
-                        "openid": "234",
-                        "nickname": "X",
-                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/P78kJjgI0cWkJ8vDh9FssKY3V51x49jMib4d5ic4YGNwcKlSd9NmZhF2pI2LmrkdLKrx9Dkc33Wyld0MQt9KWDJQ\/132",
-                        "mobile": "13174797057",
-                        "sex": 2,
-                        "unique_code": "223344",
-                        "pid": 1,
-                        "ppid": 0,
-                        "status": 1,
-                        "created_at": "2020-07-14 17:41:01",
-                        "updated_at": "2020-07-14 17:41:04"
-                    },
-                    "ppid": {
-                        "id": 1,
-                        "openid": "123",
-                        "nickname": "五岁",
-                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
-                        "mobile": "18107120122",
-                        "sex": 1,
-                        "unique_code": "123456",
-                        "pid": 0,
-                        "ppid": 0,
-                        "status": 1,
-                        "created_at": "2020-07-14 17:40:19",
-                        "updated_at": "2020-07-15 09:17:30"
-                    },
-                    "status": 1,
-                    "created_at": "2020-07-14 17:41:59",
-                    "updated_at": "2020-07-14 17:42:01"
-                },
-                {
-                    "id": 2,
-                    "openid": "234",
-                    "nickname": "X",
-                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/P78kJjgI0cWkJ8vDh9FssKY3V51x49jMib4d5ic4YGNwcKlSd9NmZhF2pI2LmrkdLKrx9Dkc33Wyld0MQt9KWDJQ\/132",
-                    "mobile": "13174797057",
-                    "sex": 2,
-                    "unique_code": "223344",
-                    "pid": {
-                        "id": 1,
-                        "openid": "123",
-                        "nickname": "五岁",
-                        "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
-                        "mobile": "18107120122",
-                        "sex": 1,
-                        "unique_code": "123456",
-                        "pid": 0,
-                        "ppid": 0,
-                        "status": 1,
-                        "created_at": "2020-07-14 17:40:19",
-                        "updated_at": "2020-07-15 09:17:30"
-                    },
-                    "ppid": 0,
-                    "status": 1,
-                    "created_at": "2020-07-14 17:41:01",
-                    "updated_at": "2020-07-14 17:41:04"
-                },
-                {
-                    "id": 1,
-                    "openid": "123",
-                    "nickname": "五岁",
-                    "avatar": "http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/umxqic2CHGySYhT47Rz03eLUyxpNCic7XP2O9k9Hez1GSo0VDoA6iaWConpADX06jcWnavWhfQbcXJt5tLSUwia4Fw\/132",
-                    "mobile": "18107120122",
-                    "sex": 1,
-                    "unique_code": "123456",
-                    "pid": 0,
-                    "ppid": 0,
-                    "status": 1,
-                    "created_at": "2020-07-14 17:40:19",
-                    "updated_at": "2020-07-15 09:17:30"
-                }
-            ],
-            "first_page_url": "\/?page=1",
-            "from": 1,
-            "last_page": 1,
-            "last_page_url": "\/?page=1",
-            "next_page_url": null,
-            "path": "\/",
-            "per_page": "10",
-            "prev_page_url": null,
-            "to": 3,
-            "total": 3
-        }
-    }
-}
+null
 ```
 
 ### HTTP Request
@@ -9240,5 +10507,65 @@ Parameter | Type | Status | Description
     `images[]` | file |  optional  | 图片文件
     
 <!-- END_204613676cab89a55dfdc7d81f16a281 -->
+
+<!-- START_5f0ba94023354600fdccd49012e79c9d -->
+## area
+获取全国地区
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/api/areas" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/api/areas"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "multipart/form-data",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/api/areas',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => 'multipart/form-data',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (500):
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/areas`
+
+
+<!-- END_5f0ba94023354600fdccd49012e79c9d -->
 
 
