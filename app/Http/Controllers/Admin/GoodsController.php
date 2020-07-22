@@ -291,8 +291,8 @@ class GoodsController extends Controller
                 $freezeStock += $product['freeze_stock'];
                 $product['goods_id'] = $goods->id;
                 //生成货号
-                if (!isset($product['barcode']) || $product['barcode'] == null) {
-                    $product['barcode'] = 'P_'.$sn.($key + 1);
+                if (!isset($product['sn']) || $product['sn'] == null) {
+                    $product['sn'] = 'P_'.$sn.($key + 1);
                 }
                 Products::create($product);
             }
@@ -492,8 +492,8 @@ class GoodsController extends Controller
                     $freezeStock += $product['freeze_stock'];
                     $product['goods_id'] = $goods->id;
                     //生成货号
-                    if (!isset($product['barcode']) || $product['barcode'] == null) {
-                        $product['barcode'] = 'P'.$sn.($num += 1);
+                    if (!isset($product['sn']) || $product['sn'] == null) {
+                        $product['sn'] = 'P'.$sn.($num += 1);
                     }
                     Products::create($product);
                 } else {

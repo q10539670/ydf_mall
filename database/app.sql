@@ -428,7 +428,41 @@ CREATE TABLE `jshop_bill_delivery_order_rel` (
   KEY `delivery_id` (`delivery_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='发货单订单关联表';
 
+CREATE TABLE `ydf_delivery` (
+  `id` varchar(32) NOT NULL COMMENT '发货单id 日期字符串+dl+微秒+3位随机数生成',
+  `order_id` varchar(32) DEFAULT NULL COMMENT '订单号',
+  `logi_name` varchar(50) DEFAULT NULL COMMENT '物流公司名称',
+  `logi_code` varchar(50) DEFAULT NULL COMMENT '物流公司编码',
+  `logi_no` varchar(50) DEFAULT NULL COMMENT '物流单号',
+  `logi_information` longtext COMMENT '快递物流信息',
+  `logi_status` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '0快递信息可能更新  1快递信息不更新了',
+  `ship_area_code` int(10) unsigned DEFAULT NULL COMMENT '收货地区code',
+  `ship_address` varchar(200) DEFAULT NULL COMMENT '收货详细地址',
+  `ship_name` varchar(50) DEFAULT NULL COMMENT '收货人姓名',
+  `ship_mobile` char(15) DEFAULT NULL COMMENT '收货电话',
+  `confirm_time` bigint(12) unsigned DEFAULT NULL COMMENT '确认收货时间',
+  `status` tinyint(1) unsigned DEFAULT '2' COMMENT '状态 1=准备发货 2=已发货 3=已确认 4=其他',
+  `desc` varchar(255) not null  DEFAULT '' COMMENT '备注',
+  created_at datetime  NULL DEFAULT NULL,
+  updated_at datetime  NULL  DEFAULT NULL,
+  last_logi_at datetime  NULL  DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='发货单表';
 
+CREATE TABLE `ydf_delivery_items` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `delivery_id` varchar(32) NOT NULL COMMENT '发货单号 关联bill_delivery.id',
+  `goods_id` int unsigned NOT NULL default 0,
+  `product_id` int unsigned NOT NULL default 0,
+  `sn` varchar(32) NOT NULL default '',
+  `bn` varchar(32) NOT NULL default '',
+  `name` varchar(128) NOT NULL default '',
+  `nums` int unsigned DEFAULT NULL COMMENT '发货数量',
+  `weight` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+   product_spec text comment '商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]',
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='发货单详情表';
 
 
 

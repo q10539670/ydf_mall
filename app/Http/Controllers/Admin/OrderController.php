@@ -8,6 +8,7 @@ use App\Models\Order;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * @group Order
@@ -79,27 +80,36 @@ class OrderController extends Controller
         return Helper::Json(1,'查询成功',['order' => $order]);
     }
 
+    public function edit($id)
+    {
+        $order = Order::find($id);
+        return Helper::Json(1,'查询成功',['order' => $order]);
+    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'ship_area_code' => 'required|exists:china_area,id',
+            'ship_address' => 'required',
+            'ship_name' => 'required|max:50',
+            'ship_mobile' => 'required|max:11',
+        ], [
+            'ship_area_code.required' => '收货地区不能为空',
+            'ship_area_code.exists' =>'收货地区参数错误',
+            'ship_address.required' => '收货地址不能为空',
+            'ship_name.required' => '收货姓名不能为空',
+            'ship_name.max' => '收货姓名字符太长',
+            'ship_mobile.required' => '收货人电话不能为空',
+            'ship_mobile.max' => '收货人电话字符太长',
+        ]);
+        if ($validator->fails()) {
+            return Helper::Json(-1,$validator->errors()->first());
+        }
+        $order = Order::find($id);
+        $order->fill($request->all());
+        $order->save();
+        return Helper::Json(1,'更新成功',['order' => $order]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    public function
 }
