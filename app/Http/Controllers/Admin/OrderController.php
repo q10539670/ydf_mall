@@ -77,6 +77,7 @@ class OrderController extends Controller
         $order[0]->ship;
         $order[0]->area;
         return Helper::Json(1,'查询成功',['order' => $order]);
+
     }
 
     /**
