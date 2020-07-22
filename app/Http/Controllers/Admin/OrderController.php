@@ -77,19 +77,8 @@ class OrderController extends Controller
         $order[0]->ship;
         $order[0]->area;
         return Helper::Json(1,'查询成功',['order' => $order]);
-
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
