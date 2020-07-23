@@ -237,7 +237,7 @@ class CouponController extends Controller
         if ($coupon->is_del == 1) {
             return Helper::Json(-1, '删除失败,优惠券已删除');
         }
-        $coupon->is_del = 1;
+        $coupon->status = 2;
         $coupon->save();
         return Helper::Json(1, '删除成功');
     }

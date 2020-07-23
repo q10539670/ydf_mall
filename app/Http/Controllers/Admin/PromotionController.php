@@ -72,7 +72,7 @@ class PromotionController extends Controller
      * @bodyParam condition_params array required 促销条件参数[1,2,3] Example:1
      * @bodyParam result_code string required 促销结果编码[GOODS_DISCOUNT(指定商品X折) ORDER_REDUCE(订单减多少钱)] Example:GOODS_DISCOUNT
      * @bodyParam result_params string required 促销结果参数[{"discount":97}(指定商品97折)] Example:{"discount":97}
-     * @bodyParam desc string required 促销描述 Example: 这是一个国庆节促销活动
+     * @bodyParam description string required 促销描述 Example: 这是一个国庆节促销活动
      * @bodyParam sort numeric required 排序 Example: 100
      * @bodyParam start_time date required 开始时间 Example: 2020-07-01
      * @bodyParam end_time data required 结束时间 Example: 2020-08-31
@@ -91,7 +91,7 @@ class PromotionController extends Controller
     "condition_params": [1],
     "result_code": "GOODS_DISCOUNT",
     "result_params": "{\"discount\":77}",
-    "desc": "这是一个元旦促销活动",
+    "description": "这是一个元旦促销活动",
     "sort": "100",
     "start_time": "2020-07-01",
     "end_time": "2020-08-31",
@@ -155,7 +155,7 @@ class PromotionController extends Controller
      * @bodyParam condition_params array required 促销条件参数[1,2,3] Example:1
      * @bodyParam result_code string required 促销结果编码[GOODS_DISCOUNT(指定商品X折) ORDER_REDUCE(订单减多少钱)] Example:GOODS_DISCOUNT
      * @bodyParam result_params string required 促销结果参数[{"discount":97}(指定商品97折)] Example:{"discount":97}
-     * @bodyParam desc string required 促销描述 Example: 这是一个国庆节促销活动
+     * @bodyParam description string required 促销描述 Example: 这是一个国庆节促销活动
      * @bodyParam sort numeric required 排序 Example: 100
      * @bodyParam start_time date required 开始时间 Example: 2020-07-01
      * @bodyParam end_time data required 结束时间 Example: 2020-08-31
@@ -175,7 +175,7 @@ class PromotionController extends Controller
     "condition_params": [1,2,3],
     "result_code": "GOODS_DISCOUNT",
     "result_params": "{\"discount\":77}",
-    "desc": "这是一个元旦促销活动",
+    "description": "这是一个元旦促销活动",
     "sort": "100",
     "start_time": "2020-07-01",
     "end_time": "2020-08-31",
