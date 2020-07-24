@@ -10,4 +10,8 @@ class Delivery extends Model
 
     protected $guarded = [];
 
+    public function item()
+    {
+        return $this->hasMany('App\Models\DeliveryItems');
+    }
 }
