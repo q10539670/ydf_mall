@@ -24,4 +24,8 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Area','ship_area_code');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

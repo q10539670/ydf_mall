@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "1f4a6612-7097-4865-a8c9-f655746520f4",
+        "_postman_id": "ce3a0e98-7252-47d2-a691-4b265a6c5d0a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -1217,6 +1217,160 @@
             ]
         },
         {
+            "name": "Order",
+            "description": "\u8ba2\u5355\u63a5\u53e3",
+            "item": [
+                {
+                    "name": "api\/admin\/order",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/order",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/order\/:order",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "order",
+                                    "key": "order",
+                                    "value": "culpa",
+                                    "description": "\u8ba2\u5355ID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/admin\/order\/{order}\/edit",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/order\/:order\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/admin\/order\/{order}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/order\/:order",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/admin\/order\/ship",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/admin\/order\/ship",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "multipart\/form-data"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
             "name": "Promotion",
             "description": "\u4fc3\u9500\u63a5\u53e3",
             "item": [
@@ -1298,7 +1452,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\",\n    \"exclusive\": 1,\n    \"condition_code\": \"GOODS_IDS\",\n    \"condition_params\": \"1\",\n    \"result_code\": \"GOODS_DISCOUNT\",\n    \"result_params\": \"{\\\"discount\\\":97}\",\n    \"desc\": \"\\u8fd9\\u662f\\u4e00\\u4e2a\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\\u6d3b\\u52a8\",\n    \"sort\": \"100\",\n    \"start_time\": \"2020-07-01\",\n    \"end_time\": \"2020-08-31\",\n    \"is_del\": 0,\n    \"status\": 1\n}"
+                            "raw": "{\n    \"name\": \"\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\",\n    \"exclusive\": 1,\n    \"condition_code\": \"GOODS_IDS\",\n    \"condition_params\": \"1\",\n    \"result_code\": \"GOODS_DISCOUNT\",\n    \"result_params\": \"{\\\"discount\\\":97}\",\n    \"description\": \"\\u8fd9\\u662f\\u4e00\\u4e2a\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\\u6d3b\\u52a8\",\n    \"sort\": \"100\",\n    \"start_time\": \"2020-07-01\",\n    \"end_time\": \"2020-08-31\",\n    \"is_del\": 0,\n    \"status\": 1\n}"
                         },
                         "description": "",
                         "response": []
@@ -1406,7 +1560,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\",\n    \"exclusive\": 3,\n    \"condition_code\": \"GOODS_IDS\",\n    \"condition_params\": \"1\",\n    \"result_code\": \"GOODS_DISCOUNT\",\n    \"result_params\": \"{\\\"discount\\\":97}\",\n    \"desc\": \"\\u8fd9\\u662f\\u4e00\\u4e2a\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\\u6d3b\\u52a8\",\n    \"sort\": \"100\",\n    \"start_time\": \"2020-07-01\",\n    \"end_time\": \"2020-08-31\",\n    \"is_del\": 0,\n    \"status\": 1\n}"
+                            "raw": "{\n    \"name\": \"\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\",\n    \"exclusive\": 3,\n    \"condition_code\": \"GOODS_IDS\",\n    \"condition_params\": \"1\",\n    \"result_code\": \"GOODS_DISCOUNT\",\n    \"result_params\": \"{\\\"discount\\\":97}\",\n    \"description\": \"\\u8fd9\\u662f\\u4e00\\u4e2a\\u56fd\\u5e86\\u8282\\u4fc3\\u9500\\u6d3b\\u52a8\",\n    \"sort\": \"100\",\n    \"start_time\": \"2020-07-01\",\n    \"end_time\": \"2020-08-31\",\n    \"is_del\": 0,\n    \"status\": 1\n}"
                         },
                         "description": "",
                         "response": []

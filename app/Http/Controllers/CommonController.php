@@ -93,9 +93,11 @@ class CommonController extends Controller
         $redis->select(12);
         $redisKey = 'wx:area';
         if (!$areas = $redis->get($redisKey)) {
-            $areas = Area::getAreasForTable();
+            $areas = json_encode(Area::getAreasForTable());
             $redis->set($redisKey,$areas);
         }
+        $areas = json_decode($areas);
+//        $areas = Area::getAreasForTable();
         return Helper::Json(1,'地区查询成功',['areas' => $areas]);
     }
 }
