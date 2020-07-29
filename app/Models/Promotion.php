@@ -12,4 +12,10 @@ class Promotion extends Model
 
     protected $guarded = [];
 
+    /**
+     * 指示模型是否自动维护时间戳
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }

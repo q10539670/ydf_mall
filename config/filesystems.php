@@ -55,6 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'production' => [
+            'driver' => 'local',
+            'root' => '/data/wwwroot/ydf.sanshanwenhua.com/static/upload',
+            'url' => env('APP_URL').'/static/upload',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

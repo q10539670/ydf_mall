@@ -10,9 +10,13 @@ class Order extends Model
 
     protected $guarded = [];
 
+    protected $primaryKey = 'order_id';
+
+    protected $keyType = 'string';
+
     public function item()
     {
-        return $this->hasMany('App\Models\OrderItem','order_id');
+        return $this->hasMany('App\Models\OrderItem','order_id','order_id');
     }
 
     public function ship()

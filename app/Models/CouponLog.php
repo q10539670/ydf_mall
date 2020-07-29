@@ -11,4 +11,5 @@ class CouponLog extends Model
 
     protected $guarded = [];
 
+    public $timestamps = false;
 }

@@ -122,9 +122,10 @@ class BrandController extends Controller
      */
     public function update(BrandRequest $request, $id)
     {
-        if ($brand = Brand::find($id)) {
+        if (!$brand = Brand::find($id)) {
             return Helper::Json(-1, '更新失败,未查到该品牌');
         }
+        $brand = Brand::find($id);
         $brand->fill($request->all());
         $brand->save();
         return Helper::Json(1, '品牌更新成功', ['brand' => new BrandResource($brand)]);

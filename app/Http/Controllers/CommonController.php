@@ -48,12 +48,14 @@ class CommonController extends Controller
                         $ext = $imagesName[1];
                         $jpg = (string)Image::make($file[$i])->encode('jpg', $this->ratio);
                         $filename = '/images/' . date('Ymd') . '/' . md5(time() . rand(10000, 99999)) . "." . $ext;
-                        Storage::disk('public')->put($filename, $jpg);    //保存图片
-                        $pathName = strstr($filename, date('Ymd'));
                         if (env('APP_ENV') == 'local') {
+                            Storage::disk('public')->put($filename, $jpg);    //保存图片
+                            $pathName = strstr($filename, date('Ymd'));
                             $newFileName = 'http://192.168.0.178:8888/storage/images/' . $pathName;
                         } else {
-                            $newFileName = asset('/storage/images/') . $pathName;
+                            Storage::disk('production')->put($filename, $jpg);    //保存图片
+                            $pathName = strstr($filename, date('Ymd'));
+                            $newFileName = env('APP_URL').'/static/upload/images/' . $pathName;
                         }
                         if ($newFileName) {
                             $m = $m + 1;

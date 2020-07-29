@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "ce3a0e98-7252-47d2-a691-4b265a6c5d0a",
+        "_postman_id": "8f8fb9bb-3610-4d58-9cb3-5a54d27f5b02",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -17,7 +17,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/brand",
+                            "path": "admin-api\/admin\/brand",
                             "query": [
                                 {
                                     "key": "condition",
@@ -70,7 +70,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/brand",
+                            "path": "admin-api\/admin\/brand",
                             "query": []
                         },
                         "method": "POST",
@@ -98,7 +98,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/brand\/:brand",
+                            "path": "admin-api\/admin\/brand\/:brand",
                             "query": [],
                             "variable": [
                                 {
@@ -134,7 +134,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/brand\/:brand",
+                            "path": "admin-api\/admin\/brand\/:brand",
                             "query": [],
                             "variable": [
                                 {
@@ -170,7 +170,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/brand\/:brand",
+                            "path": "admin-api\/admin\/brand\/:brand",
                             "query": [],
                             "variable": [
                                 {
@@ -212,7 +212,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category",
+                            "path": "admin-api\/admin\/category",
                             "query": []
                         },
                         "method": "GET",
@@ -240,7 +240,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/create",
+                            "path": "admin-api\/admin\/category\/create",
                             "query": []
                         },
                         "method": "GET",
@@ -268,7 +268,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category",
+                            "path": "admin-api\/admin\/category",
                             "query": []
                         },
                         "method": "POST",
@@ -296,7 +296,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/:category",
+                            "path": "admin-api\/admin\/category\/:category",
                             "query": [],
                             "variable": [
                                 {
@@ -332,7 +332,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/:category\/edit",
+                            "path": "admin-api\/admin\/category\/:category\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -368,7 +368,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/:category",
+                            "path": "admin-api\/admin\/category\/:category",
                             "query": [],
                             "variable": [
                                 {
@@ -404,7 +404,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/:category",
+                            "path": "admin-api\/admin\/category\/:category",
                             "query": [],
                             "variable": [
                                 {
@@ -440,7 +440,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/category\/status\/:category",
+                            "path": "admin-api\/admin\/category\/status\/:category",
                             "query": [],
                             "variable": [
                                 {
@@ -482,7 +482,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/coupon",
+                            "path": "admin-api\/admin\/coupon",
                             "query": [
                                 {
                                     "key": "name",
@@ -547,7 +547,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/coupon\/create",
+                            "path": "admin-api\/admin\/coupon\/create",
                             "query": []
                         },
                         "method": "GET",
@@ -575,7 +575,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/coupon",
+                            "path": "admin-api\/admin\/coupon",
                             "query": []
                         },
                         "method": "POST",
@@ -603,7 +603,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/coupon\/:coupon\/edit",
+                            "path": "admin-api\/admin\/coupon\/:coupon\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -639,7 +639,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/coupon\/:coupon",
+                            "path": "admin-api\/admin\/coupon\/:coupon",
                             "query": [],
                             "variable": [
                                 {
@@ -675,7 +675,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/coupon\/:coupon",
+                            "path": "admin-api\/admin\/coupon\/:coupon",
                             "query": [],
                             "variable": [
                                 {
@@ -717,7 +717,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods",
+                            "path": "admin-api\/admin\/goods",
                             "query": [
                                 {
                                     "key": "condition",
@@ -776,7 +776,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/create",
+                            "path": "admin-api\/admin\/goods\/create",
                             "query": []
                         },
                         "method": "GET",
@@ -804,7 +804,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods",
+                            "path": "admin-api\/admin\/goods",
                             "query": []
                         },
                         "method": "POST",
@@ -832,7 +832,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/:good",
+                            "path": "admin-api\/admin\/goods\/:good",
                             "query": [],
                             "variable": [
                                 {
@@ -868,7 +868,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/:good\/edit",
+                            "path": "admin-api\/admin\/goods\/:good\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -904,7 +904,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/:good",
+                            "path": "admin-api\/admin\/goods\/:good",
                             "query": [],
                             "variable": [
                                 {
@@ -940,7 +940,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/:good",
+                            "path": "admin-api\/admin\/goods\/:good",
                             "query": [],
                             "variable": [
                                 {
@@ -976,7 +976,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/goods\/attr\/:good",
+                            "path": "admin-api\/admin\/goods\/attr\/:good",
                             "query": [
                                 {
                                     "key": "key",
@@ -1031,7 +1031,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/logi",
+                            "path": "admin-api\/admin\/logi",
                             "query": [
                                 {
                                     "key": "name",
@@ -1084,7 +1084,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/logi",
+                            "path": "admin-api\/admin\/logi",
                             "query": []
                         },
                         "method": "POST",
@@ -1112,7 +1112,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/logi\/:logi\/edit",
+                            "path": "admin-api\/admin\/logi\/:logi\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -1148,7 +1148,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/logi\/:logi",
+                            "path": "admin-api\/admin\/logi\/:logi",
                             "query": [],
                             "variable": [
                                 {
@@ -1184,7 +1184,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/logi\/:logi",
+                            "path": "admin-api\/admin\/logi\/:logi",
                             "query": [],
                             "variable": [
                                 {
@@ -1221,12 +1221,12 @@
             "description": "\u8ba2\u5355\u63a5\u53e3",
             "item": [
                 {
-                    "name": "api\/admin\/order",
+                    "name": "admin-api\/admin\/order",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/order",
+                            "path": "admin-api\/admin\/order",
                             "query": []
                         },
                         "method": "GET",
@@ -1254,7 +1254,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/order\/:order",
+                            "path": "admin-api\/admin\/order\/:order",
                             "query": [],
                             "variable": [
                                 {
@@ -1285,12 +1285,12 @@
                     }
                 },
                 {
-                    "name": "api\/admin\/order\/{order}\/edit",
+                    "name": "admin-api\/admin\/order\/{order}\/edit",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/order\/:order\/edit",
+                            "path": "admin-api\/admin\/order\/:order\/edit",
                             "query": []
                         },
                         "method": "GET",
@@ -1313,12 +1313,12 @@
                     }
                 },
                 {
-                    "name": "api\/admin\/order\/{order}",
+                    "name": "admin-api\/admin\/order\/{order}",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/order\/:order",
+                            "path": "admin-api\/admin\/order\/:order",
                             "query": []
                         },
                         "method": "PUT",
@@ -1341,12 +1341,12 @@
                     }
                 },
                 {
-                    "name": "api\/admin\/order\/ship",
+                    "name": "admin-api\/admin\/order\/ship\/{order}",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/order\/ship",
+                            "path": "admin-api\/admin\/order\/ship\/:order",
                             "query": []
                         },
                         "method": "POST",
@@ -1380,7 +1380,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion",
+                            "path": "admin-api\/admin\/promotion",
                             "query": []
                         },
                         "method": "GET",
@@ -1408,7 +1408,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion\/create",
+                            "path": "admin-api\/admin\/promotion\/create",
                             "query": []
                         },
                         "method": "GET",
@@ -1436,7 +1436,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion",
+                            "path": "admin-api\/admin\/promotion",
                             "query": []
                         },
                         "method": "POST",
@@ -1464,7 +1464,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion\/:promotion",
+                            "path": "admin-api\/admin\/promotion\/:promotion",
                             "query": [],
                             "variable": [
                                 {
@@ -1500,7 +1500,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion\/:promotion\/edit",
+                            "path": "admin-api\/admin\/promotion\/:promotion\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -1536,7 +1536,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion\/:promotion",
+                            "path": "admin-api\/admin\/promotion\/:promotion",
                             "query": [],
                             "variable": [
                                 {
@@ -1572,7 +1572,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/promotion\/:promotion",
+                            "path": "admin-api\/admin\/promotion\/:promotion",
                             "query": []
                         },
                         "method": "DELETE",
@@ -1606,7 +1606,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship",
+                            "path": "admin-api\/admin\/ship",
                             "query": [
                                 {
                                     "key": "per_page",
@@ -1647,7 +1647,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship\/create",
+                            "path": "admin-api\/admin\/ship\/create",
                             "query": []
                         },
                         "method": "GET",
@@ -1675,7 +1675,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship",
+                            "path": "admin-api\/admin\/ship",
                             "query": []
                         },
                         "method": "POST",
@@ -1703,7 +1703,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship\/:ship",
+                            "path": "admin-api\/admin\/ship\/:ship",
                             "query": [],
                             "variable": [
                                 {
@@ -1739,7 +1739,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship\/:ship\/edit",
+                            "path": "admin-api\/admin\/ship\/:ship\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -1775,7 +1775,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship\/:ship",
+                            "path": "admin-api\/admin\/ship\/:ship",
                             "query": [],
                             "variable": [
                                 {
@@ -1811,7 +1811,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/ship\/:ship",
+                            "path": "admin-api\/admin\/ship\/:ship",
                             "query": [],
                             "variable": [
                                 {
@@ -1853,7 +1853,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec",
+                            "path": "admin-api\/admin\/spec",
                             "query": [
                                 {
                                     "key": "condition",
@@ -1900,7 +1900,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec",
+                            "path": "admin-api\/admin\/spec",
                             "query": []
                         },
                         "method": "POST",
@@ -1928,7 +1928,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec\/:spec",
+                            "path": "admin-api\/admin\/spec\/:spec",
                             "query": [],
                             "variable": [
                                 {
@@ -1964,7 +1964,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec\/:spec",
+                            "path": "admin-api\/admin\/spec\/:spec",
                             "query": [],
                             "variable": [
                                 {
@@ -2000,7 +2000,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/spec\/:spec",
+                            "path": "admin-api\/admin\/spec\/:spec",
                             "query": []
                         },
                         "method": "DELETE",
@@ -2034,7 +2034,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type",
+                            "path": "admin-api\/admin\/type",
                             "query": [
                                 {
                                     "key": "condition",
@@ -2081,7 +2081,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/create",
+                            "path": "admin-api\/admin\/type\/create",
                             "query": []
                         },
                         "method": "GET",
@@ -2109,7 +2109,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type",
+                            "path": "admin-api\/admin\/type",
                             "query": []
                         },
                         "method": "POST",
@@ -2137,7 +2137,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type",
+                            "path": "admin-api\/admin\/type\/:type",
                             "query": [],
                             "variable": [
                                 {
@@ -2173,7 +2173,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type\/edit",
+                            "path": "admin-api\/admin\/type\/:type\/edit",
                             "query": [],
                             "variable": [
                                 {
@@ -2209,7 +2209,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type",
+                            "path": "admin-api\/admin\/type\/:type",
                             "query": [],
                             "variable": [
                                 {
@@ -2245,7 +2245,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/type\/:type",
+                            "path": "admin-api\/admin\/type\/:type",
                             "query": [],
                             "variable": [
                                 {
@@ -2287,7 +2287,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/user",
+                            "path": "admin-api\/admin\/user",
                             "query": [
                                 {
                                     "key": "phone",
@@ -2358,7 +2358,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/admin\/user\/status\/:user",
+                            "path": "admin-api\/admin\/user\/status\/:user",
                             "query": [],
                             "variable": [
                                 {
@@ -2391,7 +2391,7 @@
             ]
         },
         {
-            "name": "Z-Other \u901a\u7528\u63a5\u53e3",
+            "name": "Z-Other",
             "description": "",
             "item": [
                 {
@@ -2400,7 +2400,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/images",
+                            "path": "admin-api\/images",
                             "query": []
                         },
                         "method": "POST",
@@ -2428,7 +2428,7 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "api\/areas",
+                            "path": "admin-api\/areas",
                             "query": []
                         },
                         "method": "GET",

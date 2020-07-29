@@ -51,18 +51,18 @@
 <!-- END_INFO -->
 <h1>Brand</h1>
 <p>品牌接口</p>
-<!-- START_e6a1447d1827d32e5ba6ac9cdf71dbb4 -->
+<!-- START_18df6ca144e03eda0d60577e923b468c -->
 <h2>index</h2>
 <p>品牌列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/brand?condition=%E4%B8%89%E6%98%9F&amp;is_del=culpa&amp;current_page=1&amp;per_page=10" \
+    -G "http://192.168.0.178:8888/admin-api/admin/brand?condition=%E4%B8%89%E6%98%9F&amp;is_del=culpa&amp;current_page=1&amp;per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/brand"
+    "http://192.168.0.178:8888/admin-api/admin/brand"
 );
 
 let params = {
@@ -88,7 +88,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/brand',
+    'http://192.168.0.178:8888/admin-api/admin/brand',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -222,7 +222,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/brand</code></p>
+<p><code>GET admin-api/admin/brand</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -255,21 +255,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_e6a1447d1827d32e5ba6ac9cdf71dbb4 -->
-<!-- START_711f7bca136968bf91d0800cb473c3d2 -->
+<!-- END_18df6ca144e03eda0d60577e923b468c -->
+<!-- START_99a0d0e111d20cd72c3e47abb0c195b9 -->
 <h2>store</h2>
 <p>保存品牌</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/brand" \
+    "http://192.168.0.178:8888/admin-api/admin/brand" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u4e09\u661f","logo":1,"sort":100,"is_del":0}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/brand"
+    "http://192.168.0.178:8888/admin-api/admin/brand"
 );
 
 let headers = {
@@ -294,7 +294,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/brand',
+    'http://192.168.0.178:8888/admin-api/admin/brand',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -330,7 +330,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/brand</code></p>
+<p><code>POST admin-api/admin/brand</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -368,19 +368,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_711f7bca136968bf91d0800cb473c3d2 -->
-<!-- START_0572d1a91340566e1a9f53734cfef6d9 -->
+<!-- END_99a0d0e111d20cd72c3e47abb0c195b9 -->
+<!-- START_a4f59d1215033d6370a41fefe2e4550e -->
 <h2>show</h2>
 <p>查询单一品牌</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/brand/1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/brand/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/brand/1"
+    "http://192.168.0.178:8888/admin-api/admin/brand/1"
 );
 
 let headers = {
@@ -397,7 +397,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/brand/1',
+    'http://192.168.0.178:8888/admin-api/admin/brand/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -429,7 +429,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/brand/{brand}</code></p>
+<p><code>GET admin-api/admin/brand/{brand}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -447,21 +447,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_0572d1a91340566e1a9f53734cfef6d9 -->
-<!-- START_5abe2cf81b9aecd9045b385b13d73afa -->
+<!-- END_a4f59d1215033d6370a41fefe2e4550e -->
+<!-- START_1b4e11f63c2b7a09cb999cc7ab10546d -->
 <h2>update</h2>
 <p>更新品牌</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/brand/51" \
+    "http://192.168.0.178:8888/admin-api/admin/brand/51" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u4e09\u661f","logo":1,"sort":90,"is_del":0}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/brand/51"
+    "http://192.168.0.178:8888/admin-api/admin/brand/51"
 );
 
 let headers = {
@@ -486,7 +486,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/brand/51',
+    'http://192.168.0.178:8888/admin-api/admin/brand/51',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -522,8 +522,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/brand/{brand}</code></p>
-<p><code>PATCH api/admin/brand/{brand}</code></p>
+<p><code>PUT admin-api/admin/brand/{brand}</code></p>
+<p><code>PATCH admin-api/admin/brand/{brand}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -578,19 +578,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_5abe2cf81b9aecd9045b385b13d73afa -->
-<!-- START_683bdbae9348bfc894706954ec860e35 -->
+<!-- END_1b4e11f63c2b7a09cb999cc7ab10546d -->
+<!-- START_058c5ed9e27b3084d1e5869cf760dae9 -->
 <h2>delete</h2>
 <p>删除品牌</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/brand/51" \
+    "http://192.168.0.178:8888/admin-api/admin/brand/51" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/brand/51"
+    "http://192.168.0.178:8888/admin-api/admin/brand/51"
 );
 
 let headers = {
@@ -607,7 +607,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/brand/51',
+    'http://192.168.0.178:8888/admin-api/admin/brand/51',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -637,7 +637,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/brand/{brand}</code></p>
+<p><code>DELETE admin-api/admin/brand/{brand}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -655,21 +655,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_683bdbae9348bfc894706954ec860e35 -->
+<!-- END_058c5ed9e27b3084d1e5869cf760dae9 -->
 <h1>Category</h1>
 <p>商品分类接口</p>
-<!-- START_701f64236c5cf10f69caffda7e7072f8 -->
+<!-- START_f4f166b44e57100900985c0216fcf04b -->
 <h2>index</h2>
 <p>分类列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/category" \
+    -G "http://192.168.0.178:8888/admin-api/admin/category" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category"
+    "http://192.168.0.178:8888/admin-api/admin/category"
 );
 
 let headers = {
@@ -686,7 +686,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/category',
+    'http://192.168.0.178:8888/admin-api/admin/category',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -775,9 +775,9 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/category</code></p>
-<!-- END_701f64236c5cf10f69caffda7e7072f8 -->
-<!-- START_a6bb04f86b66b63d8f0e6505d1d29e2b -->
+<p><code>GET admin-api/admin/category</code></p>
+<!-- END_f4f166b44e57100900985c0216fcf04b -->
+<!-- START_9af3075d87032b35a3a4836cdf38e396 -->
 <h2>create</h2>
 <p>获取加前缀的分类
 获取商品类型</p>
@@ -785,11 +785,11 @@ print_r(json_decode((string) $body));</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/category/create" \
+    -G "http://192.168.0.178:8888/admin-api/admin/category/create" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/create"
+    "http://192.168.0.178:8888/admin-api/admin/category/create"
 );
 
 let headers = {
@@ -806,7 +806,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/category/create',
+    'http://192.168.0.178:8888/admin-api/admin/category/create',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1035,22 +1035,22 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/category/create</code></p>
-<!-- END_a6bb04f86b66b63d8f0e6505d1d29e2b -->
-<!-- START_2f78ffac7816ccf9db5b5c8e130e43da -->
+<p><code>GET admin-api/admin/category/create</code></p>
+<!-- END_9af3075d87032b35a3a4836cdf38e396 -->
+<!-- START_1519f34630cd39ea95a1ab4f0a203526 -->
 <h2>store</h2>
 <p>保存分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/category" \
+    "http://192.168.0.178:8888/admin-api/admin/category" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"pid":1,"name":"\u77ed\u88e4","goods_type_id":1,"sort":100,"image_id":1,"status":1}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category"
+    "http://192.168.0.178:8888/admin-api/admin/category"
 );
 
 let headers = {
@@ -1077,7 +1077,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/category',
+    'http://192.168.0.178:8888/admin-api/admin/category',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1116,7 +1116,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/category</code></p>
+<p><code>POST admin-api/admin/category</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -1166,19 +1166,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_2f78ffac7816ccf9db5b5c8e130e43da -->
-<!-- START_214091a9db7d8a91095b4311653a6491 -->
+<!-- END_1519f34630cd39ea95a1ab4f0a203526 -->
+<!-- START_0100ca6f467fb6bbe86d2ed510209ac4 -->
 <h2>show</h2>
 <p>查询分类(单一)</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/category/1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/category/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/1"
+    "http://192.168.0.178:8888/admin-api/admin/category/1"
 );
 
 let headers = {
@@ -1195,7 +1195,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/category/1',
+    'http://192.168.0.178:8888/admin-api/admin/category/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1228,7 +1228,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/category/{category}</code></p>
+<p><code>GET admin-api/admin/category/{category}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1246,19 +1246,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_214091a9db7d8a91095b4311653a6491 -->
-<!-- START_9323416ad4259365069a9390edd15ed1 -->
+<!-- END_0100ca6f467fb6bbe86d2ed510209ac4 -->
+<!-- START_92529498e4cbdefc19b317c78c3f2662 -->
 <h2>edit</h2>
 <p>编辑分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/category/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/category/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/category/1/edit"
 );
 
 let headers = {
@@ -1275,7 +1275,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/category/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/category/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1517,7 +1517,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/category/{category}/edit</code></p>
+<p><code>GET admin-api/admin/category/{category}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1535,21 +1535,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_9323416ad4259365069a9390edd15ed1 -->
-<!-- START_dde958a883781f63b95acf8f07522b75 -->
+<!-- END_92529498e4cbdefc19b317c78c3f2662 -->
+<!-- START_888c1271b11c30f9aafb957e2dd909ba -->
 <h2>update</h2>
 <p>更新分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/category/32" \
+    "http://192.168.0.178:8888/admin-api/admin/category/32" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"pid":1,"name":"\u77ed\u88e42","goods_type_id":1,"sort":100,"image_id":1,"status":1}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/32"
+    "http://192.168.0.178:8888/admin-api/admin/category/32"
 );
 
 let headers = {
@@ -1576,7 +1576,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/category/32',
+    'http://192.168.0.178:8888/admin-api/admin/category/32',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1615,8 +1615,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/category/{category}</code></p>
-<p><code>PATCH api/admin/category/{category}</code></p>
+<p><code>PUT admin-api/admin/category/{category}</code></p>
+<p><code>PATCH admin-api/admin/category/{category}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1683,19 +1683,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_dde958a883781f63b95acf8f07522b75 -->
-<!-- START_3bfecade78e62be5edb04afa9f62857b -->
+<!-- END_888c1271b11c30f9aafb957e2dd909ba -->
+<!-- START_d075b786a6abd91d064a857408e8e073 -->
 <h2>delete</h2>
 <p>删除分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/category/1" \
+    "http://192.168.0.178:8888/admin-api/admin/category/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/1"
+    "http://192.168.0.178:8888/admin-api/admin/category/1"
 );
 
 let headers = {
@@ -1712,7 +1712,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/category/1',
+    'http://192.168.0.178:8888/admin-api/admin/category/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1731,7 +1731,7 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/category/{category}</code></p>
+<p><code>DELETE admin-api/admin/category/{category}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1749,21 +1749,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_3bfecade78e62be5edb04afa9f62857b -->
-<!-- START_1ab85a9a2627f7c9660a365bcc570698 -->
+<!-- END_d075b786a6abd91d064a857408e8e073 -->
+<!-- START_3590f96b16201711832b3d26401d039f -->
 <h2>status</h2>
 <p>更改状态</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "http://192.168.0.178:8888/api/admin/category/status/1" \
+    "http://192.168.0.178:8888/admin-api/admin/category/status/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"status":12}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/category/status/1"
+    "http://192.168.0.178:8888/admin-api/admin/category/status/1"
 );
 
 let headers = {
@@ -1785,7 +1785,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;patch(
-    'http://192.168.0.178:8888/api/admin/category/status/1',
+    'http://192.168.0.178:8888/admin-api/admin/category/status/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1807,7 +1807,7 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PATCH api/admin/category/status/{category}</code></p>
+<p><code>PATCH admin-api/admin/category/status/{category}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1844,21 +1844,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_1ab85a9a2627f7c9660a365bcc570698 -->
+<!-- END_3590f96b16201711832b3d26401d039f -->
 <h1>Coupon</h1>
 <p>优惠券接口</p>
-<!-- START_3ac8252da213a0fa8a86e924cd5aa2fa -->
+<!-- START_903dc5dc07a0f42c4b2854285855fa23 -->
 <h2>index</h2>
 <p>优惠券列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/coupon?perPage=10&amp;currentPage=1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/coupon?perPage=10&amp;currentPage=1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/coupon"
+    "http://192.168.0.178:8888/admin-api/admin/coupon"
 );
 
 let params = {
@@ -1882,7 +1882,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/coupon',
+    'http://192.168.0.178:8888/admin-api/admin/coupon',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -1901,7 +1901,7 @@ print_r(json_decode((string) $body));</code></pre>
 </blockquote>
 <pre><code class="language-json">null</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/coupon</code></p>
+<p><code>GET admin-api/admin/coupon</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -1944,19 +1944,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_3ac8252da213a0fa8a86e924cd5aa2fa -->
-<!-- START_f5074db5c32272c395317ffe38487dd4 -->
+<!-- END_903dc5dc07a0f42c4b2854285855fa23 -->
+<!-- START_973dd53f7441835a34c680c6f4ac4a66 -->
 <h2>create</h2>
 <p>创建优惠券</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/coupon/create" \
+    -G "http://192.168.0.178:8888/admin-api/admin/coupon/create" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/coupon/create"
+    "http://192.168.0.178:8888/admin-api/admin/coupon/create"
 );
 
 let headers = {
@@ -1973,7 +1973,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/coupon/create',
+    'http://192.168.0.178:8888/admin-api/admin/coupon/create',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -2261,22 +2261,22 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/coupon/create</code></p>
-<!-- END_f5074db5c32272c395317ffe38487dd4 -->
-<!-- START_1329ccb919d04d572d84dc6d3acfc216 -->
+<p><code>GET admin-api/admin/coupon/create</code></p>
+<!-- END_973dd53f7441835a34c680c6f4ac4a66 -->
+<!-- START_794abc409b1fe1bbb188eaf45a3db4cf -->
 <h2>store</h2>
 <p>保存优惠券</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/coupon" \
+    "http://192.168.0.178:8888/admin-api/admin/coupon" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"20\u5143\u4f18\u60e0\u5238","type":0,"use_key":2,"use_value":"[1,2,3]","amount":20,"per_limit":1,"min_point":0,"start_time":"2020-07-01","end_time":"2020-08-31","note":"\u8fd9\u662f\u4e00\u5f20\u4f18\u60e0\u5238","publish_count":1000,"enable_time":"2020-07-31","status":12}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/coupon"
+    "http://192.168.0.178:8888/admin-api/admin/coupon"
 );
 
 let headers = {
@@ -2310,7 +2310,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/coupon',
+    'http://192.168.0.178:8888/admin-api/admin/coupon',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -2364,7 +2364,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/coupon</code></p>
+<p><code>POST admin-api/admin/coupon</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -2456,19 +2456,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_1329ccb919d04d572d84dc6d3acfc216 -->
-<!-- START_6dad24d0839004644ed267647953900a -->
+<!-- END_794abc409b1fe1bbb188eaf45a3db4cf -->
+<!-- START_8e49118652bc0952547a9ec02905ef30 -->
 <h2>edit</h2>
 <p>编辑</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/coupon/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/coupon/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/coupon/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/coupon/1/edit"
 );
 
 let headers = {
@@ -2485,7 +2485,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/coupon/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/coupon/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -2796,7 +2796,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/coupon/{coupon}/edit</code></p>
+<p><code>GET admin-api/admin/coupon/{coupon}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -2814,21 +2814,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_6dad24d0839004644ed267647953900a -->
-<!-- START_44e0c3e3966a1c0899afc5c08469546c -->
+<!-- END_8e49118652bc0952547a9ec02905ef30 -->
+<!-- START_9beca4faa14261343791593b5d53801f -->
 <h2>update</h2>
 <p>更新优惠券</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/coupon/1" \
+    "http://192.168.0.178:8888/admin-api/admin/coupon/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"20\u5143\u4f18\u60e0\u5238","type":0,"use_key":2,"use_value":"[1,2,3]","amount":20,"per_limit":1,"min_point":0,"start_time":"2020-07-01","end_time":"2020-08-31","note":"\u8fd9\u662f\u4e00\u5f20\u4f18\u60e0\u5238","publish_count":1000,"enable_time":"2020-07-31","status":12}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/coupon/1"
+    "http://192.168.0.178:8888/admin-api/admin/coupon/1"
 );
 
 let headers = {
@@ -2862,7 +2862,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/coupon/1',
+    'http://192.168.0.178:8888/admin-api/admin/coupon/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -2916,8 +2916,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/coupon/{coupon}</code></p>
-<p><code>PATCH api/admin/coupon/{coupon}</code></p>
+<p><code>PUT admin-api/admin/coupon/{coupon}</code></p>
+<p><code>PATCH admin-api/admin/coupon/{coupon}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -3026,19 +3026,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_44e0c3e3966a1c0899afc5c08469546c -->
-<!-- START_ebecb58ebb23e47721f03eefec78ef70 -->
+<!-- END_9beca4faa14261343791593b5d53801f -->
+<!-- START_20a28a23152d90d275b3d8b052bf8252 -->
 <h2>delete</h2>
 <p>删除优惠券</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/coupon/1" \
+    "http://192.168.0.178:8888/admin-api/admin/coupon/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/coupon/1"
+    "http://192.168.0.178:8888/admin-api/admin/coupon/1"
 );
 
 let headers = {
@@ -3055,7 +3055,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/coupon/1',
+    'http://192.168.0.178:8888/admin-api/admin/coupon/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -3074,7 +3074,7 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/coupon/{coupon}</code></p>
+<p><code>DELETE admin-api/admin/coupon/{coupon}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -3092,21 +3092,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_ebecb58ebb23e47721f03eefec78ef70 -->
+<!-- END_20a28a23152d90d275b3d8b052bf8252 -->
 <h1>Goods</h1>
 <p>商品接口</p>
-<!-- START_4f0cf39ed680b5602fa6eba298730581 -->
+<!-- START_7284dc020d27b9e996a97c77d295b761 -->
 <h2>index</h2>
 <p>商品列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods?marketable=1&amp;current_page=1&amp;per_page=10" \
+    -G "http://192.168.0.178:8888/admin-api/admin/goods?marketable=1&amp;current_page=1&amp;per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods"
+    "http://192.168.0.178:8888/admin-api/admin/goods"
 );
 
 let params = {
@@ -3131,7 +3131,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/goods',
+    'http://192.168.0.178:8888/admin-api/admin/goods',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -3938,7 +3938,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/goods</code></p>
+<p><code>GET admin-api/admin/goods</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -3976,19 +3976,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_4f0cf39ed680b5602fa6eba298730581 -->
-<!-- START_6b55ae11d145b85c42a4d1a51c3a4e49 -->
+<!-- END_7284dc020d27b9e996a97c77d295b761 -->
+<!-- START_46e4f76988957ecf8faec7ab8c1269e7 -->
 <h2>create</h2>
 <p>创建</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods/create" \
+    -G "http://192.168.0.178:8888/admin-api/admin/goods/create" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/create"
+    "http://192.168.0.178:8888/admin-api/admin/goods/create"
 );
 
 let headers = {
@@ -4005,7 +4005,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/goods/create',
+    'http://192.168.0.178:8888/admin-api/admin/goods/create',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -4537,22 +4537,22 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/goods/create</code></p>
-<!-- END_6b55ae11d145b85c42a4d1a51c3a4e49 -->
-<!-- START_b4c911978d3b1363c6d8368c7e9d256f -->
+<p><code>GET admin-api/admin/goods/create</code></p>
+<!-- END_46e4f76988957ecf8faec7ab8c1269e7 -->
+<!-- START_e79468003ac0f9a6ef5341017aa38b25 -->
 <h2>store</h2>
 <p>保存商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/goods" \
+    "http://192.168.0.178:8888/admin-api/admin/goods" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"is_selected":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods"
+    "http://192.168.0.178:8888/admin-api/admin/goods"
 );
 
 let headers = {
@@ -4597,7 +4597,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/goods',
+    'http://192.168.0.178:8888/admin-api/admin/goods',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -4745,7 +4745,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/goods</code></p>
+<p><code>POST admin-api/admin/goods</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -4915,19 +4915,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_b4c911978d3b1363c6d8368c7e9d256f -->
-<!-- START_95cb295a66887bc87d231647cf934875 -->
+<!-- END_e79468003ac0f9a6ef5341017aa38b25 -->
+<!-- START_ed85519e9616ded56819a141d5046f81 -->
 <h2>show</h2>
 <p>查询商品(单一)</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods/1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/goods/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/1"
+    "http://192.168.0.178:8888/admin-api/admin/goods/1"
 );
 
 let headers = {
@@ -4944,7 +4944,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/goods/1',
+    'http://192.168.0.178:8888/admin-api/admin/goods/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -5139,7 +5139,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/goods/{good}</code></p>
+<p><code>GET admin-api/admin/goods/{good}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -5157,19 +5157,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_95cb295a66887bc87d231647cf934875 -->
-<!-- START_260f82804c7e0295307e499bd681175e -->
+<!-- END_ed85519e9616ded56819a141d5046f81 -->
+<!-- START_513ca9924fd55fb4467a47fb4a5925db -->
 <h2>edit</h2>
 <p>编辑商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/goods/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/goods/1/edit"
 );
 
 let headers = {
@@ -5186,7 +5186,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/goods/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/goods/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -5829,7 +5829,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/goods/{good}/edit</code></p>
+<p><code>GET admin-api/admin/goods/{good}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -5847,21 +5847,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_260f82804c7e0295307e499bd681175e -->
-<!-- START_d4da2edf1bc2e1db7c31164ef418936b -->
+<!-- END_513ca9924fd55fb4467a47fb4a5925db -->
+<!-- START_9df4b98e5c8fb8d7e6f3b3d052edb18e -->
 <h2>update</h2>
 <p>更新商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/goods/2" \
+    "http://192.168.0.178:8888/admin-api/admin/goods/2" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"is_selected":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/2"
+    "http://192.168.0.178:8888/admin-api/admin/goods/2"
 );
 
 let headers = {
@@ -5906,7 +5906,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/goods/2',
+    'http://192.168.0.178:8888/admin-api/admin/goods/2',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6062,8 +6062,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/goods/{good}</code></p>
-<p><code>PATCH api/admin/goods/{good}</code></p>
+<p><code>PUT admin-api/admin/goods/{good}</code></p>
+<p><code>PATCH admin-api/admin/goods/{good}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -6250,19 +6250,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_d4da2edf1bc2e1db7c31164ef418936b -->
-<!-- START_3f4639ac2921209061f1d8ac93d977c0 -->
+<!-- END_9df4b98e5c8fb8d7e6f3b3d052edb18e -->
+<!-- START_0e7ca44b274b1c083d1358c699b1c923 -->
 <h2>delete</h2>
 <p>删除商品</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/goods/2" \
+    "http://192.168.0.178:8888/admin-api/admin/goods/2" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/2"
+    "http://192.168.0.178:8888/admin-api/admin/goods/2"
 );
 
 let headers = {
@@ -6279,7 +6279,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/goods/2',
+    'http://192.168.0.178:8888/admin-api/admin/goods/2',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6409,7 +6409,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/goods/{good}</code></p>
+<p><code>DELETE admin-api/admin/goods/{good}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -6427,19 +6427,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_3f4639ac2921209061f1d8ac93d977c0 -->
-<!-- START_57d8ed12eef0af47cd20ad543e4f506d -->
+<!-- END_0e7ca44b274b1c083d1358c699b1c923 -->
+<!-- START_3431e9b60f9448204cb04338396d69b8 -->
 <h2>set</h2>
 <p>设置商品属性</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/goods/attr/2?key=marketable&amp;value=2" \
+    -G "http://192.168.0.178:8888/admin-api/admin/goods/attr/2?key=marketable&amp;value=2" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/goods/attr/2"
+    "http://192.168.0.178:8888/admin-api/admin/goods/attr/2"
 );
 
 let params = {
@@ -6463,7 +6463,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/goods/attr/2',
+    'http://192.168.0.178:8888/admin-api/admin/goods/attr/2',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6517,12 +6517,12 @@ print_r(json_decode((string) $body));</code></pre>
             "spec_desc": null,
             "is_del": 0,
             "created_at": null,
-            "updated_at": "2020-07-28 17:05:25"
+            "updated_at": "2020-07-29 17:06:06"
         }
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/goods/attr/{good}</code></p>
+<p><code>GET admin-api/admin/goods/attr/{good}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -6562,21 +6562,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_57d8ed12eef0af47cd20ad543e4f506d -->
+<!-- END_3431e9b60f9448204cb04338396d69b8 -->
 <h1>Logistics</h1>
 <p>物流公司接口</p>
-<!-- START_ac771ff0c9c369a329393a4a2ffeb667 -->
+<!-- START_5f8a5722fd5dc1f3af0fe1b2c6ee71f0 -->
 <h2>index</h2>
 <p>物流公司列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/logi?per_page=10&amp;current_page=1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/logi?per_page=10&amp;current_page=1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/logi"
+    "http://192.168.0.178:8888/admin-api/admin/logi"
 );
 
 let params = {
@@ -6600,7 +6600,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/logi',
+    'http://192.168.0.178:8888/admin-api/admin/logi',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6647,7 +6647,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/logi</code></p>
+<p><code>GET admin-api/admin/logi</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -6680,21 +6680,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_ac771ff0c9c369a329393a4a2ffeb667 -->
-<!-- START_1de8e0ac38162e94265713e62849d786 -->
+<!-- END_5f8a5722fd5dc1f3af0fe1b2c6ee71f0 -->
+<!-- START_20d7b0515ec699cec2ad23908b99eab3 -->
 <h2>store</h2>
 <p>保存</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/logi" \
+    "http://192.168.0.178:8888/admin-api/admin/logi" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","sort":"100"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/logi"
+    "http://192.168.0.178:8888/admin-api/admin/logi"
 );
 
 let headers = {
@@ -6718,7 +6718,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/logi',
+    'http://192.168.0.178:8888/admin-api/admin/logi',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6751,7 +6751,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/logi</code></p>
+<p><code>POST admin-api/admin/logi</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -6783,19 +6783,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_1de8e0ac38162e94265713e62849d786 -->
-<!-- START_cc13661f343da8623681915c17849e1d -->
+<!-- END_20d7b0515ec699cec2ad23908b99eab3 -->
+<!-- START_0e383798b39608065d436c9e1b18b9d8 -->
 <h2>edit</h2>
 <p>编辑</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/logi/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/logi/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/logi/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/logi/1/edit"
 );
 
 let headers = {
@@ -6812,7 +6812,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/logi/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/logi/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6842,7 +6842,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/logi/{logi}/edit</code></p>
+<p><code>GET admin-api/admin/logi/{logi}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -6860,21 +6860,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_cc13661f343da8623681915c17849e1d -->
-<!-- START_678147baaf5700c8523ed3d143d13e11 -->
+<!-- END_0e383798b39608065d436c9e1b18b9d8 -->
+<!-- START_24b72c23fad2227c019e96eed9746aff -->
 <h2>update</h2>
 <p>更新</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/logi/1" \
+    "http://192.168.0.178:8888/admin-api/admin/logi/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","sort":"100"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/logi/1"
+    "http://192.168.0.178:8888/admin-api/admin/logi/1"
 );
 
 let headers = {
@@ -6898,7 +6898,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/logi/1',
+    'http://192.168.0.178:8888/admin-api/admin/logi/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -6931,8 +6931,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/logi/{logi}</code></p>
-<p><code>PATCH api/admin/logi/{logi}</code></p>
+<p><code>PUT admin-api/admin/logi/{logi}</code></p>
+<p><code>PATCH admin-api/admin/logi/{logi}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -6981,19 +6981,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_678147baaf5700c8523ed3d143d13e11 -->
-<!-- START_c875af72ea7cdfe9217a3b1e60942cfb -->
+<!-- END_24b72c23fad2227c019e96eed9746aff -->
+<!-- START_ff163b2850ed79144730427b5d55ae99 -->
 <h2>delete</h2>
 <p>删除物流公司</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/logi/1" \
+    "http://192.168.0.178:8888/admin-api/admin/logi/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/logi/1"
+    "http://192.168.0.178:8888/admin-api/admin/logi/1"
 );
 
 let headers = {
@@ -7010,7 +7010,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/logi/1',
+    'http://192.168.0.178:8888/admin-api/admin/logi/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7029,7 +7029,7 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/logi/{logi}</code></p>
+<p><code>DELETE admin-api/admin/logi/{logi}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -7047,20 +7047,20 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_c875af72ea7cdfe9217a3b1e60942cfb -->
+<!-- END_ff163b2850ed79144730427b5d55ae99 -->
 <h1>Order</h1>
 <p>订单接口</p>
-<!-- START_cf7ddc3a866613d34491bf08602e4e23 -->
-<h2>api/admin/order</h2>
+<!-- START_e75f64b27267b678c0f3dd07bc5ea4da -->
+<h2>admin-api/admin/order</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/order" \
+    -G "http://192.168.0.178:8888/admin-api/admin/order" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/order"
+    "http://192.168.0.178:8888/admin-api/admin/order"
 );
 
 let headers = {
@@ -7077,7 +7077,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/order',
+    'http://192.168.0.178:8888/admin-api/admin/order',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7088,23 +7088,42 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (500):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "orders": {
+            "current_page": 1,
+            "data": [],
+            "first_page_url": "\/?page=1",
+            "from": null,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": 10,
+            "prev_page_url": null,
+            "to": null,
+            "total": 0
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/order</code></p>
-<!-- END_cf7ddc3a866613d34491bf08602e4e23 -->
-<!-- START_0ea202ce1c93dcf699c28a7115846c56 -->
+<p><code>GET admin-api/admin/order</code></p>
+<!-- END_e75f64b27267b678c0f3dd07bc5ea4da -->
+<!-- START_a3d135de30676bde29b57319cfd9073f -->
 <h2>Display the specified resource.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/order/culpa" \
+    -G "http://192.168.0.178:8888/admin-api/admin/order/culpa" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/order/culpa"
+    "http://192.168.0.178:8888/admin-api/admin/order/culpa"
 );
 
 let headers = {
@@ -7121,7 +7140,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/order/culpa',
+    'http://192.168.0.178:8888/admin-api/admin/order/culpa',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7132,11 +7151,15 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (500):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": -1,
+    "message": "该订单不存在",
+    "data": []
+}</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/order/{order}</code></p>
+<p><code>GET admin-api/admin/order/{order}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -7154,18 +7177,18 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_0ea202ce1c93dcf699c28a7115846c56 -->
-<!-- START_ad8d95bebaba95030845225eab4e1fd7 -->
-<h2>api/admin/order/{order}/edit</h2>
+<!-- END_a3d135de30676bde29b57319cfd9073f -->
+<!-- START_4ea3f5e193ec8a728e89b7df8cb0f7c2 -->
+<h2>admin-api/admin/order/{order}/edit</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/order/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/order/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/order/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/order/1/edit"
 );
 
 let headers = {
@@ -7182,7 +7205,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/order/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/order/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7193,23 +7216,27 @@ $response = $client-&gt;get(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <blockquote>
-<p>Example response (500):</p>
+<p>Example response (200):</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
+<pre><code class="language-json">{
+    "code": -1,
+    "message": "该订单不存在",
+    "data": []
+}</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/order/{order}/edit</code></p>
-<!-- END_ad8d95bebaba95030845225eab4e1fd7 -->
-<!-- START_b0a8852a88255c224dda2d2bae02f559 -->
-<h2>api/admin/order/{order}</h2>
+<p><code>GET admin-api/admin/order/{order}/edit</code></p>
+<!-- END_4ea3f5e193ec8a728e89b7df8cb0f7c2 -->
+<!-- START_f27bf893692c2914110d46fa19fc817b -->
+<h2>admin-api/admin/order/{order}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/order/1" \
+    "http://192.168.0.178:8888/admin-api/admin/order/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/order/1"
+    "http://192.168.0.178:8888/admin-api/admin/order/1"
 );
 
 let headers = {
@@ -7226,7 +7253,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/order/1',
+    'http://192.168.0.178:8888/admin-api/admin/order/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7237,20 +7264,20 @@ $response = $client-&gt;put(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/order/{order}</code></p>
-<p><code>PATCH api/admin/order/{order}</code></p>
-<!-- END_b0a8852a88255c224dda2d2bae02f559 -->
-<!-- START_ee7acfedb261f9e19b00c25c94c349b3 -->
-<h2>api/admin/order/ship</h2>
+<p><code>PUT admin-api/admin/order/{order}</code></p>
+<p><code>PATCH admin-api/admin/order/{order}</code></p>
+<!-- END_f27bf893692c2914110d46fa19fc817b -->
+<!-- START_6476c266a2e2af22f030a31a604bc611 -->
+<h2>admin-api/admin/order/ship/{order}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/order/ship" \
+    "http://192.168.0.178:8888/admin-api/admin/order/ship/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/order/ship"
+    "http://192.168.0.178:8888/admin-api/admin/order/ship/1"
 );
 
 let headers = {
@@ -7267,7 +7294,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/order/ship',
+    'http://192.168.0.178:8888/admin-api/admin/order/ship/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7278,22 +7305,22 @@ $response = $client-&gt;post(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/order/ship</code></p>
-<!-- END_ee7acfedb261f9e19b00c25c94c349b3 -->
+<p><code>POST admin-api/admin/order/ship/{order}</code></p>
+<!-- END_6476c266a2e2af22f030a31a604bc611 -->
 <h1>Promotion</h1>
 <p>促销接口</p>
-<!-- START_ad40ef13b9f3d1f5bbe357fabaf5320d -->
+<!-- START_35f3b107a2b5876462953a19dec3a401 -->
 <h2>index</h2>
 <p>促销列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/promotion" \
+    -G "http://192.168.0.178:8888/admin-api/admin/promotion" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion"
+    "http://192.168.0.178:8888/admin-api/admin/promotion"
 );
 
 let headers = {
@@ -7310,7 +7337,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/promotion',
+    'http://192.168.0.178:8888/admin-api/admin/promotion',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7379,20 +7406,20 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/promotion</code></p>
-<!-- END_ad40ef13b9f3d1f5bbe357fabaf5320d -->
-<!-- START_35903c35ae655f85ccac333c5923d457 -->
+<p><code>GET admin-api/admin/promotion</code></p>
+<!-- END_35f3b107a2b5876462953a19dec3a401 -->
+<!-- START_a5c463a1a5a4405b41a3d367ab9434a4 -->
 <h2>create</h2>
 <p>创建促销</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/promotion/create" \
+    -G "http://192.168.0.178:8888/admin-api/admin/promotion/create" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion/create"
+    "http://192.168.0.178:8888/admin-api/admin/promotion/create"
 );
 
 let headers = {
@@ -7409,7 +7436,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/promotion/create',
+    'http://192.168.0.178:8888/admin-api/admin/promotion/create',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7641,22 +7668,22 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/promotion/create</code></p>
-<!-- END_35903c35ae655f85ccac333c5923d457 -->
-<!-- START_2b866ff394bbf08402341e8a96613573 -->
+<p><code>GET admin-api/admin/promotion/create</code></p>
+<!-- END_a5c463a1a5a4405b41a3d367ab9434a4 -->
+<!-- START_631d0f0513240b6233427bda5f88b524 -->
 <h2>store</h2>
 <p>保存促销</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/promotion" \
+    "http://192.168.0.178:8888/admin-api/admin/promotion" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u56fd\u5e86\u8282\u4fc3\u9500","exclusive":1,"condition_code":"GOODS_IDS","condition_params":"1","result_code":"GOODS_DISCOUNT","result_params":"{\"discount\":97}","description":"\u8fd9\u662f\u4e00\u4e2a\u56fd\u5e86\u8282\u4fc3\u9500\u6d3b\u52a8","sort":"100","start_time":"2020-07-01","end_time":"2020-08-31","is_del":0,"status":1}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion"
+    "http://192.168.0.178:8888/admin-api/admin/promotion"
 );
 
 let headers = {
@@ -7689,7 +7716,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/promotion',
+    'http://192.168.0.178:8888/admin-api/admin/promotion',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7742,7 +7769,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/promotion</code></p>
+<p><code>POST admin-api/admin/promotion</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -7828,19 +7855,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_2b866ff394bbf08402341e8a96613573 -->
-<!-- START_6555ca34025de8b49dbc13cd527083dd -->
+<!-- END_631d0f0513240b6233427bda5f88b524 -->
+<!-- START_98029f6edcb80eba2efae82750e433fa -->
 <h2>show</h2>
 <p>查询促销</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/promotion/1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/promotion/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion/1"
+    "http://192.168.0.178:8888/admin-api/admin/promotion/1"
 );
 
 let headers = {
@@ -7857,7 +7884,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/promotion/1',
+    'http://192.168.0.178:8888/admin-api/admin/promotion/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -7896,7 +7923,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/promotion/{promotion}</code></p>
+<p><code>GET admin-api/admin/promotion/{promotion}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -7914,19 +7941,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_6555ca34025de8b49dbc13cd527083dd -->
-<!-- START_9b11547f0ff5e841665e2b2d8c43ea73 -->
+<!-- END_98029f6edcb80eba2efae82750e433fa -->
+<!-- START_ee029bbce15fe72800902ad3dbb33f44 -->
 <h2>edit</h2>
 <p>编辑促销</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/promotion/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/promotion/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/promotion/1/edit"
 );
 
 let headers = {
@@ -7943,7 +7970,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/promotion/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/promotion/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -8194,7 +8221,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/promotion/{promotion}/edit</code></p>
+<p><code>GET admin-api/admin/promotion/{promotion}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -8212,21 +8239,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_9b11547f0ff5e841665e2b2d8c43ea73 -->
-<!-- START_d3ef821b042a8626d5e6370d60014cf7 -->
+<!-- END_ee029bbce15fe72800902ad3dbb33f44 -->
+<!-- START_aaf34137eb604492f774705f72dae3c5 -->
 <h2>update</h2>
 <p>更新促销</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/promotion/1" \
+    "http://192.168.0.178:8888/admin-api/admin/promotion/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u56fd\u5e86\u8282\u4fc3\u9500","exclusive":3,"condition_code":"GOODS_IDS","condition_params":"1","result_code":"GOODS_DISCOUNT","result_params":"{\"discount\":97}","description":"\u8fd9\u662f\u4e00\u4e2a\u56fd\u5e86\u8282\u4fc3\u9500\u6d3b\u52a8","sort":"100","start_time":"2020-07-01","end_time":"2020-08-31","is_del":0,"status":1}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion/1"
+    "http://192.168.0.178:8888/admin-api/admin/promotion/1"
 );
 
 let headers = {
@@ -8259,7 +8286,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/promotion/1',
+    'http://192.168.0.178:8888/admin-api/admin/promotion/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -8314,8 +8341,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/promotion/{promotion}</code></p>
-<p><code>PATCH api/admin/promotion/{promotion}</code></p>
+<p><code>PUT admin-api/admin/promotion/{promotion}</code></p>
+<p><code>PATCH admin-api/admin/promotion/{promotion}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -8418,19 +8445,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_d3ef821b042a8626d5e6370d60014cf7 -->
-<!-- START_4a494705ac31eff224e95c7cbf9b7487 -->
+<!-- END_aaf34137eb604492f774705f72dae3c5 -->
+<!-- START_0dfc9c7e2cf812b37bb55a09d97483d2 -->
 <h2>delete</h2>
 <p>删除促销</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/promotion/1" \
+    "http://192.168.0.178:8888/admin-api/admin/promotion/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/promotion/1"
+    "http://192.168.0.178:8888/admin-api/admin/promotion/1"
 );
 
 let headers = {
@@ -8447,7 +8474,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/promotion/1',
+    'http://192.168.0.178:8888/admin-api/admin/promotion/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -8466,22 +8493,22 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/promotion/{promotion}</code></p>
-<!-- END_4a494705ac31eff224e95c7cbf9b7487 -->
+<p><code>DELETE admin-api/admin/promotion/{promotion}</code></p>
+<!-- END_0dfc9c7e2cf812b37bb55a09d97483d2 -->
 <h1>Ship</h1>
 <p>配送方式接口</p>
-<!-- START_833c788b1ce112e7c98aa8fd92013d3e -->
+<!-- START_8688f211e3e8308288e86a921ed2764e -->
 <h2>index</h2>
 <p>配送方式列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/ship?per_page=10&amp;current_page=1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/ship?per_page=10&amp;current_page=1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship"
+    "http://192.168.0.178:8888/admin-api/admin/ship"
 );
 
 let params = {
@@ -8505,7 +8532,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/ship',
+    'http://192.168.0.178:8888/admin-api/admin/ship',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -9469,7 +9496,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/ship</code></p>
+<p><code>GET admin-api/admin/ship</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -9492,19 +9519,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_833c788b1ce112e7c98aa8fd92013d3e -->
-<!-- START_83413ca82f5d118476fab68d3803ae5e -->
+<!-- END_8688f211e3e8308288e86a921ed2764e -->
+<!-- START_85ab7c04f068df1fc347d7030e49a816 -->
 <h2>create</h2>
 <p>创建配送方式</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/ship/create" \
+    -G "http://192.168.0.178:8888/admin-api/admin/ship/create" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship/create"
+    "http://192.168.0.178:8888/admin-api/admin/ship/create"
 );
 
 let headers = {
@@ -9521,7 +9548,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/ship/create',
+    'http://192.168.0.178:8888/admin-api/admin/ship/create',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -9551,22 +9578,22 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/ship/create</code></p>
-<!-- END_83413ca82f5d118476fab68d3803ae5e -->
-<!-- START_9a5a5cb0fba71575935217ba2076a5aa -->
+<p><code>GET admin-api/admin/ship/create</code></p>
+<!-- END_85ab7c04f068df1fc347d7030e49a816 -->
+<!-- START_519081b62fa4c01362bc8c8791c12560 -->
 <h2>store</h2>
 <p>保存配送方式</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/ship" \
+    "http://192.168.0.178:8888/admin-api/admin/ship" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u914d\u9001\u65b9\u5f0f1","type":1,"has_cod":1,"firstunit":500,"continueunit":500,"def_area_fee":1,"area_type":1,"firstunit_price":10,"continueunit_price":5,"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","is_def":2,"sort":100,"status":1,"free_postage":2,"goodsmoney":0,"area_fee":"[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship"
+    "http://192.168.0.178:8888/admin-api/admin/ship"
 );
 
 let headers = {
@@ -9604,7 +9631,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/ship',
+    'http://192.168.0.178:8888/admin-api/admin/ship',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -9634,7 +9661,7 @@ $response = $client-&gt;post(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/ship</code></p>
+<p><code>POST admin-api/admin/ship</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -9750,19 +9777,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_9a5a5cb0fba71575935217ba2076a5aa -->
-<!-- START_53037d387438ebf682668ff7d66edd98 -->
+<!-- END_519081b62fa4c01362bc8c8791c12560 -->
+<!-- START_6c50287825e627ffb8f5cd57c42fce4e -->
 <h2>show</h2>
 <p>查询配送方式</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/ship/1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/ship/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship/1"
+    "http://192.168.0.178:8888/admin-api/admin/ship/1"
 );
 
 let headers = {
@@ -9779,7 +9806,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/ship/1',
+    'http://192.168.0.178:8888/admin-api/admin/ship/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -9934,7 +9961,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/ship/{ship}</code></p>
+<p><code>GET admin-api/admin/ship/{ship}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -9952,19 +9979,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_53037d387438ebf682668ff7d66edd98 -->
-<!-- START_43c46b08c6a9692404cad53f2f11ebd6 -->
+<!-- END_6c50287825e627ffb8f5cd57c42fce4e -->
+<!-- START_50ec9c5c380580f5f4f921c9d84d5a36 -->
 <h2>edit</h2>
 <p>编辑</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/ship/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/ship/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/ship/1/edit"
 );
 
 let headers = {
@@ -9981,7 +10008,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/ship/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/ship/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -10146,7 +10173,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/ship/{ship}/edit</code></p>
+<p><code>GET admin-api/admin/ship/{ship}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -10164,21 +10191,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_43c46b08c6a9692404cad53f2f11ebd6 -->
-<!-- START_4b9c1da0fed382429a84c26e09a11a81 -->
+<!-- END_50ec9c5c380580f5f4f921c9d84d5a36 -->
+<!-- START_f513de490f213a511467e25214b780c3 -->
 <h2>update</h2>
 <p>更新</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/ship/1" \
+    "http://192.168.0.178:8888/admin-api/admin/ship/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u914d\u9001\u65b9\u5f0f1","type":1,"has_cod":1,"firstunit":500,"continueunit":500,"def_area_fee":1,"area_type":1,"firstunit_price":10,"continueunit_price":5,"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","is_def":2,"sort":100,"status":1,"free_postage":2,"goodsmoney":0,"area_fee":"[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship/1"
+    "http://192.168.0.178:8888/admin-api/admin/ship/1"
 );
 
 let headers = {
@@ -10216,7 +10243,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/ship/1',
+    'http://192.168.0.178:8888/admin-api/admin/ship/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -10246,8 +10273,8 @@ $response = $client-&gt;put(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/ship/{ship}</code></p>
-<p><code>PATCH api/admin/ship/{ship}</code></p>
+<p><code>PUT admin-api/admin/ship/{ship}</code></p>
+<p><code>PATCH admin-api/admin/ship/{ship}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -10380,19 +10407,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_4b9c1da0fed382429a84c26e09a11a81 -->
-<!-- START_f82e3bd349225df19b2a43207c01e9d5 -->
+<!-- END_f513de490f213a511467e25214b780c3 -->
+<!-- START_96dd991546c459d04868a95a43911087 -->
 <h2>delete</h2>
 <p>删除</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/ship/1" \
+    "http://192.168.0.178:8888/admin-api/admin/ship/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/ship/1"
+    "http://192.168.0.178:8888/admin-api/admin/ship/1"
 );
 
 let headers = {
@@ -10409,7 +10436,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/ship/1',
+    'http://192.168.0.178:8888/admin-api/admin/ship/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -10420,7 +10447,7 @@ $response = $client-&gt;delete(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/ship/{ship}</code></p>
+<p><code>DELETE admin-api/admin/ship/{ship}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -10438,22 +10465,22 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_f82e3bd349225df19b2a43207c01e9d5 -->
+<!-- END_96dd991546c459d04868a95a43911087 -->
 <h1>Spec</h1>
 <p>属性接口
 Class SpecController</p>
-<!-- START_eb57f9f10a51ded148bdcb5669195e94 -->
+<!-- START_d757b7c508d3a517dd482d2275d1862b -->
 <h2>index</h2>
 <p>属性列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/spec?current_page=1&amp;per_page=10" \
+    -G "http://192.168.0.178:8888/admin-api/admin/spec?current_page=1&amp;per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec"
+    "http://192.168.0.178:8888/admin-api/admin/spec"
 );
 
 let params = {
@@ -10477,7 +10504,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/spec',
+    'http://192.168.0.178:8888/admin-api/admin/spec',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -10814,7 +10841,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/spec</code></p>
+<p><code>GET admin-api/admin/spec</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -10842,21 +10869,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_eb57f9f10a51ded148bdcb5669195e94 -->
-<!-- START_1144bc6fdea08d8ddce96397dabd4a3f -->
+<!-- END_d757b7c508d3a517dd482d2275d1862b -->
+<!-- START_c02fbe26c391ada63d6ad6e0c90e6175 -->
 <h2>store</h2>
 <p>保存属性</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/spec" \
+    "http://192.168.0.178:8888/admin-api/admin/spec" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u7801\u6570","sort":100,"values":"[34,35,36,37,38,39,40]"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec"
+    "http://192.168.0.178:8888/admin-api/admin/spec"
 );
 
 let headers = {
@@ -10880,7 +10907,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/spec',
+    'http://192.168.0.178:8888/admin-api/admin/spec',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -10941,7 +10968,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/spec</code></p>
+<p><code>POST admin-api/admin/spec</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -10973,19 +11000,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_1144bc6fdea08d8ddce96397dabd4a3f -->
-<!-- START_40bfefe538bd1e871b0867db2fd349fb -->
+<!-- END_c02fbe26c391ada63d6ad6e0c90e6175 -->
+<!-- START_8b4b51921983c576bc2765c473ceffcb -->
 <h2>show</h2>
 <p>查询属性(单一)</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/spec/culpa" \
+    -G "http://192.168.0.178:8888/admin-api/admin/spec/culpa" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec/culpa"
+    "http://192.168.0.178:8888/admin-api/admin/spec/culpa"
 );
 
 let headers = {
@@ -11002,7 +11029,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/spec/culpa',
+    'http://192.168.0.178:8888/admin-api/admin/spec/culpa',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11021,7 +11048,7 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/spec/{spec}</code></p>
+<p><code>GET admin-api/admin/spec/{spec}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -11039,21 +11066,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_40bfefe538bd1e871b0867db2fd349fb -->
-<!-- START_bd081498d34d1dc2bf0eca0d7ce5fa04 -->
+<!-- END_8b4b51921983c576bc2765c473ceffcb -->
+<!-- START_dc2ee438febbf6caac3d61fb33373248 -->
 <h2>update</h2>
 <p>更新属性</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/spec/culpa" \
+    "http://192.168.0.178:8888/admin-api/admin/spec/culpa" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u7801\u6570","sort":100,"values":"[34,35,36,37,38,39,40]"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec/culpa"
+    "http://192.168.0.178:8888/admin-api/admin/spec/culpa"
 );
 
 let headers = {
@@ -11077,7 +11104,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/spec/culpa',
+    'http://192.168.0.178:8888/admin-api/admin/spec/culpa',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11138,8 +11165,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/spec/{spec}</code></p>
-<p><code>PATCH api/admin/spec/{spec}</code></p>
+<p><code>PUT admin-api/admin/spec/{spec}</code></p>
+<p><code>PATCH admin-api/admin/spec/{spec}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -11188,19 +11215,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_bd081498d34d1dc2bf0eca0d7ce5fa04 -->
-<!-- START_8f1f153625db53644568ad45fd01a751 -->
+<!-- END_dc2ee438febbf6caac3d61fb33373248 -->
+<!-- START_63db4b0cf6e0c90db3bf00a6eac0103f -->
 <h2>delete</h2>
 <p>删除</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/spec/1" \
+    "http://192.168.0.178:8888/admin-api/admin/spec/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/spec/1"
+    "http://192.168.0.178:8888/admin-api/admin/spec/1"
 );
 
 let headers = {
@@ -11217,7 +11244,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/spec/1',
+    'http://192.168.0.178:8888/admin-api/admin/spec/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11228,21 +11255,21 @@ $response = $client-&gt;delete(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/spec/{spec}</code></p>
-<!-- END_8f1f153625db53644568ad45fd01a751 -->
+<p><code>DELETE admin-api/admin/spec/{spec}</code></p>
+<!-- END_63db4b0cf6e0c90db3bf00a6eac0103f -->
 <h1>Type</h1>
-<!-- START_2bf18f2a6d8f9a56e9b7791105ae31dc -->
+<!-- START_4b6c8f50d20d7d66cc74eed6a8f2fd65 -->
 <h2>index</h2>
 <p>类型列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type?current_page=1&amp;per_page=10" \
+    -G "http://192.168.0.178:8888/admin-api/admin/type?current_page=1&amp;per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type"
+    "http://192.168.0.178:8888/admin-api/admin/type"
 );
 
 let params = {
@@ -11266,7 +11293,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type',
+    'http://192.168.0.178:8888/admin-api/admin/type',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11375,7 +11402,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/type</code></p>
+<p><code>GET admin-api/admin/type</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -11403,19 +11430,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_2bf18f2a6d8f9a56e9b7791105ae31dc -->
-<!-- START_84902dbe1ce91e5e42037f62df784d86 -->
+<!-- END_4b6c8f50d20d7d66cc74eed6a8f2fd65 -->
+<!-- START_0e504f0c18c229c2076a25f06ee1defe -->
 <h2>create</h2>
 <p>创建类型</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type/create" \
+    -G "http://192.168.0.178:8888/admin-api/admin/type/create" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/create"
+    "http://192.168.0.178:8888/admin-api/admin/type/create"
 );
 
 let headers = {
@@ -11432,7 +11459,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type/create',
+    'http://192.168.0.178:8888/admin-api/admin/type/create',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11582,22 +11609,22 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/type/create</code></p>
-<!-- END_84902dbe1ce91e5e42037f62df784d86 -->
-<!-- START_adccea5cb8e1ee74d6d49b8340d2fea8 -->
+<p><code>GET admin-api/admin/type/create</code></p>
+<!-- END_0e504f0c18c229c2076a25f06ee1defe -->
+<!-- START_def4ed48d2f7f93b9349022bcccc02e3 -->
 <h2>store</h2>
 <p>保存分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/admin/type" \
+    "http://192.168.0.178:8888/admin-api/admin/type" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u901a\u7528\u7c7b\u578b","spec_id":"[1]","sort":100}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type"
+    "http://192.168.0.178:8888/admin-api/admin/type"
 );
 
 let headers = {
@@ -11621,7 +11648,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/admin/type',
+    'http://192.168.0.178:8888/admin-api/admin/type',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11667,7 +11694,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/admin/type</code></p>
+<p><code>POST admin-api/admin/type</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -11699,19 +11726,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_adccea5cb8e1ee74d6d49b8340d2fea8 -->
-<!-- START_4939a0f5d3266facf1b6f9edc0dcc558 -->
+<!-- END_def4ed48d2f7f93b9349022bcccc02e3 -->
+<!-- START_ace288eb7da4e0c155017dee04a9c02a -->
 <h2>show</h2>
 <p>查询类型(单一)</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type/1" \
+    -G "http://192.168.0.178:8888/admin-api/admin/type/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1"
+    "http://192.168.0.178:8888/admin-api/admin/type/1"
 );
 
 let headers = {
@@ -11728,7 +11755,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type/1',
+    'http://192.168.0.178:8888/admin-api/admin/type/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11757,7 +11784,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/type/{type}</code></p>
+<p><code>GET admin-api/admin/type/{type}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -11775,19 +11802,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_4939a0f5d3266facf1b6f9edc0dcc558 -->
-<!-- START_74d0bf9ea2fa3334be174ff0a867e515 -->
+<!-- END_ace288eb7da4e0c155017dee04a9c02a -->
+<!-- START_de9e268079f85cac20529b55d6169b88 -->
 <h2>edit</h2>
 <p>编辑类型</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/type/1/edit" \
+    -G "http://192.168.0.178:8888/admin-api/admin/type/1/edit" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1/edit"
+    "http://192.168.0.178:8888/admin-api/admin/type/1/edit"
 );
 
 let headers = {
@@ -11804,7 +11831,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/type/1/edit',
+    'http://192.168.0.178:8888/admin-api/admin/type/1/edit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -11989,7 +12016,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/type/{type}/edit</code></p>
+<p><code>GET admin-api/admin/type/{type}/edit</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -12007,21 +12034,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_74d0bf9ea2fa3334be174ff0a867e515 -->
-<!-- START_ddfc96f5dd2cd99669f0ebf91e638e15 -->
+<!-- END_de9e268079f85cac20529b55d6169b88 -->
+<!-- START_c088a6963d9a5b955ead8e241e768997 -->
 <h2>update</h2>
 <p>更新类型</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/api/admin/type/1" \
+    "http://192.168.0.178:8888/admin-api/admin/type/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"name":"\u901a\u7528\u7c7b\u578b1","spec_id":"[1]","sort":100}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1"
+    "http://192.168.0.178:8888/admin-api/admin/type/1"
 );
 
 let headers = {
@@ -12045,7 +12072,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://192.168.0.178:8888/api/admin/type/1',
+    'http://192.168.0.178:8888/admin-api/admin/type/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -12091,8 +12118,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/admin/type/{type}</code></p>
-<p><code>PATCH api/admin/type/{type}</code></p>
+<p><code>PUT admin-api/admin/type/{type}</code></p>
+<p><code>PATCH admin-api/admin/type/{type}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -12141,19 +12168,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_ddfc96f5dd2cd99669f0ebf91e638e15 -->
-<!-- START_5fa475b5e166ef0c11ad7356b1ce1373 -->
+<!-- END_c088a6963d9a5b955ead8e241e768997 -->
+<!-- START_4961ae06d4b7ea14ac8f1358d26b17fe -->
 <h2>delete</h2>
 <p>删除分类</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/api/admin/type/1" \
+    "http://192.168.0.178:8888/admin-api/admin/type/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/type/1"
+    "http://192.168.0.178:8888/admin-api/admin/type/1"
 );
 
 let headers = {
@@ -12170,7 +12197,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://192.168.0.178:8888/api/admin/type/1',
+    'http://192.168.0.178:8888/admin-api/admin/type/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -12189,7 +12216,7 @@ print_r(json_decode((string) $body));</code></pre>
     "data": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/admin/type/{type}</code></p>
+<p><code>DELETE admin-api/admin/type/{type}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -12207,21 +12234,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_5fa475b5e166ef0c11ad7356b1ce1373 -->
+<!-- END_4961ae06d4b7ea14ac8f1358d26b17fe -->
 <h1>User</h1>
 <p>用户接口</p>
-<!-- START_b83d7cd7027ac246cb0f9cecb20c7bc4 -->
+<!-- START_7db60fa119816a6bc4e3227b905c7511 -->
 <h2>index</h2>
 <p>用户列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/admin/user?current_page=1&amp;per_page=10" \
+    -G "http://192.168.0.178:8888/admin-api/admin/user?current_page=1&amp;per_page=10" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/user"
+    "http://192.168.0.178:8888/admin-api/admin/user"
 );
 
 let params = {
@@ -12245,7 +12272,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/admin/user',
+    'http://192.168.0.178:8888/admin-api/admin/user',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -12365,7 +12392,7 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/admin/user</code></p>
+<p><code>GET admin-api/admin/user</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -12413,21 +12440,21 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_b83d7cd7027ac246cb0f9cecb20c7bc4 -->
-<!-- START_cd4ea8061e4098ff43c0a955e533b436 -->
+<!-- END_7db60fa119816a6bc4e3227b905c7511 -->
+<!-- START_e2c87a7b4fe9764a67ed7e2d93501c82 -->
 <h2>status</h2>
 <p>更改用户状态</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "http://192.168.0.178:8888/api/admin/user/status/1" \
+    "http://192.168.0.178:8888/admin-api/admin/user/status/1" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"status":"2"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/admin/user/status/1"
+    "http://192.168.0.178:8888/admin-api/admin/user/status/1"
 );
 
 let headers = {
@@ -12449,7 +12476,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;patch(
-    'http://192.168.0.178:8888/api/admin/user/status/1',
+    'http://192.168.0.178:8888/admin-api/admin/user/status/1',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -12463,7 +12490,7 @@ $response = $client-&gt;patch(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PATCH api/admin/user/status/{user}</code></p>
+<p><code>PATCH admin-api/admin/user/status/{user}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -12500,22 +12527,22 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_cd4ea8061e4098ff43c0a955e533b436 -->
-<h1>Z-Other 通用接口</h1>
-<!-- START_204613676cab89a55dfdc7d81f16a281 -->
+<!-- END_e2c87a7b4fe9764a67ed7e2d93501c82 -->
+<h1>Z-Other</h1>
+<!-- START_c1ebba912b77a4efd01b64e716849b88 -->
 <h2>upload</h2>
 <p>上传图片</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/api/images" \
+    "http://192.168.0.178:8888/admin-api/images" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data" \
     -d '{"images":{"":"culpa"}}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/images"
+    "http://192.168.0.178:8888/admin-api/images"
 );
 
 let headers = {
@@ -12539,7 +12566,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://192.168.0.178:8888/api/images',
+    'http://192.168.0.178:8888/admin-api/images',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -12555,7 +12582,7 @@ $response = $client-&gt;post(
 $body = $response-&gt;getBody();
 print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/images</code></p>
+<p><code>POST admin-api/images</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -12575,19 +12602,19 @@ print_r(json_decode((string) $body));</code></pre>
 </tr>
 </tbody>
 </table>
-<!-- END_204613676cab89a55dfdc7d81f16a281 -->
-<!-- START_5f0ba94023354600fdccd49012e79c9d -->
+<!-- END_c1ebba912b77a4efd01b64e716849b88 -->
+<!-- START_48e82aada58370364075ad95bafa567c -->
 <h2>area</h2>
 <p>获取全国地区</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/api/areas" \
+    -G "http://192.168.0.178:8888/admin-api/areas" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: multipart/form-data"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/api/areas"
+    "http://192.168.0.178:8888/admin-api/areas"
 );
 
 let headers = {
@@ -12604,7 +12631,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/api/areas',
+    'http://192.168.0.178:8888/admin-api/areas',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -65927,8 +65954,8 @@ print_r(json_decode((string) $body));</code></pre>
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/areas</code></p>
-<!-- END_5f0ba94023354600fdccd49012e79c9d -->
+<p><code>GET admin-api/areas</code></p>
+<!-- END_48e82aada58370364075ad95bafa567c -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

@@ -76,18 +76,20 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        if ($order = Order::find($id)) {
+        if (!$order = Order::find($id)) {
             return Helper::Json(-1, '该订单不存在');
         }
-        $order[0]->item;
-        $order[0]->ship;
-        $order[0]->area;
+        $order->item;
+        $order->ship;
+        $order->area;
         return Helper::Json(1, '查询成功', ['order' => $order]);
     }
 
     public function edit($id)
     {
-        $order = Order::find($id);
+        if (!$order = Order::find($id)) {
+            return Helper::Json(-1, '该订单不存在');
+        }
         return Helper::Json(1, '查询成功', ['order' => $order]);
     }
 
@@ -110,7 +112,9 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return Helper::Json(-1, $validator->errors()->first());
         }
-        $order = Order::find($id);
+        if (!$order = Order::find($id)) {
+            return Helper::Json(-1, '该订单不存在');
+        }
         $order->fill($request->all());
         $order->save();
         return Helper::Json(1, '更新成功', ['order' => $order]);
@@ -135,13 +139,19 @@ class OrderController extends Controller
             'ship_name.max' => '收货姓名字符太长',
             'ship_mobile.required' => '收货人电话不能为空',
             'ship_mobile.max' => '收货人电话字符太长',
-            'send_nums.required' => '发货数量不能为空'
+            'send_nums.required' => '发货数量不能为空',
+            'logi_id.required' => '物流公司不能为空',
+            'logi_id.exists' => '物流公司参数错误',
+            'logi_no.required' => '物流单号不能为空',
         ]);
         if ($validator->fails()) {
             return Helper::Json(-1, $validator->errors()->first());
         }
+        $order = Order::find($id);
         $logistics = Logistics::find($request->input('logi_id'));
+        $deliveryId = date('YmdHis'). 'dl00' . $order->user_id . '00' . mt_rand(100,999);
         $delivery = Delivery::create([
+            'id' => $deliveryId,
             'order_id' => $id,
             'logi_name' => $logistics->logi_name,
             'logi_code' => $logistics->logi_code,
@@ -152,9 +162,9 @@ class OrderController extends Controller
             'ship_mobile' => $request->input('ship_mobile'),
             'desc' => $request->has('desc') ? $request->input('desc') : ''
         ]);
-        $order = Order::find($id);
+
         $order->fill($request->only('ship_area_code', 'ship_address', 'ship_name', 'ship_mobile'));
-        $orderItems = $order[0]->item;
+        $orderItems = $order->item;
         $sendNums = $request->input('send_nums');
         if (array_sum($sendNums) == 0) {
             return Helper::Json(-1, '请至少发货一件商品');
@@ -162,26 +172,32 @@ class OrderController extends Controller
         $shipStatus = 0;//标记是否完全发货
         foreach ($orderItems as $item) {
             $item->sendnums += $sendNums[$item->id];
+            if ($item->sendnums > $item->nums) {
+                return Helper::Json(-1, '发货失败,超过购买数量');
+            }
             $item->save();
             DeliveryItems::create([
-                'delivery_id' => $delivery->id,
+                'delivery_id' => $deliveryId,
                 'goods_id' => $item->goods_id,
                 'product_id' => $item->product_id,
-                'goods_name' => $item->name,
-                'goods_pic_url' => $item->image_url,
+                'goods_name' => $item->goods_name,
+                'goods_pic_url' => $item->goods_pic_url,
                 'sn' => $item->sn,
                 'bn' => $item->bn,
                 'nums' => $sendNums[$item->id],
                 'weight' => $item->weight,
                 'product_spec' => $item->product_spec
             ]);
-            if ($item->nums != $item->sendnums) {
+            if ((int)$item->nums > (int)$item->sendnums) {
                 $shipStatus++;
             }
         }
         if ($shipStatus != 0) {
             $order->ship_status = 2;
+        } else {
+            $order->ship_status = 3;
         }
         $order->save();
+        return Helper::Json(1, '发货成功');
     }
 }

@@ -54,6 +54,7 @@ return [
      * By default, this will be the value of config('app.url').
      */
     'base_url' => 'http://192.168.0.178:8888',
+//    'base_url' => 'https://ydf.sanshanwenhua.com',
 
     /*
      * Generate a Postman collection in addition to HTML docs.
@@ -243,7 +244,7 @@ return [
     /*
      * Name for the group of routes which do not have a @group set.
      */
-    'default_group' => 'Z-Other 通用接口',
+    'default_group' => 'Z-Other',
 
     /*
      * Example requests for each endpoint will be shown in each of these languages.

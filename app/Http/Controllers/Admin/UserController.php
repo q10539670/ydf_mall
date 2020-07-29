@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * @group User
@@ -79,6 +80,15 @@ class UserController extends Controller
     {
         if (!$user = User::find($id)) {
             return Helper::Json(-1, '状态修改失败,该用户不存在');
+        }
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|regex:/^[1,2]$/',
+        ], [
+            'status.required' => '状态参数不能为空',
+            'status.regex' => '状态参数错误',
+        ]);
+        if ($validator->fails()) {
+            return Helper::Json(-1, $validator->errors()->first());
         }
         $user->status = $request->input('status');
         $user->save();

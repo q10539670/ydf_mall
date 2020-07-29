@@ -472,8 +472,9 @@ class GoodsController extends Controller
         if (!$data['bn'] || $data['bn'] == null) {
             unset($data['bn']);
         }
-        $goods = Goods::find($id);
-
+        if (!$goods = Goods::find($id)) {
+            return Helper::Json(-1, '更新失败,该商品不存在');
+        }
         $num = Products::where('goods_id', $id)->count();
         $sn = strstr($goods->bn, '_');
         $productIds = array_reduce(Products::where('goods_id', $id)->get('id')->toArray(), function ($result, $value) {
