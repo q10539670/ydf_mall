@@ -173,7 +173,7 @@ class OrderController extends Controller
         foreach ($orderItems as $item) {
             $item->sendnums += $sendNums[$item->id];
             if ($item->sendnums > $item->nums) {
-                return Helper::Json(-1, '发货失败,超过购买数量');
+                return Helper::Json(-1, '发货失败,发货数量超过购买数量');
             }
             $item->save();
             DeliveryItems::create([

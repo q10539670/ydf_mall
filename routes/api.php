@@ -33,7 +33,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'cors
     Route::resource('ship', 'ShipController')->names('ship');                          //配送方式
     Route::resource('order', 'OrderController')->names('order');                       //订单
 
-
+    Route::get('delivery','DeliveryController@index')->name('delivery');
+    Route::get('delivery/{delivery}','DeliveryController@show')->name('delivery.show');
     Route::get('user', 'UserController@index')->name('user'); //用户列表
     Route::post('order/ship/{order}', 'OrderController@ship')->name('order.ship'); //用户列表
     Route::patch('user/status/{user}', 'UserController@status')->name('user.status'); //更改用户状态

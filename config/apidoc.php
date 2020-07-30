@@ -150,7 +150,7 @@ return [
                  */
                 'headers' => [
                     'Content-Type' => 'multipart/form-data',
-                    'Accept' => 'multipart/form-data',
+                    'Accept' => '*/*',
                     // 'Authorization' => 'Bearer {token}',
                     // 'Api-Version' => 'v2',
                 ],

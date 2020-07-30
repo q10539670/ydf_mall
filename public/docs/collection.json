@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "8f8fb9bb-3610-4d58-9cb3-5a54d27f5b02",
+        "_postman_id": "d0d7c2a5-2da1-4db6-84eb-86cd55294214",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -53,7 +53,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -81,7 +81,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -117,7 +117,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -153,7 +153,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -189,7 +189,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -223,7 +223,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -251,7 +251,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -279,7 +279,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -315,7 +315,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -351,7 +351,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -387,7 +387,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -423,7 +423,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -459,7 +459,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -530,7 +530,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -558,7 +558,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -586,7 +586,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -622,7 +622,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -658,7 +658,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -694,7 +694,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -759,7 +759,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -787,7 +787,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -815,7 +815,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -851,7 +851,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -887,7 +887,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -923,7 +923,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -959,7 +959,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1008,7 +1008,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1067,7 +1067,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1095,7 +1095,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1131,7 +1131,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1167,7 +1167,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1203,7 +1203,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1237,7 +1237,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1273,7 +1273,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1301,7 +1301,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1329,7 +1329,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1357,7 +1357,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1391,7 +1391,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1419,7 +1419,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1447,7 +1447,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1483,7 +1483,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1519,7 +1519,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1555,7 +1555,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1583,7 +1583,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1630,7 +1630,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1658,7 +1658,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1686,7 +1686,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1722,7 +1722,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1758,7 +1758,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1794,7 +1794,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1830,7 +1830,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1883,7 +1883,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1911,7 +1911,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1947,7 +1947,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -1983,7 +1983,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2011,7 +2011,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2064,7 +2064,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2092,7 +2092,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2120,7 +2120,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2156,7 +2156,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2192,7 +2192,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2228,7 +2228,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2264,7 +2264,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2341,7 +2341,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2377,7 +2377,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2411,7 +2411,7 @@
                             },
                             {
                                 "key": "Accept",
-                                "value": "multipart\/form-data"
+                                "value": "*\/*"
                             }
                         ],
                         "body": {
@@ -2439,7 +2439,114 @@
                             },
                             {
                                 "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "index\n\u53d1\u8d27\u5355\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/delivery",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "",
+                                    "description": "\u53d1\u8d27\u5355\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "order_id",
+                                    "value": "",
+                                    "description": "\u8ba2\u5355\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "date_range",
+                                    "value": "",
+                                    "description": "\u4e0b\u5355\u65f6\u95f4[\u8303\u56f4]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "logi_no",
+                                    "value": "",
+                                    "description": "\u5feb\u9012\u5355\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "ship_mobile",
+                                    "value": "",
+                                    "description": "\u6536\u8d27\u4eba\u7535\u8bdd",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "culpa",
+                                    "description": "\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "culpa",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
                                 "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "show\n\u67e5\u8be2\u5355\u4e00",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/delivery\/:delivery",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "delivery",
+                                    "key": "delivery",
+                                    "value": "culpa",
+                                    "description": "\u53d1\u8d27\u5355\u53f7"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
                             }
                         ],
                         "body": {

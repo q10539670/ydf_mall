@@ -34,7 +34,7 @@ Welcome to the generated API reference.
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/brand?condition=%E4%B8%89%E6%98%9F&is_del=culpa&current_page=1&per_page=10" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -53,7 +53,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -72,7 +72,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'condition'=> '三星',
@@ -230,7 +230,7 @@ Parameter | Status | Description
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/brand" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u4e09\u661f","logo":1,"sort":100,"is_del":0}'
 
 ```
@@ -242,7 +242,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -269,7 +269,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '三星',
@@ -328,7 +328,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/brand/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -338,7 +338,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -357,7 +357,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -410,7 +410,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/brand/51" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u4e09\u661f","logo":1,"sort":90,"is_del":0}'
 
 ```
@@ -422,7 +422,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -449,7 +449,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '三星',
@@ -515,7 +515,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/brand/51" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -525,7 +525,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -544,7 +544,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -598,7 +598,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/category" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -608,7 +608,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -627,7 +627,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -733,7 +733,7 @@ print_r(json_decode((string) $body));
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/category/create" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -743,7 +743,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -762,7 +762,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -1007,7 +1007,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/category" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"pid":1,"name":"\u77ed\u88e4","goods_type_id":1,"sort":100,"image_id":1,"status":1}'
 
 ```
@@ -1019,7 +1019,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -1048,7 +1048,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'pid' => 1,
@@ -1112,7 +1112,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/category/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -1122,7 +1122,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -1141,7 +1141,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -1195,7 +1195,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/category/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -1205,7 +1205,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -1224,7 +1224,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -1487,7 +1487,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/category/32" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"pid":1,"name":"\u77ed\u88e42","goods_type_id":1,"sort":100,"image_id":1,"status":1}'
 
 ```
@@ -1499,7 +1499,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -1528,7 +1528,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'pid' => 1,
@@ -1599,7 +1599,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/category/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -1609,7 +1609,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -1628,7 +1628,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -1668,7 +1668,7 @@ Parameter | Status | Description
 curl -X PATCH \
     "http://192.168.0.178:8888/admin-api/admin/category/status/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"status":12}'
 
 ```
@@ -1680,7 +1680,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -1704,7 +1704,7 @@ $response = $client->patch(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'status' => 12,
@@ -1754,7 +1754,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/coupon?perPage=10&currentPage=1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -1771,7 +1771,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -1790,7 +1790,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'perPage'=> '10',
@@ -1835,7 +1835,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/coupon/create" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -1845,7 +1845,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -1864,7 +1864,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -2168,7 +2168,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/coupon" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"20\u5143\u4f18\u60e0\u5238","type":0,"use_key":2,"use_value":"[1,2,3]","amount":20,"per_limit":1,"min_point":0,"start_time":"2020-07-01","end_time":"2020-08-31","note":"\u8fd9\u662f\u4e00\u5f20\u4f18\u60e0\u5238","publish_count":1000,"enable_time":"2020-07-31","status":12}'
 
 ```
@@ -2180,7 +2180,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -2216,7 +2216,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '20元优惠券',
@@ -2302,7 +2302,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/coupon/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -2312,7 +2312,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -2331,7 +2331,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -2663,7 +2663,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/coupon/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"20\u5143\u4f18\u60e0\u5238","type":0,"use_key":2,"use_value":"[1,2,3]","amount":20,"per_limit":1,"min_point":0,"start_time":"2020-07-01","end_time":"2020-08-31","note":"\u8fd9\u662f\u4e00\u5f20\u4f18\u60e0\u5238","publish_count":1000,"enable_time":"2020-07-31","status":12}'
 
 ```
@@ -2675,7 +2675,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -2711,7 +2711,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '20元优惠券',
@@ -2804,7 +2804,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/coupon/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -2814,7 +2814,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -2833,7 +2833,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -2876,7 +2876,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/goods?marketable=1&current_page=1&per_page=10" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -2894,7 +2894,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -2913,7 +2913,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'marketable'=> '1',
@@ -3745,7 +3745,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/goods/create" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -3755,7 +3755,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -3774,7 +3774,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -4322,7 +4322,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/goods" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"is_selected":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
 
 ```
@@ -4334,7 +4334,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -4381,7 +4381,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '三星S10 5G',
@@ -4574,7 +4574,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/goods/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -4584,7 +4584,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -4603,7 +4603,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -4819,7 +4819,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/goods/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -4829,7 +4829,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -4848,7 +4848,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -5512,7 +5512,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/goods/2" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u4e09\u661fS10 5G","brief":"\u8fd9\u662f\u4e00\u6b3e\u795e\u5947\u7684\u624b\u673a","price":3688,"costprice":0,"mktprice":0,"image_id":1,"pics":"[2,3,4]","goods_category_id":32,"goods_type_id":10,"brand_id":1,"marketable":1,"stock":100,"freeze_stock":100,"weight":123.5,"unit":"\u514b","introduction":"\u8fd9\u662f\u8be6\u60c5","sort":100,"is_recommend":1,"is_hot":2,"is_selected":2,"spec_list":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"8G\"]}","spec_desc":"{\"key\":\"\u989c\u8272\",\"value\":[\"\u9ed1\u8272\",\"\u767d\u8272\",\"\u91d1\u8272\"]},{\"key\":\"\u5185\u5b58\",\"value\":[\"2G\",\"4G\",\"8G]\"}","is_del":0,"products":"[{\"barcode\":\"\",\"price\":\"100\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"50\",\"freeze_stock\":\"5\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"2G\"}],\"is_default\":\"1\",\"image_id\":\"2\",\"is_del\":\"0\"},{\"barcode\":\"\",\"price\":\"120\",\"costprice\":\"0\",\"mktprice\":\"0\",\"stock\":\"10\",\"freeze_stock\":\"2\",\"spec_params\":[{\"key\":\"\u989c\u8272\",\"value\":\"\u9ed1\u8272\"},{\"key\":\"\u5185\u5b58\",\"value\":\"4G\"}],\"is_default\":\"2\",\"image_id\":\"3\",\"is_del\":\"0\"}]"}'
 
 ```
@@ -5524,7 +5524,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -5571,7 +5571,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '三星S10 5G',
@@ -5779,7 +5779,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/goods/2" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -5789,7 +5789,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -5808,7 +5808,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -5959,7 +5959,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/goods/attr/2?key=marketable&value=2" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -5976,7 +5976,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -5995,7 +5995,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'key'=> 'marketable',
@@ -6048,7 +6048,7 @@ print_r(json_decode((string) $body));
             "spec_desc": null,
             "is_del": 0,
             "created_at": null,
-            "updated_at": "2020-07-29 17:06:06"
+            "updated_at": "2020-07-30 09:35:31"
         }
     }
 }
@@ -6084,7 +6084,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/logi?per_page=10&current_page=1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6101,7 +6101,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6120,7 +6120,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'per_page'=> '10',
@@ -6191,7 +6191,7 @@ Parameter | Status | Description
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/logi" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","sort":"100"}'
 
 ```
@@ -6203,7 +6203,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -6229,7 +6229,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'logi_name' => '顺丰速运',
@@ -6284,7 +6284,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/logi/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6294,7 +6294,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6313,7 +6313,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6364,7 +6364,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/logi/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","sort":"100"}'
 
 ```
@@ -6376,7 +6376,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -6402,7 +6402,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'logi_name' => '顺丰速运',
@@ -6464,7 +6464,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/logi/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6474,7 +6474,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6493,7 +6493,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6534,7 +6534,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/order" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6544,7 +6544,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6563,7 +6563,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6612,7 +6612,7 @@ print_r(json_decode((string) $body));
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/order/culpa" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6622,7 +6622,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6641,7 +6641,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6679,7 +6679,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/order/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6689,7 +6689,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6708,7 +6708,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6741,7 +6741,7 @@ print_r(json_decode((string) $body));
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/order/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6751,7 +6751,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6770,7 +6770,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6796,7 +6796,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/order/ship/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6806,7 +6806,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6825,7 +6825,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6854,7 +6854,7 @@ print_r(json_decode((string) $body));
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/promotion" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6864,7 +6864,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6883,7 +6883,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -6968,7 +6968,7 @@ print_r(json_decode((string) $body));
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/promotion/create" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -6978,7 +6978,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -6997,7 +6997,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -7245,7 +7245,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/promotion" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u56fd\u5e86\u8282\u4fc3\u9500","exclusive":1,"condition_code":"GOODS_IDS","condition_params":"1","result_code":"GOODS_DISCOUNT","result_params":"{\"discount\":97}","description":"\u8fd9\u662f\u4e00\u4e2a\u56fd\u5e86\u8282\u4fc3\u9500\u6d3b\u52a8","sort":"100","start_time":"2020-07-01","end_time":"2020-08-31","is_del":0,"status":1}'
 
 ```
@@ -7257,7 +7257,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -7292,7 +7292,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '国庆节促销',
@@ -7376,7 +7376,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/promotion/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -7386,7 +7386,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -7405,7 +7405,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -7465,7 +7465,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/promotion/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -7475,7 +7475,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -7494,7 +7494,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -7766,7 +7766,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/promotion/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u56fd\u5e86\u8282\u4fc3\u9500","exclusive":3,"condition_code":"GOODS_IDS","condition_params":"1","result_code":"GOODS_DISCOUNT","result_params":"{\"discount\":97}","description":"\u8fd9\u662f\u4e00\u4e2a\u56fd\u5e86\u8282\u4fc3\u9500\u6d3b\u52a8","sort":"100","start_time":"2020-07-01","end_time":"2020-08-31","is_del":0,"status":1}'
 
 ```
@@ -7778,7 +7778,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -7813,7 +7813,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '国庆节促销',
@@ -7906,7 +7906,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/promotion/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -7916,7 +7916,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -7935,7 +7935,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -7973,7 +7973,7 @@ print_r(json_decode((string) $body));
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/ship?per_page=10&current_page=1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -7990,7 +7990,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -8009,7 +8009,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'per_page'=> '10',
@@ -8995,7 +8995,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/ship/create" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -9005,7 +9005,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -9024,7 +9024,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -9070,7 +9070,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/ship" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u914d\u9001\u65b9\u5f0f1","type":1,"has_cod":1,"firstunit":500,"continueunit":500,"def_area_fee":1,"area_type":1,"firstunit_price":10,"continueunit_price":5,"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","is_def":2,"sort":100,"status":1,"free_postage":2,"goodsmoney":0,"area_fee":"[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"}'
 
 ```
@@ -9082,7 +9082,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -9122,7 +9122,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '配送方式1',
@@ -9187,7 +9187,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/ship/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -9197,7 +9197,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -9216,7 +9216,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -9392,7 +9392,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/ship/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -9402,7 +9402,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -9421,7 +9421,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -9607,7 +9607,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/ship/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u914d\u9001\u65b9\u5f0f1","type":1,"has_cod":1,"firstunit":500,"continueunit":500,"def_area_fee":1,"area_type":1,"firstunit_price":10,"continueunit_price":5,"logi_name":"\u987a\u4e30\u901f\u8fd0","logi_code":"SF-Express","is_def":2,"sort":100,"status":1,"free_postage":2,"goodsmoney":0,"area_fee":"[{\"area_id\":[10005,2005,25576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"12\",\"continueunit_price\":\"8\"},{\"area_id\":[1005,9755,2576],\"firstunit\":\"500\",\"continueunit\":\"500\",\"firstunit_price\":\"8\",\"continueunit_price\":\"3\"}]"}'
 
 ```
@@ -9619,7 +9619,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -9659,7 +9659,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '配送方式1',
@@ -9731,7 +9731,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/ship/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -9741,7 +9741,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -9760,7 +9760,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -9795,7 +9795,7 @@ Class SpecController
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/spec?current_page=1&per_page=10" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -9812,7 +9812,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -9831,7 +9831,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'current_page'=> '1',
@@ -10191,7 +10191,7 @@ Parameter | Status | Description
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/spec" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u7801\u6570","sort":100,"values":"[34,35,36,37,38,39,40]"}'
 
 ```
@@ -10203,7 +10203,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -10229,7 +10229,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '码数',
@@ -10312,7 +10312,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/spec/culpa" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -10322,7 +10322,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -10341,7 +10341,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -10381,7 +10381,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/spec/culpa" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u7801\u6570","sort":100,"values":"[34,35,36,37,38,39,40]"}'
 
 ```
@@ -10393,7 +10393,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -10419,7 +10419,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '码数',
@@ -10509,7 +10509,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/spec/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -10519,7 +10519,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -10538,7 +10538,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -10567,7 +10567,7 @@ print_r(json_decode((string) $body));
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/type?current_page=1&per_page=10" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -10584,7 +10584,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -10603,7 +10603,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'current_page'=> '1',
@@ -10735,7 +10735,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/type/create" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -10745,7 +10745,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -10764,7 +10764,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -10930,7 +10930,7 @@ print_r(json_decode((string) $body));
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/admin/type" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u901a\u7528\u7c7b\u578b","spec_id":"[1]","sort":100}'
 
 ```
@@ -10942,7 +10942,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -10968,7 +10968,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '通用类型',
@@ -11036,7 +11036,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/type/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -11046,7 +11046,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -11065,7 +11065,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -11115,7 +11115,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/type/1/edit" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -11125,7 +11125,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -11144,7 +11144,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -11350,7 +11350,7 @@ Parameter | Status | Description
 curl -X PUT \
     "http://192.168.0.178:8888/admin-api/admin/type/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"name":"\u901a\u7528\u7c7b\u578b1","spec_id":"[1]","sort":100}'
 
 ```
@@ -11362,7 +11362,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -11388,7 +11388,7 @@ $response = $client->put(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'name' => '通用类型1',
@@ -11463,7 +11463,7 @@ Parameter | Type | Status | Description
 curl -X DELETE \
     "http://192.168.0.178:8888/admin-api/admin/type/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -11473,7 +11473,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -11492,7 +11492,7 @@ $response = $client->delete(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -11535,7 +11535,7 @@ Parameter | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/admin/user?current_page=1&per_page=10" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -11552,7 +11552,7 @@ Object.keys(params)
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -11571,7 +11571,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'query' => [
             'current_page'=> '1',
@@ -11718,7 +11718,7 @@ Parameter | Status | Description
 curl -X PATCH \
     "http://192.168.0.178:8888/admin-api/admin/user/status/1" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"status":"2"}'
 
 ```
@@ -11730,7 +11730,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -11754,7 +11754,7 @@ $response = $client->patch(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'status' => '2',
@@ -11795,7 +11795,7 @@ Parameter | Type | Status | Description
 curl -X POST \
     "http://192.168.0.178:8888/admin-api/images" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data" \
+    -H "Accept: */*" \
     -d '{"images":{"":"culpa"}}'
 
 ```
@@ -11807,7 +11807,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 let body = {
@@ -11833,7 +11833,7 @@ $response = $client->post(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
         'json' => [
             'images' => [
@@ -11868,7 +11868,7 @@ Parameter | Type | Status | Description
 curl -X GET \
     -G "http://192.168.0.178:8888/admin-api/areas" \
     -H "Content-Type: multipart/form-data" \
-    -H "Accept: multipart/form-data"
+    -H "Accept: */*"
 ```
 
 ```javascript
@@ -11878,7 +11878,7 @@ const url = new URL(
 
 let headers = {
     "Content-Type": "multipart/form-data",
-    "Accept": "multipart/form-data",
+    "Accept": "*/*",
 };
 
 fetch(url, {
@@ -11897,7 +11897,7 @@ $response = $client->get(
     [
         'headers' => [
             'Content-Type' => 'multipart/form-data',
-            'Accept' => 'multipart/form-data',
+            'Accept' => '*/*',
         ],
     ]
 );
@@ -65225,5 +65225,156 @@ print_r(json_decode((string) $body));
 
 
 <!-- END_48e82aada58370364075ad95bafa567c -->
+
+<!-- START_062cddea90f96419451a307800f03011 -->
+## index
+发货单列表
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/delivery?per_page=culpa&current_page=culpa" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/delivery"
+);
+
+let params = {
+    "per_page": "culpa",
+    "current_page": "culpa",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/admin-api/admin/delivery',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => '*/*',
+        ],
+        'query' => [
+            'per_page'=> 'culpa',
+            'current_page'=> 'culpa',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (500):
+
+```json
+null
+```
+
+### HTTP Request
+`GET admin-api/admin/delivery`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `id` |  optional  | 发货单号
+    `order_id` |  optional  | 订单号
+    `date_range` |  optional  | 下单时间[范围]
+    `logi_no` |  optional  | 快递单号
+    `ship_mobile` |  optional  | 收货人电话
+    `per_page` |  required  | 显示数量
+    `current_page` |  required  | 当前页
+
+<!-- END_062cddea90f96419451a307800f03011 -->
+
+<!-- START_6300facc4d418ec2da4d0117a5440c39 -->
+## show
+查询单一
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/delivery/culpa" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"
+```
+
+```javascript
+const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/delivery/culpa"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+```php
+
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    'http://192.168.0.178:8888/admin-api/admin/delivery/culpa',
+    [
+        'headers' => [
+            'Content-Type' => 'multipart/form-data',
+            'Accept' => '*/*',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "code": 1,
+    "message": "该发货单不存在",
+    "data": []
+}
+```
+
+### HTTP Request
+`GET admin-api/admin/delivery/{delivery}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `delivery` |  required  | 发货单号
+
+<!-- END_6300facc4d418ec2da4d0117a5440c39 -->
 
 
