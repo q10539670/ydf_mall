@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Area extends Model
 {
-    protected $table = 'china_area';
+    protected $table = 'areas';
 
     protected $guarded = [];
 
@@ -28,7 +28,7 @@ class Area extends Model
     {
         $tree = [];
         foreach ($data as $val) {
-            if ($val['pid'] == $pid) {
+            if ($val['parent_id'] == $pid) {
                 $tree[] = $val;
                 $tree = array_merge($tree, self::getTree($data, $val['id']));
             }
@@ -41,9 +41,9 @@ class Area extends Model
     {
         $tree = [];
         foreach ($areas as $val) {
-            if ($val['pid'] == $pid) {
+            if ($val['parent_id'] == $pid) {
                 $data = $val;
-                if ($val['level'] < 3) {
+                if ($val['level_type'] < 3) {
                     $data['children'] = self::getChildTree($areas, $val['id']);
                 }
                 $tree[] = $data;

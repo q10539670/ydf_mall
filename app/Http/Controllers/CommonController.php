@@ -87,13 +87,17 @@ class CommonController extends Controller
     /**
      * area
      * 获取全国地区
+     * @param  bool  $type
      * @return JsonResponse
      */
-    public function getAreas()
+    public function getAreas($type = null)
     {
         $redis = app('redis');
         $redis->select(12);
         $redisKey = 'wx:area';
+        if ($type) {
+            $redis->del($redisKey);
+        }
         if (!$areas = $redis->get($redisKey)) {
             $areas = json_encode(Area::getAreasForTable());
             $redis->set($redisKey,$areas);

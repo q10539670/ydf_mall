@@ -47,7 +47,7 @@ class PromotionController extends Controller
             ->when($del === 0 || $del === 1, function ($query) use ($del) {
                 return $query->where('is_del', $del);
             });
-        $query->orderBy('created_at', 'desc');
+        $query->orderBy('sort', 'asc');
         $promotions = self::paginator($query, $currentPage, $perPage);
         return Helper::Json(1, '查询成功', ['promotions' => $promotions]);
     }

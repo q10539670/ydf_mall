@@ -37,7 +37,6 @@ class CouponController extends Controller
         $name = $request->input('name');
         $status = $request->input('status');
         $dateRange = Helper::formatDateString($request->input('date_range'));
-        $del = $request->input('del') != '' ? $request->input('per_page') : 0;;
         $perPage = $request->input('per_page') != '' ? $request->input('per_page') : 10;
         $currentPage = $request->input('current_page') != '' ? $request->input('current_page') : 1;
         $query = Coupon::when($name != '', function ($query) use ($name) {
@@ -48,9 +47,6 @@ class CouponController extends Controller
             })
             ->when($dateRange != '', function ($query) use ($dateRange) {
                 return $query->where('start_time', '>', $dateRange[0])->orWhere('end_time', '<', $dateRange[1]);
-            })
-            ->when($del == 0 || $del == 1, function ($query) use ($del) {
-                return $query->where('is_del', $del);
             });
         $query->orderBy('created_at', 'desc');
         $coupons = self::paginator($query, $currentPage, $perPage);
@@ -233,9 +229,6 @@ class CouponController extends Controller
     {
         if (!$coupon = Coupon::find($id)) {
             return Helper::Json(-1, '删除失败,优惠券不存在');
-        }
-        if ($coupon->is_del == 1) {
-            return Helper::Json(-1, '删除失败,优惠券已删除');
         }
         $coupon->status = 2;
         $coupon->save();
