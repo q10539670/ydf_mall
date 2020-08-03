@@ -87,7 +87,7 @@ class CommonController extends Controller
     /**
      * area
      * 获取全国地区
-     * @param  bool  $type
+     * @param  null  $type
      * @return JsonResponse
      */
     public function getAreas($type = null)
@@ -95,15 +95,19 @@ class CommonController extends Controller
         $redis = app('redis');
         $redis->select(12);
         $redisKey = 'wx:area';
-        if ($type) {
-            $redis->del($redisKey);
-        }
-        if (!$areas = $redis->get($redisKey)) {
+        if ($redis->exists($redisKey)) {
+            if ($type) {
+                $redis->del($redisKey);
+                $areas = json_encode(Area::getAreasForTable());
+                $redis->set($redisKey,$areas);
+            }
+        } else {
             $areas = json_encode(Area::getAreasForTable());
             $redis->set($redisKey,$areas);
         }
+
+        $areas = $redis->get($redisKey);
         $areas = json_decode($areas);
-//        $areas = Area::getAreasForTable();
         return Helper::Json(1,'地区查询成功',['areas' => $areas]);
     }
 }

@@ -14,13 +14,12 @@ class Area extends Model
     public static function getAreasForTable()
     {
         $areas = self::getdata();
-        $data = self::getChildTree($areas);
-        return $data;
+        return self::getChildTree($areas);
     }
 
     public static function getData()
     {
-        return self::all()->toArray();
+        return self::get(['id','parent_id','level_type','name','zip_code','first_char'])->toArray();
     }
 
     //排序权限
@@ -37,7 +36,7 @@ class Area extends Model
     }
 
     //多维数组结构
-    public static function getChildTree($areas, $pid = 0)
+    public static function getChildTree($areas, $pid = 100000)
     {
         $tree = [];
         foreach ($areas as $val) {
