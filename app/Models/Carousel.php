@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model
+class Carousel extends Model
 {
-    protected $table = 'ydf_brand';
+    protected $table = 'ydf_lunbo';
 
     protected $guarded = [];
 

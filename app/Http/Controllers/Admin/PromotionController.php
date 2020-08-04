@@ -20,6 +20,14 @@ class PromotionController extends Controller
      * index
      * 促销列表
      *
+     * @qureyParam name 促销名称 No-example
+     * @qureyParam status 启用状态[1:开启 2:关闭] No-example
+     * @qureyParam exclusive 是否排他[1:不排 2:排他] No-example
+     * @qureyParam date_range 起止时间 No-example
+     * @qureyParam is_del 是否删除 No-example
+     * @qureyParam per_page required 每页显示数量 Example: 10
+     * @queryParam current_page required 当前页 Example:1
+     *
      * @param  Request  $request
      * @return JsonResponse
      */
@@ -29,7 +37,7 @@ class PromotionController extends Controller
         $status = $request->input('status');
         $exclusive = $request->input('exclusive');
         $dateRange = Helper::formatDateString($request->input('date_range'));
-        $del = $request->input('del', 0);
+        $isDel = $request->input('is_del', 0);
         $perPage = ($request->input('per_page') != '') ? $request->input('per_page') : 10;
         $currentPage = $request->input('current_page') != '' ? $request->input('current_page') : 1;
         $query = Promotion::when($name != '', function ($query) use ($name) {
@@ -44,8 +52,8 @@ class PromotionController extends Controller
             ->when($dateRange != '', function ($query) use ($dateRange) {
                 return $query->where('start_time', '>', $dateRange[0])->orWhere('end_time', '<', $dateRange[1]);
             })
-            ->when($del === 0 || $del === 1, function ($query) use ($del) {
-                return $query->where('is_del', $del);
+            ->when($isDel === 0 || $isDel === 1, function ($query) use ($isDel) {
+                return $query->where('is_del', $isDel);
             });
         $query->orderBy('sort', 'asc');
         $promotions = self::paginator($query, $currentPage, $perPage);

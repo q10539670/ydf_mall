@@ -28,6 +28,7 @@ Route::group(['middleware' => 'cors'], function () {
         Route::resource('logi', 'LogisticsController')->names('logi');                     //物流公司
         Route::resource('ship', 'ShipController')->names('ship');                          //配送方式
         Route::resource('order', 'OrderController')->names('order');                       //订单
+        Route::resource('carousel', 'CarouselController')->names('carousel');              //轮播图
 
         Route::get('delivery','DeliveryController@index')->name('delivery');
         Route::get('delivery/{delivery}','DeliveryController@show')->name('delivery.show');

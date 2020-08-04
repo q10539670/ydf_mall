@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "d0d7c2a5-2da1-4db6-84eb-86cd55294214",
+        "_postman_id": "41f9db1b-1707-44d4-af12-3ef8a2f6e4ce",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -738,6 +738,12 @@
                                     "disabled": false
                                 },
                                 {
+                                    "key": "is_del",
+                                    "value": "0",
+                                    "description": "\u662f\u5426\u5220\u9664",
+                                    "disabled": true
+                                },
+                                {
                                     "key": "current_page",
                                     "value": "1",
                                     "description": "\u5f53\u524d\u9875",
@@ -1221,13 +1227,56 @@
             "description": "\u8ba2\u5355\u63a5\u53e3",
             "item": [
                 {
-                    "name": "admin-api\/admin\/order",
+                    "name": "index\n\u8ba2\u5355\u5217\u8868",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "admin-api\/admin\/order",
-                            "query": []
+                            "query": [
+                                {
+                                    "key": "order_id",
+                                    "value": "",
+                                    "description": "\u8ba2\u5355ID",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "date_range",
+                                    "value": "",
+                                    "description": "\u65e5\u671f\u533a\u95f4",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "order_type",
+                                    "value": "",
+                                    "description": "\u8ba2\u5355\u7c7b\u578b[1:\u666e\u901a,2:\u79d2\u6740,3:\u62fc\u56e2]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "name_or_mobile",
+                                    "value": "",
+                                    "description": "\u7528\u6237\u6635\u79f0\u6216\u7535\u8bdd",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "ship_mobile",
+                                    "value": "",
+                                    "description": "\u6536\u8d27\u4eba\u7535\u8bdd",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1249,7 +1298,7 @@
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "show\n\u67e5\u8be2\u8ba2\u5355",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1285,13 +1334,21 @@
                     }
                 },
                 {
-                    "name": "admin-api\/admin\/order\/{order}\/edit",
+                    "name": "edit\n\u7f16\u8f91\u8ba2\u5355",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "admin-api\/admin\/order\/:order\/edit",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "order",
+                                    "key": "order",
+                                    "value": "culpa",
+                                    "description": "\u8ba2\u5355ID"
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1313,13 +1370,21 @@
                     }
                 },
                 {
-                    "name": "admin-api\/admin\/order\/{order}",
+                    "name": "update\n\u66f4\u65b0\u8ba2\u5355",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "admin-api\/admin\/order\/:order",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "order",
+                                    "key": "order",
+                                    "value": "20200727123340order001835",
+                                    "description": "\u8ba2\u5355ID"
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -1334,20 +1399,28 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"ship_area_code\": \"9\",\n    \"ship_address\": \"1\\u53f7\",\n    \"ship_name\": \"\\u5f90\\u5176\\u9633\",\n    \"ship_mobile\": \"18107120122\"\n}"
                         },
                         "description": "",
                         "response": []
                     }
                 },
                 {
-                    "name": "admin-api\/admin\/order\/ship\/{order}",
+                    "name": "ship_\n\u53d1\u8d27",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "admin-api\/admin\/order\/ship\/:order",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "order",
+                                    "key": "order",
+                                    "value": "20200727123340order001835",
+                                    "description": "\u8ba2\u5355ID"
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -1362,7 +1435,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"ship_area_code\": \"9\",\n    \"ship_address\": \"1\\u53f7\",\n    \"ship_name\": \"\\u5f90\\u5176\\u9633\",\n    \"ship_mobile\": \"18107120122\",\n    \"send_nums\": \"18107120122\",\n    \"logi_id\": \"18107120122\",\n    \"logi_no\": \"18107120122\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1381,7 +1454,14 @@
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
                             "path": "admin-api\/admin\/promotion",
-                            "query": []
+                            "query": [
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -2428,10 +2508,211 @@
                         "url": {
                             "protocol": "http",
                             "host": "192.168.0.178:8888",
-                            "path": "admin-api\/areas",
+                            "path": "admin-api\/areas\/:type",
                             "query": []
                         },
                         "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "index\n\u8f6e\u64ad\u56fe\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/carousel",
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "",
+                                    "description": "\u8f6e\u64ad\u56fe\u540d\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "",
+                                    "description": "\u8f6e\u64ad\u56fe\u7c7b\u578b[0:\u56fe\u7247 1:\u89c6\u9891]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "date_range",
+                                    "value": "",
+                                    "description": "\u8d77\u6b62\u65f6\u95f4",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "is_del",
+                                    "value": "0",
+                                    "description": "\u662f\u5426\u5220\u9664[0:\u6b63\u5e38 1:\u5220\u9664]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "store\n\u4fdd\u5b58",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/carousel",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u8f6e\\u64ad\\u56fe1\",\n    \"type\": 0,\n    \"path\": \"https:www.baidu.com\",\n    \"sort\": 100,\n    \"is_show\": 1,\n    \"image_id\": 1,\n    \"start_at\": \"culpa\",\n    \"end_at\": \"culpa\",\n    \"is_delete\": \"0\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "show\n\u67e5\u8be2(\u5355\u4e00)",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/carousel\/:carousel",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "carousel",
+                                    "key": "carousel",
+                                    "value": "1",
+                                    "description": "\u8f6e\u64ad\u56feID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "update\n\u66f4\u65b0",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/carousel\/:carousel",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "carousel",
+                                    "key": "carousel",
+                                    "value": "1",
+                                    "description": "\u8f6e\u64ad\u56feID"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"\\u8f6e\\u64ad\\u56fe1\",\n    \"type\": 0,\n    \"path\": \"https:www.baidu.com\",\n    \"sort\": 100,\n    \"is_show\": 1,\n    \"image_id\": 1,\n    \"start_at\": \"culpa\",\n    \"end_at\": \"culpa\",\n    \"is_delete\": \"0\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "delete\n\u5220\u9664",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/carousel\/:carousel",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "carousel",
+                                    "key": "carousel",
+                                    "value": "1",
+                                    "description": "\u8f6e\u64ad\u56feID"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",

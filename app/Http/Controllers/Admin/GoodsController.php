@@ -28,6 +28,7 @@ class GoodsController extends Controller
      * @queryParam  condition 商品名称  No-example
      * @queryParam  bn 编码 No-example
      * @queryParam  marketable 是否上架 Example: 1
+     * @queryParam  is_del 是否删除 Example: 0
      * @queryParam  current_page required 当前页 Example: 1
      * @queryParam  per_page required 每页显示数量 Example: 10
      * @param  Request  $request
@@ -40,6 +41,7 @@ class GoodsController extends Controller
         $marketable = $request->input('marketable');    //是否上架
         $currentPage = $request->input('current_page'); //当前页
         $perPage = $request->input('per_page');         //每页显示数量
+        $isDel = $request->input('is_del', '0');
         $query = Goods::when($condition != '', function ($query) use ($condition) {
             return $query->where('name', 'like', '%'.$condition.'%');
         })
@@ -48,6 +50,9 @@ class GoodsController extends Controller
             })
             ->when($marketable == 1 || $marketable == 2, function ($query) use ($marketable) {
                 return $query->where('marketable', $marketable);
+            })
+            ->when($isDel === 0 || $isDel === 1, function ($query) use ($isDel) {
+                return $query->where('is_del', $isDel);
             });
         $query->orderBy('created_at', 'desc');
         $goods = self::paginator($query, $currentPage, $perPage);
@@ -117,6 +122,9 @@ class GoodsController extends Controller
         $brand = Brand::all();
         $goods = Goods::find($id);
         $goods[0]->product;
+        $goods[0]->image;
+        $imageIds = explode(',',$goods[0]->pics);
+        $goods[0]['pics'] = Images::whereIn('id',$imageIds)->get();
         return Helper::Json(1, '查询成功', ['cates' => $cates, 'spec' => $spec, 'brand' => $brand, 'goods' => $goods]);
     }
 
@@ -275,7 +283,7 @@ class GoodsController extends Controller
             $goods['label_ids'] = '';
         }
         $sn = date('Ymd').(Goods::max('id') + 1).rand(100, 999);
-        if (!$goods || $goods['bn'] == null) {
+        if (!isset($goods['bn']) || $goods['bn'] == '') {
             $goods['bn'] = 'G_'.$sn;
         }
         $goods['up_at'] = now()->toDateTimeString();

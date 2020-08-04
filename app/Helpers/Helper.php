@@ -269,8 +269,11 @@ class Helper
 
     public static function formatTimeString($date, $type = '')
     {
+        if (substr($date,-8) == '00:00:00' || substr($date,-8) == '23:59:59'){
+            return $date;
+        }
         if ($type == 'start') {
-            return $date != '' ? $date.' 00:00:00' : '';
+            return $date != ''  ? $date.' 00:00:00' : '';
         }
         return $date != '' ? $date.' 23:59:59' : '';
     }

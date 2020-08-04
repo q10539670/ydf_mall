@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AfterSales;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 /**
  * @group 售后单
@@ -62,14 +63,14 @@ class AfterSalesController extends Controller
                     $query->where('confirm', $confirm);
                 });
             });
-        $query->order('created_at','desc');
-        $afterSales = self::paginator($query,$currentPage,$perPage);
+        $query->order('created_at', 'desc');
+        $afterSales = self::paginator($query, $currentPage, $perPage);
         foreach ($afterSales as $afterSale) {
             $afterSale->order;
             $afterSale->orderItem;
             $afterSale->user;
         }
-        return Helper::Json(1,'查询成功',['after_sales',$afterSales]);
+        return Helper::Json(1, '查询成功', ['after_sales', $afterSales]);
 
     }
 
@@ -85,45 +86,37 @@ class AfterSalesController extends Controller
     {
 
         if ($afterSale = AfterSales::find($id)) {
-            return  Helper::Json(-1,'该售后单不存在');
+            return Helper::Json(-1, '该售后单不存在');
         }
         $afterSale->order;
         $afterSale->orderItem;
         $afterSale->user;
-        return Helper::Json(1,'查询成功',['after_sale',$afterSale]);
+        return Helper::Json(1, '查询成功', ['after_sale', $afterSale]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
-     * Update the specified resource in storage.
+     * update
+     * 审核
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @urlParam id required 售后单ID No-example
+     * @queryParam status required 是否通过审核[2,通过 3,不通过] Example:2
+     * @queryParam admin_mark 管理员备注 No-example
+     * @param  Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
     public function update(Request $request, $id)
     {
-        //
+        $status = $request->input('status');
+        $adminMark = $request->input('admin_mark') ?? '';
+        $handleTime = now()->toDateTimeString();
+        $afterSale = AfterSales::find($id);
+        $afterSale->status = $status;
+        $afterSale->admin_mark = $adminMark;
+        $afterSale->handle_time = $handleTime;
+        $afterSale->save();
+        return Helper::Json(1,'审核成功',['after_sale' => $afterSale]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

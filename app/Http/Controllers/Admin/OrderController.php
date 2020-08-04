@@ -19,7 +19,15 @@ use Illuminate\Support\Facades\Validator;
  */
 class OrderController extends Controller
 {
-    /**
+    /** index
+     * 订单列表
+     * @queryParam order_id 订单ID No-example
+     * @queryParam date_range 日期区间 No-example
+     * @queryParam order_type 订单类型[1:普通,2:秒杀,3:拼团] No-example
+     * @queryParam name_or_mobile 用户昵称或电话 No-example
+     * @queryParam ship_mobile 收货人电话 No-example
+     * @queryParam per_page required 每页显示数量 Example: 10
+     * @queryParam current_page required 当前页 Example:1
      * @param  Request  $request
      * @return JsonResponse
      */
@@ -30,7 +38,6 @@ class OrderController extends Controller
         $type = $request->input('order_type');
         $nameOrMobile = $request->input('name_or_mobile');
         $shipMobile = $request->input('ship_mobile');
-        $del = $request->input('del', 0);
         $perPage = ($request->input('per_page') != '') ? $request->input('per_page') : 10;
         $currentPage = $request->input('current_page') != '' ? $request->input('current_page') : 1;
         $query = Order::when($orderId != '', function ($query) use ($orderId) {
@@ -54,9 +61,6 @@ class OrderController extends Controller
             })
             ->when($shipMobile != '', function ($query) use ($shipMobile) {
                 return $query->where('ship_mobile', $shipMobile);
-            })
-            ->when($del === 0 || $del === 1, function ($query) use ($del) {
-                return $query->where('is_del', $del);
             });
         $query->orderBy('created_at', 'desc');
         $orders = self::paginator($query, $currentPage, $perPage);
@@ -69,7 +73,8 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * show
+     * 查询订单
      * @urlParam order required 订单ID
      * @param  int  $id
      * @return JsonResponse
@@ -85,6 +90,13 @@ class OrderController extends Controller
         return Helper::Json(1, '查询成功', ['order' => $order]);
     }
 
+    /**
+     * edit
+     * 编辑订单
+     * @urlParam order required 订单ID
+     * @param $id
+     * @return JsonResponse
+     */
     public function edit($id)
     {
         if (!$order = Order::find($id)) {
@@ -93,6 +105,60 @@ class OrderController extends Controller
         return Helper::Json(1, '查询成功', ['order' => $order]);
     }
 
+    /**
+     * update
+     * 更新订单
+     * @urlParam order required 订单ID Example:20200727123340order001835
+     * @bodyParam ship_area_code required 收货人地址ID Example:9
+     * @bodyParam ship_address required 收货人详细地址 Example:1号
+     * @bodyParam ship_name required 收货人姓名 Example:徐其阳
+     * @bodyParam ship_mobile required 收货人电话 Example:18107120122
+     * @param  Request  $request
+     * @param $id
+     * @return JsonResponse
+     * @response {
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+    "order": {
+    "order_id": "20200727123340order001835",
+    "total_amount": "860.00",
+    "payed_amount": "860.00",
+    "freight_amount": "10.00",
+    "promotion_amount": "0.00",
+    "coupon_amount": "0.00",
+    "pay_status": 1,
+    "ship_status": 3,
+    "status": 1,
+    "order_type": 1,
+    "payment_time": null,
+    "confirm_time": null,
+    "logistics_id": null,
+    "logistics_name": null,
+    "cost_freight": "0.00",
+    "user_id": 1,
+    "confirm": 1,
+    "ship_area_code": "9",
+    "ship_address": "1号",
+    "ship_name": "徐其阳",
+    "ship_mobile": "18107120122",
+    "weight": 0,
+    "order_pmt": "0.00",
+    "goods_pmt": "0.00",
+    "coupon_pmt": "0.00",
+    "coupon_list": null,
+    "promotion_list": null,
+    "memo": null,
+    "ip": null,
+    "mark": null,
+    "is_comment": 1,
+    "created_at": "2020-07-27 12:33:40",
+    "updated_at": "2020-07-29 17:58:36",
+    "is_del": 0
+    }
+    }
+     * }
+     */
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -120,7 +186,26 @@ class OrderController extends Controller
         return Helper::Json(1, '更新成功', ['order' => $order]);
     }
 
-
+    /**
+     * ship_
+     * 发货
+     * @urlParam order required 订单ID Example:20200727123340order001835
+     * @bodyParam ship_area_code required 收货人地址ID Example:9
+     * @bodyParam ship_address required 收货人详细地址 Example:1号
+     * @bodyParam ship_name required 收货人姓名 Example:徐其阳
+     * @bodyParam ship_mobile required 收货人电话 Example:18107120122
+     * @bodyParam send_nums required 发货数量 Example:18107120122
+     * @bodyParam logi_id required 物流公司 Example:18107120122
+     * @bodyParam logi_no required 物流单号 Example:18107120122
+     * @param  Request  $request
+     * @param $id
+     * @return JsonResponse
+     * @response {
+    "code": 1,
+    "message": "发货成功",
+    "data": []
+     * }
+     */
     public function ship(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
