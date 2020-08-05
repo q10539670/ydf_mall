@@ -10,7 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 /**
- * Carousel
+ * @group Carousel
  * 轮播图管理
  * @package App\Http\Controllers\Admin
  */
@@ -69,7 +69,7 @@ class CarouselController extends Controller
      * @bodyParam image_id int required 资源ID Example:1
      * @bodyParam start_at date 开始时间
      * @bodyParam end_at date 结束时间
-     * @bodyParam is_delete required 删除标记[0:正常 1:删除] Example:0
+     * @bodyParam is_del required 删除标记[0:正常 1:删除] Example:0
      * @param  CarouselRequest  $request
      * @return JsonResponse
      * @response {
@@ -85,7 +85,7 @@ class CarouselController extends Controller
     "image_id": "1",
     "start_at": "2020-08-01 00:00:00",
     "end_at": "2020-08-31 23:59:59",
-    "is_delete": "0",
+    "is_del": "0",
     "updated_at": "2020-08-04 18:00:03",
     "created_at": "2020-08-04 18:00:03",
     "id": 7
@@ -127,7 +127,7 @@ class CarouselController extends Controller
      * @bodyParam image_id int required 资源ID Example:1
      * @bodyParam start_at date 开始时间
      * @bodyParam end_at date 结束时间
-     * @bodyParam is_delete required 删除标记[0:正常 1:删除] Example:0
+     * @bodyParam is_del required 删除标记[0:正常 1:删除] Example:0
      * @param  CarouselRequest  $request
      * @param  int  $id
      * @return JsonResponse
@@ -145,7 +145,7 @@ class CarouselController extends Controller
     "image_id": "1",
     "start_at": "2020-08-01 00:00:00",
     "end_at": "2020-08-31 23:59:59",
-    "is_delete": "0",
+    "is_del": "0",
     "created_at": "2020-08-04 18:00:03",
     "updated_at": "2020-08-04 18:00:03"
     }
@@ -180,7 +180,7 @@ class CarouselController extends Controller
         if (!$carousel = Carousel::find($id)) {
             return Helper::Json(-1,'删除失败,ID参数错误');
         }
-        $carousel->is_delete = 1;
+        $carousel->is_del = 1;
         $carousel->save();
         return Helper::Json(-1,'删除成功');
     }

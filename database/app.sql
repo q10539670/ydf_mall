@@ -399,15 +399,15 @@ CREATE TABLE `ydf_order_items`
 
 create table ydf_aftersales
 (
-    `id`           varchar(32)             NOT NULL COMMENT '售后单id 日期字符串+as+微秒+3位随机数生成',
-    order_id       varchar(32)             not null default '' comment '订单id',
-    order_items_id varchar(32)             not null default '' comment '订单明细表id',
+    `id`           varchar(128)            NOT NULL COMMENT '售后单id 日期字符串+as+微秒+3位随机数生成',
+    order_id       varchar(128)            not null default '' comment '订单id',
+    order_items_id int                     not null default 0 comment '订单明细表id',
     goods_id       int                     not null default 0 comment '商品id',
     product_id     int                     not null default 0 comment '产品id',
     `sn`           varchar(30)             not null DEFAULT '' COMMENT '货品编码',
     `bn`           varchar(30)             not null DEFAULT '' COMMENT '商品编码',
-    goods_pic_url  varchar(255)            not null default '' comment '商品主图',
     goods_name     varchar(128)            not null default '' comment '商品名称',
+    goods_pic_url  varchar(255)            not null default '' comment '商品主图',
     nums           int                     not null default 0 comment '商品数量',
     user_id        int                     not null default 0 comment '用户id',
     type           tinyint                 not null default 1 comment '售后类型 1->只退款 2->退货退款',
@@ -415,8 +415,9 @@ create table ydf_aftersales
     `status`       tinyint unsigned                 DEFAULT '1' COMMENT '状态 0=待提交 1=未审核 2=审核通过 3=审核拒绝',
     product_spec   text comment '商品销售属性:[{"key":"颜色","value":"银色"},{"key":"容量","value":"4G"}]',
     `reason`       varchar(255)            NOT NULL default '' COMMENT '退款原因',
-    `desc`         varchar(255)            not null default '' comment '描述',
+    `user_desc`    varchar(255)            not null default '' comment '描述',
     `images`       text comment '用户上传图片 逗号分隔',
+    is_del         tinyint                 not null default 0 comment '0：未删除，1:删除',
     admin_mark     varchar(500)            not null default '' comment '管理员备注',
     handle_time    datetime                NULL     DEFAULT NULL comment '管理员处理时间',
     created_at     datetime                NULL     DEFAULT NULL,
@@ -490,14 +491,84 @@ create table ydf_search_hot_keywords
     num        int         not null default 0 comment '热门值 每条记录+1',
     sort       int unsigned         DEFAULT 100 COMMENT '品牌排序 越小越靠前',
     keywords   varchar(32) not null default '' comment '搜索关键词',
-    is_delete  tinyint     not null default '' comment '',
+    is_del     tinyint     not null default '' comment '',
     created_at datetime    NULL     DEFAULT NULL,
     updated_at datetime    NULL     DEFAULT NULL,
-    primary key (id),
-    key (user_id)
+    primary key (id)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='热门关键字';
 
+create table ydf_user_saler_info
+(
+    id                        int                     not null auto_increment,
+    user_id                   int                     not null default 0 comment 'user.id',
+    openid                    varchar(64)             not null default '' comment 'openid',
+    unique_code               varchar(32)             not null default '' comment '身份码',
+    total_amount              decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '累计收益金额',
+    received_amount           decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '已提现金额',
+    store_amount              decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '剩余可提现金额',
+    wait_amount_today         decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '今日待到账金额',
+    wait_amount_total         decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '累计待到账金额',
+    plan_amount_last_month    decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '上月预估收入金额',
+    plan_amount_current_month decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '本月预估收入金额',
+    created_at                datetime                NULL     DEFAULT NULL,
+    updated_at                datetime                NULL     DEFAULT NULL,
+    primary key (id)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4 COMMENT ='用户表-分销账户表';
+
+CREATE TABLE `ydf_sale_items`
+(
+    id              int unsigned            NOT NULL AUTO_INCREMENT COMMENT 'ID号',
+    order_id        varchar(32)             not null default '' comment '订单id',
+    order_phone     varchar(32)             not null default '' comment '下单者手机号',
+    order_items_id  varchar(32)             not null default '' comment '订单明细表id',
+    goods_id        int                     not null default 0 comment '商品id',
+    product_id      int                     not null default 0 comment '产品id',
+    buyer_user_id   int                     not null default 0 comment '购买者user_id',
+    share_user_id   int                     not null default 0 comment '分享者user_id',
+    goods_pic       int                     not null default 0 comment '商品主图',
+    goods_name      varchar(128)            not null default '' comment '商品名称',
+    nums            int                     not null default 0 comment '商品数量',
+    pay_amount      decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '扣除优惠的实际支付金额',
+    rate            decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '分销提成比率',
+    allocate_amount decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '分销提成金额',
+    status          tinyint                 not null default 0 comment '-1=>已失效  1=>未结算（未收货） 2=>未结算（已收货） 11=>已结算  ',
+    content         varchar(255)            not null default '' comment '备注',
+    created_at      datetime                NULL     DEFAULT NULL,
+    updated_at      datetime                NULL     DEFAULT NULL,
+    primary key (id)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4 COMMENT =' 分销商品结算表 ';
+
+
+CREATE TABLE `ydf_sale_amount_change_log`
+(
+    id         int unsigned            NOT NULL AUTO_INCREMENT COMMENT '',
+    type       tinyint                 not null default 1 comment '1=>结算收入  2=>提现支出',
+    user_id    int                     not null default 0 comment 'user.id',
+    params     varchar(255)            not null default '' comment '',
+    amount     decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '金额数量',
+    created_at datetime                NULL     DEFAULT NULL,
+    primary key (id)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4 COMMENT ='用户账户金额变动表';
+
+create table ydf_sale_cashout
+(
+    id           int unsigned            NOT NULL AUTO_INCREMENT COMMENT '',
+    user_id      int unsigned            not null DEFAULT 0 COMMENT ' 用户ID ',
+    type         int unsigned            not null default 1 comment '1=>银行卡 2=>微信余额 ',
+    bankcard_id  int                     not null default 0 comment ' 银行卡id ',
+    apply_amount decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT ' 提现金额 ',
+    status       tinyint                 not null default 0 comment '0=>已申请 1=>发放成功 2=>发放失败 3=>拒绝 ',
+    content      text comment ' 备注 ',
+    created_at   datetime                NULL     DEFAULT NULL,
+    updated_at   datetime                NULL     DEFAULT NULL,
+    apply_at     datetime                NULL     DEFAULT NULL,
+    primary key (id)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4 COMMENT =' 佣金提现记录表 ';
 /*
 [{"area_value":"[{\"id\":\"110000\",\"pid\":\"-1\",\"name\":\"\u5317\u4eac\u5e02\",\"ischecked\":\"1\"},{\"id\":\"120000\",\"pid\":\"-1\",\"name\":\"\u5929\u6d25\u5e02\",\"ischecked\":\"1\"},{\"id\":\"130000\",\"pid\":\"-1\",\"name\":\"\u6cb3\u5317\u7701\",\"ischecked\":\"1\"},{\"id\":\"140000\",\"pid\":\"-1\",\"name\":\"\u5c71\u897f\u7701\",\"ischecked\":\"1\"}]","area":"110000,110100,110101,110102,110105,110106,110107,110108,110109,110111,110112,110113,110114,110115,110116,110117,110118,110119,120000,120100,120101,120102,120103,120104,120105,120106,120110,120111,120112,120113,120114,120115,120116,120117,120118,120119,130000,130100,130101,130102,130104,130105,130107,130108,130109,130110,130111,130121,130123,130125,130126,130127,130128,130129,130130,130131,130132,130133,130183,130184,130200,130201,130202,130203,130204,130205,130207,130208,130209,130223,130224,130225,130227,130229,130281,130283,130300,130301,130302,130303,130304,130306,130321,130322,130324,130400,130401,130402,130403,130404,130406,130421,130423,130424,130425,130426,130427,130428,130429,130430,130431,130432,130433,130434,130435,130481,130500,130501,130502,130503,130521,130522,130523,130524,130525,130526,130527,130528,130529,130530,130531,130532,130533,130534,130535,130581,130582,130600,130601,130602,130606,130607,130608,130609,130623,130624,130626,130627,130628,130629,130630,130631,130632,130633,130634,130635,130636,130637,130638,130681,130683,130684,130700,130701,130702,130703,130705,130706,130708,130709,130722,130723,130724,130725,130726,130727,130728,130730,130731,130732,130800,130801,130802,130803,130804,130821,130822,130823,130824,130825,130826,130827,130828,130900,130901,130902,130903,130921,130922,130923,130924,130925,130926,130927,130928,130929,130930,130981,130982,130983,130984,131000,131001,131002,131003,131022,131023,131024,131025,131026,131028,131081,131082,131100,131101,131102,131103,131121,131122,131123,131124,131125,131126,131127,131128,131182,139000,139001,139002,140000,140100,140101,140105,140106,140107,140108,140109,140110,140121,140122,140123,140181,140200,140201,140202,140203,140211,140212,140221,140222,140223,140224,140225,140226,140227,140300,140301,140302,140303,140311,140321,140322,140400,140401,140402,140411,140421,140423,140424,140425,140426,140427,140428,140429,140430,140431,140481,140500,140501,140502,140521,140522,140524,140525,140581,140600,140601,140602,140603,140621,140622,140623,140624,140700,140701,140702,140721,140722,140723,140724,140725,140726,140727,140728,140729,140781,140800,140801,140802,140821,140822,140823,140824,140825,140826,140827,140828,140829,140830,140881,140882,140900,140901,140902,140921,140922,140923,140924,140925,140926,140927,140928,140929,140930,140931,140932,140981,141000,141001,141002,141021,141022,141023,141024,141025,141026,141027,141028,141029,141030,141031,141032,141033,141034,141081,141082,141100,141101,141102,141121,141122,141123,141124,141125,141126,141127,141128,141129,141130,141181,141182","firstunit_area_price":"5","continueunit_area_price":"1","exp":"5 + (ceil(abs(w-500)\/500) * 1)"},{"area_value":"[{\"id\":\"150000\",\"pid\":\"-1\",\"name\":\"\u5185\u8499\u53e4\u81ea\u6cbb\u533a\",\"ischecked\":\"1\"},{\"id\":\"210000\",\"pid\":\"-1\",\"name\":\"\u8fbd\u5b81\u7701\",\"ischecked\":\"1\"},{\"id\":\"220000\",\"pid\":\"-1\",\"name\":\"\u5409\u6797\u7701\",\"ischecked\":\"1\"},{\"id\":\"230000\",\"pid\":\"-1\",\"name\":\"\u9ed1\u9f99\u6c5f\u7701\",\"ischecked\":\"1\"}]","area":"150000,150100,150101,150102,150103,150104,150105,150121,150122,150123,150124,150125,150200,150201,150202,150203,150204,150205,150206,150207,150221,150222,150223,150300,150301,150302,150303,150304,150400,150401,150402,150403,150404,150421,150422,150423,150424,150425,150426,150428,150429,150430,150500,150501,150502,150521,150522,150523,150524,150525,150526,150581,150600,150601,150602,150603,150621,150622,150623,150624,150625,150626,150627,150700,150701,150702,150703,150721,150722,150723,150724,150725,150726,150727,150781,150782,150783,150784,150785,150800,150801,150802,150821,150822,150823,150824,150825,150826,150900,150901,150902,150921,150922,150923,150924,150925,150926,150927,150928,150929,150981,152200,152201,152202,152221,152222,152223,152224,152500,152501,152502,152522,152523,152524,152525,152526,152527,152528,152529,152530,152531,152900,152921,152922,152923,210000,210100,210101,210102,210103,210104,210105,210106,210111,210112,210113,210114,210115,210123,210124,210181,210200,210201,210202,210203,210204,210211,210212,210213,210214,210224,210281,210283,210300,210301,210302,210303,210304,210311,210321,210323,210381,210400,210401,210402,210403,210404,210411,210421,210422,210423,210500,210501,210502,210503,210504,210505,210521,210522,210600,210601,210602,210603,210604,210624,210681,210682,210700,210701,210702,210703,210711,210726,210727,210781,210782,210800,210801,210802,210803,210804,210811,210881,210882,210900,210901,210902,210903,210904,210905,210911,210921,210922,211000,211001,211002,211003,211004,211005,211011,211021,211081,211100,211101,211102,211103,211104,211122,211200,211201,211202,211204,211221,211223,211224,211281,211282,211300,211301,211302,211303,211321,211322,211324,211381,211382,211400,211401,211402,211403,211404,211421,211422,211481,220000,220100,220101,220102,220103,220104,220105,220106,220112,220113,220122,220182,220183,220200,220201,220202,220203,220204,220211,220221,220281,220282,220283,220284,220300,220301,220302,220303,220322,220323,220381,220382,220400,220401,220402,220403,220421,220422,220500,220501,220502,220503,220521,220523,220524,220581,220582,220600,220601,220602,220605,220621,220622,220623,220681,220700,220701,220702,220721,220722,220723,220781,220800,220801,220802,220821,220822,220881,220882,222400,222401,222402,222403,222404,222405,222406,222424,222426,230000,230100,230101,230102,230103,230104,230108,230109,230110,230111,230112,230113,230123,230124,230125,230126,230127,230128,230129,230183,230184,230200,230201,230202,230203,230204,230205,230206,230207,230208,230221,230223,230224,230225,230227,230229,230230,230231,230281,230300,230301,230302,230303,230304,230305,230306,230307,230321,230381,230382,230400,230401,230402,230403,230404,230405,230406,230407,230421,230422,230500,230501,230502,230503,230505,230506,230521,230522,230523,230524,230600,230601,230602,230603,230604,230605,230606,230621,230622,230623,230624,230700,230701,230702,230703,230704,230705,230706,230707,230708,230709,230710,230711,230712,230713,230714,230715,230716,230722,230781,230800,230801,230803,230804,230805,230811,230822,230826,230828,230881,230882,230883,230900,230901,230902,230903,230904,230921,231000,231001,231002,231003,231004,231005,231025,231081,231083,231084,231085,231086,231100,231101,231102,231121,231123,231124,231181,231182,231200,231201,231202,231221,231222,231223,231224,231225,231226,231281,231282,231283,232700,232721,232722,232723","firstunit_area_price":"0","continueunit_area_price":"0","exp":"0 + (ceil(abs(w-500)\/500) * 0)"}]
 */

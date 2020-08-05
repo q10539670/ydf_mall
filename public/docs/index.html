@@ -656,6 +656,591 @@ print_r(json_decode((string) $body));</code></pre>
 </tbody>
 </table>
 <!-- END_058c5ed9e27b3084d1e5869cf760dae9 -->
+<h1>Carousel</h1>
+<p>轮播图管理</p>
+<!-- START_2e6a9de9e6851788f8264fa915a92f47 -->
+<h2>index</h2>
+<p>轮播图列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/carousel?is_del=0&amp;current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/carousel"
+);
+
+let params = {
+    "is_del": "0",
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/carousel',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'query' =&gt; [
+            'is_del'=&gt; '0',
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "coupons": {
+            "current_page": 1,
+            "data": [],
+            "first_page_url": "\/?page=1",
+            "from": null,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": null,
+            "total": 0
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/carousel</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>optional</td>
+<td>轮播图名称</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>optional</td>
+<td>轮播图类型[0:图片 1:视频]</td>
+</tr>
+<tr>
+<td><code>date_range</code></td>
+<td>optional</td>
+<td>起止时间</td>
+</tr>
+<tr>
+<td><code>is_del</code></td>
+<td>optional</td>
+<td>是否删除[0:正常 1:删除]</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2e6a9de9e6851788f8264fa915a92f47 -->
+<!-- START_045a35c828bb4aacfd9b17221092fef7 -->
+<h2>store</h2>
+<p>保存</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/admin-api/admin/carousel" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*" \
+    -d '{"name":"\u8f6e\u64ad\u56fe1","type":0,"path":"https:\/\/www.baidu.com","sort":100,"is_show":1,"image_id":1,"start_at":"culpa","end_at":"culpa","is_del":"0"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/carousel"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+let body = {
+    "name": "\u8f6e\u64ad\u56fe1",
+    "type": 0,
+    "path": "https:\/\/www.baidu.com",
+    "sort": 100,
+    "is_show": 1,
+    "image_id": 1,
+    "start_at": "culpa",
+    "end_at": "culpa",
+    "is_del": "0"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/admin-api/admin/carousel',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '轮播图1',
+            'type' =&gt; 0,
+            'path' =&gt; 'https://www.baidu.com',
+            'sort' =&gt; 100,
+            'is_show' =&gt; 1,
+            'image_id' =&gt; 1,
+            'start_at' =&gt; 'culpa',
+            'end_at' =&gt; 'culpa',
+            'is_del' =&gt; '0',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "创建成功",
+    "data": {
+        "carousel": {
+            "name": "轮播图1",
+            "type": "0",
+            "path": "https:\/\/www.baidu.com",
+            "sort": "100",
+            "is_show": "1",
+            "image_id": "1",
+            "start_at": "2020-08-01 00:00:00",
+            "end_at": "2020-08-31 23:59:59",
+            "is_del": "0",
+            "updated_at": "2020-08-04 18:00:03",
+            "created_at": "2020-08-04 18:00:03",
+            "id": 7
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin-api/admin/carousel</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>轮播图名称</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>integer</td>
+<td>required</td>
+<td>类型[0:图片 1:视频]</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>required</td>
+<td>跳转地址</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>is_show</code></td>
+<td>integer</td>
+<td>required</td>
+<td>展示标记[0:不展示 1:展示]</td>
+</tr>
+<tr>
+<td><code>image_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>资源ID</td>
+</tr>
+<tr>
+<td><code>start_at</code></td>
+<td>date</td>
+<td>optional</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td><code>end_at</code></td>
+<td>date</td>
+<td>optional</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td><code>is_del</code></td>
+<td>required</td>
+<td>optional</td>
+<td>删除标记[0:正常 1:删除]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_045a35c828bb4aacfd9b17221092fef7 -->
+<!-- START_51157c9cf68e8cc3e86efffd7e29a0ac -->
+<h2>show</h2>
+<p>查询(单一)</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/carousel/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/carousel/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/carousel/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": -1,
+    "message": "ID不存在",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/carousel/{carousel}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>carousel</code></td>
+<td>required</td>
+<td>轮播图ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_51157c9cf68e8cc3e86efffd7e29a0ac -->
+<!-- START_1dac5ba7158bfe69e31f9298800657ab -->
+<h2>update</h2>
+<p>更新</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://192.168.0.178:8888/admin-api/admin/carousel/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*" \
+    -d '{"name":"\u8f6e\u64ad\u56fe1","type":0,"path":"https:www.baidu.com","sort":100,"is_show":1,"image_id":1,"start_at":"culpa","end_at":"culpa","is_del":"0"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/carousel/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+let body = {
+    "name": "\u8f6e\u64ad\u56fe1",
+    "type": 0,
+    "path": "https:www.baidu.com",
+    "sort": 100,
+    "is_show": 1,
+    "image_id": 1,
+    "start_at": "culpa",
+    "end_at": "culpa",
+    "is_del": "0"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://192.168.0.178:8888/admin-api/admin/carousel/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'json' =&gt; [
+            'name' =&gt; '轮播图1',
+            'type' =&gt; 0,
+            'path' =&gt; 'https:www.baidu.com',
+            'sort' =&gt; 100,
+            'is_show' =&gt; 1,
+            'image_id' =&gt; 1,
+            'start_at' =&gt; 'culpa',
+            'end_at' =&gt; 'culpa',
+            'is_del' =&gt; '0',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "更新成功",
+    "data": {
+        "carousel": {
+            "id": 7,
+            "name": "轮播图1",
+            "type": "0",
+            "path": "https:\/\/www.baidu.com",
+            "sort": "100",
+            "is_show": "1",
+            "image_id": "1",
+            "start_at": "2020-08-01 00:00:00",
+            "end_at": "2020-08-31 23:59:59",
+            "is_del": "0",
+            "created_at": "2020-08-04 18:00:03",
+            "updated_at": "2020-08-04 18:00:03"
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT admin-api/admin/carousel/{carousel}</code></p>
+<p><code>PATCH admin-api/admin/carousel/{carousel}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>carousel</code></td>
+<td>required</td>
+<td>轮播图ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>轮播图名称</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>integer</td>
+<td>required</td>
+<td>类型[0:图片 1:视频]</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>required</td>
+<td>跳转地址</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>is_show</code></td>
+<td>integer</td>
+<td>required</td>
+<td>展示标记[0:不展示 1:展示]</td>
+</tr>
+<tr>
+<td><code>image_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>资源ID</td>
+</tr>
+<tr>
+<td><code>start_at</code></td>
+<td>date</td>
+<td>optional</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td><code>end_at</code></td>
+<td>date</td>
+<td>optional</td>
+<td>结束时间</td>
+</tr>
+<tr>
+<td><code>is_del</code></td>
+<td>required</td>
+<td>optional</td>
+<td>删除标记[0:正常 1:删除]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1dac5ba7158bfe69e31f9298800657ab -->
+<!-- START_4939c6ec77401103f92a3dbb1b0f9764 -->
+<h2>delete</h2>
+<p>删除</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://192.168.0.178:8888/admin-api/admin/carousel/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/carousel/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://192.168.0.178:8888/admin-api/admin/carousel/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "删除成功",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE admin-api/admin/carousel/{carousel}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>carousel</code></td>
+<td>required</td>
+<td>轮播图ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_4939c6ec77401103f92a3dbb1b0f9764 -->
 <h1>Category</h1>
 <p>商品分类接口</p>
 <!-- START_f4f166b44e57100900985c0216fcf04b -->
@@ -7763,7 +8348,7 @@ print_r(json_decode((string) $body));</code></pre>
             "spec_desc": null,
             "is_del": 0,
             "created_at": null,
-            "updated_at": "2020-08-04 17:41:39"
+            "updated_at": "2020-08-05 16:11:44"
         }
     }
 }</code></pre>
@@ -10364,6 +10949,494 @@ print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE admin-api/admin/promotion/{promotion}</code></p>
 <!-- END_0dfc9c7e2cf812b37bb55a09d97483d2 -->
+<h1>SearchHotKeywords</h1>
+<p>热搜接口</p>
+<!-- START_7a5dbe267077951476ac2b47c290cf30 -->
+<h2>index</h2>
+<p>轮播图列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/keyword?is_del=0&amp;current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/keyword"
+);
+
+let params = {
+    "is_del": "0",
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/keyword',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'query' =&gt; [
+            'is_del'=&gt; '0',
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "查询成功",
+    "data": {
+        "keywords": {
+            "current_page": 1,
+            "data": [],
+            "first_page_url": "\/?page=1",
+            "from": null,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": null,
+            "total": 0
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/keyword</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keywords</code></td>
+<td>optional</td>
+<td>关键词</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>optional</td>
+<td>添加类型[1:系统添加 2:后台添加]</td>
+</tr>
+<tr>
+<td><code>is_show</code></td>
+<td>optional</td>
+<td>是否展示[0:不展示 1:展示]</td>
+</tr>
+<tr>
+<td><code>is_hot</code></td>
+<td>optional</td>
+<td>是否热门[0:非热门 1:热门]</td>
+</tr>
+<tr>
+<td><code>is_del</code></td>
+<td>optional</td>
+<td>是否删除[0:正常 1:删除]</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
+<!-- END_7a5dbe267077951476ac2b47c290cf30 -->
+<!-- START_bd5ae2c1df38bdc96bcb6a2d8a78d9c3 -->
+<h2>store</h2>
+<p>保存</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/admin-api/admin/keyword" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*" \
+    -d '{"keywords":"\u590f\u5b63","sort":100,"is_show":1,"is_hot":1,"is_delete":"0"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/keyword"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+let body = {
+    "keywords": "\u590f\u5b63",
+    "sort": 100,
+    "is_show": 1,
+    "is_hot": 1,
+    "is_delete": "0"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/admin-api/admin/keyword',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'json' =&gt; [
+            'keywords' =&gt; '夏季',
+            'sort' =&gt; 100,
+            'is_show' =&gt; 1,
+            'is_hot' =&gt; 1,
+            'is_delete' =&gt; '0',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin-api/admin/keyword</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keywords</code></td>
+<td>string</td>
+<td>required</td>
+<td>关键词</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>is_show</code></td>
+<td>integer</td>
+<td>required</td>
+<td>展示标记[0:不展示 1:展示]</td>
+</tr>
+<tr>
+<td><code>is_hot</code></td>
+<td>integer</td>
+<td>required</td>
+<td>热门标记[0:非热门 1:热门]</td>
+</tr>
+<tr>
+<td><code>is_delete</code></td>
+<td>required</td>
+<td>optional</td>
+<td>删除标记[0:正常 1:删除]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bd5ae2c1df38bdc96bcb6a2d8a78d9c3 -->
+<!-- START_4054ce29ef219db3261a14cc43d1eb88 -->
+<h2>show</h2>
+<p>查询(单一)</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/keyword/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/keyword/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/keyword/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": -1,
+    "message": "ID不存在",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/keyword/{keyword}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keyword</code></td>
+<td>required</td>
+<td>关键词ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_4054ce29ef219db3261a14cc43d1eb88 -->
+<!-- START_2f1231c6aefae76419ddc038c5ff073c -->
+<h2>update</h2>
+<p>更新</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://192.168.0.178:8888/admin-api/admin/keyword/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*" \
+    -d '{"keywords":"\u590f\u5b63","sort":100,"is_show":1,"is_hot":1,"is_delete":"0"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/keyword/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+let body = {
+    "keywords": "\u590f\u5b63",
+    "sort": 100,
+    "is_show": 1,
+    "is_hot": 1,
+    "is_delete": "0"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://192.168.0.178:8888/admin-api/admin/keyword/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'json' =&gt; [
+            'keywords' =&gt; '夏季',
+            'sort' =&gt; 100,
+            'is_show' =&gt; 1,
+            'is_hot' =&gt; 1,
+            'is_delete' =&gt; '0',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT admin-api/admin/keyword/{keyword}</code></p>
+<p><code>PATCH admin-api/admin/keyword/{keyword}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keyword</code></td>
+<td>required</td>
+<td>关键词ID</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keywords</code></td>
+<td>string</td>
+<td>required</td>
+<td>关键词</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>integer</td>
+<td>required</td>
+<td>排序</td>
+</tr>
+<tr>
+<td><code>is_show</code></td>
+<td>integer</td>
+<td>required</td>
+<td>展示标记[0:不展示 1:展示]</td>
+</tr>
+<tr>
+<td><code>is_hot</code></td>
+<td>integer</td>
+<td>required</td>
+<td>热门标记[0:非热门 1:热门]</td>
+</tr>
+<tr>
+<td><code>is_delete</code></td>
+<td>required</td>
+<td>optional</td>
+<td>删除标记[0:正常 1:删除]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2f1231c6aefae76419ddc038c5ff073c -->
+<!-- START_86d41d3c1c90758abee6bafc4fb650e3 -->
+<h2>delete</h2>
+<p>删除</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://192.168.0.178:8888/admin-api/admin/keyword/1" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/keyword/1"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://192.168.0.178:8888/admin-api/admin/keyword/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "删除成功",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE admin-api/admin/keyword/{keyword}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keyword</code></td>
+<td>required</td>
+<td>关键词ID</td>
+</tr>
+</tbody>
+</table>
+<!-- END_86d41d3c1c90758abee6bafc4fb650e3 -->
 <h1>Ship</h1>
 <p>配送方式接口</p>
 <!-- START_8688f211e3e8308288e86a921ed2764e -->
@@ -13747,7 +14820,7 @@ print_r(json_decode((string) $body));</code></pre>
 <!-- END_e2c87a7b4fe9764a67ed7e2d93501c82 -->
 <h1>Z-Other</h1>
 <!-- START_c1ebba912b77a4efd01b64e716849b88 -->
-<h2>upload</h2>
+<h2>uploadImages</h2>
 <p>上传图片</p>
 <blockquote>
 <p>Example request:</p>
@@ -13820,6 +14893,76 @@ print_r(json_decode((string) $body));</code></pre>
 </tbody>
 </table>
 <!-- END_c1ebba912b77a4efd01b64e716849b88 -->
+<!-- START_a3eea0fd8825e3c81fa5f6fc2c0bf327 -->
+<h2>uploadVideo</h2>
+<p>上传视频</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://192.168.0.178:8888/admin-api/video" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*" \
+    -d '{"video":"culpa"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/video"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+let body = {
+    "video": "culpa"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://192.168.0.178:8888/admin-api/video',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'json' =&gt; [
+            'video' =&gt; 'culpa',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin-api/video</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>video</code></td>
+<td>file</td>
+<td>optional</td>
+<td>视频文件</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a3eea0fd8825e3c81fa5f6fc2c0bf327 -->
 <!-- START_5bb04da3c9782aac4edc211c594429ed -->
 <h2>area</h2>
 <p>获取全国地区</p>
@@ -13827,11 +14970,11 @@ print_r(json_decode((string) $body));</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/admin-api/areas/" \
+    -G "http://192.168.0.178:8888/admin-api/areas/culpa" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: */*"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/areas/"
+    "http://192.168.0.178:8888/admin-api/areas/culpa"
 );
 
 let headers = {
@@ -13848,7 +14991,7 @@ fetch(url, {
 <pre><code class="language-php">
 $client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://192.168.0.178:8888/admin-api/areas/',
+    'http://192.168.0.178:8888/admin-api/areas/culpa',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'multipart/form-data',
@@ -49332,536 +50475,24 @@ print_r(json_decode((string) $body));</code></pre>
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET admin-api/areas/{type?}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>optional</td>
+<td>boolean 是否更新地区缓存[true:更新 false:不更新] 默认不更新</td>
+</tr>
+</tbody>
+</table>
 <!-- END_5bb04da3c9782aac4edc211c594429ed -->
-<!-- START_2e6a9de9e6851788f8264fa915a92f47 -->
-<h2>index</h2>
-<p>轮播图列表</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/admin-api/admin/carousel?is_del=0&amp;current_page=1&amp;per_page=10" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/carousel"
-);
-
-let params = {
-    "is_del": "0",
-    "current_page": "1",
-    "per_page": "10",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/admin-api/admin/carousel',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-        'query' =&gt; [
-            'is_del'=&gt; '0',
-            'current_page'=&gt; '1',
-            'per_page'=&gt; '10',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "查询成功",
-    "data": {
-        "coupons": {
-            "current_page": 1,
-            "data": [],
-            "first_page_url": "\/?page=1",
-            "from": null,
-            "last_page": 1,
-            "last_page_url": "\/?page=1",
-            "next_page_url": null,
-            "path": "\/",
-            "per_page": "10",
-            "prev_page_url": null,
-            "to": null,
-            "total": 0
-        }
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET admin-api/admin/carousel</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>optional</td>
-<td>轮播图名称</td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td>optional</td>
-<td>轮播图类型[0:图片 1:视频]</td>
-</tr>
-<tr>
-<td><code>date_range</code></td>
-<td>optional</td>
-<td>起止时间</td>
-</tr>
-<tr>
-<td><code>is_del</code></td>
-<td>optional</td>
-<td>是否删除[0:正常 1:删除]</td>
-</tr>
-<tr>
-<td><code>current_page</code></td>
-<td>required</td>
-<td>当前页</td>
-</tr>
-<tr>
-<td><code>per_page</code></td>
-<td>required</td>
-<td>每页显示数量</td>
-</tr>
-</tbody>
-</table>
-<!-- END_2e6a9de9e6851788f8264fa915a92f47 -->
-<!-- START_045a35c828bb4aacfd9b17221092fef7 -->
-<h2>store</h2>
-<p>保存</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://192.168.0.178:8888/admin-api/admin/carousel" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*" \
-    -d '{"name":"\u8f6e\u64ad\u56fe1","type":0,"path":"https:www.baidu.com","sort":100,"is_show":1,"image_id":1,"start_at":"culpa","end_at":"culpa","is_delete":"0"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/carousel"
-);
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-let body = {
-    "name": "\u8f6e\u64ad\u56fe1",
-    "type": 0,
-    "path": "https:www.baidu.com",
-    "sort": 100,
-    "is_show": 1,
-    "image_id": 1,
-    "start_at": "culpa",
-    "end_at": "culpa",
-    "is_delete": "0"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;post(
-    'http://192.168.0.178:8888/admin-api/admin/carousel',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-        'json' =&gt; [
-            'name' =&gt; '轮播图1',
-            'type' =&gt; 0,
-            'path' =&gt; 'https:www.baidu.com',
-            'sort' =&gt; 100,
-            'is_show' =&gt; 1,
-            'image_id' =&gt; 1,
-            'start_at' =&gt; 'culpa',
-            'end_at' =&gt; 'culpa',
-            'is_delete' =&gt; '0',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST admin-api/admin/carousel</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>string</td>
-<td>required</td>
-<td>轮播图名称</td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td>integer</td>
-<td>required</td>
-<td>类型[0:图片 1:视频]</td>
-</tr>
-<tr>
-<td><code>path</code></td>
-<td>string</td>
-<td>required</td>
-<td>跳转地址</td>
-</tr>
-<tr>
-<td><code>sort</code></td>
-<td>integer</td>
-<td>required</td>
-<td>排序</td>
-</tr>
-<tr>
-<td><code>is_show</code></td>
-<td>integer</td>
-<td>required</td>
-<td>展示标记[0:不展示 1:展示]</td>
-</tr>
-<tr>
-<td><code>image_id</code></td>
-<td>integer</td>
-<td>required</td>
-<td>资源ID</td>
-</tr>
-<tr>
-<td><code>start_at</code></td>
-<td>date</td>
-<td>optional</td>
-<td>开始时间</td>
-</tr>
-<tr>
-<td><code>end_at</code></td>
-<td>date</td>
-<td>optional</td>
-<td>结束时间</td>
-</tr>
-<tr>
-<td><code>is_delete</code></td>
-<td>required</td>
-<td>optional</td>
-<td>删除标记[0:正常 1:删除]</td>
-</tr>
-</tbody>
-</table>
-<!-- END_045a35c828bb4aacfd9b17221092fef7 -->
-<!-- START_51157c9cf68e8cc3e86efffd7e29a0ac -->
-<h2>show</h2>
-<p>查询(单一)</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/admin-api/admin/carousel/1" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/carousel/1"
-);
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/admin-api/admin/carousel/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": -1,
-    "message": "ID不存在",
-    "data": []
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET admin-api/admin/carousel/{carousel}</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>carousel</code></td>
-<td>required</td>
-<td>轮播图ID</td>
-</tr>
-</tbody>
-</table>
-<!-- END_51157c9cf68e8cc3e86efffd7e29a0ac -->
-<!-- START_1dac5ba7158bfe69e31f9298800657ab -->
-<h2>update</h2>
-<p>更新</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://192.168.0.178:8888/admin-api/admin/carousel/1" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*" \
-    -d '{"name":"\u8f6e\u64ad\u56fe1","type":0,"path":"https:www.baidu.com","sort":100,"is_show":1,"image_id":1,"start_at":"culpa","end_at":"culpa","is_delete":"0"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/carousel/1"
-);
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-let body = {
-    "name": "\u8f6e\u64ad\u56fe1",
-    "type": 0,
-    "path": "https:www.baidu.com",
-    "sort": 100,
-    "is_show": 1,
-    "image_id": 1,
-    "start_at": "culpa",
-    "end_at": "culpa",
-    "is_delete": "0"
-}
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: body
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;put(
-    'http://192.168.0.178:8888/admin-api/admin/carousel/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-        'json' =&gt; [
-            'name' =&gt; '轮播图1',
-            'type' =&gt; 0,
-            'path' =&gt; 'https:www.baidu.com',
-            'sort' =&gt; 100,
-            'is_show' =&gt; 1,
-            'image_id' =&gt; 1,
-            'start_at' =&gt; 'culpa',
-            'end_at' =&gt; 'culpa',
-            'is_delete' =&gt; '0',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT admin-api/admin/carousel/{carousel}</code></p>
-<p><code>PATCH admin-api/admin/carousel/{carousel}</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>carousel</code></td>
-<td>required</td>
-<td>轮播图ID</td>
-</tr>
-</tbody>
-</table>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>string</td>
-<td>required</td>
-<td>轮播图名称</td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td>integer</td>
-<td>required</td>
-<td>类型[0:图片 1:视频]</td>
-</tr>
-<tr>
-<td><code>path</code></td>
-<td>string</td>
-<td>required</td>
-<td>跳转地址</td>
-</tr>
-<tr>
-<td><code>sort</code></td>
-<td>integer</td>
-<td>required</td>
-<td>排序</td>
-</tr>
-<tr>
-<td><code>is_show</code></td>
-<td>integer</td>
-<td>required</td>
-<td>展示标记[0:不展示 1:展示]</td>
-</tr>
-<tr>
-<td><code>image_id</code></td>
-<td>integer</td>
-<td>required</td>
-<td>资源ID</td>
-</tr>
-<tr>
-<td><code>start_at</code></td>
-<td>date</td>
-<td>optional</td>
-<td>开始时间</td>
-</tr>
-<tr>
-<td><code>end_at</code></td>
-<td>date</td>
-<td>optional</td>
-<td>结束时间</td>
-</tr>
-<tr>
-<td><code>is_delete</code></td>
-<td>required</td>
-<td>optional</td>
-<td>删除标记[0:正常 1:删除]</td>
-</tr>
-</tbody>
-</table>
-<!-- END_1dac5ba7158bfe69e31f9298800657ab -->
-<!-- START_4939c6ec77401103f92a3dbb1b0f9764 -->
-<h2>delete</h2>
-<p>删除</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://192.168.0.178:8888/admin-api/admin/carousel/1" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/carousel/1"
-);
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;delete(
-    'http://192.168.0.178:8888/admin-api/admin/carousel/1',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE admin-api/admin/carousel/{carousel}</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>carousel</code></td>
-<td>required</td>
-<td>轮播图ID</td>
-</tr>
-</tbody>
-</table>
-<!-- END_4939c6ec77401103f92a3dbb1b0f9764 -->
 <!-- START_062cddea90f96419451a307800f03011 -->
 <h2>index</h2>
 <p>发货单列表</p>
