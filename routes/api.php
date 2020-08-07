@@ -39,6 +39,7 @@ Route::group(['middleware' => 'cors'], function () {
         Route::post('order/ship/{order}', 'OrderController@ship')->name('order.ship');                         //订单发货
         Route::patch('category/status/{category}', 'GoodsCategoryController@status')->name('category.status'); //更改分类状态
         Route::get('goods/attr/{good}','GoodsController@setGoodsAttribute')->name('goods.attr');               //设置商品属性
+        Route::get('distribution','DistributionController@index')->name('distribution.index');                 //分销详情列表
     });
 });
 

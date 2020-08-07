@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "b64ac816-47bc-454c-87ba-75e1daee668c",
+        "_postman_id": "14bf8aa8-fba3-4cb1-a8ab-6e4685a46d69",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -894,6 +894,184 @@
                             ]
                         },
                         "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Delivery",
+            "description": "\u53d1\u8d27\u5355\u63a5\u53e3",
+            "item": [
+                {
+                    "name": "index\n\u53d1\u8d27\u5355\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/delivery",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "",
+                                    "description": "\u53d1\u8d27\u5355\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "order_id",
+                                    "value": "",
+                                    "description": "\u8ba2\u5355\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "date_range",
+                                    "value": "",
+                                    "description": "\u4e0b\u5355\u65f6\u95f4[\u8303\u56f4]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "logi_no",
+                                    "value": "",
+                                    "description": "\u5feb\u9012\u5355\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "ship_mobile",
+                                    "value": "",
+                                    "description": "\u6536\u8d27\u4eba\u7535\u8bdd",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "culpa",
+                                    "description": "\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "culpa",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "show\n\u67e5\u8be2\u5355\u4e00",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/delivery\/:delivery",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "delivery",
+                                    "key": "delivery",
+                                    "value": "culpa",
+                                    "description": "\u53d1\u8d27\u5355\u53f7"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Distribution",
+            "description": "\u5206\u9500\u8d26\u6237\u8868",
+            "item": [
+                {
+                    "name": "index\n\u5206\u9500\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/distribution",
+                            "query": [
+                                {
+                                    "key": "phone",
+                                    "value": "",
+                                    "description": "\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "sex",
+                                    "value": "",
+                                    "description": "\u6027\u522b[1:\u7537, 2:\u5973]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "nickname",
+                                    "value": "",
+                                    "description": "\u6635\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1888,7 +2066,7 @@
             "description": "\u70ed\u641c\u63a5\u53e3",
             "item": [
                 {
-                    "name": "index\n\u8f6e\u64ad\u56fe\u5217\u8868",
+                    "name": "index\n\u70ed\u641c\u5217\u8868",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2958,113 +3136,6 @@
                             "host": "192.168.0.178:8888",
                             "path": "admin-api\/areas\/:type",
                             "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "multipart\/form-data"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "*\/*"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "index\n\u53d1\u8d27\u5355\u5217\u8868",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "admin-api\/admin\/delivery",
-                            "query": [
-                                {
-                                    "key": "id",
-                                    "value": "",
-                                    "description": "\u53d1\u8d27\u5355\u53f7",
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "order_id",
-                                    "value": "",
-                                    "description": "\u8ba2\u5355\u53f7",
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "date_range",
-                                    "value": "",
-                                    "description": "\u4e0b\u5355\u65f6\u95f4[\u8303\u56f4]",
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "logi_no",
-                                    "value": "",
-                                    "description": "\u5feb\u9012\u5355\u53f7",
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "ship_mobile",
-                                    "value": "",
-                                    "description": "\u6536\u8d27\u4eba\u7535\u8bdd",
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "per_page",
-                                    "value": "culpa",
-                                    "description": "\u663e\u793a\u6570\u91cf",
-                                    "disabled": false
-                                },
-                                {
-                                    "key": "current_page",
-                                    "value": "culpa",
-                                    "description": "\u5f53\u524d\u9875",
-                                    "disabled": false
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "multipart\/form-data"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "*\/*"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "show\n\u67e5\u8be2\u5355\u4e00",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "192.168.0.178:8888",
-                            "path": "admin-api\/admin\/delivery\/:delivery",
-                            "query": [],
-                            "variable": [
-                                {
-                                    "id": "delivery",
-                                    "key": "delivery",
-                                    "value": "culpa",
-                                    "description": "\u53d1\u8d27\u5355\u53f7"
-                                }
-                            ]
                         },
                         "method": "GET",
                         "header": [

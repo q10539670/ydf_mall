@@ -46,7 +46,7 @@ class UserController extends Controller
                 return $query->where('sex', $sex);
             })
             ->when($nickname != '', function ($query) use ($nickname) {
-                return $query->where('nickname', $nickname);
+                return $query->where('nickname', 'like','%'.$nickname.'%');
             })
             ->when($status == 1 || $status == 2, function ($query) use ($status) {
                 return $query->where('status', $status);

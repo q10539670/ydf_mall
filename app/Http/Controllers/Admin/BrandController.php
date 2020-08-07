@@ -31,7 +31,7 @@ class BrandController extends Controller
      */
     public function index(Request $request)
     {
-        $condition = $request->input('condition');
+        $condition = $request->input('condition');//distribution
         $isDel = $request->input('is_del', '0');
         $currentPage = $request->input('current_page'); //当前页
         $perPage = $request->input('per_page');    //每页显示数量

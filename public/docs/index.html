@@ -4109,6 +4109,291 @@ print_r(json_decode((string) $body));</code></pre>
 </tbody>
 </table>
 <!-- END_20a28a23152d90d275b3d8b052bf8252 -->
+<h1>Delivery</h1>
+<p>发货单接口</p>
+<!-- START_062cddea90f96419451a307800f03011 -->
+<h2>index</h2>
+<p>发货单列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/delivery?per_page=culpa&amp;current_page=culpa" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/delivery"
+);
+
+let params = {
+    "per_page": "culpa",
+    "current_page": "culpa",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/delivery',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'query' =&gt; [
+            'per_page'=&gt; 'culpa',
+            'current_page'=&gt; 'culpa',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/delivery</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>发货单号</td>
+</tr>
+<tr>
+<td><code>order_id</code></td>
+<td>optional</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td><code>date_range</code></td>
+<td>optional</td>
+<td>下单时间[范围]</td>
+</tr>
+<tr>
+<td><code>logi_no</code></td>
+<td>optional</td>
+<td>快递单号</td>
+</tr>
+<tr>
+<td><code>ship_mobile</code></td>
+<td>optional</td>
+<td>收货人电话</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>显示数量</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+</tbody>
+</table>
+<!-- END_062cddea90f96419451a307800f03011 -->
+<!-- START_6300facc4d418ec2da4d0117a5440c39 -->
+<h2>show</h2>
+<p>查询单一</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/delivery/culpa" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/delivery/culpa"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/delivery/culpa',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "该发货单不存在",
+    "data": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/delivery/{delivery}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delivery</code></td>
+<td>required</td>
+<td>发货单号</td>
+</tr>
+</tbody>
+</table>
+<!-- END_6300facc4d418ec2da4d0117a5440c39 -->
+<h1>Distribution</h1>
+<p>分销账户表</p>
+<!-- START_03d2b726dd87c051cb9e8edcba40e673 -->
+<h2>index</h2>
+<p>分销列表</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://192.168.0.178:8888/admin-api/admin/distribution?current_page=1&amp;per_page=10" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: */*"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://192.168.0.178:8888/admin-api/admin/distribution"
+);
+
+let params = {
+    "current_page": "1",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "*/*",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://192.168.0.178:8888/admin-api/admin/distribution',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; '*/*',
+        ],
+        'query' =&gt; [
+            'current_page'=&gt; '1',
+            'per_page'=&gt; '10',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "code": 1,
+    "message": "分销账户查询成功",
+    "data": {
+        "distributions": {
+            "current_page": 1,
+            "data": [],
+            "first_page_url": "\/?page=1",
+            "from": null,
+            "last_page": 1,
+            "last_page_url": "\/?page=1",
+            "next_page_url": null,
+            "path": "\/",
+            "per_page": "10",
+            "prev_page_url": null,
+            "to": null,
+            "total": 0
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-api/admin/distribution</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phone</code></td>
+<td>optional</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>optional</td>
+<td>性别[1:男, 2:女]</td>
+</tr>
+<tr>
+<td><code>nickname</code></td>
+<td>optional</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td><code>current_page</code></td>
+<td>required</td>
+<td>当前页</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>required</td>
+<td>每页显示数量</td>
+</tr>
+</tbody>
+</table>
+<!-- END_03d2b726dd87c051cb9e8edcba40e673 -->
 <h1>Goods</h1>
 <p>商品接口</p>
 <!-- START_7284dc020d27b9e996a97c77d295b761 -->
@@ -8348,7 +8633,7 @@ print_r(json_decode((string) $body));</code></pre>
             "spec_desc": null,
             "is_del": 0,
             "created_at": null,
-            "updated_at": "2020-08-05 16:11:44"
+            "updated_at": "2020-08-07 17:29:30"
         }
     }
 }</code></pre>
@@ -10953,7 +11238,7 @@ print_r(json_decode((string) $body));</code></pre>
 <p>热搜接口</p>
 <!-- START_7a5dbe267077951476ac2b47c290cf30 -->
 <h2>index</h2>
-<p>轮播图列表</p>
+<p>热搜列表</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -50493,175 +50778,6 @@ print_r(json_decode((string) $body));</code></pre>
 </tbody>
 </table>
 <!-- END_5bb04da3c9782aac4edc211c594429ed -->
-<!-- START_062cddea90f96419451a307800f03011 -->
-<h2>index</h2>
-<p>发货单列表</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/admin-api/admin/delivery?per_page=culpa&amp;current_page=culpa" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/delivery"
-);
-
-let params = {
-    "per_page": "culpa",
-    "current_page": "culpa",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/admin-api/admin/delivery',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-        'query' =&gt; [
-            'per_page'=&gt; 'culpa',
-            'current_page'=&gt; 'culpa',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (500):</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET admin-api/admin/delivery</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>optional</td>
-<td>发货单号</td>
-</tr>
-<tr>
-<td><code>order_id</code></td>
-<td>optional</td>
-<td>订单号</td>
-</tr>
-<tr>
-<td><code>date_range</code></td>
-<td>optional</td>
-<td>下单时间[范围]</td>
-</tr>
-<tr>
-<td><code>logi_no</code></td>
-<td>optional</td>
-<td>快递单号</td>
-</tr>
-<tr>
-<td><code>ship_mobile</code></td>
-<td>optional</td>
-<td>收货人电话</td>
-</tr>
-<tr>
-<td><code>per_page</code></td>
-<td>required</td>
-<td>显示数量</td>
-</tr>
-<tr>
-<td><code>current_page</code></td>
-<td>required</td>
-<td>当前页</td>
-</tr>
-</tbody>
-</table>
-<!-- END_062cddea90f96419451a307800f03011 -->
-<!-- START_6300facc4d418ec2da4d0117a5440c39 -->
-<h2>show</h2>
-<p>查询单一</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://192.168.0.178:8888/admin-api/admin/delivery/culpa" \
-    -H "Content-Type: multipart/form-data" \
-    -H "Accept: */*"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://192.168.0.178:8888/admin-api/admin/delivery/culpa"
-);
-
-let headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "*/*",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<pre><code class="language-php">
-$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'http://192.168.0.178:8888/admin-api/admin/delivery/culpa',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'multipart/form-data',
-            'Accept' =&gt; '*/*',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "code": 1,
-    "message": "该发货单不存在",
-    "data": []
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET admin-api/admin/delivery/{delivery}</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>delivery</code></td>
-<td>required</td>
-<td>发货单号</td>
-</tr>
-</tbody>
-</table>
-<!-- END_6300facc4d418ec2da4d0117a5440c39 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

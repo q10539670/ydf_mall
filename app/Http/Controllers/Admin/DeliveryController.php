@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 /**
- * @Gourp Delivery
+ * @group Delivery
  * 发货单接口
  * @package App\Http\Controllers\Admin
  */
