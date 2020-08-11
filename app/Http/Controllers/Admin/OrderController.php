@@ -234,7 +234,7 @@ class OrderController extends Controller
         }
         $order = Order::find($id);
         $logistics = Logistics::find($request->input('logi_id'));
-        $deliveryId = date('YmdHis'). 'dl00' . $order->user_id . '00' . mt_rand(100,999);
+        $deliveryId = Helper::generateNo('dl',$order->user_id);
         $delivery = Delivery::create([
             'id' => $deliveryId,
             'order_id' => $id,

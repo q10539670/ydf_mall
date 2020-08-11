@@ -20,13 +20,13 @@ class AfterSalesController extends Controller
      * 售后单列表
      *
      * @queryParam id 售后单号 No-example
-     * @queryParam order_id 订单号
-     * @queryParam date_range 申请时间
-     * @queryParam mobile
-     * @queryParam confirm
-     * @queryParam status
-     * @queryParam per_page
-     * @queryParam current_page
+     * @queryParam order_id 订单号 No-example
+     * @queryParam date_range 申请时间 No-example
+     * @queryParam mobile 手机号 No-example
+     * @queryParam confirm 是否确认收货[1:未确认收货 2:已确认收货] No-example
+     * @queryParam status 状态[0:待提交 1:未审核 2:审核通过 3:审核拒绝] No-example
+     * @queryParam current_page required 当前页 Example: 1
+     * @queryParam per_page required 每页显示数量 Example: 10
      *
      * @param  Request  $request
      * @return JsonResponse

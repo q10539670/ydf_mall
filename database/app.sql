@@ -556,17 +556,23 @@ CREATE TABLE `ydf_sale_amount_change_log`
 
 create table ydf_sale_cashout
 (
-    id           int unsigned            NOT NULL AUTO_INCREMENT COMMENT '',
-    user_id      int unsigned            not null DEFAULT 0 COMMENT ' 用户ID ',
-    type         int unsigned            not null default 1 comment '1=>银行卡 2=>微信余额 ',
-    bankcard_id  int                     not null default 0 comment ' 银行卡id ',
-    apply_amount decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT ' 提现金额 ',
-    status       tinyint                 not null default 0 comment '0=>已申请 1=>发放成功 2=>发放失败 3=>拒绝 ',
-    content      text comment ' 备注 ',
-    created_at   datetime                NULL     DEFAULT NULL,
-    updated_at   datetime                NULL     DEFAULT NULL,
-    apply_at     datetime                NULL     DEFAULT NULL,
-    primary key (id)
+    id             int unsigned            NOT NULL AUTO_INCREMENT COMMENT '',
+    cashout_id     varchar(128)            not null default '' comment '提现单id 日期字符串+cash+微秒+3位随机数生成',
+    user_id        int unsigned            not null DEFAULT 0 COMMENT ' 用户ID ',
+    type           int unsigned            not null default 1 comment '1=>银行卡 2=>微信余额 ',
+    bank_id        int                     not null default 0 comment ' 银行id ',
+    bankcard_id    int                     not null default 0 comment ' 银行卡id ',
+    apply_amount   decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT ' 提现金额 ',
+    status         tinyint                 not null default 0 comment '0=>已申请 1=>发放成功 2=>发放失败 3=>拒绝 ',
+    pay_return_msg varchar(128)            not null default '' comment '付款返回信息',
+    pay_detail     text comment '付款详情',
+    content        text comment '备注',
+    created_at     datetime                NULL     DEFAULT NULL,
+    updated_at     datetime                NULL     DEFAULT NULL,
+    apply_at       datetime                NULL     DEFAULT NULL comment '付款时间',
+    primary key (id),
+    key (cashout_id),
+    key (user_id)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT =' 佣金提现记录表 ';
 /*

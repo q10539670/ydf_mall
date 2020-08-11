@@ -4,46 +4,42 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
-use App\Models\Distribution;
+use App\Models\AmountChange;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Validator;
 
 /**
- * @group Distribution
- * 分销账户表
+ * @group AmountChange
+ * 余额变动表
  * @package App\Http\Controllers\Admin
  */
-class DistributionController extends Controller
+class AmountChangeController extends Controller
 {
     /**
      * index
-     * 分销列表
+     * 余额变动表
      * @queryParam mobile 手机号 No-example
-     * @queryParam sex 性别[1:男, 2:女] No-example
      * @queryParam nickname 昵称 No-example
-     * @queryParam  current_page required 当前页 Example: 1
-     * @queryParam  per_page required 每页显示数量 Example: 10
+     * @queryParam type 类型[1:结算收入 2:提现支出] No-example
+     * @queryParam current_page required 当前页 Example: 1
+     * @queryParam per_page required 每页显示数量 Example: 10
      * @param  Request  $request
      * @return JsonResponse
      */
     public function index(Request $request)
     {
         $mobile = $request->input('mobile');
-        $sex = $request->input('sex');
+        $type = $request->input('type');
         $nickname = $request->input('nickname');
         $currentPage = $request->input('current_page'); //当前页
         $perPage = $request->input('per_page');    //每页显示数量
-        $query = Distribution::when($mobile != '', function ($query) use ($mobile) {
+        $query = AmountChange::when($mobile != '', function ($query) use ($mobile) {
             return $query->whereHas('user', function ($query) use ($mobile) {
                 $query->where('mobile', 'like', '%'.$mobile.'%');
             });
         })
-            ->when($sex == 1 || $sex == 2, function ($query) use ($sex) {
-                return $query->whereHas('user', function ($query) use ($sex) {
-                    $query->where('sex', $sex);
-                });
+            ->when($type == 1 || $type == 2, function ($query) use ($type) {
+                return $query->where('type', $type);
             })
             ->when($nickname != '', function ($query) use ($nickname) {
                 return $query->whereHas('user', function ($query) use ($nickname) {
@@ -51,10 +47,10 @@ class DistributionController extends Controller
                 });
             });
         $query->orderBy('created_at', 'desc');
-        $distributions = self::paginator($query, $currentPage, $perPage);
-        foreach ($distributions as $distribution) {
-            $distribution->user;
+        $amountChanges = self::paginator($query, $currentPage, $perPage);
+        foreach ($amountChanges as $amountChange) {
+            $amountChange->user;
         }
-        return Helper::Json(1, '分销账户查询成功', ['distributions' => $distributions]);
+        return Helper::Json(1, '查询成功', ['amountChanges' => $amountChanges]);
     }
 }

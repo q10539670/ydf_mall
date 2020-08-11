@@ -20,7 +20,7 @@ class UserController extends Controller
     /**
      * index
      * 用户列表
-     * @queryParam phone 手机号 No-example
+     * @queryParam mobile 手机号 No-example
      * @queryParam sex 性别[1:男, 2:女] No-example
      * @queryParam nickname 昵称 No-example
      * @queryParam status 状态[1:正常, 2:禁用] No-example

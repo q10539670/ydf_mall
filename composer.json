@@ -16,6 +16,8 @@
         "laravel/tinker": "^1.0",
         "medz/cors": "^1.5",
         "mpociot/laravel-apidoc-generator": "^4.8",
+        "overtrue/laravel-wechat": "~5.0",
+        "overtrue/wechat": "^4.2",
         "predis/predis": "^1.1"
     },
     "require-dev": {

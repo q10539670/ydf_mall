@@ -277,4 +277,15 @@ class Helper
         }
         return $date != '' ? $date.' 23:59:59' : '';
     }
+
+    /**
+     * 生成单号
+     * @param $type
+     * @param $userId
+     * @return string
+     */
+    public static function generateNo($type,$userId)
+    {
+        return date('YmdHis'). $type.'00' . $userId . '00' . mt_rand(100,999);
+    }
 }

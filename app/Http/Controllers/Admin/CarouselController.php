@@ -22,6 +22,7 @@ class CarouselController extends Controller
      *
      * @queryParam name 轮播图名称 No-example
      * @queryParam type 轮播图类型[0:图片 1:视频] No-example
+     * @queryParam location_type 轮播图位置[0:首页顶部轮播图] No-example
      * @queryParam date_range 起止时间 No-example
      * @queryParam is_del 是否删除[0:正常 1:删除] Example: 0
      * @queryParam current_page required 当前页 Example: 1
@@ -33,6 +34,7 @@ class CarouselController extends Controller
     {
         $name = $request->input('name');
         $type = $request->input('type');
+        $locationType = $request->input('location_type');
         $dateRange = Helper::formatDateString($request->input('date_range'));
         $isDel = $request->input('is_del', '0');
         $perPage = $request->input('per_page') != '' ? $request->input('per_page') : 10;
@@ -42,6 +44,9 @@ class CarouselController extends Controller
         })
             ->when($type === 0 || $type === 1, function ($query) use ($type) {
                 return $query->where('type', $type);
+            })
+            ->when(preg_match('/^[0]$/',$locationType), function ($query) use ($locationType) {
+                return $query->where('location_type', $locationType);
             })
             ->when($dateRange != '', function ($query) use ($dateRange) {
                 return $query->where('start_at', '>', $dateRange[0])->orWhere('end_at', '<', $dateRange[1]);
@@ -63,6 +68,7 @@ class CarouselController extends Controller
      *
      * @bodyParam name string required 轮播图名称 Example:轮播图1
      * @bodyParam type int required 类型[0:图片 1:视频] Example:0
+     * @bodyParam location_type int required 类型[0:首页顶部轮播图] Example:0
      * @bodyParam path string required 跳转地址 Example:https://www.baidu.com
      * @bodyParam sort int required 排序 Example:100
      * @bodyParam is_show int required 展示标记[0:不展示 1:展示] Example:1
@@ -79,6 +85,7 @@ class CarouselController extends Controller
     "carousel": {
     "name": "轮播图1",
     "type": "0",
+    "location_type": "0",
     "path": "https://www.baidu.com",
     "sort": "100",
     "is_show": "1",
@@ -120,6 +127,7 @@ class CarouselController extends Controller
      * 更新
      * @urlParam carousel required 轮播图ID Example:1
      * @bodyParam name string required 轮播图名称 Example:轮播图1
+     * @bodyParam location_type int required 类型[0:首页顶部轮播图] Example:0
      * @bodyParam type int required 类型[0:图片 1:视频] Example:0
      * @bodyParam path string required 跳转地址 Example:https:www.baidu.com
      * @bodyParam sort int required 排序 Example:100
@@ -139,6 +147,7 @@ class CarouselController extends Controller
     "id": 7,
     "name": "轮播图1",
     "type": "0",
+    "location_type": "0",
     "path": "https://www.baidu.com",
     "sort": "100",
     "is_show": "1",
