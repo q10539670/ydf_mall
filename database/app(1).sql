@@ -591,6 +591,7 @@ CREATE TABLE `ydf_user_bankcards`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='用户银行卡表';
+alter table ydf_user_bankcards add truename varchar(16)  not null DEFAULT '' COMMENT '开户人姓名' after user_id;
 
 CREATE TABLE `ydf_sale_items`
 (
@@ -614,8 +615,22 @@ CREATE TABLE `ydf_sale_money`
     id           int unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID号',
     type         tinyint      not null default 0 comment '1=>下级提成 2=>下下级提成',
     user_id      int unsigned not null DEFAULT 0 COMMENT '用户ID',
-    sale_item_id int unsigned not null DEFAULT 0 COMMENT '订单id',
+    sale_item_id int unsigned not null DEFAULT 0 COMMENT '订单id'
 
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='分销金额表';
+
+create table ydf_mall_amount_log
+(
+    `id`       int(10) unsigned        NOT NULL AUTO_INCREMENT,
+    type       tinyint                 not null default 0 comment '1=>收入 2=>支出',
+    kind       tinyint                 not null default 0 comment '11=>购买商品收入 21=>佣金支出 22=>退款支出',
+    money      decimal(10, 2) unsigned NOT NULL DEFAULT '0.00' COMMENT '金额',
+    content    text comment '',
+    content2   text comment '',
+    created_at datetime                NULL     DEFAULT NULL,
+    updated_at datetime                NULL     DEFAULT NULL,
+    primary key (id)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4 COMMENT ='店铺流水表';

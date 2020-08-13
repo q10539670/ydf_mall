@@ -106,22 +106,24 @@ return [
      */
      'payment' => [
          'default' => [
-             'sandbox'            => env('WECHAT_PAYMENT_SANDBOX', false),
-             'app_id'             => env('WECHAT_PAYMENT_APPID', ''),
-             'mch_id'             => env('WECHAT_PAYMENT_MCH_ID', 'your-mch-id'),
-             'key'                => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
-             'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/cert/apiclient_cert.pem'),    // XXX: 绝对路径！！！！
-             'key_path'           => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/cert/apiclient_key.pem'),      // XXX: 绝对路径！！！！
-             'notify_url'         => 'http://example.com/payments/wechat-notify',                           // 默认支付结果通知地址
+             'sandbox'             => env('WECHAT_PAYMENT_SANDBOX', false),
+             'app_id'              => env('WECHAT_PAYMENT_APPID', ''),
+             'mch_id'              => env('WECHAT_PAYMENT_MCH_ID', 'your-mch-id'),
+             'key'                 => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
+             'cert_path'           => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/cert/apiclient_cert.pem'),          // XXX: 绝对路径！！！！
+             'key_path'            => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/cert/apiclient_key.pem'),            // XXX: 绝对路径！！！！
+             'rsa_public_key_path' => env('WECHAT_RSA_PUBLIC_KEY_PATH', 'path/to/cert/rsa_public_key.pem'),   // XXX: 绝对路径！！！！
+             'notify_url'          => 'http://example.com/payments/wechat-notify',                           // 默认支付结果通知地址
          ],
          'test' =>[
-             'sandbox'            => env('WECHAT_PAYMENT_SANDBOX', false),
-             'app_id'             => 'wx24e6a8e7309fa489',
-             'mch_id'             => '1490899052',
-             'key'                => 'bqiVxY5yE3FKs8pjgGAJ2c2Gyz4SEfwI',
-             'cert_path'          => '/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/apiclient_cert.pem',    // XXX: 绝对路径！！！！
-             'key_path'           => '/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/apiclient_key.pem',      // XXX: 绝对路径！！！！
-             'notify_url'         => 'https://wx.sanshanwenhua.com/lvll/api/index',                           // 默认支付结果通知地址
+             'sandbox'             => env('WECHAT_PAYMENT_SANDBOX', false),
+             'app_id'              => 'wx24e6a8e7309fa489',
+             'mch_id'              => '1490899052',
+             'key'                 => 'bqiVxY5yE3FKs8pjgGAJ2c2Gyz4SEfwI',
+             'cert_path'           => '/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/apiclient_cert.pem',    // XXX: 绝对路径！！！！
+             'key_path'            => '/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/apiclient_key.pem',      // XXX: 绝对路径！！！！
+             'rsa_public_key_path' => '/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/rsa_public_key.pem',   // XXX: 绝对路径！！！！
+             'notify_url'          => 'https://wx.sanshanwenhua.com/lvll/api/index',                           // 默认支付结果通知地址
          ]
 
          // ...
@@ -138,4 +140,13 @@ return [
     //          //...
     //      ],
     // ],
+
+
+    /*
+    ./vendor/bin/easywechat payment:rsa_public_key \
+  --mch_id=1490899052 \
+  --api_key=bqiVxY5yE3FKs8pjgGAJ2c2Gyz4SEfwI \
+  --cert_path=/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/apiclient_cert.pem \
+  --key_path=/data/wwwroot/wx.sanshanwenhua.com/backend/33wh/cert/apiclient_key.pem
+    */
 ];

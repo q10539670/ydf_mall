@@ -40,6 +40,11 @@ Route::group(['middleware' => 'cors'], function () {
         Route::patch('category/status/{category}', 'GoodsCategoryController@status')->name('category.status'); //更改分类状态
         Route::get('goods/attr/{good}','GoodsController@setGoodsAttribute')->name('goods.attr');               //设置商品属性
         Route::get('distribution','DistributionController@index')->name('distribution.index');                 //分销详情列表
+        Route::get('cashout','CashoutController@index')->name('cashout.index');                                //提现列表
+        Route::get('cashout/refuse/{cashout}','CashoutController@reduse')->name('cashout.refuse');             //提现拒绝
+        Route::get('cashout/{cashout}','CashoutController@cashout')->name('cashout.cashout');                  //提现
+        Route::get('amount','AmountChangeController@index')->name('amount.index');                             //资金变动
+        Route::get('sale_item','SaleItemController@index')->name('sale_item.index');                           //分销结算
     });
 });
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use EasyWeChat\Kernel\Exceptions\InvalidArgumentException;
 use EasyWeChat\Kernel\Exceptions\InvalidConfigException;
+use EasyWeChat\Kernel\Exceptions\RuntimeException;
 use EasyWeChat\Kernel\Support\Collection;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class WXPayController extends Controller
             'key' => $config['key'],
             'cert_path' => $config['cert_path'], // XXX: 绝对路径！！！！
             'key_path' => $config['key_path'],      // XXX: 绝对路径！！！！
+            'rsa_public_key_path' => $config['rsa_public_key_path'],
             'notify_url' => route('refund_notify'),     // 你也可以在下单时单独设置来想覆盖它
             'getTokenFunc' => WechatHelper::getTokenFunc(),
         ];
@@ -52,11 +54,36 @@ class WXPayController extends Controller
             'check_name' => 'NO_CHECK', // NO_CHECK：不校验真实姓名, FORCE_CHECK：强校验真实姓名
             //'re_user_name' => $name, // 如果 check_name 设置为FORCE_CHECK，则必填用户真实姓名
             'amount' => $amount, // 企业付款金额，单位为分
-            'desc' => '提现', // 企业付款操作说明信息。必填
+            'desc' => '用户提现到余额', // 企业付款操作说明信息。必填
         ]);
 
     }
 
+    /**
+     * 付款到银行卡
+     * @param $amount
+     * @param $partner_trade_no
+     * @param $name
+     * @param $bankNo
+     * @param $bankCode
+     * @return array|Collection|object|ResponseInterface|string
+     * @throws GuzzleException
+     * @throws InvalidArgumentException
+     * @throws InvalidConfigException
+     * @throws RuntimeException
+     */
+    public static function payToBank($bankNo, $amount, $partner_trade_no,$name,$bankCode)
+    {
+        $app = Factory::payment(self::config());
+        return $app->transfer->toBankCard([
+            'partner_trade_no' => $partner_trade_no,
+            'enc_bank_no' => $bankNo, // 银行卡号
+            'enc_true_name' => $name,   // 银行卡对应的用户真实姓名
+            'bank_code' => $bankCode, // 银行编号
+            'amount' => $amount,  // 单位：分
+            'desc' => '用户提现到银行卡',
+        ]);
+    }
 
     /*
      * 统一下单
