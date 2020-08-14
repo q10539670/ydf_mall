@@ -32,9 +32,9 @@ Route::group(['middleware' => 'cors'], function () {
         Route::resource('carousel', 'CarouselController')->names('carousel');                             //轮播图
         Route::resource('keyword', 'SearchHotKeywordsController')->names('keyword');                      //热搜
 
-        Route::get('delivery','DeliveryController@index')->name('delivery');                                   //发货单列表
+        Route::get('delivery','DeliveryController@index')->name('delivery.index');                             //发货单列表
         Route::get('delivery/{delivery}','DeliveryController@show')->name('delivery.show');                    //查询发货单(单一)
-        Route::get('user', 'UserController@index')->name('user');                                              //用户列表
+        Route::get('user', 'UserController@index')->name('user.index');                                        //用户列表
         Route::patch('user/status/{user}', 'UserController@status')->name('user.status');                      //更改用户状态
         Route::post('order/ship/{order}', 'OrderController@ship')->name('order.ship');                         //订单发货
         Route::patch('category/status/{category}', 'GoodsCategoryController@status')->name('category.status'); //更改分类状态
@@ -45,6 +45,8 @@ Route::group(['middleware' => 'cors'], function () {
         Route::get('cashout/{cashout}','CashoutController@cashout')->name('cashout.cashout');                  //提现
         Route::get('amount','AmountChangeController@index')->name('amount.index');                             //资金变动
         Route::get('sale_item','SaleItemController@index')->name('sale_item.index');                           //分销结算
+        Route::get('saler_info','SalerInfoController@index')->name('saler_info.index');                        //用户分销列表
+        Route::get('saler_info/{saler_info}','SalerInfoController@show')->name('saler_info.show');             //用户分销(单一)
     });
 });
 

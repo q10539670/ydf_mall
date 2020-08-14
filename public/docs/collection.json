@@ -2,11 +2,76 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "14bf8aa8-fba3-4cb1-a8ab-6e4685a46d69",
+        "_postman_id": "53b6ebfc-a2fd-40e2-84a7-0014b87844b1",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
     "item": [
+        {
+            "name": "AmountChange",
+            "description": "\u4f59\u989d\u53d8\u52a8\u8868",
+            "item": [
+                {
+                    "name": "index\n\u4f59\u989d\u53d8\u52a8\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/amount",
+                            "query": [
+                                {
+                                    "key": "mobile",
+                                    "value": "",
+                                    "description": "\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "nickname",
+                                    "value": "",
+                                    "description": "\u6635\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "",
+                                    "description": "\u7c7b\u578b[1:\u7ed3\u7b97\u6536\u5165 2:\u63d0\u73b0\u652f\u51fa]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
         {
             "name": "Brand",
             "description": "\u54c1\u724c\u63a5\u53e3",
@@ -227,6 +292,12 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "location_type",
+                                    "value": "",
+                                    "description": "\u8f6e\u64ad\u56fe\u4f4d\u7f6e[0:\u9996\u9875\u9876\u90e8\u8f6e\u64ad\u56fe]",
+                                    "disabled": true
+                                },
+                                {
                                     "key": "date_range",
                                     "value": "",
                                     "description": "\u8d77\u6b62\u65f6\u95f4",
@@ -293,7 +364,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"\\u8f6e\\u64ad\\u56fe1\",\n    \"type\": 0,\n    \"path\": \"https:\\\/\\\/www.baidu.com\",\n    \"sort\": 100,\n    \"is_show\": 1,\n    \"image_id\": 1,\n    \"start_at\": \"culpa\",\n    \"end_at\": \"culpa\",\n    \"is_del\": \"0\"\n}"
+                            "raw": "{\n    \"name\": \"\\u8f6e\\u64ad\\u56fe1\",\n    \"type\": 0,\n    \"location_type\": 0,\n    \"path\": \"https:\\\/\\\/www.baidu.com\",\n    \"sort\": 100,\n    \"is_show\": 1,\n    \"image_id\": 1,\n    \"start_at\": \"culpa\",\n    \"end_at\": \"culpa\",\n    \"is_del\": \"0\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -365,7 +436,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"\\u8f6e\\u64ad\\u56fe1\",\n    \"type\": 0,\n    \"path\": \"https:www.baidu.com\",\n    \"sort\": 100,\n    \"is_show\": 1,\n    \"image_id\": 1,\n    \"start_at\": \"culpa\",\n    \"end_at\": \"culpa\",\n    \"is_del\": \"0\"\n}"
+                            "raw": "{\n    \"name\": \"\\u8f6e\\u64ad\\u56fe1\",\n    \"location_type\": 0,\n    \"type\": 0,\n    \"path\": \"https:www.baidu.com\",\n    \"sort\": 100,\n    \"is_show\": 1,\n    \"image_id\": 1,\n    \"start_at\": \"culpa\",\n    \"end_at\": \"culpa\",\n    \"is_del\": \"0\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -389,6 +460,113 @@
                             ]
                         },
                         "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cashout",
+            "description": "\u63d0\u73b0\u8bb0\u5f55",
+            "item": [
+                {
+                    "name": "index\n\u63d0\u73b0\u8bb0\u5f55\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/cashout",
+                            "query": [
+                                {
+                                    "key": "mobile",
+                                    "value": "",
+                                    "description": "\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "nickname",
+                                    "value": "",
+                                    "description": "\u6635\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "type",
+                                    "value": "",
+                                    "description": "\u7c7b\u578b[1:\u94f6\u884c\u5361 2:\u5fae\u4fe1\u4f59\u989d]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "status",
+                                    "value": "",
+                                    "description": "\u72b6\u6001[0:\u5df2\u7533\u8bf7 1:\u6210\u529f 2:\u63d0\u73b0\u5931\u8d25 3:\u62d2\u7edd]",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "cashout\n\u63d0\u73b0",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/cashout\/:cashout",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "cashout",
+                                    "key": "cashout",
+                                    "value": "culpa",
+                                    "description": "\u63d0\u73b0ID"
+                                }
+                            ]
+                        },
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1040,7 +1218,7 @@
                             "path": "admin-api\/admin\/distribution",
                             "query": [
                                 {
-                                    "key": "phone",
+                                    "key": "mobile",
                                     "value": "",
                                     "description": "\u624b\u673a\u53f7",
                                     "disabled": true
@@ -2062,6 +2240,164 @@
             ]
         },
         {
+            "name": "SaleItems",
+            "description": "\u5206\u9500\u5546\u54c1\u7ed3\u7b97\u8868",
+            "item": [
+                {
+                    "name": "index\n\u7ed3\u7b97\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/sale_item",
+                            "query": [
+                                {
+                                    "key": "mobile",
+                                    "value": "",
+                                    "description": "\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "order_id",
+                                    "value": "",
+                                    "description": "\u8ba2\u5355ID",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "status",
+                                    "value": "",
+                                    "description": "\u72b6\u6001",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "nickname",
+                                    "value": "",
+                                    "description": "\u6635\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SalerInfo",
+            "description": "\u7528\u6237\u5206\u9500\u8d26\u6237\u8868",
+            "item": [
+                {
+                    "name": "index\n\u7528\u6237\u5206\u9500\u8d26\u6237\u5217\u8868",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/saler_info",
+                            "query": [
+                                {
+                                    "key": "mobile",
+                                    "value": "",
+                                    "description": "\u624b\u673a\u53f7",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "nickname",
+                                    "value": "",
+                                    "description": "\u6635\u79f0",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "current_page",
+                                    "value": "1",
+                                    "description": "\u5f53\u524d\u9875",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "10",
+                                    "description": "\u6bcf\u9875\u663e\u793a\u6570\u91cf",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "admin-api\/admin\/saler_info\/{saler_info}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/saler_info\/:saler_info",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
             "name": "SearchHotKeywords",
             "description": "\u70ed\u641c\u63a5\u53e3",
             "item": [
@@ -2968,7 +3304,7 @@
                             "path": "admin-api\/admin\/user",
                             "query": [
                                 {
-                                    "key": "phone",
+                                    "key": "mobile",
                                     "value": "",
                                     "description": "\u624b\u673a\u53f7",
                                     "disabled": true
