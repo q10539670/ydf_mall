@@ -82,7 +82,7 @@ class AfterSalesController extends Controller
      * @param  int  $id
      * @return JsonResponse
      */
-    public function show($id)
+    public function show(int $id)
     {
 
         if ($afterSale = AfterSales::find($id)) {
