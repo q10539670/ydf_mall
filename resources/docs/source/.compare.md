@@ -8313,7 +8313,7 @@ print_r(json_decode((string) $body));
             "spec_desc": null,
             "is_del": 0,
             "created_at": null,
-            "updated_at": "2020-08-14 16:48:05"
+            "updated_at": "2020-09-16 16:48:15"
         }
     }
 }

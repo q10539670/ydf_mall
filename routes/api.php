@@ -31,6 +31,7 @@ Route::group(['middleware' => 'cors'], function () {
         Route::resource('order', 'OrderController')->names('order');                                      //订单
         Route::resource('carousel', 'CarouselController')->names('carousel');                             //轮播图
         Route::resource('keyword', 'SearchHotKeywordsController')->names('keyword');                      //热搜
+        Route::resource('after', 'AfterSalesController')->names('after');                                 //售后
 
         Route::get('delivery','DeliveryController@index')->name('delivery.index');                             //发货单列表
         Route::get('delivery/{delivery}','DeliveryController@show')->name('delivery.show');                    //查询发货单(单一)

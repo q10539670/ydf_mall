@@ -13,6 +13,11 @@ use Illuminate\Http\Response;
  * @group 售后单
  * @package App\Http\Controllers\Admin
  */
+/**
+ * @OA\Info(title="售后单",version="1.0")
+ * @param  Request  $request
+ * @return JsonResponse
+ */
 class AfterSalesController extends Controller
 {
     /**
@@ -28,6 +33,20 @@ class AfterSalesController extends Controller
      * @queryParam current_page required 当前页 Example: 1
      * @queryParam per_page required 每页显示数量 Example: 10
      *
+     * @param  Request  $request
+     * @return JsonResponse
+     */
+
+    /**
+     * @OA\Get (
+     *     path="/admin-api/admin/after",
+     *     summary="售后单列表",
+     *     tags={"售后单"},
+     *   @OA\Response(
+     *     response=200,
+     *     description="售后单列表",
+     *   )
+     *     )
      * @param  Request  $request
      * @return JsonResponse
      */

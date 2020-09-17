@@ -1,0 +1,23 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "售后单",
+        "version": "1.0"
+    },
+    "paths": {
+        "/admin-api/admin/after": {
+            "get": {
+                "tags": [
+                    "售后单"
+                ],
+                "summary": "售后单列表",
+                "operationId": "App\\Http\\Controllers\\Admin\\AfterSalesController::index",
+                "responses": {
+                    "200": {
+                        "description": "售后单列表"
+                    }
+                }
+            }
+        }
+    }
+}
