@@ -1,8 +1,9 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "售后单",
-        "version": "1.0"
+        "title": "又东风小程序后台 Api 文档",
+        "description": "又东风小程序后台 Api 文档",
+        "version": "1.0.0"
     },
     "paths": {
         "/admin-api/admin/after": {
@@ -17,6 +18,13 @@
                         "description": "售后单列表"
                     }
                 }
+            }
+        }
+    },
+    "components": {
+        "links": {
+            "http://ydf_mall.test": {
+                "server": "http://"
             }
         }
     }

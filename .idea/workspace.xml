@@ -22,16 +22,13 @@
     <list default="true" id="5b7e045c-3a3e-412d-812c-2d9762681afb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ydf_mall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ydf_mall.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AfterSalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AfterSalesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/app.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/docs/source/.compare.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/source/.compare.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/docs/source/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/source/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/api-docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/api-docs/api-docs.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="F:/浏览器下载/php-client-generated (1)" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
@@ -243,7 +240,8 @@
       <workItem from="1600305209310" duration="2960000" />
       <workItem from="1600324354046" duration="695000" />
       <workItem from="1600329730147" duration="2493000" />
-      <workItem from="1600333568782" duration="3613000" />
+      <workItem from="1600333568782" duration="3798000" />
+      <workItem from="1600391647040" duration="7816000" />
     </task>
     <servers />
   </component>
@@ -260,6 +258,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="179" key="#CLI_Interpreters" timestamp="1600332217849">
@@ -270,10 +269,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="835" y="145" key="#Plugins/0.0.1920.1050@0.0.1920.1050" timestamp="1600049271875" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1600333358721">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600415478082">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1600333358721" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1600415478082" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1600398339865">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1600398339865" />
     <state x="461" y="169" key="SettingsEditor" timestamp="1600334517781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

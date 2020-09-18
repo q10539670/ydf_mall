@@ -8,6 +8,17 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 
+/**
+ *@OA\Info(
+ *     version="1.0.0",
+ *     title="又东风小程序后台 Api 文档",
+ *     description="又东风小程序后台 Api 文档"
+ * )
+ * @OA\Link (
+ *     link="http://ydf_mall.test",
+ *     server="http://"
+ * )
+ */
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

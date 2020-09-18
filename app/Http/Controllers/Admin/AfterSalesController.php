@@ -13,11 +13,7 @@ use Illuminate\Http\Response;
  * @group 售后单
  * @package App\Http\Controllers\Admin
  */
-/**
- * @OA\Info(title="售后单",version="1.0")
- * @param  Request  $request
- * @return JsonResponse
- */
+
 class AfterSalesController extends Controller
 {
     /**

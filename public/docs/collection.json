@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "261f3140-081e-4b74-a7ac-8304dc7f0410",
+        "_postman_id": "e63d79bf-83e7-4bf5-bad5-4aaf98d0ef0f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -3409,6 +3409,118 @@
             "description": "",
             "item": [
                 {
+                    "name": "Display Swagger API page.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/docs",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Dump api-docs content endpoint. Supports dumping a json, or yaml file.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "docs\/:jsonFile",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "docs\/asset\/{asset}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "docs\/asset\/:asset",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display Oauth2 callback pages.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "api\/oauth2-callback",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
                     "name": "uploadImages\n\u4e0a\u4f20\u56fe\u7247",
                     "request": {
                         "url": {
@@ -3474,6 +3586,109 @@
                             "query": []
                         },
                         "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "\u552e\u540e\u5355",
+            "description": "",
+            "item": [
+                {
+                    "name": "admin-api\/admin\/after",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/after",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "show\n\u67e5\u8be2(\u5355\u4e00)",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/after\/:after",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*\/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "update\n\u5ba1\u6838",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "192.168.0.178:8888",
+                            "path": "admin-api\/admin\/after\/:after",
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "2",
+                                    "description": "\u662f\u5426\u901a\u8fc7\u5ba1\u6838[2,\u901a\u8fc7 3,\u4e0d\u901a\u8fc7]",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "admin_mark",
+                                    "value": "",
+                                    "description": "\u7ba1\u7406\u5458\u5907\u6ce8",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
