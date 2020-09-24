@@ -20,14 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b7e045c-3a3e-412d-812c-2d9762681afb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AfterSalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AfterSalesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SpecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SpecController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/docs/source/.compare.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/source/.compare.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/docs/source/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/docs/source/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Spec.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Spec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/api-docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/api-docs/api-docs.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +194,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/浏览器下载/php-client-generated (1)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
@@ -242,6 +240,11 @@
       <workItem from="1600329730147" duration="2493000" />
       <workItem from="1600333568782" duration="3798000" />
       <workItem from="1600391647040" duration="7816000" />
+      <workItem from="1600651323869" duration="1459000" />
+      <workItem from="1600654195767" duration="13553000" />
+      <workItem from="1600755221512" duration="7166000" />
+      <workItem from="1600823472989" duration="13269000" />
+      <workItem from="1600910490301" duration="14945000" />
     </task>
     <servers />
   </component>
@@ -269,6 +272,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="835" y="145" key="#Plugins/0.0.1920.1050@0.0.1920.1050" timestamp="1600049271875" />
+    <state x="796" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600671729336">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="796" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1600671729336" />
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600415478082">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -285,5 +292,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="823" y="368" key="cloudConfig.SelfSettingsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1600324389940" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1600937287859">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1600937287859" />
   </component>
 </project>

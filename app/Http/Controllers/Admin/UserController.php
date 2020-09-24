@@ -10,23 +10,73 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
-/**
- * @group User
- * 用户接口
- * @package App\Http\Controllers\Admin
- */
+
 class UserController extends Controller
 {
     /**
-     * index
-     * 用户列表
-     * @queryParam mobile 手机号 No-example
-     * @queryParam sex 性别[1:男, 2:女] No-example
-     * @queryParam nickname 昵称 No-example
-     * @queryParam status 状态[1:正常, 2:禁用] No-example
-     * @queryParam pid_phone 推荐人手机号 No-example
-     * @queryParam  current_page required 当前页 Example: 1
-     * @queryParam  per_page required 每页显示数量 Example: 10
+     * @OA\Get(
+     *    path="/user",
+     *    tags={"用户"},
+     *    summary="获取用户列表",
+     *    description="返回用户列表",
+     *    operationId="getUser",
+     *    @OA\Parameter(ref="#/components/parameters/current_page"),
+     *    @OA\Parameter(ref="#/components/parameters/per_page"),
+     *    @OA\Parameter(
+     *         name="mobile",
+     *         description="手机号码",
+     *         required=false,
+     *         in="query",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *    @OA\Parameter(
+     *         name="sex",
+     *         description="性别[1:男 2:女]",
+     *         required=false,
+     *         in="query",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *    @OA\Parameter(
+     *         name="nickname",
+     *         description="昵称",
+     *         required=false,
+     *         in="query",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *    @OA\Parameter(
+     *         name="status",
+     *         description="状态[1:正常, 2:禁用]",
+     *         required=false,
+     *         in="query",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *    @OA\Parameter(
+     *         name="pid_mobile",
+     *         description="推荐人手机号码",
+     *         required=false,
+     *         in="query",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *    @OA\Response(
+     *         response=200,
+     *         description="用户查询成功",
+     *         @OA\JsonContent(ref="#/components/responses/user")
+     *      ),
+     *    @OA\Response(
+     *         response=404,
+     *         description="页面未找到",
+     *      )
+     * )
      * @param  Request  $request
      * @return JsonResponse
      */
@@ -72,6 +122,33 @@ class UserController extends Controller
      * 更改用户状态
      * @urlParam user required 用户ID Example:1
      * @bodyParam status required 状态[1:正常, 2:禁用] Example: 2
+     * @param  Request  $request
+     * @param $id
+     * @return JsonResponse
+     */
+    /**
+     * @OA\Patch (
+     *     path="/user/status/{user}",
+     *     tags={"用户"},
+     *     summary="修改用户状态",
+     *     description="修改用户状态",
+     *     @OA\Parameter(
+     *         name="user",
+     *         description="用户ID",
+     *         required=true,
+     *         in="path",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *          ref="#/components/requestBodies/user_in_body",
+     *     ),
+     *     @OA\Response(
+     *          response="200",
+     *          description="状态修改成功",
+     *     )
+     * )
      * @param  Request  $request
      * @param $id
      * @return JsonResponse

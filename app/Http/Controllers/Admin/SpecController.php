@@ -12,22 +12,37 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-/**
- * @group Spec
- * 属性接口
- * Class SpecController
- * @package App\Http\Controllers\Admin
- */
+
 class SpecController extends Controller
 {
+
     /**
-     * index
-     * 属性列表
-     * @queryParam  condition 类型名称  No-example
-     * @queryParam  current_page required 当前页 Example: 1
-     * @queryParam  per_page required 每页显示数量 Example: 10
-     *
-     * @param Request $request
+     * @OA\Get (
+     *     path="/spec",
+     *     tags={"属性"},
+     *     summary="获取属性列表",
+     *     description="返回属性列表",
+     *     operationId="getSpec",
+     *     @OA\Parameter(ref="#/components/parameters/current_page"),
+     *     @OA\Parameter(ref="#/components/parameters/per_page"),
+     *     @OA\Parameter(
+     *         name="condition",
+     *         description="类型名称",
+     *         in="query",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="属性查询成功",
+     *         @OA\JsonContent(ref="#/components/responses/spec"),
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     ),
+     * )
+     * @param  Request  $request
      * @return JsonResponse
      */
     public function index(Request $request)
@@ -45,56 +60,25 @@ class SpecController extends Controller
         return Helper::Json(1, '查询成功', ['specs' => $specs]);
     }
 
+
     /**
-     * store
-     * 保存属性
-     * @bodyParam name string required 属性名称 Example:码数
-     * @bodyParam sort int required 排序(越小越靠前) Example: 100
-     * @bodyParam values array required 属性值 Example: [34,35,36,37,38,39,40]
-     * @response {
-    "code": 1,
-    "message": "创建成功",
-    "data": {
-    "$spec": {
-    "name": "码数",
-    "sort": "100",
-    "updated_at": "2020-07-14 11:08:54",
-    "created_at": "2020-07-14 11:08:54",
-    "id": 16,
-    "value": [
-    {
-    "id": 61,
-    "spec_id": 16,
-    "name": "34",
-    "sort": 0,
-    "details": "",
-    "created_at": "2020-07-14 11:08:54",
-    "updated_at": "2020-07-14 11:08:54"
-    },
-    {
-    "id": 62,
-    "spec_id": 16,
-    "name": "35",
-    "sort": 0,
-    "details": "",
-    "created_at": "2020-07-14 11:08:54",
-    "updated_at": "2020-07-14 11:08:54"
-    },
-    {
-    "id": 63,
-    "spec_id": 16,
-    "name": "36",
-    "sort": 0,
-    "details": "",
-    "created_at": "2020-07-14 11:08:54",
-    "updated_at": "2020-07-14 11:08:54"
-    }
-    ]
-    }
-    }
-     * }
-     * @param SpecRequest $request
-     * @return JsonResponse|Response
+     * @OA\Post(
+     *     path="/spec",
+     *     tags={"属性"},
+     *     description="保存属性",
+     *     summary="返回保存属性详情",
+     *     @OA\RequestBody(ref="#/components/requestBodies/spec_in_body"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="属性保存成功",
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     ),
+     * )
+     * @param  SpecRequest  $request
+     * @return JsonResponse
      */
     public function store(SpecRequest $request)
     {
@@ -104,20 +88,32 @@ class SpecController extends Controller
         ]);
         foreach ($request->values as $value) {
             SpecValue::create([
-                'spec_id'=>$spec->id,
+                'spec_id'=>$spec['id'],
                 'name' => $value
             ]);
         }
         $spec->value;
-        return Helper::Json(1, '创建成功', ['$spec' => $spec]);
+        return Helper::Json(1, '创建成功', ['spec' => $spec]);
     }
 
     /**
-     * show
-     * 查询属性(单一)
-     * @urlParam spec required 属性ID
-     *
-     * @param SpecRequest $id
+     * @OA\Get(
+     *     path="/spec/{spec}",
+     *     tags={"属性"},
+     *     description="通过ID查询属性",
+     *     summary="返回ID所属属性",
+     *     @OA\Parameter (ref="#/components/parameters/spec_in_path_required"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *         @OA\JsonContent(ref="#/components/responses/spec"),
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     )
+     * )
+     * @param  SpecRequest  $id
      * @return JsonResponse
      */
     public function show(SpecRequest $id)
@@ -128,56 +124,25 @@ class SpecController extends Controller
     }
 
     /**
-     * update
-     * 更新属性
-     * @urlParam spec required 属性名ID
-     * @bodyParam name string required 属性名称 Example:码数
-     * @bodyParam sort int required 排序(越小越靠前) Example: 100
-     * @bodyParam values array required 属性值 Example: [34,35,36,37,38,39,40]
-     * @response {
-    "code": 1,
-    "message": "更新成功",
-    "data": {
-    "$spec": {
-    "name": "码数",
-    "sort": "100",
-    "updated_at": "2020-07-14 11:08:54",
-    "created_at": "2020-07-14 11:08:54",
-    "id": 16,
-    "value": [
-    {
-    "id": 61,
-    "spec_id": 16,
-    "name": "34",
-    "sort": 0,
-    "details": "",
-    "created_at": "2020-07-14 11:08:54",
-    "updated_at": "2020-07-14 11:08:54"
-    },
-    {
-    "id": 62,
-    "spec_id": 16,
-    "name": "35",
-    "sort": 0,
-    "details": "",
-    "created_at": "2020-07-14 11:08:54",
-    "updated_at": "2020-07-14 11:08:54"
-    },
-    {
-    "id": 63,
-    "spec_id": 16,
-    "name": "36",
-    "sort": 0,
-    "details": "",
-    "created_at": "2020-07-14 11:08:54",
-    "updated_at": "2020-07-14 11:08:54"
-    }
-    ]
-    }
-    }
-     * }
-     * @param SpecRequest $request
-     * @param int $id
+     * @OA\Patch(
+     *     path="spec/{spec}",
+     *     tags={"属性"},
+     *     description="更新属性",
+     *     summary="返回更新的属性详情",
+     *     @OA\Parameter(ref="#/components/parameters/spec_in_path_required"),
+     *     @OA\RequestBody(ref="#/components/requestBodies/spec_in_body"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *         @OA\JsonContent(ref="#/components/responses/spec"),
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     )
+     * )
+     * @param  SpecRequest  $request
+     * @param $id
      * @return JsonResponse
      */
     public function update(SpecRequest $request, $id)
@@ -197,13 +162,25 @@ class SpecController extends Controller
         return Helper::Json(1, '更新成功', ['$spec' => $spec]);
     }
 
+
     /**
-     * delete
-     * 删除
-     *
-     * @param int $id
-     * @return JsonResponse|Response
-     * @throws \Exception
+     * @OA\Delete(
+     *     path="spec/{spec}",
+     *     tags={"属性"},
+     *     description="删除属性",
+     *     summary="返回状态",
+     *     @OA\Parameter(ref="#/components/parameters/spec_in_path_required"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     )
+     * )
+     * @param $id
+     * @return JsonResponse
      */
     public function destroy($id)
     {
