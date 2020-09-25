@@ -22,7 +22,6 @@ class SpecController extends Controller
      *     tags={"属性"},
      *     summary="获取属性列表",
      *     description="返回属性列表",
-     *     operationId="getSpec",
      *     @OA\Parameter(ref="#/components/parameters/current_page"),
      *     @OA\Parameter(ref="#/components/parameters/per_page"),
      *     @OA\Parameter(

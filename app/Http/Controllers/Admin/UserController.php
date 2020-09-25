@@ -19,7 +19,6 @@ class UserController extends Controller
      *    tags={"用户"},
      *    summary="获取用户列表",
      *    description="返回用户列表",
-     *    operationId="getUser",
      *    @OA\Parameter(ref="#/components/parameters/current_page"),
      *    @OA\Parameter(ref="#/components/parameters/per_page"),
      *    @OA\Parameter(

@@ -37,7 +37,7 @@
                 ],
                 "summary": "获取属性列表",
                 "description": "返回属性列表",
-                "operationId": "getSpec",
+                "operationId": "App\\Http\\Controllers\\Admin\\SpecController::index",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/current_page"
@@ -182,7 +182,7 @@
                 ],
                 "summary": "获取用户列表",
                 "description": "返回用户列表",
-                "operationId": "getUser",
+                "operationId": "App\\Http\\Controllers\\Admin\\UserController::index",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/current_page"
