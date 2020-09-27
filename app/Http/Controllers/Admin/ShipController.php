@@ -12,18 +12,27 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-/**
- * @group Ship
- * 配送方式接口
- * @package App\Http\Controllers\Admin
- */
+
 class ShipController extends Controller
 {
     /**
-     * index
-     * 配送方式列表
-     * @queryParam per_page required 每页显示数量 Example: 10
-     * @queryParam current_page required 当前页 Example:1
+     * @OA\Get (
+     *     path="/ship",
+     *     tags={"配送方式"},
+     *     summary="配送方式列表",
+     *     description="返回配送方式列表",
+     *     @OA\Parameter(ref="#/components/parameters/per_page"),
+     *     @OA\Parameter(ref="#/components/parameters/current_page"),
+     *     @OA\Response (
+     *         response=200,
+     *         description="成功",
+     *         @OA\JsonContent(ref="#components/responses/ship")
+     *     ),
+     *     @OA\Response (
+     *         response=500,
+     *         description="服务器错误",
+     *     )
+     * )
      * @param  Request  $request
      * @return JsonResponse
      */
@@ -50,25 +59,21 @@ class ShipController extends Controller
     }
 
     /**
-     * store
-     * 保存配送方式
-     * @bodyParam name string required 配送方式名称 Example:配送方式1
-     * @bodyParam type int required 计算方式[1:按重量 2:按件数] Example:1
-     * @bodyParam has_cod int required 是否货到付款[1:不是 2:是] Example:1
-     * @bodyParam firstunit int required 首重(单位:克) Example:500
-     * @bodyParam continueunit int required 续重(单位:克) Example:500
-     * @bodyParam def_area_fee int required 按地区设置配送费用是否启用默认配送费用[1:启用 2:不启用] Example:1
-     * @bodyParam area_type int required 地区类型[1:全部地区 2:指定地区] Example:1
-     * @bodyParam firstunit_price float required 首重费用 Example: 10.00
-     * @bodyParam continueunit_price float required 续重费用 Example: 5:00
-     * @bodyParam logi_name string required 物流公司名称 Example: 顺丰速运
-     * @bodyParam logi_code string required 物流公司编码 Example: SF-Express
-     * @bodyParam is_def int required 是否默认[1:默认 2:不默认] Example:2
-     * @bodyParam sort int required 排序 Example:100
-     * @bodyParam status int required 状态[1:正常 2:禁用] Example:1
-     * @bodyParam free_postage int required 是否包邮[1:包邮 2:不包邮] Example:2
-     * @bodyParam goodsmoney float required 满多少免运费 Example: 0.00
-     * @bodyParam area_fee array 地区配送费用 Example:[{"area_id":[10005,2005,25576],"firstunit":"500","continueunit":"500","firstunit_price":"12","continueunit_price":"8"},{"area_id":[1005,9755,2576],"firstunit":"500","continueunit":"500","firstunit_price":"8","continueunit_price":"3"}]
+     * @OA\Post (
+     *     path="/ship",
+     *     tags={"配送方式"},
+     *     summary="保存配送方式",
+     *     description="返回保存的配送方式",
+     *     @OA\RequestBody(ref="#/components/requestBodies/ship_in_body"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误"
+     *     )
+     * )
      * @param  ShipRequest  $request
      * @return JsonResponse
      */
@@ -86,10 +91,21 @@ class ShipController extends Controller
     }
 
     /**
-     * show
-     * 查询配送方式
-     *
-     * @urlParam ship required 配送方式ID Example: 1
+     * @OA\Get (
+     *     path="ship/{ship}",
+     *     tags={"配送方式"},
+     *     summary="通过ID查询配送方式",
+     *     description="返回查询到的配送方式",
+     *     @OA\Parameter(ref="#/components/parameters/ship_in_path_required"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     ),
+     * )
      * @param  ShipRequest  $id
      * @return JsonResponse
      */
@@ -100,14 +116,6 @@ class ShipController extends Controller
         return Helper::Json(1, '查询成功', ['ship' => $ship]);
     }
 
-    /**
-     * edit
-     * 编辑
-     * @urlParam ship required 配送方式ID Example: 1
-     *
-     * @param  ShipRequest  $id
-     * @return JsonResponse
-     */
     public function edit(ShipRequest $id)
     {
         $ships = self::getAreasFormat(Ship::find($id)->toArray());
@@ -117,28 +125,24 @@ class ShipController extends Controller
     }
 
     /**
-     * update
-     * 更新
-     * @urlParam ship required 配送方式ID Example: 1
-     * @bodyParam name string required 配送方式名称 Example:配送方式1
-     * @bodyParam type int required 计算方式[1:按重量 2:按件数] Example:1
-     * @bodyParam has_cod int required 是否货到付款[1:不是 2:是] Example:1
-     * @bodyParam firstunit int required 首重(单位:克) Example:500
-     * @bodyParam continueunit int required 续重(单位:克) Example:500
-     * @bodyParam def_area_fee int required 按地区设置配送费用是否启用默认配送费用[1:启用 2:不启用] Example:1
-     * @bodyParam area_type int required 地区类型[1:全部地区 2:指定地区] Example:1
-     * @bodyParam firstunit_price float required 首重费用 Example: 10.00
-     * @bodyParam continueunit_price float required 续重费用 Example: 5:00
-     * @bodyParam logi_name string required 物流公司名称 Example: 顺丰速运
-     * @bodyParam logi_code string required 物流公司编码 Example: SF-Express
-     * @bodyParam is_def int required 是否默认[1:默认 2:不默认] Example:2
-     * @bodyParam sort int required 排序 Example:100
-     * @bodyParam status int required 状态[1:正常 2:禁用] Example:1
-     * @bodyParam free_postage int required 是否包邮[1:包邮 2:不包邮] Example:2
-     * @bodyParam goodsmoney float required 满多少免运费 Example: 0.00
-     * @bodyParam area_fee array 地区配送费用 Example:[{"area_id":[10005,2005,25576],"firstunit":"500","continueunit":"500","firstunit_price":"12","continueunit_price":"8"},{"area_id":[1005,9755,2576],"firstunit":"500","continueunit":"500","firstunit_price":"8","continueunit_price":"3"}]
+     * @OA\Patch (
+     *     path="ship/{ship}",
+     *     tags={"配送方式"},
+     *     summary="通过ID更新配送方式",
+     *     description="返回更新后的配送方式",
+     *     @OA\Parameter("#/components/parameters/ship_in_path_required"),
+     *     @OA\RequestBody ("#/components/requestBodies/ship_in_body"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     ),
+     * )
      * @param  ShipRequest  $request
-     * @param  int  $id
+     * @param $id
      * @return JsonResponse
      */
     public function update(ShipRequest $request, $id)
@@ -152,10 +156,22 @@ class ShipController extends Controller
     }
 
     /**
-     * delete
-     * 删除
-     * @urlParam ship required 配送方式ID Example: 1
-     * @param  int  $id
+     * @OA\Delete (
+     *     path="ship/{ship}",
+     *     tags={"配送方式"},
+     *     summary="通过ID删除配送方式",
+     *     description="返回是否删除成功",
+     *     @OA\Parameter(ref="#/components/parameters/ship_in_path_required"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功",
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误",
+     *     ),
+     * )
+     * @param $id
      * @return JsonResponse
      */
     public function destroy($id)
