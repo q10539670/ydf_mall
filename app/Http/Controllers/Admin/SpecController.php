@@ -124,7 +124,7 @@ class SpecController extends Controller
 
     /**
      * @OA\Patch(
-     *     path="spec/{spec}",
+     *     path="/spec/{spec}",
      *     tags={"属性"},
      *     description="更新属性",
      *     summary="返回更新的属性详情",
@@ -164,7 +164,7 @@ class SpecController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="spec/{spec}",
+     *     path="/spec/{spec}",
      *     tags={"属性"},
      *     description="删除属性",
      *     summary="返回状态",

@@ -6,7 +6,7 @@ use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CarouselRequest;
 use App\Http\Requests\Admin\KeywordsRequest;
-use App\Models\SearchHotKeywords;
+use App\Models\Keyword as SearchHotKeywords;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -18,16 +18,53 @@ use Illuminate\Http\Request;
 class SearchHotKeywordsController extends Controller
 {
     /**
-     * index
-     * 热搜列表
-     *
-     * @queryParam keywords 关键词 No-example
-     * @queryParam type 添加类型[1:系统添加 2:后台添加] No-example
-     * @queryParam is_show 是否展示[0:不展示 1:展示] No-example
-     * @queryParam is_hot 是否热门[0:非热门 1:热门] No-example
-     * @queryParam is_del 是否删除[0:正常 1:删除] Example: 0
-     * @queryParam current_page required 当前页 Example: 1
-     * @queryParam per_page required 每页显示数量 Example: 10
+     * @OA\Get (
+     *     path="/keyword",
+     *     tags={"热搜"},
+     *     summary="热搜列表",
+     *     description="返回热搜列表",
+     *     @OA\Parameter (ref="#/components/parameters/current_page"),
+     *     @OA\Parameter (ref="#/components/parameters/per_page"),
+     *     @OA\Parameter (
+     *         name="keyword",
+     *         description="关键词",
+     *         in="query",
+     *         @OA\Schema (type="string")
+     *     ),
+     *     @OA\Parameter (
+     *         name="type",
+     *         description="添加类型[1:系统添加 2:后台添加]",
+     *         in = "query",
+     *         @OA\Schema (type="integer")
+     *     ),
+     *     @OA\Parameter (
+     *         name = "is_show",
+     *         description="是否展示[0:不展示 1:展示]",
+     *         in = "query",
+     *         @OA\Schema (type="integer")
+     *     ),
+     *     @OA\Parameter (
+     *         name = "is_hot",
+     *         description = "是否热门[0:非热门 1:热门]",
+     *         in = "query",
+     *         @OA\Schema (type="integer")
+     *     ),
+     *     @OA\Parameter (
+     *         name = "is_del",
+     *         description = "是否删除[0:正常 1:删除]",
+     *         in = "query",
+     *         @OA\Schema (type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response = 200,
+     *         description="成功",
+
+     *     ),
+     *     @OA\Response(
+     *         response = 500,
+     *         description="服务器错误"
+     *     ),
+     * )
      * @param  Request  $request
      * @return JsonResponse
      */
@@ -60,20 +97,7 @@ class SearchHotKeywordsController extends Controller
         return Helper::Json(1, '查询成功', ['keywords' => $keywords]);
     }
 
-    /**
-     * store
-     * 保存
-     *
-     * @bodyParam keywords string required 关键词 Example:夏季
-     * @bodyParam sort int required 排序 Example:100
-     * @bodyParam is_show int required 展示标记[0:不展示 1:展示] Example:1
-     * @bodyParam is_hot int required 热门标记[0:非热门 1:热门] Example:1
-     * @bodyParam is_delete required 删除标记[0:正常 1:删除] Example:0
-     * @param  KeywordsRequest  $request
-     * @return JsonResponse
-     * @response {
-     * }
-     */
+
     public function store(KeywordsRequest $request)
     {
         $request->type = 2; //标记后台添加
@@ -88,27 +112,32 @@ class SearchHotKeywordsController extends Controller
      * @param  KeywordsRequest  $id
      * @return JsonResponse
      */
+    /**
+     * @OA\Get(
+     *     path="/keyword/{keyword}",
+     *     tags={"热搜"},
+     *     description="根据ID查询热搜词",
+     *     summary="返回热搜词",
+     *     @OA\Parameter (ref="#/components/parameters/keyword_in_path_required"),
+     *     @OA\Response (
+     *         response=200,
+     *         description="成功"
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误"
+     *     )
+     * )
+     * @param  KeywordsRequest  $id
+     * @return JsonResponse
+     */
     public function show(KeywordsRequest $id)
     {
         $keyword = SearchHotKeywords::find($id);
         return Helper::Json(1,'查询成功',['keyword' =>$keyword]);
     }
 
-    /**
-     * update
-     * 更新
-     * @urlParam keyword required 关键词ID Example:1
-     * @bodyParam keywords string required 关键词 Example:夏季
-     * @bodyParam sort int required 排序 Example:100
-     * @bodyParam is_show int required 展示标记[0:不展示 1:展示] Example:1
-     * @bodyParam is_hot int required 热门标记[0:非热门 1:热门] Example:1
-     * @bodyParam is_delete required 删除标记[0:正常 1:删除] Example:0
-     * @param  KeywordsRequest  $request
-     * @param  int  $id
-     * @return JsonResponse
-     * @response {
-     * }
-     */
+
     public function update(KeywordsRequest $request, $id)
     {
         $keyword = SearchHotKeywords::find($id);
@@ -120,16 +149,23 @@ class SearchHotKeywordsController extends Controller
     }
 
     /**
-     * delete
-     * 删除
-     * @urlParam keyword required 关键词ID Example:1
-     * @param  int  $id
+     * @OA\Delete (
+     *     path="/keyword/{keyword}",
+     *     tags={"热搜"},
+     *     description="根据ID删除热搜",
+     *     summary="返回删除状态",
+     *     @OA\Parameter (ref="#/components/parameters/keyword_in_path_required"),
+     *     @OA\Response(
+     *         response=200,
+     *         description="成功"
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="服务器错误"
+     *     ),
+     * )
+     * @param $id
      * @return JsonResponse
-     * @response {
-    "code": 1,
-    "message": "删除成功",
-    "data": []
-     * }
      */
     public function destroy($id)
     {

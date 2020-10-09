@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b7e045c-3a3e-412d-812c-2d9762681afb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/Keyword.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShipController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SearchHotKeywordsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SearchHotKeywordsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShipController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShipController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SpecController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SpecController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/SearchHotKeywords.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Ship.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/api-docs/api-docs.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,19 +195,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.env" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\laragon\www\ydf_mall\app\Http\Controllers\Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\ydf_mall\routes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\ydf_mall\app\Models" />
+      <recent name="D:\laragon\www\ydf_mall\app\Http\Controllers\Admin" />
       <recent name="D:\laragon\www\ydf_mall\routes" />
     </key>
   </component>
@@ -251,7 +257,11 @@
       <workItem from="1600823472989" duration="13269000" />
       <workItem from="1600910490301" duration="15246000" />
       <workItem from="1600996893233" duration="2459000" />
-      <workItem from="1601173325490" duration="9619000" />
+      <workItem from="1601173325490" duration="9921000" />
+      <workItem from="1601256022433" duration="4203000" />
+      <workItem from="1601363235796" duration="1418000" />
+      <workItem from="1601428520888" duration="5656000" />
+      <workItem from="1602205791461" duration="16216000" />
     </task>
     <servers />
   </component>
@@ -279,26 +289,50 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="835" y="145" key="#Plugins/0.0.1920.1050@0.0.1920.1050" timestamp="1600049271875" />
+    <state x="536" y="170" key="#SSH_配置" timestamp="1602207141170">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="536" y="170" key="#SSH_配置/0.0.1920.1050@0.0.1920.1050" timestamp="1602207141170" />
     <state x="796" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600671729336">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="796" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1600671729336" />
+    <state x="689" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602234995135">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="689" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602234995135" />
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601198688266">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1601198688266" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1601201482282">
+    <state x="711" y="200" key="#选项" timestamp="1602207321804">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1601201482282" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1600334517781">
+    <state x="711" y="200" key="#选项/0.0.1920.1050@0.0.1920.1050" timestamp="1602207321804" />
+    <state x="552" y="183" key="#部署" timestamp="1602207307672">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1600334517781" />
+    <state x="552" y="183" key="#部署/0.0.1920.1050@0.0.1920.1050" timestamp="1602207307672" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1602207252600">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1602207252600" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1602225700680">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602225700680" />
     <state x="823" y="368" key="cloudConfig.SelfSettingsDialog" timestamp="1600324389940">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="823" y="368" key="cloudConfig.SelfSettingsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1600324389940" />
+    <state x="810" y="255" key="ftp.server.browser" timestamp="1602207262674">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="810" y="255" key="ftp.server.browser/0.0.1920.1050@0.0.1920.1050" timestamp="1602207262674" />
+    <state x="832" y="416" key="publish.login" timestamp="1602207099127">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="832" y="416" key="publish.login/0.0.1920.1050@0.0.1920.1050" timestamp="1602207099127" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1600937287859">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

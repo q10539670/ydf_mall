@@ -113,18 +113,9 @@ class UserController extends Controller
             if ($user->pid != 0) $user->pid = User::find($user->pid);
             if ($user->ppid != 0) $user->ppid = User::find($user->ppid);
         }
-        return Helper::Json(1, '用户查询成功', ['brand' => $users]);
+        return Helper::Json(1, '用户查询成功', ['users' => $users]);
     }
 
-    /**
-     * status
-     * 更改用户状态
-     * @urlParam user required 用户ID Example:1
-     * @bodyParam status required 状态[1:正常, 2:禁用] Example: 2
-     * @param  Request  $request
-     * @param $id
-     * @return JsonResponse
-     */
     /**
      * @OA\Patch (
      *     path="/user/status/{user}",

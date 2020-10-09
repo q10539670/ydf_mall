@@ -23,6 +23,7 @@ class Ship extends Model
 
     public $id;
     /**
+     * 配送方式名称
      * @OA\Property (format="string",example="配送方式1")
      * @var
      */
@@ -135,7 +136,7 @@ class Ship extends Model
 
     /**
      * 地区配送费用
-     * @OA\Property(format="string",example={{"area_id":{10005,2005,25576}},{"firstunit":"500"},{"continueunit":"500"},{"firstunit_price":"12"},{"continueunit_price":"8"}})
+     * @OA\Property(format="string",example={"area_id":{10005,2005,25576},"firstunit":500,"continueunit":500,"firstunit_price":12,"continueunit_price":8})
      */
     public $area_fee;
 

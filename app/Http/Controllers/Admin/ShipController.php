@@ -92,7 +92,7 @@ class ShipController extends Controller
 
     /**
      * @OA\Get (
-     *     path="ship/{ship}",
+     *     path="/ship/{ship}",
      *     tags={"配送方式"},
      *     summary="通过ID查询配送方式",
      *     description="返回查询到的配送方式",
@@ -126,12 +126,12 @@ class ShipController extends Controller
 
     /**
      * @OA\Patch (
-     *     path="ship/{ship}",
+     *     path="/ship/{ship}",
      *     tags={"配送方式"},
      *     summary="通过ID更新配送方式",
      *     description="返回更新后的配送方式",
-     *     @OA\Parameter("#/components/parameters/ship_in_path_required"),
-     *     @OA\RequestBody ("#/components/requestBodies/ship_in_body"),
+     *     @OA\Parameter(ref="#/components/parameters/ship_in_path_required"),
+     *     @OA\RequestBody (ref="#/components/requestBodies/ship_in_body"),
      *     @OA\Response(
      *         response=200,
      *         description="成功",
@@ -157,7 +157,7 @@ class ShipController extends Controller
 
     /**
      * @OA\Delete (
-     *     path="ship/{ship}",
+     *     path="/ship/{ship}",
      *     tags={"配送方式"},
      *     summary="通过ID删除配送方式",
      *     description="返回是否删除成功",
