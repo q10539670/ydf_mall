@@ -136,7 +136,7 @@ class Ship extends Model
 
     /**
      * 地区配送费用
-     * @OA\Property(format="string",example={"area_id":{10005,2005,25576},"firstunit":500,"continueunit":500,"firstunit_price":12,"continueunit_price":8})
+     * @OA\Property(format="string")
      */
     public $area_fee;
 

@@ -527,11 +527,6 @@
                         "format": "integer",
                         "example": 1
                     },
-                    "is_del": {
-                        "description": "是否删除[0:删除,1:正常]",
-                        "format": "integer",
-                        "example": 0
-                    },
                     "sort": {
                         "description": "排序 越小越靠前",
                         "format": "integer",
@@ -631,18 +626,7 @@
                     },
                     "area_fee": {
                         "description": "地区配送费用",
-                        "format": "string",
-                        "example": {
-                            "area_id": [
-                                10005,
-                                2005,
-                                25576
-                            ],
-                            "firstunit": 500,
-                            "continueunit": 500,
-                            "firstunit_price": 12,
-                            "continueunit_price": 8
-                        }
+                        "format": "string"
                     }
                 },
                 "type": "object"

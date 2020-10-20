@@ -38,13 +38,6 @@ class Keyword extends Model
     public $is_hot;
 
     /**
-     * 是否删除[0:删除,1:正常]
-     * @OA\Property (format="integer",example=0)
-     * @var
-     */
-    public $is_del;
-
-    /**
      * 排序 越小越靠前
      * @OA\Property (format="integer",example=100)
      * @var

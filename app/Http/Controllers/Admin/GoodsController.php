@@ -477,9 +477,6 @@ class GoodsController extends Controller
         } else {
             unset($data['label_ids']);
         }
-        if (!$data['bn'] || $data['bn'] == null) {
-            unset($data['bn']);
-        }
         if (!$goods = Goods::find($id)) {
             return Helper::Json(-1, '更新失败,该商品不存在');
         }

@@ -26,7 +26,7 @@ class CarouselRequest extends FormRequest
                     'image_id' => ['required', 'exists:ydf_images,id'],
                     'start_at' => ['required', 'date'],
                     'end_at' => ['required', 'date','after:start_at'],
-                    'is_delete' => ['required', 'regex:/^[0,1]$/']
+                    'is_del' => ['required', 'regex:/^[0,1]$/']
                 ];
                 break;
             case 'GET':
@@ -64,8 +64,8 @@ class CarouselRequest extends FormRequest
             'end_at.required' => '结束时间不能为空',
             'end_at.date' => '结束时间格式错误',
             'end_at.after' => '结束时间不能早于开始时间',
-            'is_delete.required' => '状态不能为空',
-            'is_delete.regex' => '状态参数错误',
+            'is_del.required' => '状态不能为空',
+            'is_del.regex' => '状态参数错误',
         ];
     }
 }

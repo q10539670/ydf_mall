@@ -27,7 +27,7 @@ class GoodsRequest extends FormRequest
                     'goods_category_id' => ['required', 'exists:ydf_goods_category,id'],
                     'goods_type_id' => ['required', 'exists:ydf_goods_type,id'],
                     'brand_id' =>['sometimes','required', 'exists:ydf_brand,id'],
-                    'sort' => ['required', 'numeric'],
+                    'sort' => ['required', 'numeric']
                 ];
                 break;
             case 'GET':
@@ -61,6 +61,7 @@ class GoodsRequest extends FormRequest
             'goods_type_id.exists' => '该商品类型不存在',
             'sort.required' => '排序不能为空',
             'sort.numeric' => '排序只能是数字',
+//            'products.required' => '商品规格不能为空',
         ];
     }
 

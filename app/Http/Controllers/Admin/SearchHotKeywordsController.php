@@ -74,7 +74,7 @@ class SearchHotKeywordsController extends Controller
         $type = $request->input('type');
         $isShow = $request->input('is_show');
         $isHot = $request->input('is_hot');
-        $isDel = $request->input('is_del', '0');
+        $isDel = $request->input('is_del', 0);
         $perPage = $request->input('per_page') != '' ? $request->input('per_page') : 10;
         $currentPage = $request->input('current_page') != '' ? $request->input('current_page') : 1;
         $query = SearchHotKeywords::when($keywords != '', function ($query) use ($keywords) {
@@ -141,7 +141,6 @@ class SearchHotKeywordsController extends Controller
     public function update(KeywordsRequest $request, $id)
     {
         $keyword = SearchHotKeywords::find($id);
-        $request->type = 2; //标记后台添加
         $keyword->fill($request->all());
         $keyword->save();
         return Helper::Json(1,'更新成功',['carousel' =>$keyword]);
@@ -172,8 +171,11 @@ class SearchHotKeywordsController extends Controller
         if (!$keyword = SearchHotKeywords::find($id)) {
             return Helper::Json(-1,'删除失败,ID参数错误');
         }
+        if ($keyword->is_del == 1) {
+            return Helper::Json(-1, '删除失败,该热搜词已删除');
+        }
         $keyword->is_del = 1;
         $keyword->save();
-        return Helper::Json(-1,'删除成功');
+        return Helper::Json(1,'删除成功');
     }
 }
