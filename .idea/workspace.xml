@@ -21,13 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5b7e045c-3a3e-412d-812c-2d9762681afb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarouselController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarouselController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SearchHotKeywordsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SearchHotKeywordsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/CarouselRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/CarouselRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/GoodsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/GoodsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Keyword.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Keyword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ship.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/api-docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/api-docs/api-docs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/CouponRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/CouponRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +198,7 @@
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -271,7 +269,13 @@
       <workItem from="1602810929587" duration="2245000" />
       <workItem from="1603070128934" duration="5827000" />
       <workItem from="1603155894170" duration="2748000" />
-      <workItem from="1603174092010" duration="9654000" />
+      <workItem from="1603174092010" duration="9981000" />
+      <workItem from="1603242687767" duration="20105000" />
+      <workItem from="1603328776669" duration="5666000" />
+      <workItem from="1603415932481" duration="6420000" />
+      <workItem from="1603445127296" duration="595000" />
+      <workItem from="1603675783257" duration="16120000" />
+      <workItem from="1603760892358" duration="6408000" />
     </task>
     <servers />
   </component>
@@ -311,10 +315,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="689" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602234995135" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601198688266">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603349323209">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1601198688266" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1603349323209" />
     <state x="711" y="200" key="#选项" timestamp="1602207321804">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -327,10 +331,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1603070287934" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1602225700680">
+    <state x="461" y="169" key="SettingsEditor" timestamp="1603701533204">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1602225700680" />
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1603701533204" />
     <state x="823" y="368" key="cloudConfig.SelfSettingsDialog" timestamp="1600324389940">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

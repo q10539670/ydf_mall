@@ -194,3 +194,31 @@ class CarouselController extends Controller
         return Helper::Json(-1,'删除成功');
     }
 }
+
+/*
+ * https://apt.cdalei.com/
+ * https://repo.lenglengyu.top/
+ * https://repo.cydiabc.top/
+ * http://apt.autotouch.net/
+ * https://c1d3r.com/repo/
+ * http://cokepokes.github.io/
+ * https://repo.chariz.com/
+ * https://apt.cydiakk.com/
+ * https://apt.iwba.cn/
+ * http://repo.qqtlr.com/
+ * https://aquawu.github/.io/igg/
+ * https://ib-soft.net/cydia/
+ * https://cydia.akemi.ai/
+ * http://limneos.net/repo/
+ * https://repo.initnil.com/
+ * https://apt.initnil.com/
+ * https://tigisoftware.com/cydia
+ * https://apt.htv123.com
+ * https://apt.25mao.com
+ * https://apt.fcydia.com
+ * http://opa334.github.io/
+ * https://repo.incendo.ws/
+ * http://beta.unlimapps.com/
+ * http://rpetri.ch/repo
+ * https://getdelta.co/
+ */

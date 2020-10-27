@@ -12,6 +12,7 @@ use App\Models\GoodsCategory;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Monolog\Handler\IFTTTHandler;
 
 /**
@@ -198,12 +199,12 @@ class CouponController extends Controller
     {
         $coupon = Coupon::find($id);
         $data = $request->all();
-        if (is_array($useValue = $data['use_value']) && !empty($useValue)) {
-            $useValue = implode(',', $useValue);
-        } else {
-            $useValue = "";
-        }
-        $data['use_value'] = $useValue;
+//        if (is_array($useValue = $data['use_value']) && !empty($useValue)) {
+//            $useValue = implode(',', $useValue);
+//        } else {
+//            $useValue = "";
+//        }
+//        $data['use_value'] = $useValue;
         $data['start_time'] = Helper::formatTimeString($request->input('start_time'),'start');
         $data['end_time'] = Helper::formatTimeString($request->input('end_time'));
         $data['enable_time'] = Helper::formatTimeString($request->input('enable_time'));
@@ -216,6 +217,13 @@ class CouponController extends Controller
         return Helper::Json(1, '更新成功', ['coupon' => $coupon]);
     }
 
+    public function show($id)
+    {
+        if (!$coupon = Coupon::find($id)) {
+            return Helper::Json(-1, '优惠券不存在');
+        }
+        return Helper::Json(1, '查找成功', ['coupon' => $coupon]);
+    }
     /**
      * delete
      * 删除优惠券
@@ -235,8 +243,41 @@ class CouponController extends Controller
         if (!$coupon = Coupon::find($id)) {
             return Helper::Json(-1, '删除失败,优惠券不存在');
         }
-        $coupon->status = 2;
-        $coupon->save();
+        Coupon::destroy($id);
         return Helper::Json(1, '删除成功');
+    }
+
+    /**
+     * status
+     * 修改优惠券状态
+     *
+     * @urlParam coupon required 优惠券ID Example:1
+     * @bodyParam status int required 状态[1:正常 2:禁用]
+     * @param  int  $id
+     * @return JsonResponse
+     *
+     * @response {
+     *  "code": 1,
+     *  "message": "状态修改成功",
+     *  "data": []
+     * }
+     */
+    public function status(Request $request, $id)
+    {
+        if (!$coupon = Coupon::find($id)) {
+            return Helper::Json(-1, '优惠券不存在');
+        }
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|regex:/^[1,2]$/',
+        ], [
+            'status.required' => '状态参数不能为空',
+            'status.regex' => '状态参数错误',
+        ]);
+        if ($validator->fails()) {
+            return Helper::Json(-1, $validator->errors()->first());
+        }
+        $coupon->status = $request->input('status');
+        $coupon->save();
+        return Helper::Json(1, '状态修改成功', ['coupon' => $coupon]);
     }
 }

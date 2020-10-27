@@ -21,7 +21,7 @@ class CouponRequest extends FormRequest
                     'name' => ['required', 'max:64'],
                     'type' => ['required', 'regex:/^[0-3]$/'],
                     'use_key' => ['required', 'regex:/^[0-2]$/'],
-                    'use_value' => ['required','array'],
+                    'use_value' => ['sometimes','required','array'],
                     'amount' => ['required', 'regex:/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/'],
                     'per_limit' => ['required','numeric'],
                     'min_point' => ['required','regex:/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/'],

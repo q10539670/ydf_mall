@@ -48,6 +48,7 @@ Route::group(['middleware' => 'cors'], function () {
         Route::get('sale_item','SaleItemController@index')->name('sale_item.index');                           //分销结算
         Route::get('saler_info','SalerInfoController@index')->name('saler_info.index');                        //用户分销列表
         Route::get('saler_info/{saler_info}','SalerInfoController@show')->name('saler_info.show');             //用户分销(单一)
+        Route::patch('coupon/status/{coupon}', 'CouponController@status')->name('coupon.status');              //更改优惠券状态
     });
 });
 

@@ -81,6 +81,9 @@ class GoodsController extends Controller
         $cateModel = new GoodsCategory();
         $cates = $cateModel->getCatesWithPrefix();
         $spec = Spec::all();
+        foreach ($spec as $s) {
+            $s->value;
+        }
         $brand = Brand::all();
         return Helper::Json(1, '查询成功', ['cates' => $cates, 'spec' => $spec, 'brand' => $brand]);
     }
