@@ -21,11 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5b7e045c-3a3e-412d-812c-2d9762681afb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarouselController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarouselController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CouponController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/CouponRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/CouponRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/app.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +34,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -193,7 +199,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vlvl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ydfshop" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
@@ -275,7 +281,28 @@
       <workItem from="1603415932481" duration="6420000" />
       <workItem from="1603445127296" duration="595000" />
       <workItem from="1603675783257" duration="16120000" />
-      <workItem from="1603760892358" duration="6408000" />
+      <workItem from="1603760892358" duration="7048000" />
+      <workItem from="1603847480298" duration="3596000" />
+      <workItem from="1603935575075" duration="1914000" />
+      <workItem from="1604020268041" duration="2396000" />
+      <workItem from="1604281090017" duration="2994000" />
+      <workItem from="1604366042072" duration="597000" />
+      <workItem from="1604451681650" duration="597000" />
+      <workItem from="1604538475722" duration="597000" />
+      <workItem from="1604628812401" duration="236000" />
+      <workItem from="1606096500288" duration="913000" />
+      <workItem from="1606188959526" duration="1000" />
+      <workItem from="1606705927983" duration="1214000" />
+      <workItem from="1606785376161" duration="1193000" />
+      <workItem from="1606804110723" duration="1422000" />
+      <workItem from="1606871273015" duration="3908000" />
+      <workItem from="1606960081868" duration="1199000" />
+      <workItem from="1606963602008" duration="1334000" />
+      <workItem from="1612422068201" duration="1810000" />
+      <workItem from="1614154405016" duration="2235000" />
+      <workItem from="1614159164493" duration="781000" />
+      <workItem from="1614220036296" duration="3932000" />
+      <workItem from="1614762747324" duration="10000" />
     </task>
     <servers />
   </component>
@@ -295,61 +322,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="540" y="179" key="#CLI_Interpreters" timestamp="1600332217849">
+    <state x="552" y="183" key="#部署" timestamp="1614156901989">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="540" y="179" key="#CLI_Interpreters/0.0.1920.1050@0.0.1920.1050" timestamp="1600332217849" />
-    <state x="835" y="145" key="#Plugins" timestamp="1600049271875">
+    <state x="552" y="183" key="#部署/0.0.1920.1050@0.0.1920.1050" timestamp="1614156901989" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1614762755457">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="835" y="145" key="#Plugins/0.0.1920.1050@0.0.1920.1050" timestamp="1600049271875" />
-    <state x="536" y="170" key="#SSH_配置" timestamp="1602207141170">
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1614762755457" />
+    <state x="832" y="416" key="publish.login" timestamp="1614156627707">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="536" y="170" key="#SSH_配置/0.0.1920.1050@0.0.1920.1050" timestamp="1602207141170" />
-    <state x="796" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600671729336">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="796" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1600671729336" />
-    <state x="689" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602234995135">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="689" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602234995135" />
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603349323209">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1603349323209" />
-    <state x="711" y="200" key="#选项" timestamp="1602207321804">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="711" y="200" key="#选项/0.0.1920.1050@0.0.1920.1050" timestamp="1602207321804" />
-    <state x="552" y="183" key="#部署" timestamp="1602207307672">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="183" key="#部署/0.0.1920.1050@0.0.1920.1050" timestamp="1602207307672" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1603070287934">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1603070287934" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1603701533204">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1603701533204" />
-    <state x="823" y="368" key="cloudConfig.SelfSettingsDialog" timestamp="1600324389940">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="823" y="368" key="cloudConfig.SelfSettingsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1600324389940" />
-    <state x="810" y="255" key="ftp.server.browser" timestamp="1602207262674">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="810" y="255" key="ftp.server.browser/0.0.1920.1050@0.0.1920.1050" timestamp="1602207262674" />
-    <state x="832" y="416" key="publish.login" timestamp="1602207099127">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="832" y="416" key="publish.login/0.0.1920.1050@0.0.1920.1050" timestamp="1602207099127" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1600937287859">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1600937287859" />
+    <state x="832" y="416" key="publish.login/0.0.1920.1050@0.0.1920.1050" timestamp="1614156627707" />
   </component>
 </project>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8bd58e9f6cbefc5ef5a27ac5e98d508",
+    "content-hash": "3996479905f56384d261087a803953ed",
     "packages": [
         {
             "name": "adbario/php-dot-notation",
@@ -1253,6 +1253,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
@@ -1531,6 +1532,7 @@
                 "parallel",
                 "speedup"
             ],
+            "abandoned": true,
             "time": "2020-02-16T12:49:55+00:00"
         },
         {
